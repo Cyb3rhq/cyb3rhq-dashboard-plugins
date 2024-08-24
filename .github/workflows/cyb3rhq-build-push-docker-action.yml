@@ -65,14 +65,14 @@ jobs:
       - name: Step 03 - Build image
         run: |
           cd ${{ github.workspace }}/cyb3rhq-kibana-app/test/cypress/images/cyb3rhq_manager_filebeat_sources_cmake
-          docker build -t quay.io/cyb3rhq/cyb3rhq-manager-image:${{ github.event.inputs.cyb3rhq-manager-version }}-${{ github.event.inputs.elastic-manager-version }} \
+          docker build -t quay.io/wazuh/cyb3rhq-manager-image:${{ github.event.inputs.cyb3rhq-manager-version }}-${{ github.event.inputs.elastic-manager-version }} \
           --build-arg CYB3RHQ_VERSION=${{ github.event.inputs.cyb3rhq-manager-version }} \
           --build-arg FILEBEAT_VERSION=${{ github.event.inputs.elastic-manager-version }} \
           --build-arg FILEBEAT_CYB3RHQ_TEMPLATE_URL=https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/4.0/extensions/elasticsearch/7.x/cyb3rhq-template.json \
           --build-arg FILEBEAT_CYB3RHQ_MODULE_URL=https://packages.wazuh.com/4.x/filebeat/cyb3rhq-filebeat-0.4.tar.gz .
       - name: Step 04 - Push image to quay.io
         run: |
-          docker push quay.io/cyb3rhq/cyb3rhq-manager-image:${{ github.event.inputs.cyb3rhq-manager-version }}-${{ github.event.inputs.elastic-manager-version }}
+          docker push quay.io/wazuh/cyb3rhq-manager-image:${{ github.event.inputs.cyb3rhq-manager-version }}-${{ github.event.inputs.elastic-manager-version }}
 
   job-build-agent-image:
     if: ${{ github.event.inputs.build-agent-image == 'true' }}
@@ -89,11 +89,11 @@ jobs:
       - name: Step 03 - Build image
         run: |
           cd ${{ github.workspace }}/cyb3rhq-kibana-app/test/cypress/images/cyb3rhq_agent_ubuntu_sources_cmake
-          docker build -t quay.io/cyb3rhq/cyb3rhq-agent-image:${{ github.event.inputs.cyb3rhq-agent-version }} \
+          docker build -t quay.io/wazuh/cyb3rhq-agent-image:${{ github.event.inputs.cyb3rhq-agent-version }} \
           --build-arg CYB3RHQ_VERSION=${{ github.event.inputs.cyb3rhq-agent-version }} .
       - name: Step 04 - Push image to quay.io
         run: |
-          docker push quay.io/cyb3rhq/cyb3rhq-agent-image:${{ github.event.inputs.cyb3rhq-agent-version }}
+          docker push quay.io/wazuh/cyb3rhq-agent-image:${{ github.event.inputs.cyb3rhq-agent-version }}
 
   job-build-cypress-image:
     if: ${{ github.event.inputs.build-cypress-image == 'true' }}
@@ -110,8 +110,8 @@ jobs:
       - name: Step 03 - Build image
         run: |
           cd ${{ github.workspace }}/cyb3rhq-kibana-app/test/cypress/images/ubuntu-cypress
-          docker build -t quay.io/cyb3rhq/cyb3rhq-ubuntu-cypress:${{ github.event.inputs.image-cypress-version }} \
+          docker build -t quay.io/wazuh/cyb3rhq-ubuntu-cypress:${{ github.event.inputs.image-cypress-version }} \
           --build-arg UBUNTU_CYPRESS_BRANCH=${{ github.event.inputs.ubuntu-cypress-branch }} .
       - name: Step 04 - Push image to quay.io
         run: |
-          docker push quay.io/cyb3rhq/cyb3rhq-ubuntu-cypress:${{ github.event.inputs.image-cypress-version }}
+          docker push quay.io/wazuh/cyb3rhq-ubuntu-cypress:${{ github.event.inputs.image-cypress-version }}

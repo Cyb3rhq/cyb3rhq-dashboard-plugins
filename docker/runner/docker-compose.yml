@@ -11,7 +11,7 @@ version: "3"
 services:
   test_runner:
     container_name: runner
-    image:  quay.io/cyb3rhq/$APP-dev:$VERSION
+    image:  quay.io/wazuh/$APP-dev:$VERSION
     working_dir: /home/node/kbn/plugins/cyb3rhq
     volumes:
       - $REPO:/home/node/kbn/plugins/cyb3rhq

@@ -222,7 +222,7 @@ services:
     depends_on:
       os1:
         condition: service_healthy
-    image: quay.io/cyb3rhq/osd-dev:${OSD_VERSION}
+    image: quay.io/wazuh/osd-dev:${OSD_VERSION}
     profiles:
       - 'server'
       - 'saml'
