@@ -1,6 +1,6 @@
 /*
- * Wazuh app - HOC, which renders a component if a condition is truthy or a wrapped component. This protects wrapped component of render if the condition returns a truthy value
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - HOC, which renders a component if a condition is truthy or a wrapped component. This protects wrapped component of render if the condition returns a truthy value
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

@@ -1,10 +1,10 @@
 Feature: Validate that the pinned filter label is displayed - from event page
 
-  As a Wazuh user
+  As a Cyb3rhq user
   i want to set a new filter from the agent page
   in order to manage them
   Background:
-    Given The wazuh admin user is logged
+    Given The cyb3rhq admin user is logged
     And The user navigates to the agent page
     And The user navigates to the agent dashboard
 

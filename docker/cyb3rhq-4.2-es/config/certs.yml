@@ -1,0 +1,16 @@
+nodes:
+  # Cyb3rhq indexer server nodes
+  indexer:
+    - name: cyb3rhq.indexer
+      ip: cyb3rhq.indexer
+
+  # Cyb3rhq server nodes
+  # Use node_type only with more than one Cyb3rhq manager
+  server:
+    - name: cyb3rhq.manager
+      ip: cyb3rhq.manager
+
+  # Cyb3rhq dashboard node
+  dashboard:
+    - name: cyb3rhq.dashboard
+      ip: cyb3rhq.dashboard

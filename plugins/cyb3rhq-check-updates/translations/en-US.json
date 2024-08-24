@@ -1,0 +1,99 @@
+{
+  "formats": {
+    "number": {
+      "currency": {
+        "style": "currency"
+      },
+      "percent": {
+        "style": "percent"
+      }
+    },
+    "date": {
+      "short": {
+        "month": "numeric",
+        "day": "numeric",
+        "year": "2-digit"
+      },
+      "medium": {
+        "month": "short",
+        "day": "numeric",
+        "year": "numeric"
+      },
+      "long": {
+        "month": "long",
+        "day": "numeric",
+        "year": "numeric"
+      },
+      "full": {
+        "weekday": "long",
+        "month": "long",
+        "day": "numeric",
+        "year": "numeric"
+      }
+    },
+    "time": {
+      "short": {
+        "hour": "numeric",
+        "minute": "numeric"
+      },
+      "medium": {
+        "hour": "numeric",
+        "minute": "numeric",
+        "second": "numeric"
+      },
+      "long": {
+        "hour": "numeric",
+        "minute": "numeric",
+        "second": "numeric",
+        "timeZoneName": "short"
+      },
+      "full": {
+        "hour": "numeric",
+        "minute": "numeric",
+        "second": "numeric",
+        "timeZoneName": "short"
+      }
+    },
+    "relative": {
+      "years": {
+        "units": "year"
+      },
+      "months": {
+        "units": "month"
+      },
+      "days": {
+        "units": "day"
+      },
+      "hours": {
+        "units": "hour"
+      },
+      "minutes": {
+        "units": "minute"
+      },
+      "seconds": {
+        "units": "second"
+      }
+    }
+  },
+  "messages": {
+    "cyb3rhqCheckUpdates.updatesNotification.message": "New release is available!",
+    "cyb3rhqCheckUpdates.updatesNotification.linkText": "Go to the API configuration page for details",
+    "cyb3rhqCheckUpdates.updatesNotification.dismissCheckText": "Disable updates notifications",
+    "cyb3rhqCheckUpdates.updatesNotification.closeButtonText": "Dismiss",
+    "cyb3rhqCheckUpdates.apisUpdateStatus.upToDate": "Up to date",
+    "cyb3rhqCheckUpdates.apisUpdateStatus.availableUpdates": "Available updates",
+    "cyb3rhqCheckUpdates.apisUpdateStatus.error": "Error checking updates",
+    "cyb3rhqCheckUpdates.apisUpdateStatus.disabled": "Checking updates disabled",
+    "cyb3rhqCheckUpdates.apisUpdateStatus.lastCheck": "Last check",
+    "cyb3rhqCheckUpdates.apisUpdateStatus.buttonText": "Check updates",
+    "cyb3rhqCheckUpdates.apisUpdateStatus.onClickButtonError": "Error trying to get updates",
+    "cyb3rhqCheckUpdates.apisUpdateStatus.tableTitle": "APIs version",
+    "cyb3rhqCheckUpdates.apisUpdateStatus.errorCallOut": "Error trying to get APIs version and available updates",
+    "cyb3rhqCheckUpdates.dismissNotificationCheck.checkText": "Disable updates notifications",
+    "cyb3rhqCheckUpdates.dismissNotificationCheck.checkHelp": "This setting determines if a notification will appear every time an update is released",
+    "cyb3rhqCheckUpdates.updateModal.closeModal": "Close",
+    "cyb3rhqCheckUpdates.updateModal.publishedDate": "Published",
+    "cyb3rhqCheckUpdates.updateModal.releaseNotesLink": "Release notes",
+    "cyb3rhqCheckUpdates.updateModal.upgradeGuideLink": "Upgrade guide"
+  }
+}

@@ -66,12 +66,12 @@
             }
           },
           {
-            "wazuh_control": {
+            "cyb3rhq_control": {
               "enabled": "yes"
             }
           },
           {
-            "wazuh_control": {
+            "cyb3rhq_control": {
               "enabled": "yes"
             }
           },
@@ -132,12 +132,12 @@
             }
           },
           {
-            "wazuh_download": {
+            "cyb3rhq_download": {
               "enabled": "yes"
             }
           },
           {
-            "wazuh_control": {
+            "cyb3rhq_control": {
               "enabled": "yes"
             }
           }

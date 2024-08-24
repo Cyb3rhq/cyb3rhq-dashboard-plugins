@@ -1,7 +1,7 @@
 /*
- * Wazuh app - Check APIs service
+ * Cyb3rhq app - Check APIs service
  *
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@ import { getToasts } from '../../../kibana-services';
 import { ApiCheck, AppState, GenericRequest } from '../../../react-services';
 import { CheckLogger } from '../types/check_logger';
 import {
-  PLUGIN_PLATFORM_WAZUH_DOCUMENTATION_URL_PATH_TROUBLESHOOTING,
+  PLUGIN_PLATFORM_CYB3RHQ_DOCUMENTATION_URL_PATH_TROUBLESHOOTING,
   PLUGIN_APP_NAME,
 } from '../../../../common/constants';
 import { webDocumentationLink } from '../../../../common/services/web_documentation';
@@ -55,8 +55,8 @@ const trySetDefault = async (checkLogger: CheckLogger) => {
           if (errors[j].includes('ERROR3099 - 405: Method Not Allowed')) {
             return Promise.reject(
               `No API available to connect. This may be related to a version mismatch between server and ${PLUGIN_APP_NAME}. Please check the versions and try again. Read more about this in our troubleshooting guide: ${webDocumentationLink(
-                PLUGIN_PLATFORM_WAZUH_DOCUMENTATION_URL_PATH_TROUBLESHOOTING,
-              )}#wazuh-api-and-wazuh-app-version-mismatch-error-is-displayed.`,
+                PLUGIN_PLATFORM_CYB3RHQ_DOCUMENTATION_URL_PATH_TROUBLESHOOTING,
+              )}#cyb3rhq-api-and-cyb3rhq-app-version-mismatch-error-is-displayed.`,
             );
           }
         }

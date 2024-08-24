@@ -143,7 +143,7 @@ export interface IMacOSTypes {
 
 export type tOperatingSystem = ILinuxOSTypes | IMacOSTypes | IWindowsOSTypes;
 
-type tOptionalParameters = 'server_address' | 'agent_name' | 'agent_group' | 'protocol' | 'wazuh_password';
+type tOptionalParameters = 'server_address' | 'agent_name' | 'agent_group' | 'protocol' | 'cyb3rhq_password';
 
 import { OSdefintions, paramsDefinitions} from 'path/config/os-definitions';
 

@@ -387,7 +387,7 @@
       {
         "name": "/agents/:agent_id/stats/:component",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.agent_controller.get_component_stats",
-        "description": "Return Wazuh's {component} statistical information from agent {agent_id}",
+        "description": "Return Cyb3rhq's {component} statistical information from agent {agent_id}",
         "summary": "Get agent's component stats",
         "tags": ["Agents"],
         "args": [
@@ -913,7 +913,7 @@
       {
         "name": "/cluster/:node_id/configuration",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.cluster_controller.get_configuration_node",
-        "description": "Return wazuh configuration used in node {node_id}. The 'section' and 'field' parameters will be ignored if 'raw' parameter is provided.",
+        "description": "Return cyb3rhq configuration used in node {node_id}. The 'section' and 'field' parameters will be ignored if 'raw' parameter is provided.",
         "summary": "Get node config",
         "tags": ["Cluster"],
         "args": [
@@ -954,7 +954,7 @@
           },
           {
             "name": "section",
-            "description": "Indicates the wazuh configuration section",
+            "description": "Indicates the cyb3rhq configuration section",
             "schema": {
               "type": "string",
               "enum": [
@@ -1135,7 +1135,7 @@
       {
         "name": "/cluster/:node_id/logs",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.cluster_controller.get_log_node",
-        "description": "Return the last 2000 wazuh log entries in the specified node",
+        "description": "Return the last 2000 cyb3rhq log entries in the specified node",
         "summary": "Get node logs",
         "tags": ["Cluster"],
         "args": [
@@ -1219,40 +1219,40 @@
           },
           {
             "name": "tag",
-            "description": "Wazuh component that logged the event",
+            "description": "Cyb3rhq component that logged the event",
             "schema": {
               "type": "string",
               "enum": [
-                "wazuh-agentlessd",
-                "wazuh-analysisd",
-                "wazuh-authd",
-                "wazuh-csyslogd",
-                "wazuh-dbd",
-                "wazuh-execd",
-                "wazuh-integratord",
-                "wazuh-maild",
-                "wazuh-monitord",
-                "wazuh-logcollector",
-                "wazuh-remoted",
-                "wazuh-reportd",
-                "wazuh-rootcheck",
-                "wazuh-syscheckd",
+                "cyb3rhq-agentlessd",
+                "cyb3rhq-analysisd",
+                "cyb3rhq-authd",
+                "cyb3rhq-csyslogd",
+                "cyb3rhq-dbd",
+                "cyb3rhq-execd",
+                "cyb3rhq-integratord",
+                "cyb3rhq-maild",
+                "cyb3rhq-monitord",
+                "cyb3rhq-logcollector",
+                "cyb3rhq-remoted",
+                "cyb3rhq-reportd",
+                "cyb3rhq-rootcheck",
+                "cyb3rhq-syscheckd",
                 "sca",
-                "wazuh-db",
-                "wazuh-modulesd",
-                "wazuh-modulesd:agent-key-polling",
-                "wazuh-modulesd:aws-s3",
-                "wazuh-modulesd:azure-logs",
-                "wazuh-modulesd:ciscat",
-                "wazuh-modulesd:control",
-                "wazuh-modulesd:command",
-                "wazuh-modulesd:database",
-                "wazuh-modulesd:docker-listener",
-                "wazuh-modulesd:download",
-                "wazuh-modulesd:oscap",
-                "wazuh-modulesd:osquery",
-                "wazuh-modulesd:syscollector",
-                "wazuh-modulesd:vulnerability-detector"
+                "cyb3rhq-db",
+                "cyb3rhq-modulesd",
+                "cyb3rhq-modulesd:agent-key-polling",
+                "cyb3rhq-modulesd:aws-s3",
+                "cyb3rhq-modulesd:azure-logs",
+                "cyb3rhq-modulesd:ciscat",
+                "cyb3rhq-modulesd:control",
+                "cyb3rhq-modulesd:command",
+                "cyb3rhq-modulesd:database",
+                "cyb3rhq-modulesd:docker-listener",
+                "cyb3rhq-modulesd:download",
+                "cyb3rhq-modulesd:oscap",
+                "cyb3rhq-modulesd:osquery",
+                "cyb3rhq-modulesd:syscollector",
+                "cyb3rhq-modulesd:vulnerability-detector"
               ]
             }
           },
@@ -1269,7 +1269,7 @@
       {
         "name": "/cluster/:node_id/logs/summary",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.cluster_controller.get_log_summary_node",
-        "description": "Return a summary of the last 2000 wazuh log entries in the specified node",
+        "description": "Return a summary of the last 2000 cyb3rhq log entries in the specified node",
         "summary": "Get node logs summary",
         "tags": ["Cluster"],
         "args": [
@@ -1305,7 +1305,7 @@
       {
         "name": "/cluster/:node_id/stats",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.cluster_controller.get_stats_node",
-        "description": "Return Wazuh statistical information in node {node_id} for the current or specified date",
+        "description": "Return Cyb3rhq statistical information in node {node_id} for the current or specified date",
         "summary": "Get node stats",
         "tags": ["Cluster"],
         "args": [
@@ -1349,7 +1349,7 @@
       {
         "name": "/cluster/:node_id/stats/analysisd",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.cluster_controller.get_stats_analysisd_node",
-        "description": "Return Wazuh analysisd statistical information in node {node_id}",
+        "description": "Return Cyb3rhq analysisd statistical information in node {node_id}",
         "summary": "Get node stats analysisd",
         "tags": ["Cluster"],
         "args": [
@@ -1385,7 +1385,7 @@
       {
         "name": "/cluster/:node_id/stats/hourly",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.cluster_controller.get_stats_hourly_node",
-        "description": "Return Wazuh statistical information in node {node_id} per hour. Each number in the averages field represents the average of alerts per hour",
+        "description": "Return Cyb3rhq statistical information in node {node_id} per hour. Each number in the averages field represents the average of alerts per hour",
         "summary": "Get node stats hour",
         "tags": ["Cluster"],
         "args": [
@@ -1421,7 +1421,7 @@
       {
         "name": "/cluster/:node_id/stats/remoted",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.cluster_controller.get_stats_remoted_node",
-        "description": "Return Wazuh remoted statistical information in node {node_id}",
+        "description": "Return Cyb3rhq remoted statistical information in node {node_id}",
         "summary": "Get node stats remoted",
         "tags": ["Cluster"],
         "args": [
@@ -1457,7 +1457,7 @@
       {
         "name": "/cluster/:node_id/stats/weekly",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.cluster_controller.get_stats_weekly_node",
-        "description": "Return Wazuh statistical information in node {node_id} per week. Each number in the averages field represents the average of alerts per hour for that specific day",
+        "description": "Return Cyb3rhq statistical information in node {node_id} per week. Each number in the averages field represents the average of alerts per hour for that specific day",
         "summary": "Get node stats week",
         "tags": ["Cluster"],
         "args": [
@@ -1493,7 +1493,7 @@
       {
         "name": "/cluster/:node_id/status",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.cluster_controller.get_status_node",
-        "description": "Return the status of all Wazuh daemons in node node_id",
+        "description": "Return the status of all Cyb3rhq daemons in node node_id",
         "summary": "Get node status",
         "tags": ["Cluster"],
         "args": [
@@ -1564,7 +1564,7 @@
       {
         "name": "/cluster/configuration/validation",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.cluster_controller.get_conf_validation",
-        "description": "Return whether the Wazuh configuration is correct or not in all cluster nodes or a list of them",
+        "description": "Return whether the Cyb3rhq configuration is correct or not in all cluster nodes or a list of them",
         "summary": "Check nodes config",
         "tags": ["Cluster"],
         "query": [
@@ -1926,7 +1926,7 @@
       {
         "name": "/decoders/files",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.decoder_controller.get_decoders_files",
-        "description": "Return information about all decoders files used in Wazuh. This information include decoder's file, decoder's route and decoder's status among others",
+        "description": "Return information about all decoders files used in Cyb3rhq. This information include decoder's file, decoder's route and decoder's status among others",
         "summary": "Get files",
         "tags": ["Decoders"],
         "query": [
@@ -4110,7 +4110,7 @@
       {
         "name": "/lists/files",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.cdb_list_controller.get_lists_files",
-        "description": "Return the path from all CDB lists. Use this method to know all the CDB lists and their location in the filesystem relative to Wazuh installation folder",
+        "description": "Return the path from all CDB lists. Use this method to know all the CDB lists and their location in the filesystem relative to Cyb3rhq installation folder",
         "summary": "Get CDB lists files",
         "tags": ["Lists"],
         "query": [
@@ -4260,7 +4260,7 @@
       {
         "name": "/manager/configuration",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.manager_controller.get_configuration",
-        "description": "Return wazuh configuration used. The 'section' and 'field' parameters will be ignored if 'raw' parameter is provided.",
+        "description": "Return cyb3rhq configuration used. The 'section' and 'field' parameters will be ignored if 'raw' parameter is provided.",
         "summary": "Get configuration",
         "tags": ["Manager"],
         "query": [
@@ -4290,7 +4290,7 @@
           },
           {
             "name": "section",
-            "description": "Indicates the wazuh configuration section",
+            "description": "Indicates the cyb3rhq configuration section",
             "schema": {
               "type": "string",
               "enum": [
@@ -4426,7 +4426,7 @@
       {
         "name": "/manager/configuration/validation",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.manager_controller.get_conf_validation",
-        "description": "Return whether the Wazuh configuration is correct",
+        "description": "Return whether the Cyb3rhq configuration is correct",
         "summary": "Check config",
         "tags": ["Manager"],
         "query": [
@@ -4476,7 +4476,7 @@
       {
         "name": "/manager/logs",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.manager_controller.get_log",
-        "description": "Return the last 2000 wazuh log entries",
+        "description": "Return the last 2000 cyb3rhq log entries",
         "summary": "Get logs",
         "tags": ["Manager"],
         "query": [
@@ -4549,40 +4549,40 @@
           },
           {
             "name": "tag",
-            "description": "Wazuh component that logged the event",
+            "description": "Cyb3rhq component that logged the event",
             "schema": {
               "type": "string",
               "enum": [
-                "wazuh-agentlessd",
-                "wazuh-analysisd",
-                "wazuh-authd",
-                "wazuh-csyslogd",
-                "wazuh-dbd",
-                "wazuh-execd",
-                "wazuh-integratord",
-                "wazuh-maild",
-                "wazuh-monitord",
-                "wazuh-logcollector",
-                "wazuh-remoted",
-                "wazuh-reportd",
-                "wazuh-rootcheck",
-                "wazuh-syscheckd",
+                "cyb3rhq-agentlessd",
+                "cyb3rhq-analysisd",
+                "cyb3rhq-authd",
+                "cyb3rhq-csyslogd",
+                "cyb3rhq-dbd",
+                "cyb3rhq-execd",
+                "cyb3rhq-integratord",
+                "cyb3rhq-maild",
+                "cyb3rhq-monitord",
+                "cyb3rhq-logcollector",
+                "cyb3rhq-remoted",
+                "cyb3rhq-reportd",
+                "cyb3rhq-rootcheck",
+                "cyb3rhq-syscheckd",
                 "sca",
-                "wazuh-db",
-                "wazuh-modulesd",
-                "wazuh-modulesd:agent-key-polling",
-                "wazuh-modulesd:aws-s3",
-                "wazuh-modulesd:azure-logs",
-                "wazuh-modulesd:ciscat",
-                "wazuh-modulesd:control",
-                "wazuh-modulesd:command",
-                "wazuh-modulesd:database",
-                "wazuh-modulesd:docker-listener",
-                "wazuh-modulesd:download",
-                "wazuh-modulesd:oscap",
-                "wazuh-modulesd:osquery",
-                "wazuh-modulesd:syscollector",
-                "wazuh-modulesd:vulnerability-detector"
+                "cyb3rhq-db",
+                "cyb3rhq-modulesd",
+                "cyb3rhq-modulesd:agent-key-polling",
+                "cyb3rhq-modulesd:aws-s3",
+                "cyb3rhq-modulesd:azure-logs",
+                "cyb3rhq-modulesd:ciscat",
+                "cyb3rhq-modulesd:control",
+                "cyb3rhq-modulesd:command",
+                "cyb3rhq-modulesd:database",
+                "cyb3rhq-modulesd:docker-listener",
+                "cyb3rhq-modulesd:download",
+                "cyb3rhq-modulesd:oscap",
+                "cyb3rhq-modulesd:osquery",
+                "cyb3rhq-modulesd:syscollector",
+                "cyb3rhq-modulesd:vulnerability-detector"
               ]
             }
           },
@@ -4599,7 +4599,7 @@
       {
         "name": "/manager/logs/summary",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.manager_controller.get_log_summary",
-        "description": "Return a summary of the last 2000 wazuh log entries",
+        "description": "Return a summary of the last 2000 cyb3rhq log entries",
         "summary": "Get logs summary",
         "tags": ["Manager"],
         "query": [
@@ -4624,7 +4624,7 @@
       {
         "name": "/manager/stats",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.manager_controller.get_stats",
-        "description": "Return Wazuh statistical information for the current or specified date",
+        "description": "Return Cyb3rhq statistical information for the current or specified date",
         "summary": "Get stats",
         "tags": ["Manager"],
         "query": [
@@ -4657,7 +4657,7 @@
       {
         "name": "/manager/stats/analysisd",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.manager_controller.get_stats_analysisd",
-        "description": "Return Wazuh analysisd statistical information",
+        "description": "Return Cyb3rhq analysisd statistical information",
         "summary": "Get stats analysisd",
         "tags": ["Manager"],
         "query": [
@@ -4682,7 +4682,7 @@
       {
         "name": "/manager/stats/hourly",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.manager_controller.get_stats_hourly",
-        "description": "Return Wazuh statistical information per hour. Each number in the averages field represents the average of alerts per hour",
+        "description": "Return Cyb3rhq statistical information per hour. Each number in the averages field represents the average of alerts per hour",
         "summary": "Get stats hour",
         "tags": ["Manager"],
         "query": [
@@ -4707,7 +4707,7 @@
       {
         "name": "/manager/stats/remoted",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.manager_controller.get_stats_remoted",
-        "description": "Return Wazuh remoted statistical information",
+        "description": "Return Cyb3rhq remoted statistical information",
         "summary": "Get stats remoted",
         "tags": ["Manager"],
         "query": [
@@ -4732,7 +4732,7 @@
       {
         "name": "/manager/stats/weekly",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.manager_controller.get_stats_weekly",
-        "description": "Return Wazuh statistical information per week. Each number in the averages field represents the average of alerts per hour for that specific day",
+        "description": "Return Cyb3rhq statistical information per week. Each number in the averages field represents the average of alerts per hour for that specific day",
         "summary": "Get stats week",
         "tags": ["Manager"],
         "query": [
@@ -4757,7 +4757,7 @@
       {
         "name": "/manager/status",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.manager_controller.get_status",
-        "description": "Return the status of all Wazuh daemons",
+        "description": "Return the status of all Cyb3rhq daemons",
         "summary": "Get status",
         "tags": ["Manager"],
         "query": [
@@ -5954,7 +5954,7 @@
       {
         "name": "/rules/requirement/:requirement",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.rule_controller.get_rules_requirement",
-        "description": "Return all specified requirement names defined in the Wazuh ruleset",
+        "description": "Return all specified requirement names defined in the Cyb3rhq ruleset",
         "summary": "Get requirements",
         "tags": ["Rules"],
         "args": [
@@ -8868,7 +8868,7 @@
           },
           {
             "name": "version",
-            "description": "Wazuh version to upgrade to",
+            "description": "Cyb3rhq version to upgrade to",
             "schema": {
               "type": "string"
             }
@@ -8915,11 +8915,11 @@
           },
           {
             "name": "file_path",
-            "description": "Full path to the WPK file. The file must be on a folder on the Wazuh's installation directory (by default, <code>/var/ossec</code>)",
+            "description": "Full path to the WPK file. The file must be on a folder on the Cyb3rhq's installation directory (by default, <code>/var/ossec</code>)",
             "required": true,
             "schema": {
               "type": "string",
-              "format": "wazuh_path"
+              "format": "cyb3rhq_path"
             }
           },
           {
@@ -8951,7 +8951,7 @@
       {
         "name": "/cluster/:node_id/configuration",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.cluster_controller.update_configuration",
-        "description": "Replace wazuh configuration for the given node with the data contained in the API request",
+        "description": "Replace cyb3rhq configuration for the given node with the data contained in the API request",
         "summary": "Update node configuration",
         "tags": ["Cluster"],
         "args": [
@@ -9196,8 +9196,8 @@
       {
         "name": "/manager/configuration",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.manager_controller.update_configuration",
-        "description": "Replace Wazuh configuration with the data contained in the API request",
-        "summary": "Update Wazuh configuration",
+        "description": "Replace Cyb3rhq configuration with the data contained in the API request",
+        "summary": "Update Cyb3rhq configuration",
         "tags": ["Manager"],
         "query": [
           {
@@ -9221,7 +9221,7 @@
       {
         "name": "/manager/restart",
         "documentation": "https://documentation.wazuh.com/current/user-manual/api/reference.html#operation/api.controllers.manager_controller.put_restart",
-        "description": "Restart the wazuh manager",
+        "description": "Restart the cyb3rhq manager",
         "summary": "Restart manager",
         "tags": ["Manager"],
         "query": [
@@ -9805,7 +9805,7 @@
             "type": "string",
             "maxLength": 64,
             "minLength": 64,
-            "format": "wazuh_key",
+            "format": "cyb3rhq_key",
             "description": "Key to use when communicating with the manager. The agent must have the same key on its `client.keys` file"
           },
           {

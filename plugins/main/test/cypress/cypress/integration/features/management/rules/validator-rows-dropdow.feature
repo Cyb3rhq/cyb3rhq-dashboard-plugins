@@ -1,11 +1,11 @@
 Feature: Validate row dropdown on Rule page
 
-    As a wazuh user
+    As a cyb3rhq user
     I want to see the Rules pages
     in order to manage them
 
     Background: the user navigate to the Rules page
-        Given The wazuh admin user is logged
+        Given The cyb3rhq admin user is logged
         When The user navigates to rules
         And The user see that the rule list is displayed with a limit per rows
 

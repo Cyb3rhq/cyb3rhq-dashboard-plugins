@@ -6,7 +6,7 @@ Feature: Validate refresh option is working fine
 
 @rules @actions
 Scenario: Rules are displayed after refreshing the page
-Given The wazuh admin user is logged
+Given The cyb3rhq admin user is logged
 When The user navigates to rules
 And The user clicks the refresh button
 Then The user should be able to see the rules page

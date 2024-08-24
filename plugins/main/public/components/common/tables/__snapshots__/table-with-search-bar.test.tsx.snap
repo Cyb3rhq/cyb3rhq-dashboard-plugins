@@ -103,13 +103,13 @@ exports[`Table With Search Bar component renders correctly to match the snapshot
             }
           >
             <EuiText>
-              WQL (Wazuh Query Language) provides a human query syntax based on the Wazuh API query language.
+              WQL (Cyb3rhq Query Language) provides a human query syntax based on the Cyb3rhq API query language.
             </EuiText>
             <React.Fragment>
               <EuiSpacer />
               <div>
                 <EuiLink
-                  href="https://documentation.wazuh.com/5.0/user-manual/wazuh-dashboard/queries.html"
+                  href="https://documentation.wazuh.com/5.0/user-manual/cyb3rhq-dashboard/queries.html"
                   rel="noopener noreferrer"
                   target="__blank"
                 >
@@ -172,13 +172,13 @@ exports[`Table With Search Bar component renders correctly to match the snapshot
                 }
               >
                 <EuiText>
-                  WQL (Wazuh Query Language) provides a human query syntax based on the Wazuh API query language.
+                  WQL (Cyb3rhq Query Language) provides a human query syntax based on the Cyb3rhq API query language.
                 </EuiText>
                 <React.Fragment>
                   <EuiSpacer />
                   <div>
                     <EuiLink
-                      href="https://documentation.wazuh.com/5.0/user-manual/wazuh-dashboard/queries.html"
+                      href="https://documentation.wazuh.com/5.0/user-manual/cyb3rhq-dashboard/queries.html"
                       rel="noopener noreferrer"
                       target="__blank"
                     >
@@ -252,13 +252,13 @@ exports[`Table With Search Bar component renders correctly to match the snapshot
                           }
                         >
                           <EuiText>
-                            WQL (Wazuh Query Language) provides a human query syntax based on the Wazuh API query language.
+                            WQL (Cyb3rhq Query Language) provides a human query syntax based on the Cyb3rhq API query language.
                           </EuiText>
                           <React.Fragment>
                             <EuiSpacer />
                             <div>
                               <EuiLink
-                                href="https://documentation.wazuh.com/5.0/user-manual/wazuh-dashboard/queries.html"
+                                href="https://documentation.wazuh.com/5.0/user-manual/cyb3rhq-dashboard/queries.html"
                                 rel="noopener noreferrer"
                                 target="__blank"
                               >
@@ -362,13 +362,13 @@ exports[`Table With Search Bar component renders correctly to match the snapshot
                                     }
                                   >
                                     <EuiText>
-                                      WQL (Wazuh Query Language) provides a human query syntax based on the Wazuh API query language.
+                                      WQL (Cyb3rhq Query Language) provides a human query syntax based on the Cyb3rhq API query language.
                                     </EuiText>
                                     <React.Fragment>
                                       <EuiSpacer />
                                       <div>
                                         <EuiLink
-                                          href="https://documentation.wazuh.com/5.0/user-manual/wazuh-dashboard/queries.html"
+                                          href="https://documentation.wazuh.com/5.0/user-manual/cyb3rhq-dashboard/queries.html"
                                           rel="noopener noreferrer"
                                           target="__blank"
                                         >
@@ -428,13 +428,13 @@ exports[`Table With Search Bar component renders correctly to match the snapshot
                                       }
                                     >
                                       <EuiText>
-                                        WQL (Wazuh Query Language) provides a human query syntax based on the Wazuh API query language.
+                                        WQL (Cyb3rhq Query Language) provides a human query syntax based on the Cyb3rhq API query language.
                                       </EuiText>
                                       <React.Fragment>
                                         <EuiSpacer />
                                         <div>
                                           <EuiLink
-                                            href="https://documentation.wazuh.com/5.0/user-manual/wazuh-dashboard/queries.html"
+                                            href="https://documentation.wazuh.com/5.0/user-manual/cyb3rhq-dashboard/queries.html"
                                             rel="noopener noreferrer"
                                             target="__blank"
                                           >

@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component for building the agents table.
+ * Cyb3rhq app - React component for building the agents table.
  *
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -351,7 +351,7 @@ export const AgentsTable = withErrorBoundary((props: AgentsTableProps) => {
                   ? { node_name: item.node_name }
                   : { node_name: '-' }),
                 /*
-                  The agent version contains the Wazuh word, this gets the string starting with
+                  The agent version contains the Cyb3rhq word, this gets the string starting with
                   v<NUMBER><ANYTHING>
                   */
                 ...(typeof item.version === 'string'

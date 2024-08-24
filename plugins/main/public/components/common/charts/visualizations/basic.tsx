@@ -89,11 +89,11 @@ export const VisualizationBasic = ({
         style={{ height: '100%' }}
         gutterSize='none'
       >
-        <EuiFlexItem className={'wazuh-visualization-chart'}>
+        <EuiFlexItem className={'cyb3rhq-visualization-chart'}>
           <Chart data={data} />
         </EuiFlexItem>
         {showLegend && (
-          <EuiFlexItem className={'wazuh-visualization-legend'}>
+          <EuiFlexItem className={'cyb3rhq-visualization-legend'}>
             <ChartLegend
               data={data.map(({ color, ...rest }) => ({
                 ...rest,
@@ -108,7 +108,7 @@ export const VisualizationBasic = ({
   }
 
   return (
-    <div style={{ width, height }} className='wazuh-visualization-layout'>
+    <div style={{ width, height }} className='cyb3rhq-visualization-layout'>
       {visualization}
     </div>
   );

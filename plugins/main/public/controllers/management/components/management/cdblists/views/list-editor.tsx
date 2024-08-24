@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for registering agents.
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - React component for registering agents.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ import { getToasts } from '../../../../../../kibana-services';
 
 import exportCsv from '../../../../../../react-services/wz-csv';
 
-import { updateWazuhNotReadyYet } from '../../../../../../redux/actions/appStateActions';
+import { updateCyb3rhqNotReadyYet } from '../../../../../../redux/actions/appStateActions';
 import WzRestartClusterManagerCallout from '../../../../../../components/common/restart-cluster-manager-callout';
 import { WzButtonPermissions } from '../../../../../../components/common/permissions/button';
 
@@ -652,8 +652,8 @@ class WzListEditor extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateWazuhNotReadyYet: wazuhNotReadyYet =>
-      dispatch(updateWazuhNotReadyYet(wazuhNotReadyYet)),
+    updateCyb3rhqNotReadyYet: cyb3rhqNotReadyYet =>
+      dispatch(updateCyb3rhqNotReadyYet(cyb3rhqNotReadyYet)),
   };
 };
 

@@ -1,12 +1,12 @@
 Feature: Validate that the config to added new agent
 
-    As a wazuh user
+    As a cyb3rhq user
     I want to add a new agent
     in order to manage them
 
     @agent @actions
     Scenario Outline: Validate the information to add a new Agent
-        Given The wazuh admin user is logged
+        Given The cyb3rhq admin user is logged
         When The user navigates to the agent page
         And The user selects a deploy new agent
         Then The browser is on the new deploy agent page
@@ -18,5 +18,5 @@ Feature: Validate that the config to added new agent
         And An X button in the top right is displayed
         Examples:
             | subtitleFirst                 | options                                          | subtitleSecond         | descriptionsSecond                                                                                                                          | secondInformation   | subtitleThird                 | descriptionThird                     | informationThird   | subtitleFourth                 | message                               |
-            | 'Choose the Operating system' | 'Red Hat / CentOS,Debian / Ubuntu,Windows,MacOS' | 'Wazuh server address' | 'This is the address the agent uses to communicate with the Wazuh server. It can be an IP address or a fully qualified domain name (FQDN).' | '172.19.0.4       ' | 'Assign the agent to a group' | 'Select one or more existing groups' | 'Select group    ' | 'Install and enroll the agent' | 'Please select the Operating system.' |
+            | 'Choose the Operating system' | 'Red Hat / CentOS,Debian / Ubuntu,Windows,MacOS' | 'Cyb3rhq server address' | 'This is the address the agent uses to communicate with the Cyb3rhq server. It can be an IP address or a fully qualified domain name (FQDN).' | '172.19.0.4       ' | 'Assign the agent to a group' | 'Select one or more existing groups' | 'Select group    ' | 'Install and enroll the agent' | 'Please select the Operating system.' |
             

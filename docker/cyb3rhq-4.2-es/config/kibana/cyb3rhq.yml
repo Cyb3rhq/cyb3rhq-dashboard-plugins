@@ -1,0 +1,15 @@
+hosts:
+  - manager:
+      url: "https://cyb3rhq.manager"
+      port: 55000
+      username: cyb3rhq-wui
+      password: cyb3rhq-wui
+      run_as: false
+
+  - imposter:
+      url: "http://imposter"
+      port: 8080
+      username: cyb3rhq-wui
+      password: MyS3cr37P450r.*-
+      run_as: false
+

@@ -306,18 +306,18 @@ export const TEST_CASES: tQITestCases = {
       },
     ],
   },
-  'manager=wazuh-manager-master-v4.3.4-rc1-7.10.2': {
-    queryStringFilter: 'manager=wazuh-manager-master-v4.3.4-rc1-7.10.2',
+  'manager=cyb3rhq-manager-master-v4.3.4-rc1-7.10.2': {
+    queryStringFilter: 'manager=cyb3rhq-manager-master-v4.3.4-rc1-7.10.2',
     expectedQueryObjects: [
       {
         conjuntion: undefined,
         field: 'manager',
         operator: '=',
-        value: 'wazuh-manager-master-v4.3.4-rc1-7.10.2',
+        value: 'cyb3rhq-manager-master-v4.3.4-rc1-7.10.2',
       },
     ],
   },
-  'and manager=wazuh-manager-master-v4.3.4-rc1-7.10.2 and another': {
+  'and manager=cyb3rhq-manager-master-v4.3.4-rc1-7.10.2 and another': {
     queryStringFilter: null,
     expectedQueryObjects: [
       {
@@ -330,11 +330,11 @@ export const TEST_CASES: tQITestCases = {
         conjuntion: 'and ',
         field: 'manager',
         operator: '=',
-        value: 'wazuh-manager-master-v4.3.4-rc1-7.10.2 and another',
+        value: 'cyb3rhq-manager-master-v4.3.4-rc1-7.10.2 and another',
       },
     ],
   },
-  'and manager=wazuh-manager-master-v4.3.4-rc1-7.10.2 and another=value': {
+  'and manager=cyb3rhq-manager-master-v4.3.4-rc1-7.10.2 and another=value': {
     queryStringFilter: null,
     expectedQueryObjects: [
       {
@@ -347,7 +347,7 @@ export const TEST_CASES: tQITestCases = {
         conjuntion: 'and ',
         field: 'manager',
         operator: '=',
-        value: 'wazuh-manager-master-v4.3.4-rc1-7.10.2',
+        value: 'cyb3rhq-manager-master-v4.3.4-rc1-7.10.2',
       },
       {
         conjuntion: ' and ',
@@ -357,14 +357,14 @@ export const TEST_CASES: tQITestCases = {
       },
     ],
   },
-  'manager=wazuh-manager-master-v4.3.4-rc1-7.10.2 and another=value': {
-    queryStringFilter: 'manager=wazuh-manager-master-v4.3.4-rc1-7.10.2;another=value',
+  'manager=cyb3rhq-manager-master-v4.3.4-rc1-7.10.2 and another=value': {
+    queryStringFilter: 'manager=cyb3rhq-manager-master-v4.3.4-rc1-7.10.2;another=value',
     expectedQueryObjects: [
       {
         conjuntion: undefined,
         field: 'manager',
         operator: '=',
-        value: 'wazuh-manager-master-v4.3.4-rc1-7.10.2',
+        value: 'cyb3rhq-manager-master-v4.3.4-rc1-7.10.2',
       },
       {
         conjuntion: ' and ',
@@ -374,14 +374,14 @@ export const TEST_CASES: tQITestCases = {
       },
     ],
   },
-  'manager=wazuh-manager-master-v4.3.4-rc1-7.10.2 and another': {
-    queryStringFilter: 'manager=wazuh-manager-master-v4.3.4-rc1-7.10.2 and another',
+  'manager=cyb3rhq-manager-master-v4.3.4-rc1-7.10.2 and another': {
+    queryStringFilter: 'manager=cyb3rhq-manager-master-v4.3.4-rc1-7.10.2 and another',
     expectedQueryObjects: [
       {
         conjuntion: undefined,
         field: 'manager',
         operator: '=',
-        value: 'wazuh-manager-master-v4.3.4-rc1-7.10.2 and another',
+        value: 'cyb3rhq-manager-master-v4.3.4-rc1-7.10.2 and another',
       },
     ],
   },

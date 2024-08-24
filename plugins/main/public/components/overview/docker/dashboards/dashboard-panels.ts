@@ -3,7 +3,7 @@ import { EmbeddableInput } from '../../../../../../../src/plugins/embeddable/pub
 
 const getVisStateTop5Images = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Docker-top-5-images',
+    id: 'Cyb3rhq-App-Overview-Docker-top-5-images',
     title: 'Top 5 images',
     type: 'pie',
     params: {
@@ -67,7 +67,7 @@ const getVisStateTop5Images = (indexPatternId: string) => {
 
 const getVisStateTop5Events = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Docker-top-5-events',
+    id: 'Cyb3rhq-App-Overview-Docker-top-5-events',
     title: 'Top 5 events',
     type: 'pie',
     params: {
@@ -131,7 +131,7 @@ const getVisStateTop5Events = (indexPatternId: string) => {
 
 const getVisStateEventsSourceByOverTime = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Docker-Events-By-Source-Over-Time',
+    id: 'Cyb3rhq-App-Overview-Docker-Events-By-Source-Over-Time',
     title: 'Events by source over time',
     type: 'histogram',
     params: {
@@ -278,7 +278,7 @@ const getVisStateEventsSourceByOverTime = (indexPatternId: string) => {
 
 const getVisStateEvents = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Docker-Events',
+    id: 'Cyb3rhq-App-Overview-Docker-Events',
     title: 'Events',
     type: 'table',
     params: {
@@ -443,7 +443,7 @@ const getVisStateEvents = (indexPatternId: string) => {
 
 const getVisStateAgentTop5Images = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-Docker-top-5-images',
+    id: 'Cyb3rhq-App-Agents-Docker-top-5-images',
     title: 'Top 5 images',
     type: 'pie',
     params: {
@@ -507,7 +507,7 @@ const getVisStateAgentTop5Images = (indexPatternId: string) => {
 
 const getVisStateAgentTop5Events = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-Docker-top-5-actions',
+    id: 'Cyb3rhq-App-Agents-Docker-top-5-actions',
     title: 'Top 5 events',
     type: 'pie',
     params: {
@@ -571,7 +571,7 @@ const getVisStateAgentTop5Events = (indexPatternId: string) => {
 
 const getVisStateAgentResourcesUsageByOverTime = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-Docker-Types-over-time',
+    id: 'Cyb3rhq-App-Agents-Docker-Types-over-time',
     title: 'Resources usage over time',
     type: 'histogram',
     params: {
@@ -688,7 +688,7 @@ const getVisStateAgentResourcesUsageByOverTime = (indexPatternId: string) => {
 
 const getVisStateAgentEvents = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-Docker-Actions-over-time',
+    id: 'Cyb3rhq-App-Agents-Docker-Actions-over-time',
     title: 'Events occurred evolution',
     type: 'area',
     params: {

@@ -1,0 +1,7 @@
+{
+  "prefix": "cyb3rhqCheckUpdates",
+  "paths": {
+    "cyb3rhqCheckUpdates": "."
+  },
+  "translations": ["translations/en-US.json"]
+}

@@ -1,12 +1,12 @@
-var storeWazuh = stores.open('storeWazuh');
-var deleteUser = storeWazuh.load('deleteUser');
+var storeCyb3rhq = stores.open('storeCyb3rhq');
+var deleteUser = storeCyb3rhq.load('deleteUser');
 
 switch (deleteUser) {
   case false:
     respond().withStatusCode(200).withFile('security/users/get-users.json');
     break;
   case true:
-    storeWazuh.save('deleteUser', false);
+    storeCyb3rhq.save('deleteUser', false);
     respond()
       .withStatusCode(200)
       .withFile('security/users/get-users-after-delete.json');

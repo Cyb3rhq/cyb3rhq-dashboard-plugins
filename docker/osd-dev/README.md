@@ -1,4 +1,4 @@
-# Wazuh development with Wazuh Stack
+# Cyb3rhq development with Cyb3rhq Stack
 
 ## Usage
 
@@ -11,7 +11,7 @@ environment. For example:
 
 The script will ask you all the required parameters to bring up the
 environment, including the version of the elastic stack you want to
-develop for, and the source code folder where the wazuh-dashboard-plugins is
+develop for, and the source code folder where the cyb3rhq-dashboard-plugins is
 located.
 
 Use the `saml` flag to bring up KeyCloak IDP. **Add idp to your hosts and start
@@ -24,7 +24,7 @@ the server using the `--no-base-path`**.
 ```
 
 **The script will not select the appropriate version of the
-wazuh-dashboard-plugins to use, so be sure to check out the appropriate version
+cyb3rhq-dashboard-plugins to use, so be sure to check out the appropriate version
 before bringing up the environment!**
 
 ###  UI Credentials
@@ -37,9 +37,9 @@ admin:admin
 
 ## Notes
 
-`Wazuh Indexer` and `Wazuh Dashboard` are both a redistribution of a
+`Cyb3rhq Indexer` and `Cyb3rhq Dashboard` are both a redistribution of a
 version of the OpenSearch Stack. We will only create environments for
-the versions of OpenSearch which will be included into a Wazuh
+the versions of OpenSearch which will be included into a Cyb3rhq
 version.
 
 `OpenSearch` supported versions:
@@ -54,7 +54,7 @@ version.
 - 2.4.0
 - 2.4.1
 
-We must use official `Wazuh Indexer` and `Wazuh Dashboard` images for
+We must use official `Cyb3rhq Indexer` and `Cyb3rhq Dashboard` images for
 testing!
 
 This environment will start a working deployment with:

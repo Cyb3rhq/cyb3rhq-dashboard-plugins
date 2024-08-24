@@ -48,7 +48,7 @@
     },
     "agent_version": [
       {
-        "version": "Wazuh v4.3.0",
+        "version": "Cyb3rhq v4.3.0",
         "count": 6
       }
     ],
@@ -73,10 +73,10 @@
         "name": "77000bae7bd0",
         "registerIP": "any",
         "dateAdd": "2021-05-31T09:49:28Z",
-        "manager": "wazuh-worker1",
+        "manager": "cyb3rhq-worker1",
         "id": "004",
         "mergedSum": "9a016508cea1e997ab8569f5cfab30f5",
-        "version": "Wazuh v4.3.0"
+        "version": "Cyb3rhq v4.3.0"
       }
     ]
   },

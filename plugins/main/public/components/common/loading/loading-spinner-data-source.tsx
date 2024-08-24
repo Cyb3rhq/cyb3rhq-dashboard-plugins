@@ -23,7 +23,7 @@ export function LoadingSpinnerDataSource() {
             <EuiTitle size='s' data-test-subj='loadingSpinnerText'>
               <h2>
                 <FormattedMessage
-                  id='wazuh.dataSource.checking'
+                  id='cyb3rhq.dataSource.checking'
                   defaultMessage='Checking data source'
                 />
               </h2>

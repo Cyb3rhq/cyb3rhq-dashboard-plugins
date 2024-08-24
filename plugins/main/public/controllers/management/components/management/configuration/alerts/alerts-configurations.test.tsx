@@ -33,7 +33,7 @@ const mockProps = {
     'csyslog-csyslog':
       'Fetch configuration. 3013 - Error connecting with socket',
   },
-  wazuhNotReadyYet: '',
+  cyb3rhqNotReadyYet: '',
 };
 
 const mockStore = configureMockStore();

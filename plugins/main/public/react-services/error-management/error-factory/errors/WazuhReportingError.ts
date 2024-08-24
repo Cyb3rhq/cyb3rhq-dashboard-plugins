@@ -1,8 +1,8 @@
-import { IWazuhErrorInfo, IWazuhErrorLogOpts } from '../../types';
+import { ICyb3rhqErrorInfo, ICyb3rhqErrorLogOpts } from '../../types';
 import { HttpError } from './HttpError';
 
-export class WazuhReportingError extends HttpError {
-  constructor(error: Error, info?: IWazuhErrorInfo) {
+export class Cyb3rhqReportingError extends HttpError {
+  constructor(error: Error, info?: ICyb3rhqErrorInfo) {
     super(error, info);
   }
 }

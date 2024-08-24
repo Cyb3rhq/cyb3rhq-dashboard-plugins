@@ -1,6 +1,6 @@
 import { AppState } from '../../../../react-services/app-state';
 import { search } from '../../../../components/common/search-bar';
-import { getDataPlugin, getWazuhCorePlugin } from '../../../../kibana-services';
+import { getDataPlugin, getCyb3rhqCorePlugin } from '../../../../kibana-services';
 import { getLastAlertsQuery } from './last-alerts-query';
 
 interface Last24HoursAlerts {
@@ -22,7 +22,7 @@ export const getLast24HoursAlerts = async (
   try {
     const currentIndexPattern = await getDataPlugin().indexPatterns.get(
       AppState.getCurrentPattern() ||
-        getWazuhCorePlugin().configuration.getSettingValue('pattern'),
+        getCyb3rhqCorePlugin().configuration.getSettingValue('pattern'),
     );
     const isCluster = AppState.getClusterInfo().status == 'enabled';
     const clusterValue = isCluster

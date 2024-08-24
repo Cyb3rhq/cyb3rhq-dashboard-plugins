@@ -17,7 +17,7 @@ import { OptionalParametersManager } from '../optional-parameters-manager/option
 import {
   NoArchitectureSelectedException,
   NoOSSelectedException,
-  WazuhVersionUndefinedException,
+  Cyb3rhqVersionUndefinedException,
 } from '../exceptions';
 import { version } from '../../../../../../../package.json';
 
@@ -33,13 +33,13 @@ export class CommandGenerator<
   constructor(
     public osDefinitions: IOSDefinition<OS, Params>[],
     protected optionalParams: tOptionalParams<Params>,
-    public wazuhVersion: string = version,
+    public cyb3rhqVersion: string = version,
   ) {
     // validate os definitions received
     validateOSDefinitionsDuplicated(this.osDefinitions);
     validateOSDefinitionHasDuplicatedOptions(this.osDefinitions);
-    if (wazuhVersion == '') {
-      throw new WazuhVersionUndefinedException();
+    if (cyb3rhqVersion == '') {
+      throw new Cyb3rhqVersionUndefinedException();
     }
     this.optionalsManager = new OptionalParametersManager(optionalParams);
   }
@@ -107,7 +107,7 @@ export class CommandGenerator<
       throw new NoOSSelectedException();
     }
     return this.osDefinitionSelected.urlPackage({
-      wazuhVersion: this.wazuhVersion,
+      cyb3rhqVersion: this.cyb3rhqVersion,
       architecture: this.osDefinitionSelected
         .architecture as OS['architecture'],
       name: this.os as OS['name'],
@@ -129,7 +129,7 @@ export class CommandGenerator<
       architecture: this.osDefinitionSelected
         .architecture as OS['architecture'],
       urlPackage: this.getUrlPackage(),
-      wazuhVersion: this.wazuhVersion,
+      cyb3rhqVersion: this.cyb3rhqVersion,
       optionals: this.optionals as IOptionalParameters<Params>,
     });
   }
@@ -148,7 +148,7 @@ export class CommandGenerator<
       name: this.os as OS['name'],
       architecture: this.osDefinitionSelected
         .architecture as OS['architecture'],
-      wazuhVersion: this.wazuhVersion,
+      cyb3rhqVersion: this.cyb3rhqVersion,
       optionals: this.optionals as IOptionalParameters<Params>,
     });
   }
@@ -164,7 +164,7 @@ export class CommandGenerator<
     }
 
     return {
-      wazuhVersion: this.wazuhVersion,
+      cyb3rhqVersion: this.cyb3rhqVersion,
       os: this.os as OS['name'],
       architecture: this.osDefinitionSelected
         .architecture as OS['architecture'],

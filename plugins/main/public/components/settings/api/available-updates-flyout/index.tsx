@@ -8,7 +8,7 @@ import {
   EuiFlexGroup,
   EuiFlexItem,
 } from '@elastic/eui';
-import { ApiAvailableUpdates } from '../../../../../../wazuh-check-updates/common/types';
+import { ApiAvailableUpdates } from '../../../../../../cyb3rhq-check-updates/common/types';
 import { UpdateDetail } from './update-detail';
 import { WzFlyout } from '../../../../components/common/flyouts';
 

@@ -9,8 +9,8 @@
             "timeout_allowed": 1
           },
           {
-            "name": "restart-wazuh",
-            "executable": "restart-wazuh",
+            "name": "restart-cyb3rhq",
+            "executable": "restart-cyb3rhq",
             "timeout_allowed": 0
           },
           {

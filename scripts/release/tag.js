@@ -167,7 +167,7 @@ async function run(configuration) {
 
   logger.debug(`Creating tag: ${tag}`);
   const tagOptions = [
-    [tagSign, `-s -m "Wazuh plugins for Wazuh dashboard ${tag}"`], // sign tag with message
+    [tagSign, `-s -m "Cyb3rhq plugins for Cyb3rhq dashboard ${tag}"`], // sign tag with message
     [tagAnnotate, '-a'], // annotate tag
     [true, tag], // tag name
   ]

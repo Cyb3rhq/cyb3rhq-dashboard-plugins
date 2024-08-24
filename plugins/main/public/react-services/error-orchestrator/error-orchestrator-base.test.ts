@@ -1,7 +1,7 @@
 /*
- * Wazuh app - Unit test for ErrorOrchestratorBase.
+ * Cyb3rhq app - Unit test for ErrorOrchestratorBase.
  *
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@
 import { ErrorOrchestratorBase } from './error-orchestrator-base';
 import { ErrorOrchestrator, UIErrorLog } from './types';
 
-describe('Wazuh Error Orchestrator Base', () => {
+describe('Cyb3rhq Error Orchestrator Base', () => {
   describe('Given a valid options params ', () => {
     it('Should be called displayError and storeError', () => {
       const options: UIErrorLog = {

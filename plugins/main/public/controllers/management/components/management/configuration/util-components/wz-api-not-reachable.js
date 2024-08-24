@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for render api isn't reachable.
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - React component for render api isn't reachable.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ import { updateRefreshTime } from '../../../../../../redux/actions/configuration
 import { getToasts }  from '../../../../../../kibana-services';
 import { connect } from 'react-redux';
 
-class WzWazuhAPINotReachable extends Component {
+class WzCyb3rhqAPINotReachable extends Component {
   constructor(props) {
     super(props);
   }
@@ -80,4 +80,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     null,
     mapDispatchToProps
-)(WzWazuhAPINotReachable);
+)(WzCyb3rhqAPINotReachable);

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Settings controller
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Settings controller
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -198,7 +198,7 @@ class SettingsComponent extends React.Component {
     try {
       try {
         this.setState({
-          indexPatterns: await SavedObject.getListOfWazuhValidIndexPatterns(),
+          indexPatterns: await SavedObject.getListOfCyb3rhqValidIndexPatterns(),
         });
       } catch (error) {
         this.wzMisc.setBlankScr('Sorry but no valid index patterns were found');
@@ -287,7 +287,7 @@ class SettingsComponent extends React.Component {
   }
 
   /**
-   * Returns Wazuh app info
+   * Returns Cyb3rhq app info
    */
   async getAppInfo() {
     try {

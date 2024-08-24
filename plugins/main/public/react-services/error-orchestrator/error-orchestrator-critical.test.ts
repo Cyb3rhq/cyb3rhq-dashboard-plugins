@@ -1,7 +1,7 @@
 /*
- * Wazuh app - Unit test for ErrorOrchestratorCritical.
+ * Cyb3rhq app - Unit test for ErrorOrchestratorCritical.
  *
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ jest.mock('../navigation-service', () => {
 });
 
 NavigationService;
-describe('Wazuh Error Orchestrator Critical', () => {
+describe('Cyb3rhq Error Orchestrator Critical', () => {
   describe('Given a valid options params ', () => {
     it('Should be called mockSetBlankScr and redirect to BlankScreen', () => {
       const options: UIErrorLog = {

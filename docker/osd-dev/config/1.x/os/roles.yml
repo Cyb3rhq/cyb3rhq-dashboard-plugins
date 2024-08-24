@@ -129,13 +129,13 @@ asynchronous_search_read_access:
   cluster_permissions:
     - "cluster:admin/opendistro/asynchronous_search/get"
 
-wazuh_ui_user:
+cyb3rhq_ui_user:
   reserved: true
   hidden: false
   cluster_permissions: []
   index_permissions:
     - index_patterns:
-        - "wazuh-*"
+        - "cyb3rhq-*"
       dls: ""
       fls: []
       masked_fields: []
@@ -144,13 +144,13 @@ wazuh_ui_user:
   tenant_permissions: []
   static: false
 
-wazuh_ui_admin:
+cyb3rhq_ui_admin:
   reserved: true
   hidden: false
   cluster_permissions: []
   index_permissions:
     - index_patterns:
-        - "wazuh-*"
+        - "cyb3rhq-*"
       dls: ""
       fls: []
       masked_fields: []

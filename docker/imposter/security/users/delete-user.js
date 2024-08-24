@@ -1,7 +1,7 @@
 var id = context.request.queryParams.user_ids;
-var storeWazuh = stores.open('storeWazuh');
+var storeCyb3rhq = stores.open('storeCyb3rhq');
 
-storeWazuh.save('deleteUser', true);
+storeCyb3rhq.save('deleteUser', true);
 
 var data = {
   data: {

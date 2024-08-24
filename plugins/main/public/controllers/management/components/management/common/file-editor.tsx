@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for registering agents.
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - React component for registering agents.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ import { resourceDictionary, ResourcesHandler } from './resources-handler';
 import validateConfigAfterSent from './valid-configuration';
 
 import { getToasts } from '../../../../../kibana-services';
-import { updateWazuhNotReadyYet } from '../../../../../redux/actions/appStateActions';
+import { updateCyb3rhqNotReadyYet } from '../../../../../redux/actions/appStateActions';
 import WzRestartClusterManagerCallout from '../../../../../components/common/restart-cluster-manager-callout';
 import { validateXML } from '../configuration/utils/xml';
 import { WzButtonPermissions } from '../../../../../components/common/permissions/button';
@@ -223,7 +223,7 @@ class WzFileEditor extends Component {
 
   render() {
     const { section, addingFile, fileContent } = this.props;
-    const { wazuhNotReadyYet } = this.props;
+    const { cyb3rhqNotReadyYet } = this.props;
     const { name, content, path, showWarningRestart } = this.state;
     const isRules = path.includes('rules') ? 'Ruleset Test' : 'Decoders Test';
 
@@ -422,7 +422,7 @@ class WzFileEditor extends Component {
                           width='100%'
                           height={`calc(100vh - ${
                             (showWarningRestart && !xmlError) ||
-                            wazuhNotReadyYet
+                            cyb3rhqNotReadyYet
                               ? 300
                               : xmlError
                               ? !showWarningRestart
@@ -456,15 +456,15 @@ class WzFileEditor extends Component {
 
 const mapStateToProps = state => {
   return {
-    wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet,
+    cyb3rhqNotReadyYet: state.appStateReducers.cyb3rhqNotReadyYet,
     showFlyout: state.appStateReducers.showFlyoutLogtest,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateWazuhNotReadyYet: wazuhNotReadyYet =>
-      dispatch(updateWazuhNotReadyYet(wazuhNotReadyYet)),
+    updateCyb3rhqNotReadyYet: cyb3rhqNotReadyYet =>
+      dispatch(updateCyb3rhqNotReadyYet(cyb3rhqNotReadyYet)),
   };
 };
 

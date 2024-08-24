@@ -1,8 +1,8 @@
 
-var storeWazuh = stores.open('storeWazuh');
-var callRestart = storeWazuh.load('callRestart');
+var storeCyb3rhq = stores.open('storeCyb3rhq');
+var callRestart = storeCyb3rhq.load('callRestart');
 
-storeWazuh.save('callRestart', true);
+storeCyb3rhq.save('callRestart', true);
 
 if (context.request.queryParams.nodes_list !== undefined) {
   var resp = {

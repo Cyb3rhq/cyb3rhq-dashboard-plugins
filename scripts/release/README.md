@@ -33,25 +33,25 @@ node scripts/release/bump.js --plugins-directory <plugins_directory> --manifest-
 Example:
 
 ```console
-node scripts/release/bump.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/wazuh/wazuh/4.6.0/api/api/spec/spec.yaml --manifest-package ./plugins/main/package.json --revision 03
+node scripts/release/bump.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/4.6.0/api/api/spec/spec.yaml --manifest-package ./plugins/main/package.json --revision 03
 ```
 
 - Change the plugin version. Take the `revision` and `platform-version` parameters from the specified manifest plugin package file.
 
 ```console
-node scripts/release/bump.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/wazuh/wazuh/4.6.0/api/api/spec/spec.yaml --manifest-package ./plugins/main/package.json --version 4.6.0
+node scripts/release/bump.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/4.6.0/api/api/spec/spec.yaml --manifest-package ./plugins/main/package.json --version 4.6.0
 ```
 
 - Change the plugin revision. Take the `version` and `platform-version` parameters from the specified manifest plugin package file.
 
 ```console
-node scripts/release/bump.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/wazuh/wazuh/4.6.0/api/api/spec/spec.yaml --manifest-package ./plugins/main/package.json --revision 03
+node scripts/release/bump.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/4.6.0/api/api/spec/spec.yaml --manifest-package ./plugins/main/package.json --revision 03
 ```
 
 - Change the platform version. Take the `version` and `revision` parameters from the specified manifest plugin package file.
 
 ```console
-node scripts/release/bump.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/wazuh/wazuh/4.6.0/api/api/spec/spec.yaml --manifest-package ./plugins/main/package.json --platform-version 2.8.0
+node scripts/release/bump.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/4.6.0/api/api/spec/spec.yaml --manifest-package ./plugins/main/package.json --platform-version 2.8.0
 ```
 
 - Define the values for `version`, `revision` and `platform-version`:
@@ -63,7 +63,7 @@ node scripts/release/bump.js --plugins-directory <plugins_directory> --manifest-
 Example:
 
 ```console
-node scripts/release/bump.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/wazuh/wazuh/4.6.0/api/api/spec/spec.yaml --version 4.6.0 --revision 03 --platform-version 2.8.0
+node scripts/release/bump.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/4.6.0/api/api/spec/spec.yaml --version 4.6.0 --revision 03 --platform-version 2.8.0
 ```
 
 # Tag
@@ -91,7 +91,7 @@ node scripts/release/tag.js --plugins-directory <plugins_directory> --manifest-c
 Example:
 
 ```console
-node scripts/release/tag.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --manifest-package ./plugins/main/package.json --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/wazuh/wazuh/v4.6.0/api/api/spec/spec.yaml --version 4.6.0 --revision 03 --platform-version 2.8.0 --tag-suffix -rc2
+node scripts/release/tag.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --manifest-package ./plugins/main/package.json --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/v4.6.0/api/api/spec/spec.yaml --version 4.6.0 --revision 03 --platform-version 2.8.0 --tag-suffix -rc2
 ```
 
 For non-final tags (pre-alpha, alpha, beta, rc):
@@ -99,7 +99,7 @@ For non-final tags (pre-alpha, alpha, beta, rc):
 Example:
 
 ```
-node scripts/release/tag.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --manifest-package ./plugins/main/package.json --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/wazuh/wazuh/v4.6.0/api/api/spec/spec.yaml --manifest-package ./plugins/main/package.json --tag-suffix -rc2
+node scripts/release/tag.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --manifest-package ./plugins/main/package.json --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/v4.6.0/api/api/spec/spec.yaml --manifest-package ./plugins/main/package.json --tag-suffix -rc2
 ```
 
 ### Sign tag
@@ -123,13 +123,13 @@ node scripts/release/tag.js --plugins-directory <plugins_directory> --manifest-c
 Example:
 
 ```console
-node scripts/release/tag.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/wazuh/wazuh/v4.6.0/api/api/spec/spec.yaml --version 4.6.0 --revision 03 --platform-version 2.8.0
+node scripts/release/tag.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/v4.6.0/api/api/spec/spec.yaml --version 4.6.0 --revision 03 --platform-version 2.8.0
 ```
 
 - Use a `manifest-package` as base to take the `version`, `revision` and `pluginPlatformVersion` values:
 
 ```console
-node scripts/release/tag.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/wazuh/wazuh/v4.6.0/api/api/spec/spec.yaml --manifest-package ./plugins/main/package.json
+node scripts/release/tag.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/v4.6.0/api/api/spec/spec.yaml --manifest-package ./plugins/main/package.json
 ```
 
 > If the version, the revision or platform version is not specified, then you can define the package manifest file base to take these values.
@@ -147,17 +147,17 @@ Examples:
 - Change the plugin version. Take the `revision` and `platform-version` parameters from the specified manifest plugin package file.
 
 ```console
-node scripts/release/tag.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/wazuh/wazuh/v4.6.0/api/api/spec/spec.yaml --manifest-package ./plugins/main/package.json --version 4.5.0
+node scripts/release/tag.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/v4.6.0/api/api/spec/spec.yaml --manifest-package ./plugins/main/package.json --version 4.5.0
 ```
 
 - Change the plugin revision. Take the `version` and `platform-version` parameters from the specified manifest plugin package file.
 
 ```console
-node scripts/release/tag.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/wazuh/wazuh/v4.6.0/api/api/spec/spec.yaml --manifest-package ./plugins/main/package.json --revision 02
+node scripts/release/tag.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/v4.6.0/api/api/spec/spec.yaml --manifest-package ./plugins/main/package.json --revision 02
 ```
 
 - Change the platform version. Take the `version` and `revision` parameters from the specified manifest plugin package file.
 
 ```console
-node scripts/release/tag.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/wazuh/wazuh/v4.6.0/api/api/spec/spec.yaml --manifest-package ./plugins/main/package.json --platform-version 2.8.0
+node scripts/release/tag.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/v4.6.0/api/api/spec/spec.yaml --manifest-package ./plugins/main/package.json --platform-version 2.8.0
 ```

@@ -5,7 +5,7 @@
     <a href="https://wazuh.com/community/join-us-on-slack">
         <img src="https://img.shields.io/badge/slack-join-blue.svg" />
     </a>
-    <a href="https://groups.google.com/forum/#!forum/wazuh">
+    <a href="https://groups.google.com/forum/#!forum/cyb3rhq">
         <img src="https://img.shields.io/badge/email-join-blue.svg" />
     </a>
     <a href="https://documentation.wazuh.com">
@@ -18,23 +18,23 @@
 
 - [Welcome](#welcome)
 - [Project resources](#project-resources)
-- [Wazuh UI](#wazuh-ui)
+- [Cyb3rhq UI](#cyb3rhq-ui)
 - [Contribute](#contribute)
 - [License](#license)
 - [Copyright](#copyright)
 
 <!--
 [![Slack](https://img.shields.io/badge/slack-join-blue.svg)](https://wazuh.com/community/join-us-on-slack/)
-[![Email](https://img.shields.io/badge/email-join-blue.svg)](https://groups.google.com/forum/#!forum/wazuh)
+[![Email](https://img.shields.io/badge/email-join-blue.svg)](https://groups.google.com/forum/#!forum/cyb3rhq)
 [![Documentation](https://img.shields.io/badge/docs-view-green.svg)](https://documentation.wazuh.com)
 [![Documentation](https://img.shields.io/badge/web-view-green.svg)](https://wazuh.com)
 -->
 
 ## Welcome
 
-This repository contains a set of plugins for [Wazuh dashboard][dashboard].
+This repository contains a set of plugins for [Cyb3rhq dashboard][dashboard].
 
-Wazuh is a security detection, visibility, and compliance open source project. Wazuh helps
+Cyb3rhq is a security detection, visibility, and compliance open source project. Cyb3rhq helps
 you to gain deeper security visibility into your infrastructure by monitoring hosts at an
 operating system and application level.
 
@@ -54,7 +54,7 @@ You can learn more about it at [wazuh.com][web]
   <!-- - [Release Management](RELEASING.md) -->
   <!-- - [Testing](TESTING.md) -->
 
-## Wazuh UI
+## Cyb3rhq UI
 
 **Overview**
 
@@ -114,12 +114,12 @@ version 2 of the License, or (at your option) any later version.
 
 ## Copyright
 
-- Copyright &copy; Wazuh, Inc.
+- Copyright &copy; Cyb3rhq, Inc.
 
-[dashboard]: https://github.com/wazuh/wazuh-dashboard
+[dashboard]: https://github.com/cyb3rhq/cyb3rhq-dashboard
 [web]: https://wazuh.com
 [docs]: https://documentation.wazuh.com
 [install]: https://documentation.wazuh.com/current/installation-guide/index.html
-[slack]: https://join.slack.com/t/wazuh/shared_invite/zt-1lgu531ur-7M_k_ZQbpdo4QCn_pHee3w
-[branches]: https://github.com/wazuh/wazuh-dashboard-plugins/wiki/About-our-branches-and-tags
-[wiki]: https://github.com/wazuh/wazuh-dashboard-plugins/wiki
+[slack]: https://join.slack.com/t/cyb3rhq/shared_invite/zt-1lgu531ur-7M_k_ZQbpdo4QCn_pHee3w
+[branches]: https://github.com/cyb3rhq/cyb3rhq-dashboard-plugins/wiki/About-our-branches-and-tags
+[wiki]: https://github.com/cyb3rhq/cyb3rhq-dashboard-plugins/wiki

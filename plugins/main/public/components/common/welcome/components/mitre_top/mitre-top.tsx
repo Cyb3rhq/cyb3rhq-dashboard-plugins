@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component information about MITRE ATT&CK top tactics.
+ * Cyb3rhq app - React component information about MITRE ATT&CK top tactics.
  *
- * Copyright (C) 2015-2023 Wazuh, Inc.
+ * Copyright (C) 2015-2023 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

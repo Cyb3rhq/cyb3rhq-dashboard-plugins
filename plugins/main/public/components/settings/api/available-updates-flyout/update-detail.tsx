@@ -1,5 +1,5 @@
 import React from 'react';
-import { Update } from '../../../../../../wazuh-check-updates/common/types';
+import { Update } from '../../../../../../cyb3rhq-check-updates/common/types';
 import { Markdown } from '../../../../../../../src/plugins/opensearch_dashboards_react/public';
 import {
   EuiAccordion,
@@ -11,7 +11,7 @@ import {
   EuiBadge,
   EuiTitle,
 } from '@elastic/eui';
-import { getWazuhCorePlugin } from '../../../../kibana-services';
+import { getCyb3rhqCorePlugin } from '../../../../kibana-services';
 
 interface UpdateDetailProps {
   update: Partial<Update>;
@@ -61,7 +61,7 @@ export const UpdateDetail = ({ update, type }: UpdateDetailProps) => {
               {
                 title: 'Published',
                 description:
-                  getWazuhCorePlugin().utils.formatUIDate(published_date),
+                  getCyb3rhqCorePlugin().utils.formatUIDate(published_date),
               },
             ]}
           />

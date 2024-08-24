@@ -1,0 +1,23 @@
+
+# Cyb3rhq - Filebeat configuration file
+filebeat.modules:
+  - module: cyb3rhq
+    alerts:
+      enabled: true
+    archives:
+      enabled: false
+
+setup.template.json.enabled: true
+setup.template.json.path: '/etc/filebeat/cyb3rhq-template.json'
+setup.template.json.name: 'cyb3rhq'
+setup.template.overwrite: true
+setup.ilm.enabled: false
+setup.kibana.host: "http://kibana:5601"
+output.elasticsearch:
+  hosts: ['https://es01:9200']
+  username: 'elastic'
+  password: 'SecretPassword'
+  ssl.verification_mode: full
+  ssl.certificate_authorities: ['/etc/ssl/elastic/ca/ca.crt']
+  ssl.certificate: '/etc/ssl/elastic/cyb3rhq.manager/cyb3rhq.manager.crt'
+  ssl.key: '/etc/ssl/elastic/cyb3rhq.manager/cyb3rhq.manager.key'

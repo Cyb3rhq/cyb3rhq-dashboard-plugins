@@ -1,5 +1,5 @@
 import { WzMisc } from '../../factories/misc';
-import { WazuhConfig } from '../../react-services';
+import { Cyb3rhqConfig } from '../../react-services';
 import { getWzConfig } from './get-config';
 import { settingsWizard } from './settings-wizard';
 
@@ -7,8 +7,8 @@ export function nestedResolve(params) {
   const wzMisc = new WzMisc();
   const healthCheckStatus = sessionStorage.getItem('healthCheck');
   if (!healthCheckStatus) return;
-  const wazuhConfig = new WazuhConfig();
-  return getWzConfig(wazuhConfig).then(() =>
+  const cyb3rhqConfig = new Cyb3rhqConfig();
+  return getWzConfig(cyb3rhqConfig).then(() =>
     settingsWizard(
       params,
       wzMisc,

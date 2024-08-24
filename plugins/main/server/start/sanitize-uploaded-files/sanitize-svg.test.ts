@@ -29,7 +29,7 @@ function mockContextCreator(loggerLevel: string) {
   }
 
   const ctx = {
-    wazuh: {
+    cyb3rhq: {
       logger: {
         info: createLogger('info'),
         warn: createLogger('warn'),
@@ -37,7 +37,7 @@ function mockContextCreator(loggerLevel: string) {
         debug: createLogger('debug'),
       },
     },
-    wazuh_core: {
+    cyb3rhq_core: {
       configuration: {
         _settings: {
           get: jest.fn(),
@@ -71,10 +71,10 @@ describe('[Sanitize SVG cronjob] Sanitize different custom logos.', () => {
   jest.fn(sanitizeSVG);
   describe('[Sanitize SVG cronjob] No custom logos setup.', () => {
     it('With no custom logos does not sanitize any file', async () => {
-      mockContext.wazuh_core.configuration.get.mockImplementationOnce(
+      mockContext.cyb3rhq_core.configuration.get.mockImplementationOnce(
         () => ({}),
       );
-      mockContext.wazuh_core.configuration._settings.get.mockImplementation(
+      mockContext.cyb3rhq_core.configuration._settings.get.mockImplementation(
         key =>
           Object.fromEntries(
             [
@@ -137,11 +137,11 @@ describe('[Sanitize SVG cronjob] Sanitize different custom logos.', () => {
       fs.unlinkSync(path.join(customImageDirectory, filename));
     });
     it('[Sanitize SVG cronjob] Sanitize script in customization.logo.app.svg file', async () => {
-      mockContext.wazuh_core.configuration.get.mockImplementationOnce(() => ({
+      mockContext.cyb3rhq_core.configuration.get.mockImplementationOnce(() => ({
         'customization.logo.app':
           'custom/images/customization.logo.app.svg?v=123456789',
       }));
-      mockContext.wazuh_core.configuration._settings.get.mockImplementationOnce(
+      mockContext.cyb3rhq_core.configuration._settings.get.mockImplementationOnce(
         () =>
           Object.fromEntries(
             [

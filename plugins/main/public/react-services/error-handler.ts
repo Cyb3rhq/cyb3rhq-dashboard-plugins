@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Error handler service
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Error handler service
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 import { getToasts } from '../kibana-services';
 import store from '../redux/store';
-import { updateWazuhNotReadyYet } from '../redux/actions/appStateActions';
+import { updateCyb3rhqNotReadyYet } from '../redux/actions/appStateActions';
 import { WzMisc } from '../factories/misc';
 import { CheckDaemonsStatus } from './check-daemons-status';
 
@@ -143,7 +143,7 @@ export class ErrorHandler {
     const message = ErrorHandler.extractMessage(error);
     const messageIsString = typeof message === 'string';
     if (messageIsString && message.includes('ERROR3099')) {
-      const updateNotReadyYet = updateWazuhNotReadyYet('Server not ready yet.');
+      const updateNotReadyYet = updateCyb3rhqNotReadyYet('Server not ready yet.');
       store.dispatch(updateNotReadyYet);
       CheckDaemonsStatus.makePing().catch(error => {});
       return;

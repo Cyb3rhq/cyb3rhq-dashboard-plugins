@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of alerts - General tab.
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - React component for show configuration of alerts - General tab.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -50,7 +50,7 @@ class WzConfigurationAlertsGeneral extends Component {
     super(props);
   }
   render() {
-    const { currentConfig, wazuhNotReadyYet } = this.props;
+    const { currentConfig, cyb3rhqNotReadyYet } = this.props;
     return (
       <Fragment>
         {currentConfig['analysis-alerts'] &&
@@ -65,7 +65,7 @@ class WzConfigurationAlertsGeneral extends Component {
           !currentConfig['analysis-alerts'].alerts && (
             <WzNoConfig error='not-present' help={helpLinks} />
           )}
-        {wazuhNotReadyYet &&
+        {cyb3rhqNotReadyYet &&
           (!currentConfig || !currentConfig['analysis-alerts']) && (
             <WzNoConfig error='Server not ready yet' help={helpLinks} />
           )}
@@ -89,7 +89,7 @@ class WzConfigurationAlertsGeneral extends Component {
 }
 
 WzConfigurationAlertsGeneral.propTypes = {
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  cyb3rhqNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 };
 
 export default WzConfigurationAlertsGeneral;

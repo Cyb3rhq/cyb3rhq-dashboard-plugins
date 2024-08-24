@@ -1,7 +1,7 @@
 import { AxiosError, AxiosResponse } from 'axios';
 import { ErrorHandler } from './error-handler';
 import { ErrorOrchestratorService } from '../../error-orchestrator/error-orchestrator.service';
-import WazuhError from '../error-factory/errors/WazuhError';
+import Cyb3rhqError from '../error-factory/errors/Cyb3rhqError';
 import { UIErrorLog } from '../../error-orchestrator/types';
 
 // mocked some required kibana-services
@@ -74,13 +74,13 @@ describe('Error Handler', () => {
         url: '/elastic/samplealerts',
       },
       {
-        name: 'WazuhApiError',
-        message: 'Error WazuhApiError',
+        name: 'Cyb3rhqApiError',
+        message: 'Error Cyb3rhqApiError',
         url: '/api/request',
       },
       {
-        name: 'WazuhReportingError',
-        message: 'Error WazuhReportingError',
+        name: 'Cyb3rhqReportingError',
+        message: 'Error Cyb3rhqReportingError',
         url: '/reports',
       },
       {
@@ -108,7 +108,7 @@ describe('Error Handler', () => {
           .spyOn(ErrorHandler, 'isHttpError')
           .mockImplementation(() => true);
         const errorCreated = ErrorHandler.createError(error);
-        expect(errorCreated).toBeInstanceOf(WazuhError);
+        expect(errorCreated).toBeInstanceOf(Cyb3rhqError);
         expect(errorCreated.message).toBe(message);
         expect(errorCreated.name).toBe(name);
         expect(errorCreated.stack).toBe(error.stack);
@@ -149,13 +149,13 @@ describe('Error Handler', () => {
         url: '/elastic/samplealerts',
       },
       {
-        name: 'WazuhApiError',
-        message: 'Error WazuhApiError',
+        name: 'Cyb3rhqApiError',
+        message: 'Error Cyb3rhqApiError',
         url: '/api/request',
       },
       {
-        name: 'WazuhReportingError',
-        message: 'Error WazuhReportingError',
+        name: 'Cyb3rhqReportingError',
+        message: 'Error Cyb3rhqReportingError',
         url: '/reports',
       },
       {
@@ -224,7 +224,7 @@ describe('Error Handler', () => {
           display: true,
           store: false,
         };
-        if (errorHandled instanceof WazuhError) {
+        if (errorHandled instanceof Cyb3rhqError) {
           logOptionsExpected = errorHandled.logOptions;
         }
         expect(spyErrorOrch).toBeCalledTimes(1);
@@ -241,13 +241,13 @@ describe('Error Handler', () => {
         url: '/elastic/samplealerts',
       },
       {
-        name: 'WazuhApiError',
-        message: 'Error WazuhApiError',
+        name: 'Cyb3rhqApiError',
+        message: 'Error Cyb3rhqApiError',
         url: '/api/request',
       },
       {
-        name: 'WazuhReportingError',
-        message: 'Error WazuhReportingError',
+        name: 'Cyb3rhqReportingError',
+        message: 'Error Cyb3rhqReportingError',
         url: '/reports',
       },
       {
@@ -303,7 +303,7 @@ describe('Error Handler', () => {
         const errorFromHandler = ErrorHandler.handleError(error);
         expect(errorFromHandler).toEqual(errorReturned);
         expect(errorFromHandler).toBeInstanceOf(
-          ErrorType ? ErrorType : WazuhError,
+          ErrorType ? ErrorType : Cyb3rhqError,
         );
         expect(errorFromHandler.message).toBe(message);
         expect(errorFromHandler.name).toBe(name);

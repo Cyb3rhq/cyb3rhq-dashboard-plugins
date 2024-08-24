@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of alerts - labels tab.
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - React component for show configuration of alerts - labels tab.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -47,7 +47,7 @@ class WzConfigurationAlertsLabels extends Component {
     super(props);
   }
   render() {
-    const { currentConfig, agent, wazuhNotReadyYet } = this.props;
+    const { currentConfig, agent, cyb3rhqNotReadyYet } = this.props;
     return (
       <Fragment>
         {currentConfig['agent-labels'] &&
@@ -62,7 +62,7 @@ class WzConfigurationAlertsLabels extends Component {
           !hasSize(currentConfig['agent-labels'].labels) && (
             <WzNoConfig error='not-present' help={helpLinks} />
           )}
-        {wazuhNotReadyYet &&
+        {cyb3rhqNotReadyYet &&
           (!currentConfig || !currentConfig['agent-labels']) && (
             <WzNoConfig error='Server not ready yet' />
           )}
@@ -85,7 +85,7 @@ class WzConfigurationAlertsLabels extends Component {
 }
 
 const mapStateToProps = state => ({
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet,
+  cyb3rhqNotReadyYet: state.appStateReducers.cyb3rhqNotReadyYet,
 });
 
 export default connect(mapStateToProps)(WzConfigurationAlertsLabels);
@@ -98,9 +98,9 @@ export const WzConfigurationAlertsLabelsAgent = compose(
 )(WzConfigurationAlertsLabels);
 
 WzConfigurationAlertsLabels.propTypes = {
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  cyb3rhqNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 };
 
 WzConfigurationAlertsLabelsAgent.propTypes = {
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  cyb3rhqNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 };

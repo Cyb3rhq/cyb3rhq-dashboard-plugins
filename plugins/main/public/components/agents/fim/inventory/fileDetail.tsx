@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Integrity monitoring table component
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Integrity monitoring table component
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -41,7 +41,7 @@ import { RegistryValues } from './registryValues';
 import { formatUIDate } from '../../../../react-services/time-service';
 import { FilterManager } from '../../../../../../../src/plugins/data/public/';
 import { ErrorHandler } from '../../../../react-services/error-management';
-import { WazuhFlyoutDiscover } from '../../../common/wazuh-discover/wz-flyout-discover';
+import { Cyb3rhqFlyoutDiscover } from '../../../common/cyb3rhq-discover/wz-flyout-discover';
 import {
   FILTER_OPERATOR,
   PatternDataSource,
@@ -671,7 +671,7 @@ export class FileDetails extends Component {
           paddingSize='none'
           initialIsOpen={true}
         >
-          <WazuhFlyoutDiscover
+          <Cyb3rhqFlyoutDiscover
             DataSource={PatternDataSource}
             tableColumns={this.getDiscoverColumns()}
             filterManager={this.discoverFilterManager}

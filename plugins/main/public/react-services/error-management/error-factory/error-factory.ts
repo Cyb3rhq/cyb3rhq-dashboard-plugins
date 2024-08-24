@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Error factory class
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Error factory class
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,8 +11,8 @@
  */
 
 import {
-  IWazuhError,
-  IWazuhErrorConstructor,
+  ICyb3rhqError,
+  ICyb3rhqErrorConstructor,
 } from '../types';
 import { IErrorOpts } from '../types';
 
@@ -26,9 +26,9 @@ export class ErrorFactory {
    * @returns Error instance
    */
   public static create(
-    ErrorType: IWazuhErrorConstructor,
+    ErrorType: ICyb3rhqErrorConstructor,
     opts: IErrorOpts,
-  ): Error | IWazuhError {
+  ): Error | ICyb3rhqError {
     return ErrorFactory.errorCreator(ErrorType, opts);
   }
 
@@ -40,9 +40,9 @@ export class ErrorFactory {
    */
 
   private static errorCreator(
-    ErrorType: IWazuhErrorConstructor,
+    ErrorType: ICyb3rhqErrorConstructor,
     opts: IErrorOpts,
-  ): IWazuhError {
+  ): ICyb3rhqError {
     return new ErrorType(opts?.error, { message: opts?.message, code: opts?.code });
   }
 }

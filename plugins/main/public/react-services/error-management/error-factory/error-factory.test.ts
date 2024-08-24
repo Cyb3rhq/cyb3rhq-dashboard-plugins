@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Error handler service
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Error handler service
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,11 +13,11 @@ import { AxiosError, AxiosResponse } from 'axios';
 import { ErrorFactory } from './error-factory';
 import {
   IndexerApiError,
-  WazuhReportingError,
+  Cyb3rhqReportingError,
   HttpError,
-  WazuhApiError,
+  Cyb3rhqApiError,
 } from './errors';
-import WazuhError from './errors/WazuhError';
+import Cyb3rhqError from './errors/Cyb3rhqError';
 
 const response: AxiosResponse = {
   data: {
@@ -35,8 +35,8 @@ const response: AxiosResponse = {
 describe('Error Factory', () => {
   it.each([
     { errorType: IndexerApiError, name: 'IndexerApiError' },
-    { errorType: WazuhApiError, name: 'WazuhApiError' },
-    { errorType: WazuhReportingError, name: 'WazuhReportingError' },
+    { errorType: Cyb3rhqApiError, name: 'Cyb3rhqApiError' },
+    { errorType: Cyb3rhqReportingError, name: 'Cyb3rhqReportingError' },
     { errorType: HttpError, name: 'HttpError' },
   ])(
     'Should return a $name when receive and error and error type',
@@ -65,16 +65,16 @@ describe('Error Factory', () => {
       ...response,
       stack: error.stack,
     };
-    const errorCreated = ErrorFactory.create(WazuhApiError, {
+    const errorCreated = ErrorFactory.create(Cyb3rhqApiError, {
       error,
       message: response.data.message,
     });
-    expect(errorCreated.name).toBe('WazuhApiError');
+    expect(errorCreated.name).toBe('Cyb3rhqApiError');
     expect(errorCreated.stack).toBe(error.stack);
     expect(typeof errorCreated).not.toBe('string');
   });
 
-  it('Should return a new ERROR instance of WazuhError(the parent class)', () => {
+  it('Should return a new ERROR instance of Cyb3rhqError(the parent class)', () => {
     // creating an error with response property
     let error = new Error('Error') as AxiosError;
     error = {
@@ -82,11 +82,11 @@ describe('Error Factory', () => {
       ...response,
       stack: error.stack,
     };
-    const errorCreated = ErrorFactory.create(WazuhApiError, {
+    const errorCreated = ErrorFactory.create(Cyb3rhqApiError, {
       error,
       message: response.data.message,
     });
-    expect(errorCreated).toBeInstanceOf(WazuhError);
+    expect(errorCreated).toBeInstanceOf(Cyb3rhqError);
   });
 
   it('Should return a new ERROR with the error type received like class name', () => {
@@ -97,10 +97,10 @@ describe('Error Factory', () => {
       ...response,
       stack: error.stack,
     };
-    const errorCreated = ErrorFactory.create(WazuhApiError, {
+    const errorCreated = ErrorFactory.create(Cyb3rhqApiError, {
       error,
       message: response.data.message,
     });
-    expect(errorCreated.name).toBe('WazuhApiError');
+    expect(errorCreated.name).toBe('Cyb3rhqApiError');
   });
 });

@@ -1,8 +1,8 @@
 /*
- * Wazuh app - React component building the welcome screen of an agent.
+ * Cyb3rhq app - React component building the welcome screen of an agent.
  * version, OS, registration date, last keep alive.
  *
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,7 +13,7 @@
  */
 
 import { IFilterParams, getElasticAlerts, getIndexPattern } from '../../../../../../react-services';
-import { getWazuhFilter } from '../../fim_events_table';
+import { getCyb3rhqFilter } from '../../fim_events_table';
 import {
   buildPhraseFilter,
   buildExistsFilter,
@@ -50,8 +50,8 @@ function createFilters(agentId, indexPattern) {
       $state: { store: 'appState' },
     };
   };
-  const wazuhFilter = getWazuhFilter();
-  const filters = [wazuhFilter, { name: 'agent.id', value: agentId }];
+  const cyb3rhqFilter = getCyb3rhqFilter();
+  const filters = [cyb3rhqFilter, { name: 'agent.id', value: agentId }];
   return filters.map(filter);
 }
 

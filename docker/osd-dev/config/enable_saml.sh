@@ -8,7 +8,7 @@ sleep 7
 indexer="$1-os1-1"
 dashboard="$1-osd-1"
 
-# Setup keycloack to be used with wazuh-dashboards
+# Setup keycloack to be used with cyb3rhq-dashboards
 
 # Connection
 U="admin"
@@ -29,10 +29,10 @@ ACCESS_TOKEN=$(curl -sS \
 H=('-H' 'Content-Type: application/json' '-H' "Authorization: Bearer $ACCESS_TOKEN")
 
 # Create new REALM
-REALM="wazuh"
+REALM="cyb3rhq"
 P='{
-  "id": "wazuh",
-  "realm": "wazuh",
+  "id": "cyb3rhq",
+  "realm": "cyb3rhq",
   "enabled": true
 }'
 
@@ -49,16 +49,16 @@ cert=$(cat /certs/wi/admin.pem | grep -v CERTIFICATE | tr -d "\n")
 # but it could be enabled for testing purposes
 PC="{
   \"protocol\": \"saml\",
-  \"name\": \"wazuh\",
-  \"clientId\": \"wazuh\",
-  \"description\": \"wazuh saml integration\",
+  \"name\": \"cyb3rhq\",
+  \"clientId\": \"cyb3rhq\",
+  \"description\": \"cyb3rhq saml integration\",
   \"baseUrl\": \"https://localhost:5601\",
   \"rootUrl\": \"https://localhost:5601\",
   \"redirectUris\": [\"https://localhost:5601/*\"],
   \"attributes\" : {
     \"saml_single_logout_service_url_redirect\": \"https://localhost:5601/_opendistro/_security/saml/logout\",
     \"saml_assertion_consumer_url_post\": \"https://localhost:5601/_opendistro/_security/saml/acs/idpinitiated\",
-    \"saml_single_logout_service_url_post\": \"https://wazuh.dashboard:5601/_opendistro/_security/saml/logout\",
+    \"saml_single_logout_service_url_post\": \"https://cyb3rhq.dashboard:5601/_opendistro/_security/saml/logout\",
     \"saml.force.post.binding\": \"false\",
     \"saml.signing.certificate\": \"$cert\",
     \"saml.signing.private.key\": \"$key\",
@@ -68,10 +68,10 @@ PC="{
   }
 }"
 
-curl -sS -L -X POST "${B}/admin/realms/${REALM}/clients" "${H[@]}" -d "$PC" | grep -v "Client wazuh already exists"
+curl -sS -L -X POST "${B}/admin/realms/${REALM}/clients" "${H[@]}" -d "$PC" | grep -v "Client cyb3rhq already exists"
 
 # Get a client json representation
-CLIENT=$(curl -sS -L -X GET "${B}/admin/realms/${REALM}/clients" "${H[@]}" -G -d 'clientId=wazuh' | jq '.[] | select(.clientId=="wazuh")')
+CLIENT=$(curl -sS -L -X GET "${B}/admin/realms/${REALM}/clients" "${H[@]}" -G -d 'clientId=cyb3rhq' | jq '.[] | select(.clientId=="cyb3rhq")')
 
 # Get client id
 CID=$(echo $CLIENT | jq -r '.id')
@@ -91,20 +91,20 @@ curl -sS -L -X POST "${B}/admin/realms/${REALM}/roles" "${H[@]}" -d "$PR2" | gre
 
 ## create new user
 PU='{
-  "username": "wazuh",
+  "username": "cyb3rhq",
   "email": "hello@wazuh.com",
-  "firstName": "Wazuh",
-  "lastName": "Wazuh",
+  "firstName": "Cyb3rhq",
+  "lastName": "Cyb3rhq",
   "emailVerified": true,
   "enabled": true,
-  "credentials": [{"temporary":false,"type":"password","value":"wazuh"}],
+  "credentials": [{"temporary":false,"type":"password","value":"cyb3rhq"}],
   "realmRoles": ["admin", "all-access"]
 }'
 
 curl -sS -L -X POST "${B}/admin/realms/${REALM}/users" "${H[@]}" -d "$PU" | grep -v "User exists with same username"
 
 ## Get a user json representation
-USER=$(curl -sS -L -X GET "${B}/admin/realms/${REALM}/users" "${H[@]}" -G -d 'username=wazuh' | jq '.[] | select(.username=="wazuh")')
+USER=$(curl -sS -L -X GET "${B}/admin/realms/${REALM}/users" "${H[@]}" -G -d 'username=cyb3rhq' | jq '.[] | select(.username=="cyb3rhq")')
 
 ### Get user id
 USERID=$(echo $USER | jq -r '.id')
@@ -122,7 +122,7 @@ PA1="[
     \"name\": \"admin\",
     \"composite\": false,
     \"clientRole\": false,
-    \"containerId\": \"wazuh\"
+    \"containerId\": \"cyb3rhq\"
   },
     {
     \"id\": \"$ALLACCESSID\",
@@ -130,7 +130,7 @@ PA1="[
     \"description\": \"\",
     \"composite\": false,
     \"clientRole\": false,
-    \"containerId\": \"wazuh\"
+    \"containerId\": \"cyb3rhq\"
   }
 ]"
 

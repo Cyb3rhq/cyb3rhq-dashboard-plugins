@@ -1,8 +1,8 @@
 import { BulkIndexDocumentsParams } from 'elasticsearch';
 import { indexDate } from '../../lib/index-date';
 import {
-  WAZUH_STATISTICS_DEFAULT_INDICES_SHARDS,
-  WAZUH_STATISTICS_DEFAULT_INDICES_REPLICAS,
+  CYB3RHQ_STATISTICS_DEFAULT_INDICES_SHARDS,
+  CYB3RHQ_STATISTICS_DEFAULT_INDICES_REPLICAS,
 } from '../../../common/constants';
 import { tryCatchForIndexPermissionError } from '../tryCatchForIndexPermissionError';
 
@@ -38,11 +38,11 @@ export class SaveDocument {
         indexCreation,
         mapping,
       );
-      this.context.wazuh.logger.debug('Bulk data');
+      this.context.cyb3rhq.logger.debug('Bulk data');
       const response = await this.esClientInternalUser.bulk(
         createDocumentObject,
       );
-      this.context.wazuh.logger.debug(
+      this.context.cyb3rhq.logger.debug(
         `Bulked data. Response of creating the new document ${JSON.stringify(
           response,
         )}`,
@@ -64,31 +64,31 @@ export class SaveDocument {
   private async checkIndexAndCreateIfNotExists(index, shards, replicas) {
     try {
       await tryCatchForIndexPermissionError(index)(async () => {
-        this.context.wazuh.logger.debug(
+        this.context.cyb3rhq.logger.debug(
           `Checking the existence of ${index} index`,
         );
         const exists = await this.esClientInternalUser.indices.exists({
           index,
         });
-        this.context.wazuh.logger.debug(
+        this.context.cyb3rhq.logger.debug(
           `Index '${index}' exists? ${exists.body}`,
         );
         if (!exists.body) {
-          this.context.wazuh.logger.debug(`Creating ${index} index`);
+          this.context.cyb3rhq.logger.debug(`Creating ${index} index`);
           await this.esClientInternalUser.indices.create({
             index,
             body: {
               settings: {
                 index: {
                   number_of_shards:
-                    shards ?? WAZUH_STATISTICS_DEFAULT_INDICES_SHARDS,
+                    shards ?? CYB3RHQ_STATISTICS_DEFAULT_INDICES_SHARDS,
                   number_of_replicas:
-                    replicas ?? WAZUH_STATISTICS_DEFAULT_INDICES_REPLICAS,
+                    replicas ?? CYB3RHQ_STATISTICS_DEFAULT_INDICES_REPLICAS,
                 },
               },
             },
           });
-          this.context.wazuh.logger.info(`${index} index created`);
+          this.context.cyb3rhq.logger.info(`${index} index created`);
         }
       })();
     } catch (error) {
@@ -121,7 +121,7 @@ export class SaveDocument {
         )
         .join(''),
     };
-    this.context.wazuh.logger.debug(
+    this.context.cyb3rhq.logger.debug(
       `Document object: ${JSON.stringify(createDocumentObject)}`,
     );
     return createDocumentObject;
@@ -159,7 +159,7 @@ export class SaveDocument {
   }
 
   private async addIndexPrefix(index): string {
-    const prefix = await this.context.wazuh_core.configuration.get(
+    const prefix = await this.context.cyb3rhq_core.configuration.get(
       'cron.prefix',
     );
     return `${prefix}-${index}`;

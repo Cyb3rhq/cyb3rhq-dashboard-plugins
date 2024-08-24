@@ -19,7 +19,7 @@ const MANAGER_AGENT_ID = '000';
 const AGENT_ID_KEY = 'agent.id';
 
 /**
- * Get the filter that excludes the data related to Wazuh servers
+ * Get the filter that excludes the data related to Cyb3rhq servers
  * @param indexPatternId Index pattern id
  * @returns
  */

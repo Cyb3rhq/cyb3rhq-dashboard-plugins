@@ -6,7 +6,7 @@ import { WzCluster } from './cluster';
 const basicClusterSettings = {
   'com-cluster': {
     disabled: false,
-    name: 'wazuh1',
+    name: 'cyb3rhq1',
     node_name: 'master',
     node_type: 'master',
     key: 'test1234',
@@ -20,7 +20,7 @@ const basicClusterSettings = {
 const clusterSettingsWithHaproxyHelper = {
   'com-cluster': {
     disabled: false,
-    name: 'wazuh1',
+    name: 'cyb3rhq1',
     node_name: 'master',
     node_type: 'master',
     key: 'test1234',
@@ -30,14 +30,14 @@ const clusterSettingsWithHaproxyHelper = {
     hidden: 'no',
     haproxy_helper: {
       haproxy_disabled: false,
-      haproxy_address: 'wazuh-proxy',
+      haproxy_address: 'cyb3rhq-proxy',
       haproxy_user: 'haproxy',
       haproxy_password: 'haproxy',
       frequency: 60,
       agent_reconnection_stability_time: 60,
       agent_chunk_size: 300,
       haproxy_protocol: 'http',
-      haproxy_backend: 'wazuh_cluster',
+      haproxy_backend: 'cyb3rhq_cluster',
       agent_reconnection_time: 5,
       haproxy_port: 5555,
       haproxy_resolver: null,

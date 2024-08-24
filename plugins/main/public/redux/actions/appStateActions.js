@@ -1,6 +1,6 @@
 /*
- * Wazuh app - App State Actions
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - App State Actions
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,13 +33,13 @@ export const updateShowMenu = showMenu => {
 };
 
 /**
- * Updates WazuhNotReadyYet in the appState store
- * @param wazuhNotReadyYet
+ * Updates Cyb3rhqNotReadyYet in the appState store
+ * @param cyb3rhqNotReadyYet
  */
-export const updateWazuhNotReadyYet = wazuhNotReadyYet => {
+export const updateCyb3rhqNotReadyYet = cyb3rhqNotReadyYet => {
   return {
-    type: 'UPDATE_WAZUH_NOT_READY_YET',
-    wazuhNotReadyYet: wazuhNotReadyYet,
+    type: 'UPDATE_CYB3RHQ_NOT_READY_YET',
+    cyb3rhqNotReadyYet: cyb3rhqNotReadyYet,
   };
 };
 
@@ -49,7 +49,7 @@ export const updateWazuhNotReadyYet = wazuhNotReadyYet => {
  */
 export const updateCurrentTab = currentTab => {
   return {
-    type: 'UPDATE_WAZUH_CURRENT_TAB',
+    type: 'UPDATE_CYB3RHQ_CURRENT_TAB',
     currentTab: currentTab,
   };
 };

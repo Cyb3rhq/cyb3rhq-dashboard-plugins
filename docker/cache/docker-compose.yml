@@ -1,4 +1,4 @@
-# Wazuh App Copyright (C) 2021 Wazuh Inc. (License GPLv2)
+# Cyb3rhq App Copyright (C) 2021 Cyb3rhq Inc. (License GPLv2)
 version: '3.9'
 
 x-logging: &logging

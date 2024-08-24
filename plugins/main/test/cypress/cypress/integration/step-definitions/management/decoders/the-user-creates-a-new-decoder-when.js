@@ -3,7 +3,7 @@ import { fillField, elementIsVisible, getSelector, generateRandomName } from '..
 import { DECODERS_PAGE as pageName} from '../../../utils/pages-constants';
 const decoderTitleSelector = getSelector('decoderTitleSelector', pageName);
 const codeEditorSelector = getSelector('codeEditorSelector', pageName);
-const testXmlText = '<decoder name="wazuh"><prematch>^wazuh2: </prematch></decoder>';
+const testXmlText = '<decoder name="cyb3rhq"><prematch>^cyb3rhq2: </prematch></decoder>';
 
 When('The user writes a new decoder', () => {
   elementIsVisible(decoderTitleSelector);

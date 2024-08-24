@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Mitre alerts components
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Mitre alerts components
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ import {
   Filter,
 } from '../../../../src/plugins/data/common';
 import { SearchParams, SearchResponse } from 'elasticsearch';
-import { WazuhConfig } from './wazuh-config';
+import { Cyb3rhqConfig } from './cyb3rhq-config';
 import { getDataPlugin, getUiSettings } from '../kibana-services';
 
 export interface IFilterParams {
@@ -46,9 +46,9 @@ export async function getElasticAlerts(
   aggs: any = null,
   kargs = {}
 ) {
-  const wazuhConfig = new WazuhConfig();
+  const cyb3rhqConfig = new Cyb3rhqConfig();
   const extraFilters = [];
-  const { hideManagerAlerts } = wazuhConfig.getConfig();
+  const { hideManagerAlerts } = cyb3rhqConfig.getConfig();
   if (hideManagerAlerts)
     extraFilters.push({
       meta: {

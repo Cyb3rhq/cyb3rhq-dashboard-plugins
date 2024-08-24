@@ -1,10 +1,10 @@
 Feature: Validate that the added filter label is displayed
 
-  As a Wazuh user
+  As a Cyb3rhq user
   I want to set a new filter
   in order to manage them
   Background:
-    Given The wazuh admin user is logged
+    Given The cyb3rhq admin user is logged
 
   @filter @actions
   Scenario Outline: The user add a new filer <Module Name>

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for reporting
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - React component for reporting
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -9,6 +9,6 @@
  *
  * Find more information about this on the LICENSE file.
  */
-//Wazuh statistics overview
+//Cyb3rhq statistics overview
 import WzStatisticsOverview from './statistics-overview';
 export default WzStatisticsOverview;

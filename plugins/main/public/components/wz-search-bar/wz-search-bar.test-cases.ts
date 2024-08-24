@@ -35,9 +35,9 @@ export const SEARCHBAR_TESTCASES: iTestCase[] = [
     },
   },
   {
-    inputs: ['manager=wazuh-manager-master-v4.3.4-rc1-7.10.2'],
+    inputs: ['manager=cyb3rhq-manager-master-v4.3.4-rc1-7.10.2'],
     expectedObjectFilters: {
-      q: 'manager=wazuh-manager-master-v4.3.4-rc1-7.10.2',
+      q: 'manager=cyb3rhq-manager-master-v4.3.4-rc1-7.10.2',
     },
   },
   {

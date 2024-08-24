@@ -3,7 +3,7 @@ import { EmbeddableInput } from '../../../../../../../src/plugins/embeddable/pub
 
 const getVisStateFIMAlertsByActionOverTime = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-FIM-Alerts-by-action-over-time',
+    id: 'Cyb3rhq-App-Overview-FIM-Alerts-by-action-over-time',
     title: 'Alerts by action over time',
     type: 'area',
     params: {
@@ -121,7 +121,7 @@ const getVisStateFIMAlertsByActionOverTime = (indexPatternId: string) => {
 
 const getVisStateFIMTopAgentsPie = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-FIM-Top-5-agents-pie',
+    id: 'Cyb3rhq-App-Overview-FIM-Top-5-agents-pie',
     title: 'Top 5 agents',
     type: 'pie',
     params: {
@@ -185,7 +185,7 @@ const getVisStateFIMTopAgentsPie = (indexPatternId: string) => {
 
 const getVisStateFIMEventsSummary = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-FIM-Events-summary',
+    id: 'Cyb3rhq-App-Overview-FIM-Events-summary',
     title: 'Events summary',
     type: 'line',
     params: {
@@ -272,7 +272,7 @@ const getVisStateFIMEventsSummary = (indexPatternId: string) => {
 
 const getVisStateFIMTopRules = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-FIM-Top-5-rules',
+    id: 'Cyb3rhq-App-Overview-FIM-Top-5-rules',
     title: 'Rule distribution',
     type: 'pie',
     params: {
@@ -336,7 +336,7 @@ const getVisStateFIMTopRules = (indexPatternId: string) => {
 
 const getVisStateFIMCommonActions = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-FIM-Common-actions',
+    id: 'Cyb3rhq-App-Overview-FIM-Common-actions',
     title: 'Actions',
     type: 'pie',
     params: {
@@ -400,7 +400,7 @@ const getVisStateFIMCommonActions = (indexPatternId: string) => {
 
 const getVisStateFIMTopAgentsUser = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-FIM-top-agents-user',
+    id: 'Cyb3rhq-App-Overview-FIM-top-agents-user',
     title: 'Top 5 users',
     type: 'table',
     params: {
@@ -424,7 +424,7 @@ const getVisStateFIMTopAgentsUser = (indexPatternId: string) => {
         filter: [
           {
             meta: {
-              index: 'wazuh-alerts',
+              index: 'cyb3rhq-alerts',
               negate: false,
               disabled: false,
               alias: null,
@@ -514,7 +514,7 @@ const getVisStateFIMTopAgentsUser = (indexPatternId: string) => {
 
 const getVisStateAgentFIMUsers = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-FIM-Users',
+    id: 'Cyb3rhq-App-Agents-FIM-Users',
     title: 'Most active users',
     type: 'pie',
     params: {
@@ -573,7 +573,7 @@ const getVisStateAgentFIMUsers = (indexPatternId: string) => {
 
 const getVisStateAgentFIMActions = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-FIM-Actions',
+    id: 'Cyb3rhq-App-Agents-FIM-Actions',
     title: 'Actions',
     type: 'pie',
     params: {
@@ -632,7 +632,7 @@ const getVisStateAgentFIMActions = (indexPatternId: string) => {
 
 const getVisStateAgentFIMEvents = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-FIM-Events',
+    id: 'Cyb3rhq-App-Agents-FIM-Events',
     title: 'Events',
     type: 'line',
     params: {
@@ -780,7 +780,7 @@ const getVisStateAgentFIMEvents = (indexPatternId: string) => {
 
 const getVisStateAgentFIMFilesAdded = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-FIM-Files-added',
+    id: 'Cyb3rhq-App-Agents-FIM-Files-added',
     title: 'Files added',
     type: 'pie',
     params: {
@@ -800,7 +800,7 @@ const getVisStateAgentFIMFilesAdded = (indexPatternId: string) => {
         filter: [
           {
             meta: {
-              index: 'wazuh-alerts',
+              index: 'cyb3rhq-alerts',
               type: 'phrases',
               key: 'syscheck.event',
               value: 'added, readded',
@@ -867,7 +867,7 @@ const getVisStateAgentFIMFilesAdded = (indexPatternId: string) => {
 
 const getVisStateAgentFIMFilesModified = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-FIM-Files-modified',
+    id: 'Cyb3rhq-App-Agents-FIM-Files-modified',
     title: 'Files modified',
     type: 'pie',
     params: {
@@ -887,7 +887,7 @@ const getVisStateAgentFIMFilesModified = (indexPatternId: string) => {
         filter: [
           {
             meta: {
-              index: 'wazuh-alerts',
+              index: 'cyb3rhq-alerts',
               negate: false,
               disabled: false,
               alias: null,
@@ -948,7 +948,7 @@ const getVisStateAgentFIMFilesModified = (indexPatternId: string) => {
 
 const getVisStateAgentFIMFilesDeleted = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-FIM-Files-deleted',
+    id: 'Cyb3rhq-App-Agents-FIM-Files-deleted',
     title: 'Files deleted',
     type: 'pie',
     params: {
@@ -968,7 +968,7 @@ const getVisStateAgentFIMFilesDeleted = (indexPatternId: string) => {
         filter: [
           {
             meta: {
-              index: 'wazuh-alerts',
+              index: 'cyb3rhq-alerts',
               negate: false,
               disabled: false,
               alias: null,

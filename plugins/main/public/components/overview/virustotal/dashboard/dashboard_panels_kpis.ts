@@ -3,7 +3,7 @@ import { EmbeddableInput } from '../../../../../../../../src/plugins/embeddable/
 
 const getVisStateTotalMalicious = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Virustotal-Total-Malicious',
+    id: 'Cyb3rhq-App-Overview-Virustotal-Total-Malicious',
     title: 'Total Malicious',
     type: 'metric',
     params: {
@@ -86,7 +86,7 @@ const getVisStateTotalMalicious = (indexPatternId: string) => {
 
 const getVisStateTotalPositives = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Virustotal-Total-Positives',
+    id: 'Cyb3rhq-App-Overview-Virustotal-Total-Positives',
     title: 'Total Positives',
     type: 'metric',
     params: {
@@ -169,7 +169,7 @@ const getVisStateTotalPositives = (indexPatternId: string) => {
 
 const getVisStateTotal = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Virustotal-Total',
+    id: 'Cyb3rhq-App-Overview-Virustotal-Total',
     title: 'Total',
     type: 'metric',
     params: {

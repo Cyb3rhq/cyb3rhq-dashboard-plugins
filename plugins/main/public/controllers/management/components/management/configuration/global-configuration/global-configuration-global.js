@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of global configuration - global tab.
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - React component for show configuration of global configuration - global tab.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -98,7 +98,7 @@ class WzConfigurationGlobalConfigurationGlobal extends Component {
     this.helpLinks = buildHelpLinks(this.props.agent);
   }
   render() {
-    const { currentConfig, agent, wazuhNotReadyYet } = this.props;
+    const { currentConfig, agent, cyb3rhqNotReadyYet } = this.props;
     const mainSettingsConfig =
       agent.id === '000' &&
       currentConfig['analysis-global'] &&
@@ -147,7 +147,7 @@ class WzConfigurationGlobalConfigurationGlobal extends Component {
           !currentConfig['analysis-global'].global && (
             <WzNoConfig error='not-present' help={this.helpLinks} />
           )}
-        {wazuhNotReadyYet &&
+        {cyb3rhqNotReadyYet &&
           (!currentConfig || !currentConfig['analysis-global']) && (
             <WzNoConfig error='Server not ready yet' help={this.helpLinks} />
           )}
@@ -194,7 +194,7 @@ class WzConfigurationGlobalConfigurationGlobal extends Component {
 
 WzConfigurationGlobalConfigurationGlobal.propTypes = {
   agent: PropTypes.object,
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  cyb3rhqNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 };
 
 export default WzConfigurationGlobalConfigurationGlobal;

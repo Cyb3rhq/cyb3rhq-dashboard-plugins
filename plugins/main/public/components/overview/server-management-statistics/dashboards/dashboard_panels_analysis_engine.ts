@@ -7,7 +7,7 @@ import { EmbeddableInput } from '../../../../../../../../src/plugins/embeddable/
 
 const getVisStateEventsProcessed = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Statistics-Analysisd-Events',
+    id: 'Cyb3rhq-App-Statistics-Analysisd-Events',
     title: 'Events processed',
     type: 'line',
     params: {
@@ -157,7 +157,7 @@ const getVisStateEventsProcessed = (indexPatternId: string) => {
 
 const getVisStateEventsDropped = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Statistics-Analysisd-Events-Dropped',
+    id: 'Cyb3rhq-App-Statistics-Analysisd-Events-Dropped',
     title: 'Events dropped',
     type: 'line',
     params: {
@@ -307,7 +307,7 @@ const getVisStateEventsDropped = (indexPatternId: string) => {
 
 const getVisStateQueueUsage = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Statistics-Analysisd-Queues-Usage',
+    id: 'Cyb3rhq-App-Statistics-Analysisd-Queues-Usage',
     title: 'Queue Usage',
     type: 'line',
     params: {
@@ -595,7 +595,7 @@ const getVisStateQueueUsage = (indexPatternId: string) => {
 
 const getVisStateEventsDecodedSummary = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Statistics-Analysisd-Overview-Events-Decoded',
+    id: 'Cyb3rhq-App-Statistics-Analysisd-Overview-Events-Decoded',
     title: 'Events decoded summary',
     type: 'line',
     params: {
@@ -883,7 +883,7 @@ const getVisStateEventsDecodedSummary = (indexPatternId: string) => {
 
 const getVisStateSyscheck = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Statistics-Analysisd-Syscheck',
+    id: 'Cyb3rhq-App-Statistics-Analysisd-Syscheck',
     title: 'Syscheck',
     type: 'line',
     params: {
@@ -1203,7 +1203,7 @@ const getVisStateSyscheck = (indexPatternId: string) => {
 
 const getVisStateSyscollector = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Statistics-Analysisd-Syscollector',
+    id: 'Cyb3rhq-App-Statistics-Analysisd-Syscollector',
     title: 'Syscollector',
     type: 'line',
     params: {
@@ -1517,7 +1517,7 @@ const getVisStateSyscollector = (indexPatternId: string) => {
 
 const getVisStateRootcheck = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Statistics-Analysisd-Rootcheck',
+    id: 'Cyb3rhq-App-Statistics-Analysisd-Rootcheck',
     title: 'Rootcheck',
     type: 'line',
     params: {
@@ -1783,7 +1783,7 @@ const getVisStateRootcheck = (indexPatternId: string) => {
 
 const getVisStateSCA = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Statistics-Analysisd-SCA',
+    id: 'Cyb3rhq-App-Statistics-Analysisd-SCA',
     title: 'SCA',
     type: 'line',
     params: {
@@ -2050,7 +2050,7 @@ const getVisStateSCA = (indexPatternId: string) => {
 
 const getVisStateHostInfo = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Statistics-Analysisd-HostInfo',
+    id: 'Cyb3rhq-App-Statistics-Analysisd-HostInfo',
     title: 'Host Info',
     type: 'line',
     params: {
@@ -2331,7 +2331,7 @@ const getVisStateHostInfo = (indexPatternId: string) => {
 
 const getVisStateEventsProcessedByNode = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Statistics-Analysisd-Events-By-Node',
+    id: 'Cyb3rhq-App-Statistics-Analysisd-Events-By-Node',
     title: 'Events processed',
     type: 'line',
     params: {
@@ -2498,7 +2498,7 @@ const getVisStateEventsProcessedByNode = (indexPatternId: string) => {
 
 const getVisStateEventsDroppedByNode = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Statistics-Analysisd-Events-Dropped-By-Node',
+    id: 'Cyb3rhq-App-Statistics-Analysisd-Events-Dropped-By-Node',
     title: 'Events dropped',
     type: 'line',
     params: {

@@ -6,7 +6,7 @@ Feature: Should Displayes a warning modal - Management - edit decoders
 
 @rules
   Scenario: Validate confirmation when closing modal without saving - Management - edit decoders
-    Given The wazuh admin user is logged
+    Given The cyb3rhq admin user is logged
     When The user navigates to decoders
     And The user clicks the custom decoders button
     And The user selects a custom decoders to edit

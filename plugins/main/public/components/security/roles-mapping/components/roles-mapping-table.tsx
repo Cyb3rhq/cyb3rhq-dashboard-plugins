@@ -14,7 +14,7 @@ import { WzAPIUtils } from '../../../../react-services/wz-api-utils';
 import RulesServices from '../../rules/services';
 import {
   UI_LOGGER_LEVELS,
-  WAZUH_API_RESERVED_WUI_SECURITY_RULES,
+  CYB3RHQ_API_RESERVED_WUI_SECURITY_RULES,
 } from '../../../../../common/constants';
 import { UI_ERROR_SEVERITIES } from '../../../../react-services/error-orchestrator/types';
 import { getErrorOrchestrator } from '../../../../react-services/common-services';
@@ -105,16 +105,16 @@ export const RolesMappingTable = ({
       name: 'Status',
       render(item, obj) {
         if (WzAPIUtils.isReservedID(item)) {
-          if (WAZUH_API_RESERVED_WUI_SECURITY_RULES.includes(obj.id)) {
+          if (CYB3RHQ_API_RESERVED_WUI_SECURITY_RULES.includes(obj.id)) {
             return (
               <EuiFlexGroup>
                 <EuiBadge color='primary'>Reserved</EuiBadge>
                 <EuiToolTip
                   position='top'
-                  content='wui_ rules belong to wazuh-wui API user'
+                  content='wui_ rules belong to cyb3rhq-wui API user'
                 >
                   <EuiBadge color='accent' title='' style={{ marginLeft: 10 }}>
-                    wazuh-wui
+                    cyb3rhq-wui
                   </EuiBadge>
                 </EuiToolTip>
               </EuiFlexGroup>

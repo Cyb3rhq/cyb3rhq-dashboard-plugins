@@ -1,5 +1,5 @@
-var storeWazuh = stores.open('storeWazuh');
-var deleteRolesMapping = storeWazuh.load('deleteRolesMapping');
+var storeCyb3rhq = stores.open('storeCyb3rhq');
+var deleteRolesMapping = storeCyb3rhq.load('deleteRolesMapping');
 
 switch (deleteRolesMapping) {
   case false:
@@ -8,7 +8,7 @@ switch (deleteRolesMapping) {
       .withFile('security/roles-mapping/get-rules.json');
     break;
   case true:
-    storeWazuh.save('deleteRolesMapping', false);
+    storeCyb3rhq.save('deleteRolesMapping', false);
     respond()
       .withStatusCode(200)
       .withFile('security/roles-mapping/get-rules-after-delete.json');

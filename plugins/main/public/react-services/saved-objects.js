@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Saved Objects management service
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Saved Objects management service
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,9 +18,9 @@ import {
   HEALTH_CHECK,
   NOT_TIME_FIELD_NAME_INDEX_PATTERN,
   PLUGIN_PLATFORM_NAME,
-  WAZUH_INDEX_TYPE_ALERTS,
-  WAZUH_INDEX_TYPE_MONITORING,
-  WAZUH_INDEX_TYPE_STATISTICS,
+  CYB3RHQ_INDEX_TYPE_ALERTS,
+  CYB3RHQ_INDEX_TYPE_MONITORING,
+  CYB3RHQ_INDEX_TYPE_STATISTICS,
 } from '../../common/constants';
 import { getDataPlugin, getSavedObjects } from '../kibana-services';
 import { webDocumentationLink } from '../../common/services/web_documentation';
@@ -53,7 +53,7 @@ export class SavedObject {
    * Returns the full list of index patterns that are valid
    * An index is valid if its fields contain at least these 4 fields: 'timestamp', 'rule.groups', 'agent.id' and 'manager.name'
    */
-  static async getListOfWazuhValidIndexPatterns(defaultIndexPatterns, where) {
+  static async getListOfCyb3rhqValidIndexPatterns(defaultIndexPatterns, where) {
     let result = [];
     if (where === HEALTH_CHECK) {
       const list = await Promise.all(
@@ -96,7 +96,7 @@ export class SavedObject {
     if (!result.data) {
       const fields = await SavedObject.getIndicesFields(
         patternID,
-        WAZUH_INDEX_TYPE_ALERTS,
+        CYB3RHQ_INDEX_TYPE_ALERTS,
       );
       await this.createSavedObject(
         'index-pattern',
@@ -257,13 +257,13 @@ export class SavedObject {
   }
 
   /**
-   * Creates the 'wazuh-alerts-*'  index pattern
+   * Creates the 'cyb3rhq-alerts-*'  index pattern
    */
-  static async createWazuhIndexPattern(pattern) {
+  static async createCyb3rhqIndexPattern(pattern) {
     try {
       const fields = await SavedObject.getIndicesFields(
         pattern,
-        WAZUH_INDEX_TYPE_ALERTS,
+        CYB3RHQ_INDEX_TYPE_ALERTS,
       );
       await this.createSavedObject(
         'index-pattern',
@@ -302,11 +302,11 @@ export class SavedObject {
       return response.data.fields;
     } catch (error) {
       switch (indexType) {
-        case WAZUH_INDEX_TYPE_MONITORING:
+        case CYB3RHQ_INDEX_TYPE_MONITORING:
           return FieldsMonitoring;
-        case WAZUH_INDEX_TYPE_STATISTICS:
+        case CYB3RHQ_INDEX_TYPE_STATISTICS:
           return FieldsStatistics;
-        case WAZUH_INDEX_TYPE_ALERTS:
+        case CYB3RHQ_INDEX_TYPE_ALERTS:
           return KnownFields;
         default:
           const warningError = ErrorFactory.create(WarningError, {
@@ -320,7 +320,7 @@ export class SavedObject {
 
   /**
    * Check if it exists the index pattern saved objects using the `GET /api/saved_objects/_find` endpoint.
-   * It is usefull to validate if the endpoint works as expected. Related issue: https://github.com/wazuh/wazuh-dashboard-plugins/issues/4293
+   * It is usefull to validate if the endpoint works as expected. Related issue: https://github.com/cyb3rhq/cyb3rhq-dashboard-plugins/issues/4293
    * @param {string[]} indexPatternIDs
    */
   static async validateIndexPatternSavedObjectCanBeFound(indexPatternIDs) {
@@ -339,7 +339,7 @@ export class SavedObject {
     if (!indexPatternsSavedObjectsCanBeFound) {
       throw new Error(`Saved object for index pattern not found.
 Restart the ${PLUGIN_PLATFORM_NAME} service to initialize the index. More information in troubleshooting guide: ${webDocumentationLink(
-        'user-manual/wazuh-dashboard/troubleshooting.html#saved-object-for-index-pattern-not-found',
+        'user-manual/cyb3rhq-dashboard/troubleshooting.html#saved-object-for-index-pattern-not-found',
       )}.`);
     }
   }

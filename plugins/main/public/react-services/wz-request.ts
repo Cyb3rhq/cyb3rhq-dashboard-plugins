@@ -1,6 +1,6 @@
 /*
- * Wazuh app - API request service
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - API request service
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,7 +13,7 @@ import { AppState } from './app-state';
 import { ApiCheck } from './wz-api-check';
 import { WzAuthentication } from './wz-authentication';
 import { WzMisc } from '../factories/misc';
-import { WazuhConfig } from './wazuh-config';
+import { Cyb3rhqConfig } from './cyb3rhq-config';
 import IApiResponse from './interfaces/api-response.interface';
 import { getHttp } from '../kibana-services';
 import { PLUGIN_PLATFORM_REQUEST_HEADERS } from '../../common/constants';
@@ -21,7 +21,7 @@ import { request } from '../services/request-handler';
 import NavigationService from './navigation-service';
 
 export class WzRequest {
-  static wazuhConfig: any;
+  static cyb3rhqConfig: any;
 
   /**
    * Permorn a generic request
@@ -59,8 +59,8 @@ export class WzRequest {
       if (!method || !path) {
         throw new Error('Missing parameters');
       }
-      this.wazuhConfig = new WazuhConfig();
-      const configuration = this.wazuhConfig.getConfig();
+      this.cyb3rhqConfig = new Cyb3rhqConfig();
+      const configuration = this.cyb3rhqConfig.getConfig();
       const timeout = configuration ? configuration.timeout : 20000;
 
       const url = getHttp().basePath.prepend(path);
@@ -135,7 +135,7 @@ export class WzRequest {
   }
 
   /**
-   * Perform a request to the Wazuh API
+   * Perform a request to the Cyb3rhq API
    * @param {String} method Eg. GET, PUT, POST, DELETE
    * @param {String} path API route
    * @param {Object} body Request body

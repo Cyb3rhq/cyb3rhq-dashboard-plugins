@@ -3,7 +3,7 @@ import { EmbeddableInput } from '../../../../../../../../src/plugins/embeddable/
 
 const getVisStateTotal = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-General-Metric-alerts',
+    id: 'Cyb3rhq-App-Overview-General-Metric-alerts',
     title: 'Total',
     type: 'metric',
     params: {
@@ -69,7 +69,7 @@ const getVisStateTotal = (indexPatternId: string) => {
 
 const getVisStateLevel12Alerts = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-General-Level-12-alerts',
+    id: 'Cyb3rhq-App-Overview-General-Level-12-alerts',
     title: 'Level 12 or above alerts',
     type: 'metric',
     params: {
@@ -152,7 +152,7 @@ const getVisStateLevel12Alerts = (indexPatternId: string) => {
 
 const getVisStateAuthenticationFailure = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-General-Authentication-failure',
+    id: 'Cyb3rhq-App-Overview-General-Authentication-failure',
     title: 'Authentication failure',
     type: 'metric',
     params: {
@@ -236,7 +236,7 @@ const getVisStateAuthenticationFailure = (indexPatternId: string) => {
 
 const getVisStateAuthenticationSuccess = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-General-Authentication-success',
+    id: 'Cyb3rhq-App-Overview-General-Authentication-success',
     title: 'Authentication success',
     type: 'metric',
     params: {

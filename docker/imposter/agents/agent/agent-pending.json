@@ -16,7 +16,7 @@
         "ip": "172.19.0.32",
         "name": "Pending agent",
         "group": ["default"],
-        "version": "Wazuh v4.4.0",
+        "version": "Cyb3rhq v4.4.0",
         "lastKeepAlive": "2023-03-16T15:15:07+00:00",
         "id": "006",
         "dateAdd": "2023-03-16T15:14:49+00:00",
@@ -24,7 +24,7 @@
         "status": "pending",
         "mergedSum": "x",
         "node_name": "master-node",
-        "manager": "wazuh_manager_filebeat_sources_cmake-v4.4.0-rc1-7.10.2",
+        "manager": "cyb3rhq_manager_filebeat_sources_cmake-v4.4.0-rc1-7.10.2",
         "status_code": 5
       }
     ],

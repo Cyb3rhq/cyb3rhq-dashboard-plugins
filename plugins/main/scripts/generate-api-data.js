@@ -147,13 +147,13 @@ ${Object.keys(outputs)
     // TODO: examples
     console.log(`
 - Get API data from URL spec file and save to files (API branch master). Run from project root path.
-node ${cliFilePath} --spec https://raw.githubusercontent.com/wazuh/wazuh/master/api/api/spec/spec.yaml --output file --output-directory common/api-info
+node ${cliFilePath} --spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/master/api/api/spec/spec.yaml --output file --output-directory common/api-info
 
 - Get API data from URL spec file using the plugin version and save to files. Run from project root path.
-node ${cliFilePath} --spec https://raw.githubusercontent.com/wazuh/wazuh/$(node -e \"console.log(require('./package.json').version.split('.').splice(0,2).join('.'))\")/api/api/spec/spec.yaml --output file --output-directory common/api-info
+node ${cliFilePath} --spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/$(node -e \"console.log(require('./package.json').version.split('.').splice(0,2).join('.'))\")/api/api/spec/spec.yaml --output file --output-directory common/api-info
 
 - Unused: Get API data from spec file and print to stdout (API branch master). Run from project root path.
-node ${cliFilePath} --spec https://raw.githubusercontent.com/wazuh/wazuh/master/api/api/spec/spec.yaml --output stdout
+node ${cliFilePath} --spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/master/api/api/spec/spec.yaml --output stdout
 
 `);
   }
@@ -392,15 +392,15 @@ node ${cliFilePath} --spec https://raw.githubusercontent.com/wazuh/wazuh/master/
                   }
                 : null;
 
-            //Wazuh prefix is removed due issue [#6155](https://github.com/wazuh/wazuh-dashboard-plugins/pull/6155)
+            //Cyb3rhq prefix is removed due issue [#6155](https://github.com/cyb3rhq/cyb3rhq-dashboard-plugins/pull/6155)
 
             accum[httpMethodUppercase] = [
               ...accum[httpMethodUppercase],
               {
                 name,
                 documentation,
-                description: description.replace(/Wazuh/g, 'Server'),
-                summary: summary.replace(/Wazuh/g, 'Server'),
+                description: description.replace(/Cyb3rhq/g, 'Server'),
+                summary: summary.replace(/Cyb3rhq/g, 'Server'),
                 tags,
                 ...(args.length ? { args } : {}),
                 ...(query.length
@@ -410,7 +410,7 @@ node ${cliFilePath} --spec https://raw.githubusercontent.com/wazuh/wazuh/master/
                         ...(params.description
                           ? {
                               description: params.description.replace(
-                                /Wazuh/g,
+                                /Cyb3rhq/g,
                                 'Server',
                               ),
                             }
@@ -438,7 +438,7 @@ node ${cliFilePath} --spec https://raw.githubusercontent.com/wazuh/wazuh/master/
 
     function extractDataSecurityActions(spec, configuration) {
       /* Replicate the logic of GET /security/actions endpoint response
-        Based on https://github.com/wazuh/wazuh/blob/v4.4.3/framework/wazuh/security.py#L1090-L1105
+        Based on https://github.com/cyb3rhq/cyb3rhq/blob/v4.4.3/framework/cyb3rhq/security.py#L1090-L1105
       */
       let data = {};
       for (const path in spec.paths) {

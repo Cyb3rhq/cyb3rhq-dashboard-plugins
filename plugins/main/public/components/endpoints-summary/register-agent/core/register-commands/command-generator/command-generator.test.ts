@@ -4,7 +4,7 @@ import {
   IOptionalParameters,
   tOptionalParams,
 } from '../types';
-import { DuplicatedOSException, DuplicatedOSOptionException, NoOSSelectedException, WazuhVersionUndefinedException } from '../exceptions';
+import { DuplicatedOSException, DuplicatedOSOptionException, NoOSSelectedException, Cyb3rhqVersionUndefinedException } from '../exceptions';
 
 const mockedCommandValue = 'mocked command';
 const mockedCommandsResponse = jest.fn().mockReturnValue(mockedCommandValue);
@@ -29,7 +29,7 @@ export type tOperatingSystem = ILinuxOSTypes | IMacOSTypes | IWindowsOSTypes;
 // Defined Optional Parameters
 
 
-export type tOptionalParameters = 'server_address' | 'agent_name' | 'agent_group' | 'protocol' | 'wazuh_password';
+export type tOptionalParameters = 'server_address' | 'agent_name' | 'agent_group' | 'protocol' | 'cyb3rhq_password';
 
 const osDefinitions: IOSDefinition<tOperatingSystem, tOptionalParameters>[] = [
   {
@@ -53,23 +53,23 @@ const osDefinitions: IOSDefinition<tOperatingSystem, tOptionalParameters>[] = [
 
 const optionalParams: tOptionalParams<tOptionalParameters> = {
   server_address: {
-    property: 'WAZUH_MANAGER',
+    property: 'CYB3RHQ_MANAGER',
     getParamCommand: props => `${props.property}=${props.value}`,
   },
   agent_name: {
-    property: 'WAZUH_AGENT_NAME',
+    property: 'CYB3RHQ_AGENT_NAME',
     getParamCommand: props => `${props.property}=${props.value}`,
   },
   protocol: {
-    property: 'WAZUH_MANAGER_PROTOCOL',
+    property: 'CYB3RHQ_MANAGER_PROTOCOL',
     getParamCommand: props => `${props.property}=${props.value}`,
   },
   agent_group: {
-    property: 'WAZUH_AGENT_GROUP',
+    property: 'CYB3RHQ_AGENT_GROUP',
     getParamCommand: props => `${props.property}=${props.value}`,
   },
-  wazuh_password: {
-    property: 'WAZUH_PASSWORD',
+  cyb3rhq_password: {
+    property: 'CYB3RHQ_PASSWORD',
     getParamCommand: props => `${props.property}=${props.value}`,
   },
 };
@@ -79,7 +79,7 @@ const optionalValues: IOptionalParameters<tOptionalParameters> = {
   agent_name: '',
   protocol: '',
   agent_group: '',
-  wazuh_password: '',
+  cyb3rhq_password: '',
 };
 
 describe('Command Generator', () => {
@@ -137,7 +137,7 @@ describe('Command Generator', () => {
     expect(commands).toEqual({
       os: 'linux',
       architecture: 'x64',
-      wazuhVersion: '4.4',
+      cyb3rhqVersion: '4.4',
       install_command: mockedCommandValue,
       start_command: mockedCommandValue,
       url_package: mockedCommandValue,
@@ -163,7 +163,7 @@ describe('Command Generator', () => {
       agent_name: 'agent1',
       protocol: 'tcp',
       agent_group: '',
-      wazuh_password: '123456',
+      cyb3rhq_password: '123456',
     };
     commandGenerator.addOptionalParams(optionalValues);
 
@@ -171,7 +171,7 @@ describe('Command Generator', () => {
     expect(commands).toEqual({
       os: selectedOs.name,
       architecture: selectedOs.architecture,
-      wazuhVersion: '4.4',
+      cyb3rhqVersion: '4.4',
       install_command: mockedCommandValue,
       start_command: mockedCommandValue,
       url_package: mockedCommandValue,
@@ -191,10 +191,10 @@ describe('Command Generator', () => {
           value: optionalValues.protocol,
           name: 'protocol',
         }),
-        wazuh_password: optionalParams.wazuh_password.getParamCommand({
-          property: optionalParams.wazuh_password.property,
-          value: optionalValues.wazuh_password,
-          name: 'wazuh_password',
+        cyb3rhq_password: optionalParams.cyb3rhq_password.getParamCommand({
+          property: optionalParams.cyb3rhq_password.property,
+          value: optionalValues.cyb3rhq_password,
+          name: 'cyb3rhq_password',
         }),
       },
     });
@@ -310,7 +310,7 @@ describe('Command Generator', () => {
       new CommandGenerator(osDefinitions, optionalParams, '');
     } catch (error) {
       if (error instanceof Error)
-        expect(error).toBeInstanceOf(WazuhVersionUndefinedException);
+        expect(error).toBeInstanceOf(Cyb3rhqVersionUndefinedException);
     }
   });
 
@@ -328,7 +328,7 @@ describe('Command Generator', () => {
     commandGenerator.selectOS(selectedOs);
 
     const optionalValues = {
-      server_address: 'wazuh-ip',
+      server_address: 'cyb3rhq-ip',
     };
 
     commandGenerator.addOptionalParams(optionalValues as IOptionalParameters<tOptionalParameters>);
@@ -360,7 +360,7 @@ describe('Command Generator', () => {
     commandGenerator.selectOS(selectedOs);
 
     const optionalValues = {
-      server_address: 'wazuh-ip',
+      server_address: 'cyb3rhq-ip',
     };
 
     commandGenerator.addOptionalParams(optionalValues as IOptionalParameters<tOptionalParameters>);

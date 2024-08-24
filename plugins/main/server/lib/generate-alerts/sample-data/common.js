@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Common data to generate
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Common data to generate
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@ export const Users = [
   'root',
   'ec2-user',
   'SYSTEM',
-  'wazuh',
+  'cyb3rhq',
   'Administrators',
   'suricata',
   'LOCAL Service',

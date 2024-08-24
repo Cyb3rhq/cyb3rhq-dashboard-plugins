@@ -88,7 +88,7 @@ exports[`SettingsAboutGeneralInfo component should render a component 1`] = `
               <a
                 aria-label="Google Groups"
                 class="euiButtonIcon euiButtonIcon--primary euiButtonIcon--empty euiButtonIcon--xSmall"
-                href="https://groups.google.com/forum/#!forum/wazuh"
+                href="https://groups.google.com/forum/#!forum/cyb3rhq"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -106,7 +106,7 @@ exports[`SettingsAboutGeneralInfo component should render a component 1`] = `
               <a
                 aria-label="Github"
                 class="euiButtonIcon euiButtonIcon--primary euiButtonIcon--empty euiButtonIcon--xSmall"
-                href="https://github.com/wazuh/wazuh-kibana-app"
+                href="https://github.com/cyb3rhq/cyb3rhq-kibana-app"
                 rel="noopener noreferrer"
                 target="_blank"
               >

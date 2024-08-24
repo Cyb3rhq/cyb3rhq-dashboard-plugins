@@ -1,7 +1,7 @@
 //@ts-nocheck
 import { IApi, jobs, SchedulerJob } from './index';
 
-jest.mock('../../controllers/wazuh-hosts');
+jest.mock('../../controllers/cyb3rhq-hosts');
 jest.mock('./save-document');
 jest.mock('./predefined-jobs', () => ({
   jobs: {
@@ -29,8 +29,8 @@ describe('SchedulerJob', () => {
     {
       url: 'https://localhost',
       port: 55000,
-      username: 'wazuh',
-      password: 'wazuh',
+      username: 'cyb3rhq',
+      password: 'cyb3rhq',
       id: 'default',
       cluster_info: {
         status: 'disabled',
@@ -44,8 +44,8 @@ describe('SchedulerJob', () => {
     {
       url: 'https://localhost',
       port: 55000,
-      username: 'wazuh',
-      password: 'wazuh',
+      username: 'cyb3rhq',
+      password: 'cyb3rhq',
       id: 'internal',
       cluster_info: {
         status: 'disabled',
@@ -57,8 +57,8 @@ describe('SchedulerJob', () => {
     {
       url: 'https://externalhost',
       port: 55000,
-      username: 'wazuh',
-      password: 'wazuh',
+      username: 'cyb3rhq',
+      password: 'cyb3rhq',
       id: 'external',
       cluster_info: {
         status: 'disabled',
@@ -72,8 +72,8 @@ describe('SchedulerJob', () => {
     {
       url: 'https://localhost',
       port: 55000,
-      username: 'wazuh',
-      password: 'wazuh',
+      username: 'cyb3rhq',
+      password: 'cyb3rhq',
       id: 'internal',
       cluster_info: {
         status: 'disabled',
@@ -85,8 +85,8 @@ describe('SchedulerJob', () => {
     {
       url: 'https://externalhost',
       port: 55000,
-      username: 'wazuh',
-      password: 'wazuh',
+      username: 'cyb3rhq',
+      password: 'cyb3rhq',
       id: 'external',
       cluster_info: {
         status: 'disabled',
@@ -98,8 +98,8 @@ describe('SchedulerJob', () => {
     {
       url: 'https://externalhost',
       port: 55000,
-      username: 'wazuh',
-      password: 'wazuh',
+      username: 'cyb3rhq',
+      password: 'cyb3rhq',
       id: 'experimental',
       cluster_info: {
         status: 'disabled',
@@ -110,11 +110,11 @@ describe('SchedulerJob', () => {
     },
   ];
   const mockContext = {
-    wazuh: {
+    cyb3rhq: {
       logger: { logger: {} },
       api: { client: [Object] },
     },
-    wazuh_core: {
+    cyb3rhq_core: {
       manageHosts: {
         getEntries: jest.fn(),
       },
@@ -137,7 +137,7 @@ describe('SchedulerJob', () => {
   });
 
   it('should get API object when no specified the `apis` parameter on the job object', async () => {
-    mockContext.wazuh_core.manageHosts.getEntries.mockResolvedValue(oneApi);
+    mockContext.cyb3rhq_core.manageHosts.getEntries.mockResolvedValue(oneApi);
 
     const apis: IApi[] = await schedulerJob.getApiObjects();
     expect(apis).not.toBeUndefined();
@@ -146,7 +146,7 @@ describe('SchedulerJob', () => {
   });
 
   it('should get all API objects when no specified the `apis` parameter on the job object', async () => {
-    mockContext.wazuh_core.manageHosts.getEntries.mockResolvedValue(twoApi);
+    mockContext.cyb3rhq_core.manageHosts.getEntries.mockResolvedValue(twoApi);
     const apis: IApi[] = await schedulerJob.getApiObjects();
 
     expect(apis).not.toBeUndefined();
@@ -155,7 +155,7 @@ describe('SchedulerJob', () => {
   });
 
   it('should get one of two API object when specified the id in `apis` parameter on the job object', async () => {
-    mockContext.wazuh_core.manageHosts.getEntries.mockResolvedValue(twoApi);
+    mockContext.cyb3rhq_core.manageHosts.getEntries.mockResolvedValue(twoApi);
     jobs[schedulerJob.jobName] = {
       ...jobs[schedulerJob.jobName],
       apis: ['internal'],
@@ -169,7 +169,7 @@ describe('SchedulerJob', () => {
   });
 
   it('should get two of three API object when specified the id in `apis` parameter on the job object', async () => {
-    mockContext.wazuh_core.manageHosts.getEntries.mockResolvedValue(threeApi);
+    mockContext.cyb3rhq_core.manageHosts.getEntries.mockResolvedValue(threeApi);
     const selectedApis = ['internal', 'external'];
     jobs[schedulerJob.jobName] = {
       ...jobs[schedulerJob.jobName],
@@ -186,7 +186,7 @@ describe('SchedulerJob', () => {
   });
 
   it('should throw an exception when no get APIs', async () => {
-    mockContext.wazuh_core.manageHosts.getEntries.mockResolvedValue([]);
+    mockContext.cyb3rhq_core.manageHosts.getEntries.mockResolvedValue([]);
     await expect(schedulerJob.getApiObjects()).rejects.toEqual({
       error: 10001,
       message: 'No API host configured in configuration',
@@ -194,7 +194,7 @@ describe('SchedulerJob', () => {
   });
 
   it('should throw an exception when no match API', async () => {
-    mockContext.wazuh_core.manageHosts.getEntries.mockResolvedValue(threeApi);
+    mockContext.cyb3rhq_core.manageHosts.getEntries.mockResolvedValue(threeApi);
     jobs[schedulerJob.jobName] = {
       ...jobs[schedulerJob.jobName],
       apis: ['unkown'],

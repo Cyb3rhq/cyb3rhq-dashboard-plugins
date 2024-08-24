@@ -6,7 +6,7 @@ import {
   HttpError,
   ErrorHandler,
 } from '../../../../../react-services/error-management';
-import WazuhDataGrid from '../../../../common/wazuh-data-grid/wz-data-grid';
+import Cyb3rhqDataGrid from '../../../../common/cyb3rhq-data-grid/wz-data-grid';
 import { tDataGridColumn } from '../../../../common/data-grid';
 
 type tDrillDownDataGridProps = {
@@ -61,7 +61,7 @@ export default function DrillDownDataGrid(props: tDrillDownDataGridProps) {
 
   return (
     <EuiFlexItem>
-      <WazuhDataGrid
+      <Cyb3rhqDataGrid
         results={results}
         defaultColumns={defaultTableColumns}
         indexPattern={indexPattern}

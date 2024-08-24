@@ -29,7 +29,7 @@ import { withRouterSearch } from '../../../../../../components/common/hocs';
 import NavigationService from '../../../../../../react-services/navigation-service';
 import {
   getDataPlugin,
-  getWazuhCorePlugin,
+  getCyb3rhqCorePlugin,
 } from '../../../../../../kibana-services';
 import { threatHunting } from '../../../../../../utils/applications';
 import { euiThemeVars } from '@osd/ui-shared-deps/theme';
@@ -170,7 +170,7 @@ export default withRouterSearch(
 
       const currentIndexPattern = await getDataPlugin().indexPatterns.get(
         AppState.getCurrentPattern() ||
-          getWazuhCorePlugin().configuration.getSettingValue('pattern'),
+          getCyb3rhqCorePlugin().configuration.getSettingValue('pattern'),
       );
 
       this.setState({

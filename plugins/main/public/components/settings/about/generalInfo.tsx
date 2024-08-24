@@ -88,7 +88,7 @@ export const SettingsAboutGeneralInfo = ({
                   aria-label='Google Groups'
                   iconType={googleGroupsSVG}
                   iconSize='xxl'
-                  href='https://groups.google.com/forum/#!forum/wazuh'
+                  href='https://groups.google.com/forum/#!forum/cyb3rhq'
                   target='_blank'
                 >
                   Google groups
@@ -99,7 +99,7 @@ export const SettingsAboutGeneralInfo = ({
                   aria-label='Github'
                   iconType='logoGithub'
                   iconSize='xxl'
-                  href='https://github.com/wazuh/wazuh-kibana-app'
+                  href='https://github.com/cyb3rhq/cyb3rhq-kibana-app'
                   target='_blank'
                 >
                   Github

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of global configuration - remote tab.
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - React component for show configuration of global configuration - remote tab.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -41,7 +41,7 @@ const helpLinks = [
   {
     text: 'Remote daemon reference',
     href: webDocumentationLink(
-      'user-manual/reference/daemons/wazuh-remoted.html',
+      'user-manual/reference/daemons/cyb3rhq-remoted.html',
     ),
   },
   {

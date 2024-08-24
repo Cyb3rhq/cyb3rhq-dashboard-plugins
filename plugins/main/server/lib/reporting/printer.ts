@@ -6,7 +6,7 @@ import filterIconRaw from './filter-icon-raw';
 import * as TimSort from 'timsort';
 import { REPORTS_PRIMARY_COLOR } from '../../../common/constants';
 import { Logger } from 'opensearch-dashboards/server';
-import { IConfigurationEnhanced } from '../../../../wazuh-core/server';
+import { IConfigurationEnhanced } from '../../../../cyb3rhq-core/server';
 
 interface IVisualization {
   title: string;

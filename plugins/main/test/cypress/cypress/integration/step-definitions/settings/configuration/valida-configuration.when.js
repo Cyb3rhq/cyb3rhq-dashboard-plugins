@@ -150,7 +150,7 @@ const texts = require('../../../../fixtures/configuration.panel.text.json');
 
 Then('The app current settings are displayed', () => {
     elementTextIncludes(settingTitle, texts.configurationTitle);
-    (Cypress.env('type') == 'wzd') ? elementTextIncludes(settingSubTitle, 'Configuration file located at /usr/share/wazuh-dashboard/data/wazuh/config/wazuh.yml') : elementTextIncludes(settingSubTitle, texts.configurationDescription);
+    (Cypress.env('type') == 'wzd') ? elementTextIncludes(settingSubTitle, 'Configuration file located at /usr/share/cyb3rhq-dashboard/data/cyb3rhq/config/cyb3rhq.yml') : elementTextIncludes(settingSubTitle, texts.configurationDescription);
 
     elementIsVisible(generalPanelTitle);
     elementIsVisible(generalPanelIndexPatternName);
@@ -329,7 +329,7 @@ Then('The app current settings are displayed', () => {
     elementTextIncludes(generalPanelLogLevelLabel, texts.Panel[0].items[7].label);
     elementTextIncludes(generalPanelEnrollmentName, texts.Panel[0].items[8].title);
 
-    (Cypress.env('type') == 'wzd') ? elementTextIncludes(generalPanelEnrollmentDescription, 'Specifies the Wazuh registration server, used for the agent enrollment.') : elementTextIncludes(generalPanelEnrollmentDescription, texts.Panel[0].items[8].subTitle);
+    (Cypress.env('type') == 'wzd') ? elementTextIncludes(generalPanelEnrollmentDescription, 'Specifies the Cyb3rhq registration server, used for the agent enrollment.') : elementTextIncludes(generalPanelEnrollmentDescription, texts.Panel[0].items[8].subTitle);
 
     elementTextIncludes(generalPanelEnrollmentLabel, texts.Panel[0].items[8].label);
 
@@ -352,17 +352,17 @@ Then('The app current settings are displayed', () => {
     elementTextIncludes(healthCheckPanelKnowFieldsLabel, texts.Panel[1].items[4].label);
     elementTextIncludes(healthCheckPanelRemoveMetaFieldsPrefixName, texts.Panel[1].items[5].title);
 
-    (Cypress.env('type') == 'wzd') ? elementTextIncludes(healthCheckPanelRemoveMetaFieldsPrefixDescription, 'Change the default value of the Wazuh dashboard metaField configuration') : elementTextIncludes(healthCheckPanelRemoveMetaFieldsPrefixDescription, texts.Panel[1].items[5].subTitle);
+    (Cypress.env('type') == 'wzd') ? elementTextIncludes(healthCheckPanelRemoveMetaFieldsPrefixDescription, 'Change the default value of the Cyb3rhq dashboard metaField configuration') : elementTextIncludes(healthCheckPanelRemoveMetaFieldsPrefixDescription, texts.Panel[1].items[5].subTitle);
 
     elementTextIncludes(healthCheckPanelRemoveMetaFieldsPrefixLabel, texts.Panel[1].items[5].label);
     elementTextIncludes(healthCheckPanelSetBucketPrefixName, texts.Panel[1].items[6].title);
 
-    (Cypress.env('type') == 'wzd') ? elementTextIncludes(healthCheckPanelSetBucketPrefixDescription, 'Change the default value of the Wazuh dashboard max buckets configuration') : elementTextIncludes(healthCheckPanelSetBucketPrefixDescription, texts.Panel[1].items[6].subTitle);
+    (Cypress.env('type') == 'wzd') ? elementTextIncludes(healthCheckPanelSetBucketPrefixDescription, 'Change the default value of the Cyb3rhq dashboard max buckets configuration') : elementTextIncludes(healthCheckPanelSetBucketPrefixDescription, texts.Panel[1].items[6].subTitle);
 
     elementTextIncludes(healthCheckPanelSetBucketLabel, texts.Panel[1].items[6].label);
     elementTextIncludes(healthCheckPanelSetTimePrefixName, texts.Panel[1].items[7].title);
 
-    (Cypress.env('type') == 'wzd') ? elementTextIncludes(healthCheckPanelSetTimePrefixDescription, 'Change the default value of the Wazuh dashboard timeFilter configuration') : elementTextIncludes(healthCheckPanelSetTimePrefixDescription, texts.Panel[1].items[7].subTitle);
+    (Cypress.env('type') == 'wzd') ? elementTextIncludes(healthCheckPanelSetTimePrefixDescription, 'Change the default value of the Cyb3rhq dashboard timeFilter configuration') : elementTextIncludes(healthCheckPanelSetTimePrefixDescription, texts.Panel[1].items[7].subTitle);
 
     elementTextIncludes(healthCheckPanelSetTimeLabel, texts.Panel[1].items[7].label);
 
@@ -374,7 +374,7 @@ Then('The app current settings are displayed', () => {
     elementTextIncludes(monitoringPanelStatusPatterLabel, texts.Panel[2].items[0].label);
     elementTextIncludes(monitoringPanelFrequencyName, texts.Panel[2].items[1].title);
 
-    (Cypress.env('type') == 'wzd') ? elementTextIncludes(monitoringPanelFrequencyDescription, 'Frequency, in seconds, of API requests to get the state of the agents and create a new document in the wazuh-monitoring index with this data.') : elementTextIncludes(monitoringPanelFrequencyDescription, texts.Panel[2].items[1].subTitle);
+    (Cypress.env('type') == 'wzd') ? elementTextIncludes(monitoringPanelFrequencyDescription, 'Frequency, in seconds, of API requests to get the state of the agents and create a new document in the cyb3rhq-monitoring index with this data.') : elementTextIncludes(monitoringPanelFrequencyDescription, texts.Panel[2].items[1].subTitle);
 
     elementTextIncludes(monitoringPanelFrequencyLabel, texts.Panel[2].items[1].label);
     elementTextIncludes(monitoringPanelIndexShardsName, texts.Panel[2].items[2].title);
@@ -385,12 +385,12 @@ Then('The app current settings are displayed', () => {
     elementTextIncludes(monitoringPanelPanelIndexReplicasLabel, texts.Panel[2].items[3].label);
     elementTextIncludes(monitoringPanelIndexCreationName, texts.Panel[2].items[4].title);
 
-    (Cypress.env('type') == 'wzd') ? elementTextIncludes(monitoringPanelIndexCreationDescription, 'Define the interval in which a new wazuh-monitoring index will be created.') : elementTextIncludes(monitoringPanelIndexCreationDescription, texts.Panel[2].items[4].subTitle);
+    (Cypress.env('type') == 'wzd') ? elementTextIncludes(monitoringPanelIndexCreationDescription, 'Define the interval in which a new cyb3rhq-monitoring index will be created.') : elementTextIncludes(monitoringPanelIndexCreationDescription, texts.Panel[2].items[4].subTitle);
 
     elementTextIncludes(monitoringPanelIndexCreationLabel, texts.Panel[2].items[4].label);
     elementTextIncludes(monitoringPanelIndexPatternName, texts.Panel[2].items[5].title);
 
-    (Cypress.env('type') == 'wzd') ? elementTextIncludes(monitoringPanelIndexPatternDescription, 'Default index pattern to use for Wazuh monitoring.') : elementTextIncludes(monitoringPanelIndexPatternDescription, texts.Panel[2].items[5].subTitle);
+    (Cypress.env('type') == 'wzd') ? elementTextIncludes(monitoringPanelIndexPatternDescription, 'Default index pattern to use for Cyb3rhq monitoring.') : elementTextIncludes(monitoringPanelIndexPatternDescription, texts.Panel[2].items[5].subTitle);
 
     elementTextIncludes(monitoringPanelIndexPatternLabel, texts.Panel[2].items[5].label);
 
@@ -425,23 +425,23 @@ Then('The app current settings are displayed', () => {
     elementTextIncludes(logoPanelTitle, texts.Panel[4].name);
     elementTextIncludes(LogosCustomizationPanelLogoAppName, texts.Panel[4].items[0].title);
 
-    (Cypress.env('type') == 'wzd') ? elementTextIncludes(LogosCustomizationPanelLogoAppDescription, 'Set the name of the app logo stored at /plugins/wazuh/public/assets/') : elementTextIncludes(LogosCustomizationPanelLogoAppDescription, texts.Panel[4].items[0].subTitle);
+    (Cypress.env('type') == 'wzd') ? elementTextIncludes(LogosCustomizationPanelLogoAppDescription, 'Set the name of the app logo stored at /plugins/cyb3rhq/public/assets/') : elementTextIncludes(LogosCustomizationPanelLogoAppDescription, texts.Panel[4].items[0].subTitle);
 
 
     elementTextIncludes(LogosCustomizationPanelLogoAppPatterLabel, texts.Panel[4].items[0].label);
     elementTextIncludes(LogosCustomizationPanelLogosSidebarName, texts.Panel[4].items[1].title);
 
-    (Cypress.env('type') == 'wzd') ? elementTextIncludes(LogosCustomizationPanelLogosSidebarDescription, 'Set the name of the sidebar logo stored at /plugins/wazuh/public/assets') : elementTextIncludes(LogosCustomizationPanelLogosSidebarDescription, texts.Panel[4].items[1].subTitle);
+    (Cypress.env('type') == 'wzd') ? elementTextIncludes(LogosCustomizationPanelLogosSidebarDescription, 'Set the name of the sidebar logo stored at /plugins/cyb3rhq/public/assets') : elementTextIncludes(LogosCustomizationPanelLogosSidebarDescription, texts.Panel[4].items[1].subTitle);
 
     elementTextIncludes(LogosCustomizationPanelLogosSidebarLabel, texts.Panel[4].items[1].label);
     elementTextIncludes(LogosCustomizationPanelLogoHealthCheckName, texts.Panel[4].items[2].title);
 
-    (Cypress.env('type') == 'wzd') ? elementTextIncludes(LogosCustomizationPanelLogoHealthCheckDescription, 'Set the name of the health-check logo stored at /plugins/wazuh/public/assets/') : elementTextIncludes(LogosCustomizationPanelLogoHealthCheckDescription, texts.Panel[4].items[2].subTitle);
+    (Cypress.env('type') == 'wzd') ? elementTextIncludes(LogosCustomizationPanelLogoHealthCheckDescription, 'Set the name of the health-check logo stored at /plugins/cyb3rhq/public/assets/') : elementTextIncludes(LogosCustomizationPanelLogoHealthCheckDescription, texts.Panel[4].items[2].subTitle);
 
     elementTextIncludes(LogosCustomizationPanelLogoHealthCheckLabel, texts.Panel[4].items[2].label);
     elementTextIncludes(LogosCustomizationPanelLogoReportName, texts.Panel[4].items[3].title);
 
-    (Cypress.env('type') == 'wzd') ? elementTextIncludes(LogosCustomizationPanelLogoReportDescription, 'Set the name of the reports logo (.png) stored at /plugins/wazuh/public/assets/') : elementTextIncludes(LogosCustomizationPanelLogoReportDescription, texts.Panel[4].items[3].subTitle);
+    (Cypress.env('type') == 'wzd') ? elementTextIncludes(LogosCustomizationPanelLogoReportDescription, 'Set the name of the reports logo (.png) stored at /plugins/cyb3rhq/public/assets/') : elementTextIncludes(LogosCustomizationPanelLogoReportDescription, texts.Panel[4].items[3].subTitle);
 
     elementTextIncludes(LogosCustomizationPanelLogoReportLabel, texts.Panel[4].items[3].label);
 })

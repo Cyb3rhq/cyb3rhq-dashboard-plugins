@@ -10,7 +10,7 @@ import {
   EuiSpacer,
 } from '@elastic/eui';
 
-// Wazuh components
+// Cyb3rhq components
 import {
   withUserAuthorizationPrompt,
   withGlobalBreadcrumb,

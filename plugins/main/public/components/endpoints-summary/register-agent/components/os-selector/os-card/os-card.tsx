@@ -58,7 +58,7 @@ export const OsCard = ({ onChange, value }: Props) => {
             <EuiLink
               target='_blank'
               href={webDocumentationLink(
-                'installation-guide/wazuh-agent/index.html',
+                'installation-guide/cyb3rhq-agent/index.html',
               )}
               rel='noopener noreferrer'
             >

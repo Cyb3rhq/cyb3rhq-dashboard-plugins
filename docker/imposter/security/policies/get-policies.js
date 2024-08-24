@@ -1,5 +1,5 @@
-var storeWazuh = stores.open('storeWazuh');
-var deletePolicies = storeWazuh.load('deletePolicies');
+var storeCyb3rhq = stores.open('storeCyb3rhq');
+var deletePolicies = storeCyb3rhq.load('deletePolicies');
 
 switch (deletePolicies) {
   case false:
@@ -8,7 +8,7 @@ switch (deletePolicies) {
       .withFile('security/policies/get-policies.json');
     break;
   case true:
-    storeWazuh.save('deletePolicies', false);
+    storeCyb3rhq.save('deletePolicies', false);
     respond()
       .withStatusCode(200)
       .withFile('security/policies/get-policies-after-delete.json');

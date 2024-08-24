@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Audit sample data
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Audit sample data
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ export const dataAudit = [{
         exe: '/usr/sbin/sudo',
         command: 'sudo',
         success: 'yes',
-        cwd: "/home/wazuh",
+        cwd: "/home/cyb3rhq",
         type: randomArrayItem(auditType),
       },
     },
@@ -55,7 +55,7 @@ export const dataAudit = [{
         exe: '/usr/sbin/sshd',
         command: 'ssh',
         success: 'yes',
-        cwd: "/home/wazuh",
+        cwd: "/home/cyb3rhq",
         type: randomArrayItem(auditType),
       },
     },
@@ -83,7 +83,7 @@ export const dataAudit = [{
         exe: '/usr/sbin/crond',
         command: 'cron',
         success: 'yes',
-        cwd: "/home/wazuh",
+        cwd: "/home/cyb3rhq",
         type: randomArrayItem(auditType),
       },
     },
@@ -111,7 +111,7 @@ export const dataAudit = [{
         exe: '/usr/sbin/ls',
         command: 'ls',
         success: 'yes',
-        cwd: "/home/wazuh",
+        cwd: "/home/cyb3rhq",
         type: randomArrayItem(auditType),
       },
     },
@@ -139,7 +139,7 @@ export const dataAudit = [{
         exe: '/usr/sbin/consoletype',
         command: 'consoletype',
         success: 'yes',
-        cwd: "/home/wazuh",
+        cwd: "/home/cyb3rhq",
         type: randomArrayItem(auditType),
       },
     },
@@ -167,7 +167,7 @@ export const dataAudit = [{
         exe: '/usr/sbin/bash',
         command: 'bash',
         success: 'yes',
-        cwd: "/home/wazuh",
+        cwd: "/home/cyb3rhq",
         type: randomArrayItem(auditType),
       },
     },
@@ -195,7 +195,7 @@ export const dataAudit = [{
         exe: '/usr/sbin/id',
         command: 'id',
         success: 'yes',
-        cwd: "/home/wazuh",
+        cwd: "/home/cyb3rhq",
         type: randomArrayItem(auditType),
       },
     },
@@ -223,7 +223,7 @@ export const dataAudit = [{
         exe: '/usr/sbin/grep',
         command: 'grep',
         success: 'yes',
-        cwd: "/home/wazuh",
+        cwd: "/home/cyb3rhq",
         type: randomArrayItem(auditType),
       },
     },
@@ -251,7 +251,7 @@ export const dataAudit = [{
         exe: '/usr/sbin/hostname',
         command: 'hostname',
         success: 'yes',
-        cwd: "/home/wazuh",
+        cwd: "/home/cyb3rhq",
         type: randomArrayItem(auditType),
       },
     },
@@ -305,7 +305,7 @@ export const dataAudit = [{
   //         id: "1002556",
   //         type: "CONFIG_CHANGE",
   //         list: "4",
-  //         key: "wazuh_fim"
+  //         key: "cyb3rhq_fim"
   //       },
   //     },
   //     rule: {

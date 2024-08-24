@@ -12,7 +12,7 @@ export const getAllOptionals = (
 ) => {
   // create paramNameOrderList, which is an array of the keys of optionals add interface
   const paramNameOrderList: (keyof IOptionalParameters<tOptionalParameters>)[] =
-    ['serverAddress', 'wazuhPassword', 'agentGroups', 'agentName', 'protocol'];
+    ['serverAddress', 'cyb3rhqPassword', 'agentGroups', 'agentName', 'protocol'];
 
   if (!optionals) return '';
   let paramsText = Object.entries(paramNameOrderList).reduce(
@@ -33,7 +33,7 @@ export const getAllOptionalsMacos = (
 ) => {
   // create paramNameOrderList, which is an array of the keys of optionals add interface
   const paramNameOrderList: (keyof IOptionalParameters<tOptionalParameters>)[] =
-    ['serverAddress', 'agentGroups', 'agentName', 'protocol', 'wazuhPassword'];
+    ['serverAddress', 'agentGroups', 'agentName', 'protocol', 'cyb3rhqPassword'];
 
   if (!optionals) return '';
 
@@ -57,8 +57,8 @@ export const getAllOptionalsMacos = (
 export const getDEBAMD64InstallCommand = (
   props: tOSEntryInstallCommand<tOptionalParameters>,
 ) => {
-  const { optionals, urlPackage, wazuhVersion } = props;
-  const packageName = `wazuh-agent_${wazuhVersion}-1_amd64.deb`;
+  const { optionals, urlPackage, cyb3rhqVersion } = props;
+  const packageName = `cyb3rhq-agent_${cyb3rhqVersion}-1_amd64.deb`;
   return `wget ${urlPackage} && sudo ${
     optionals && getAllOptionals(optionals)
   }dpkg -i ./${packageName}`;
@@ -67,8 +67,8 @@ export const getDEBAMD64InstallCommand = (
 export const getDEBARM64InstallCommand = (
   props: tOSEntryInstallCommand<tOptionalParameters>,
 ) => {
-  const { optionals, urlPackage, wazuhVersion } = props;
-  const packageName = `wazuh-agent_${wazuhVersion}-1_arm64.deb`;
+  const { optionals, urlPackage, cyb3rhqVersion } = props;
+  const packageName = `cyb3rhq-agent_${cyb3rhqVersion}-1_arm64.deb`;
   return `wget ${urlPackage} && sudo ${
     optionals && getAllOptionals(optionals)
   }dpkg -i ./${packageName}`;
@@ -79,8 +79,8 @@ export const getDEBARM64InstallCommand = (
 export const getRPMAMD64InstallCommand = (
   props: tOSEntryInstallCommand<tOptionalParameters>,
 ) => {
-  const { optionals, urlPackage, wazuhVersion, architecture } = props;
-  const packageName = `wazuh-agent-${wazuhVersion}-1.x86_64.rpm`;
+  const { optionals, urlPackage, cyb3rhqVersion, architecture } = props;
+  const packageName = `cyb3rhq-agent-${cyb3rhqVersion}-1.x86_64.rpm`;
   return `curl -o ${packageName} ${urlPackage} && sudo ${
     optionals && getAllOptionals(optionals)
   }rpm -ihv ${packageName}`;
@@ -89,8 +89,8 @@ export const getRPMAMD64InstallCommand = (
 export const getRPMARM64InstallCommand = (
   props: tOSEntryInstallCommand<tOptionalParameters>,
 ) => {
-  const { optionals, urlPackage, wazuhVersion, architecture } = props;
-  const packageName = `wazuh-agent-${wazuhVersion}-1.aarch64.rpm`;
+  const { optionals, urlPackage, cyb3rhqVersion, architecture } = props;
+  const packageName = `cyb3rhq-agent-${cyb3rhqVersion}-1.aarch64.rpm`;
   return `curl -o ${packageName} ${urlPackage} && sudo ${
     optionals && getAllOptionals(optionals)
   }rpm -ihv ${packageName}`;
@@ -102,7 +102,7 @@ export const getRPMARM64InstallCommand = (
 export const getLinuxStartCommand = (
   _props: tOSEntryProps<tOptionalParameters>,
 ) => {
-  return `sudo systemctl daemon-reload\nsudo systemctl enable wazuh-agent\nsudo systemctl start wazuh-agent`;
+  return `sudo systemctl daemon-reload\nsudo systemctl enable cyb3rhq-agent\nsudo systemctl start cyb3rhq-agent`;
 };
 
 /******** Windows ********/
@@ -111,7 +111,7 @@ export const getWindowsInstallCommand = (
   props: tOSEntryInstallCommand<tOptionalParameters>,
 ) => {
   const { optionals, urlPackage, name } = props;
-  return `Invoke-WebRequest -Uri ${urlPackage} -OutFile \$env:tmp\\wazuh-agent; msiexec.exe /i \$env:tmp\\wazuh-agent /q ${
+  return `Invoke-WebRequest -Uri ${urlPackage} -OutFile \$env:tmp\\cyb3rhq-agent; msiexec.exe /i \$env:tmp\\cyb3rhq-agent /q ${
     optionals && getAllOptionals(optionals, name)
   }`;
 };
@@ -119,7 +119,7 @@ export const getWindowsInstallCommand = (
 export const getWindowsStartCommand = (
   _props: tOSEntryProps<tOptionalParameters>,
 ) => {
-  return `NET START WazuhSvc`;
+  return `NET START Cyb3rhqSvc`;
 };
 
 /******** MacOS ********/
@@ -137,18 +137,18 @@ export const getMacOsInstallCommand = (
   const { optionals, urlPackage } = props;
 
   let optionalsForCommand = { ...optionals };
-  if (optionalsForCommand?.wazuhPassword) {
+  if (optionalsForCommand?.cyb3rhqPassword) {
     /**
      * We use the JSON.stringify to prevent that the scaped specials characters will be removed
      * and maintain the format of the password
       The JSON.stringify maintain the password format but adds " to wrap the characters
     */
     const scapedPasswordLength = JSON.stringify(
-      optionalsForCommand?.wazuhPassword,
+      optionalsForCommand?.cyb3rhqPassword,
     ).length;
     // We need to remove the " added by JSON.stringify
-    optionalsForCommand.wazuhPassword = `${JSON.stringify(
-      optionalsForCommand?.wazuhPassword,
+    optionalsForCommand.cyb3rhqPassword = `${JSON.stringify(
+      optionalsForCommand?.cyb3rhqPassword,
     ).substring(1, scapedPasswordLength - 1)}`;
   }
 
@@ -161,16 +161,16 @@ export const getMacOsInstallCommand = (
 
   // If no variables are set, the echo will be empty
   const macOSInstallationSetEnvVariablesScript = macOSInstallationOptions
-    ? `echo "${macOSInstallationOptions}" > /tmp/wazuh_envs && `
+    ? `echo "${macOSInstallationOptions}" > /tmp/cyb3rhq_envs && `
     : ``;
 
   // Merge environment variables with installation script
-  const macOSInstallationScript = `curl -so wazuh-agent.pkg ${urlPackage} && ${macOSInstallationSetEnvVariablesScript}sudo installer -pkg ./wazuh-agent.pkg -target /`;
+  const macOSInstallationScript = `curl -so cyb3rhq-agent.pkg ${urlPackage} && ${macOSInstallationSetEnvVariablesScript}sudo installer -pkg ./cyb3rhq-agent.pkg -target /`;
   return macOSInstallationScript;
 };
 
 export const getMacosStartCommand = (
   _props: tOSEntryProps<tOptionalParameters>,
 ) => {
-  return `sudo /Library/Ossec/bin/wazuh-control start`;
+  return `sudo /Library/Ossec/bin/cyb3rhq-control start`;
 };

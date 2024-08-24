@@ -15,7 +15,7 @@ import {
 import { SearchResponse } from '../../../../../../src/core/server';
 import { HitsCounter } from '../../../kibana-integrations/discover/application/components/hits_counter/hits_counter';
 import { formatNumWithCommas } from '../../../kibana-integrations/discover/application/helpers';
-import { getWazuhCorePlugin } from '../../../kibana-services';
+import { getCyb3rhqCorePlugin } from '../../../kibana-services';
 import {
   ErrorHandler,
   ErrorFactory,
@@ -38,10 +38,10 @@ import {
 } from '../../common/data-source';
 import { useDataSource } from '../../common/data-source/hooks';
 import { IndexPattern } from '../../../../../src/plugins/data/public';
-import { DocumentViewTableAndJson } from '../wazuh-discover/components/document-view-table-and-json';
-import { wzDiscoverRenderColumns } from '../wazuh-discover/render-columns';
+import { DocumentViewTableAndJson } from '../cyb3rhq-discover/components/document-view-table-and-json';
+import { wzDiscoverRenderColumns } from '../cyb3rhq-discover/render-columns';
 import { WzSearchBar } from '../../common/search-bar';
-import { MAX_ENTRIES_PER_QUERY } from '../wazuh-discover/wz-flyout-discover';
+import { MAX_ENTRIES_PER_QUERY } from '../cyb3rhq-discover/wz-flyout-discover';
 
 type TDocumentDetailsTab = {
   id: string;
@@ -106,7 +106,7 @@ export const TableIndexer = ({
   );
   const [isExporting, setIsExporting] = useState<boolean>(false);
 
-  const sideNavDocked = getWazuhCorePlugin().hooks.useDockedSideNav();
+  const sideNavDocked = getCyb3rhqCorePlugin().hooks.useDockedSideNav();
 
   const onClickInspectDoc = useMemo(
     () => (index: number) => {

@@ -31,7 +31,7 @@ describe('OutdatedAgentsCard', () => {
       );
 
       const outdatedAgentsNumberElement = getByTestId(
-        'wazuh-endpoints-summary-outdated-agents-number',
+        'cyb3rhq-endpoints-summary-outdated-agents-number',
       );
       expect(outdatedAgentsNumberElement).toHaveClass(
         'euiTextColor euiTextColor--success',
@@ -51,7 +51,7 @@ describe('OutdatedAgentsCard', () => {
       );
 
       const outdatedAgentsNumberElement = getByTestId(
-        'wazuh-endpoints-summary-outdated-agents-number',
+        'cyb3rhq-endpoints-summary-outdated-agents-number',
       );
       expect(outdatedAgentsNumberElement).toHaveClass(
         'euiTextColor euiTextColor--warning',
@@ -71,10 +71,10 @@ describe('OutdatedAgentsCard', () => {
 
     await awaitForMyComponent(wrapper);
 
-    expect(wrapper.find('.wazuh-outdated-agents-panel').exists()).toBeTruthy();
+    expect(wrapper.find('.cyb3rhq-outdated-agents-panel').exists()).toBeTruthy();
     expect(wrapper.find(EuiButtonEmpty).exists()).not.toBeTruthy();
 
-    wrapper.find('.wazuh-outdated-agents-panel').simulate('click');
+    wrapper.find('.cyb3rhq-outdated-agents-panel').simulate('click');
     expect(wrapper.find(EuiButtonEmpty).exists()).toBeTruthy();
   });
 
@@ -89,10 +89,10 @@ describe('OutdatedAgentsCard', () => {
 
     await awaitForMyComponent(wrapper);
 
-    expect(wrapper.find('.wazuh-outdated-agents-panel').exists()).toBeTruthy();
+    expect(wrapper.find('.cyb3rhq-outdated-agents-panel').exists()).toBeTruthy();
     expect(wrapper.find(EuiButtonEmpty).exists()).not.toBeTruthy();
 
-    wrapper.find('.wazuh-outdated-agents-panel').simulate('click');
+    wrapper.find('.cyb3rhq-outdated-agents-panel').simulate('click');
     expect(wrapper.find(EuiButtonEmpty).exists()).toBeTruthy();
 
     wrapper.find(EuiButtonEmpty).simulate('click');
@@ -111,17 +111,17 @@ describe('OutdatedAgentsCard', () => {
 
     await awaitForMyComponent(wrapper);
 
-    expect(wrapper.find('.wazuh-outdated-agents-panel').exists()).toBeTruthy();
+    expect(wrapper.find('.cyb3rhq-outdated-agents-panel').exists()).toBeTruthy();
     expect(wrapper.find(EuiButtonEmpty).exists()).not.toBeTruthy();
 
-    wrapper.find('.wazuh-outdated-agents-panel').simulate('click');
+    wrapper.find('.cyb3rhq-outdated-agents-panel').simulate('click');
     expect(wrapper.find(EuiButtonEmpty).exists()).toBeTruthy();
     expect(wrapper.find(EuiButtonEmpty).prop('isDisabled')).toBe(true);
   });
 
   it('check documentation link to update agents', async () => {
     const documentationLink = webDocumentationLink(
-      'upgrade-guide/wazuh-agent/index.html',
+      'upgrade-guide/cyb3rhq-agent/index.html',
     );
     const wrapper = await mount(
       <OutdatedAgentsCard
@@ -133,10 +133,10 @@ describe('OutdatedAgentsCard', () => {
 
     await awaitForMyComponent(wrapper);
 
-    expect(wrapper.find('.wazuh-outdated-agents-panel').exists()).toBeTruthy();
+    expect(wrapper.find('.cyb3rhq-outdated-agents-panel').exists()).toBeTruthy();
     expect(wrapper.find(EuiButtonEmpty).exists()).not.toBeTruthy();
 
-    wrapper.find('.wazuh-outdated-agents-panel').simulate('click');
+    wrapper.find('.cyb3rhq-outdated-agents-panel').simulate('click');
     expect(wrapper.find(EuiLink).exists()).toBeTruthy();
     expect(wrapper.find(EuiLink).prop('href')).toBe(documentationLink);
   });

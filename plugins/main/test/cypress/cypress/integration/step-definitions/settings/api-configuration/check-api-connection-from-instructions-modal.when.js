@@ -7,7 +7,7 @@ When('The user tests the API connection from the instructions', () => {
     cy.get('tbody tr td').then(($e) => {
 
       let index = $e.findIndex((i, element) => {
-        return element.text().indexOf('wazuh-manage');
+        return element.text().indexOf('cyb3rhq-manage');
     });
     cy.get('tbody tr:nth-child('+index+') td:nth-child(9) button[aria-label="Check connection"]').click();
   });

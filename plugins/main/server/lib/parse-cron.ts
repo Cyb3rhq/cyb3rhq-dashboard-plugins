@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module to transform seconds interval to cron readable format
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Module to transform seconds interval to cron readable format
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -10,7 +10,7 @@
  * Find more information about this on the LICENSE file.
  */
 import cron from 'node-cron';
-import { WAZUH_MONITORING_DEFAULT_CRON_FREQ } from '../../common/constants';
+import { CYB3RHQ_MONITORING_DEFAULT_CRON_FREQ } from '../../common/constants';
 
 export function parseCron(interval: string) {
   try {
@@ -40,6 +40,6 @@ export function parseCron(interval: string) {
     }
     return cronstr;
   } catch (error) {
-    return WAZUH_MONITORING_DEFAULT_CRON_FREQ;
+    return CYB3RHQ_MONITORING_DEFAULT_CRON_FREQ;
   }
 }

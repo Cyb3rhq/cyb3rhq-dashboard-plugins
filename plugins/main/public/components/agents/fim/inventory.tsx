@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Integrity monitoring components
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Integrity monitoring components
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -139,7 +139,7 @@ export class Inventory extends Component {
     const { section, selectView, agent } = props;
     const filters = JSON.parse(
       window.localStorage.getItem(
-        `wazuh-${section}-${selectView}-${
+        `cyb3rhq-${section}-${selectView}-${
           this.state?.selectedTabId || 'files'
         }-${agent['id']}`,
       ) || '{}',
@@ -150,7 +150,7 @@ export class Inventory extends Component {
   setStoreFilters(filters) {
     const { section, selectView, agent } = this.props;
     window.localStorage.setItem(
-      `wazuh-${section}-${selectView}-${this.state?.selectedTabId || 'files'}-${
+      `cyb3rhq-${section}-${selectView}-${this.state?.selectedTabId || 'files'}-${
         agent['id']
       }`,
       JSON.stringify(filters),

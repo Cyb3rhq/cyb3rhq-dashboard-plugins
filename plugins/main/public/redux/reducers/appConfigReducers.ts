@@ -1,6 +1,6 @@
 /*
- * Wazuh app - App Config Reducer
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - App Config Reducer
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,8 +19,8 @@ const initialState: AppConfigState = {
   hasError: false,
   data: {
     // TODO: this should use the configuration service
-    'vulnerabilities.pattern': 'wazuh-states-vulnerabilities',
-    'fleet.pattern': 'wazuh-fleet-agents',
+    'vulnerabilities.pattern': 'cyb3rhq-states-vulnerabilities',
+    'fleet.pattern': 'cyb3rhq-fleet-agents',
   },
 };
 

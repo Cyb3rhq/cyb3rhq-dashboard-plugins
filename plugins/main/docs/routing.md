@@ -61,7 +61,7 @@ const Security = () => {
         <>
           {allowRunAs !== undefined &&
             allowRunAs !==
-              getWazuhCorePlugin().API_USER_STATUS_RUN_AS.ENABLED &&
+              getCyb3rhqCorePlugin().API_USER_STATUS_RUN_AS.ENABLED &&
             isNotRunAs(allowRunAs)}
           <RolesMapping></RolesMapping>
         </>

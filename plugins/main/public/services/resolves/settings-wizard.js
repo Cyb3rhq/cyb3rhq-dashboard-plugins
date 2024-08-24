@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module to execute some checks on most app routes
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Module to execute some checks on most app routes
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -76,7 +76,7 @@ export function settingsWizard(_, wzMisc, disableErrors = false) {
               AppState.setNavigation({
                 reloaded: false,
                 discoverPrevious: false,
-                discoverSections: ['/overview/', '/agents', '/wazuh-dev'],
+                discoverSections: ['/overview/', '/agents', '/cyb3rhq-dev'],
               });
               throw new Error('Could not select any API entry');
             }

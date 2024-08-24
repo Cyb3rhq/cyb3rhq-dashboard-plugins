@@ -9,9 +9,9 @@ import { LOGS_PAGE } from '../../pageobjects/wzd/settings/logs.page';
 import { MISCELLANEOUS_PAGE } from '../../pageobjects/wzd/settings/miscellaneous.page';
 import { MODULES_PAGE } from '../../pageobjects/wzd/settings/modules.page';
 import { SAMPLE_DATA_PAGE } from '../../pageobjects/wzd/settings/sample-data.page';
-import { DECODERS_PAGE } from '../../pageobjects/wzd/wazuh-menu/decoders.page';
-import { RULES_PAGE } from '../../pageobjects/wzd/wazuh-menu/rules.page';
-import { WAZUH_MENU_PAGE } from '../../pageobjects/wzd/wazuh-menu/wazuh-menu.page';
+import { DECODERS_PAGE } from '../../pageobjects/wzd/cyb3rhq-menu/decoders.page';
+import { RULES_PAGE } from '../../pageobjects/wzd/cyb3rhq-menu/rules.page';
+import { CYB3RHQ_MENU_PAGE } from '../../pageobjects/wzd/cyb3rhq-menu/cyb3rhq-menu.page';
 import { MODULES_DIRECTORY_PAGE } from '../../pageobjects/wzd/modules-directory.page';
 import { REPORTING_PAGE } from '../../pageobjects/wzd/reporting/report.page';
 
@@ -20,7 +20,7 @@ import { BASIC_MODULES } from './wzd/basic-modules-mapper';
 import { MODULES_CARDS, MODULES_SETTINGS } from './wzd/modules-mapper';
 import { SAMPLE_DATA } from './wzd/sample-data-mapper';
 import { SETTINGS_MENU_LINKS } from './wzd/settings-mapper';
-import { GROUPS_PAGE } from '../../pageobjects/xpack/wazuh-menu/groups.page';
+import { GROUPS_PAGE } from '../../pageobjects/xpack/cyb3rhq-menu/groups.page';
 export const WZD_PAGES_MAPPER = {
   DEPLOY_NEW_AGENT_PAGE,
   AGENTS_PAGE,
@@ -35,7 +35,7 @@ export const WZD_PAGES_MAPPER = {
   SAMPLE_DATA_PAGE,
   DECODERS_PAGE,
   RULES_PAGE,
-  WAZUH_MENU_PAGE,
+  CYB3RHQ_MENU_PAGE,
   MODULES_DIRECTORY_PAGE,
   REPORTING_PAGE,
 

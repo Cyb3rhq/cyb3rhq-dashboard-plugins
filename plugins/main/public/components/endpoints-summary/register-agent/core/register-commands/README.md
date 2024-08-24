@@ -71,7 +71,7 @@ type tOptionalParameters =
   | 'agent_name'
   | 'agent_group'
   | 'protocol'
-  | 'wazuh_password';
+  | 'cyb3rhq_password';
 
 export interface IOSDefinition<
   OS extends IOperationSystem,
@@ -152,7 +152,7 @@ export type tOptionalParamsName =
   | 'agent_name'
   | 'protocol'
   | 'agent_group'
-  | 'wazuh_password';
+  | 'cyb3rhq_password';
 
 export type tOptionalParams = {
   [key in tOptionalParamsName]: {
@@ -170,7 +170,7 @@ This configuration will define the different optional parameters that we want to
 
 export const optionalParameters: tOptionalParams<tOptionalParameters> = {
   server_address: {
-      property: 'WAZUH_MANAGER',
+      property: 'CYB3RHQ_MANAGER',
       getParamCommand:  props => 'returns the optional param command'
     }
   },
@@ -205,7 +205,7 @@ export interface ICommandGenerator<
   Params extends string,
 > extends ICommandGeneratorMethods<Params> {
   osDefinitions: IOSDefinition<OS, Params>[];
-  wazuhVersion: string;
+  cyb3rhqVersion: string;
 }
 
 export interface ICommandGeneratorMethods<T extends string> {
@@ -328,7 +328,7 @@ If we specify the optional parameters the `Command Generator` will process the c
 
 ```ts
 export interface ICommandsResponse<T extends string> {
-  wazuhVersion: string;
+  cyb3rhqVersion: string;
   os: string;
   architecture: string;
   url_package: string;

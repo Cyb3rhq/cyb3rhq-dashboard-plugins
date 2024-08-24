@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Specific methods to fetch Wazuh TSC data from Elasticsearch
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Specific methods to fetch Cyb3rhq TSC data from Elasticsearch
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@ import { Base } from './base-query';
  * @param {Number} context Endpoint context
  * @param {Number} gte Timestamp (ms) from
  * @param {Number} lte Timestamp (ms) to
- * @param {String} filters E.g: cluster.name: wazuh AND rule.groups: vulnerability
+ * @param {String} filters E.g: cluster.name: cyb3rhq AND rule.groups: vulnerability
  * @returns {Array<String>}
  */
 export const topTSCRequirements = async (
@@ -77,7 +77,7 @@ export const topTSCRequirements = async (
  * @param {Number} gte Timestamp (ms) from
  * @param {Number} lte Timestamp (ms) to
  * @param {String} requirement TSCrequirement. E.g: 'CC7.2'
- * @param {String} filters E.g: cluster.name: wazuh AND rule.groups: vulnerability
+ * @param {String} filters E.g: cluster.name: cyb3rhq AND rule.groups: vulnerability
  * @returns {Array<String>}
  */
 export const getRulesByRequirement = async (

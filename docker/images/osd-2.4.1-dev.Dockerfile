@@ -14,7 +14,7 @@ RUN yarn install
 RUN yarn config set registry http://host.docker.internal:4873 && \
     sed -i 's/https:\/\/registry.yarnpkg.com/http:\/\/host.docker.internal:4873/g' yarn.lock
 
-RUN mkdir -p /home/node/kbn/data/wazuh/config
+RUN mkdir -p /home/node/kbn/data/cyb3rhq/config
 
 FROM node:14.20.0
 USER node

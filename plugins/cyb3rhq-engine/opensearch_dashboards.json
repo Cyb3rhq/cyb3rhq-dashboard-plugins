@@ -1,0 +1,14 @@
+{
+  "id": "cyb3rhqEngine",
+  "version": "5.0.0-00",
+  "opensearchDashboardsVersion": "opensearchDashboards",
+  "server": true,
+  "ui": true,
+  "requiredPlugins": [
+    "opensearchDashboardsUtils",
+    "cyb3rhqCore",
+    "dashboard",
+    "embeddable",
+    "data"
+  ]
+}

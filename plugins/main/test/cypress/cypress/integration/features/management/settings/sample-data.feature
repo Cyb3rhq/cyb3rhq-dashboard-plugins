@@ -1,12 +1,12 @@
 Feature: Add/Delete Sample data to modules
 
-  As a wazuh user
+  As a cyb3rhq user
   I want to add sample data indices
   in order to check modules
 
   @sampleData @actions
   Scenario: Add all sample data
-    Given The wazuh admin user is logged
+    Given The cyb3rhq admin user is logged
     When The user navigates to Sample data settings
     And All buttons have add status
     And The user adds sample data for
@@ -17,7 +17,7 @@ Feature: Add/Delete Sample data to modules
 
   @sampleData @actions
   Scenario: Delete all sample data
-      Given The wazuh admin user is logged
+      Given The cyb3rhq admin user is logged
       When The user navigates to Sample data settings
       And All buttons have remove status
       And The user removes sample data for

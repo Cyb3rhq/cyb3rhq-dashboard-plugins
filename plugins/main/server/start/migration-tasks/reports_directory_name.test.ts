@@ -3,9 +3,9 @@ import md5 from 'md5';
 import { execSync } from 'child_process';
 import path from 'path';
 import {
-  WAZUH_DATA_ABSOLUTE_PATH,
-  WAZUH_DATA_DOWNLOADS_DIRECTORY_PATH,
-  WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH,
+  CYB3RHQ_DATA_ABSOLUTE_PATH,
+  CYB3RHQ_DATA_DOWNLOADS_DIRECTORY_PATH,
+  CYB3RHQ_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH,
 } from '../../../common/constants';
 import {
   createDataDirectoryIfNotExists,
@@ -29,7 +29,7 @@ function mockContextCreator(loggerLevel: string) {
   }
 
   const ctx = {
-    wazuh: {
+    cyb3rhq: {
       logger: {
         info: createLogger('info'),
         warn: createLogger('warn'),
@@ -46,15 +46,15 @@ function mockContextCreator(loggerLevel: string) {
 }
 
 beforeAll(() => {
-  // Create <PLUGIN_PLATFORM_PATH>/data/wazuh directory.
+  // Create <PLUGIN_PLATFORM_PATH>/data/cyb3rhq directory.
   createDataDirectoryIfNotExists();
-  // Create <PLUGIN_PLATFORM_PATH>/data/wazuh/downloads directory.
-  createDirectoryIfNotExists(WAZUH_DATA_DOWNLOADS_DIRECTORY_PATH);
+  // Create <PLUGIN_PLATFORM_PATH>/data/cyb3rhq/downloads directory.
+  createDirectoryIfNotExists(CYB3RHQ_DATA_DOWNLOADS_DIRECTORY_PATH);
 });
 
 afterAll(() => {
-  // Remove <PLUGIN_PLATFORM_PATH>/data/wazuh directory.
-  execSync(`rm -rf ${WAZUH_DATA_ABSOLUTE_PATH}`);
+  // Remove <PLUGIN_PLATFORM_PATH>/data/cyb3rhq directory.
+  execSync(`rm -rf ${CYB3RHQ_DATA_ABSOLUTE_PATH}`);
 });
 
 describe("[migration] `reports` directory doesn't exist", () => {
@@ -86,13 +86,13 @@ describe('[migration] Rename the subdirectories of `reports` directory', () => {
 
   beforeEach(() => {
     mockContext = mockContextCreator('info');
-    // Create <PLUGIN_PLATFORM_PATH>/data/wazuh/downloads/reports directory.
-    createDirectoryIfNotExists(WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH);
+    // Create <PLUGIN_PLATFORM_PATH>/data/cyb3rhq/downloads/reports directory.
+    createDirectoryIfNotExists(CYB3RHQ_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH);
   });
 
   afterEach(() => {
     mockContext = null;
-    execSync(`rm -rf ${WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH}`);
+    execSync(`rm -rf ${CYB3RHQ_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH}`);
   });
 
   const userNameDirectory1 = { name: 'user1', files: 0 };
@@ -165,14 +165,14 @@ describe('[migration] Rename the subdirectories of `reports` directory', () => {
       // Create directories and file/s within directory.
       directories.forEach(({ name, files }) => {
         createDirectoryIfNotExists(
-          path.join(WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, name),
+          path.join(CYB3RHQ_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, name),
         );
         if (files) {
           Array.from(Array(files).keys()).forEach(indexFile => {
             fs.closeSync(
               fs.openSync(
                 path.join(
-                  WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH,
+                  CYB3RHQ_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH,
                   name,
                   `report_${indexFile}.pdf`,
                 ),
@@ -214,7 +214,7 @@ describe('[migration] Rename the subdirectories of `reports` directory', () => {
             // If directory name is a valid MD5, the directory should exist.
             expect(
               fs.existsSync(
-                path.join(WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, name),
+                path.join(CYB3RHQ_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, name),
               ),
             ).toBe(true);
           } else {
@@ -238,14 +238,14 @@ describe('[migration] Rename the subdirectories of `reports` directory', () => {
             expect(
               fs.existsSync(
                 path.join(
-                  WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH,
+                  CYB3RHQ_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH,
                   md5(name),
                 ),
               ),
             ).toBe(true);
             expect(
               !fs.existsSync(
-                path.join(WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, name),
+                path.join(CYB3RHQ_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, name),
               ),
             ).toBe(true);
           }
@@ -269,12 +269,12 @@ describe('[migration] Rename the subdirectories of `reports` directory', () => {
           ).toBe(true);
           expect(
             fs.existsSync(
-              path.join(WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, name),
+              path.join(CYB3RHQ_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, name),
             ),
           ).toBe(true);
           expect(
             fs.existsSync(
-              path.join(WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, md5(name)),
+              path.join(CYB3RHQ_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, md5(name)),
             ),
           ).toBe(true);
         }

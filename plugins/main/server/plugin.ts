@@ -26,7 +26,7 @@ import {
   SharedGlobalConfig,
 } from 'opensearch_dashboards/server';
 
-import { WazuhPluginSetup, WazuhPluginStart, PluginSetup } from './types';
+import { Cyb3rhqPluginSetup, Cyb3rhqPluginStart, PluginSetup } from './types';
 import { setupRoutes } from './routes';
 import {
   jobInitializeRun,
@@ -40,7 +40,7 @@ import { first } from 'rxjs/operators';
 
 declare module 'opensearch_dashboards/server' {
   interface RequestHandlerContext {
-    wazuh: {
+    cyb3rhq: {
       logger: Logger;
       plugins: PluginSetup;
       security: any;
@@ -70,7 +70,7 @@ declare module 'opensearch_dashboards/server' {
   }
 }
 
-export class WazuhPlugin implements Plugin<WazuhPluginSetup, WazuhPluginStart> {
+export class Cyb3rhqPlugin implements Plugin<Cyb3rhqPluginSetup, Cyb3rhqPluginStart> {
   private readonly logger: Logger;
 
   constructor(private readonly initializerContext: PluginInitializerContext) {
@@ -78,11 +78,11 @@ export class WazuhPlugin implements Plugin<WazuhPluginSetup, WazuhPluginStart> {
   }
 
   public async setup(core: CoreSetup, plugins: PluginSetup) {
-    this.logger.debug('Wazuh-wui: Setup');
+    this.logger.debug('Cyb3rhq-wui: Setup');
 
     const serverInfo = core.http.getServerInfo();
 
-    core.http.registerRouteHandlerContext('wazuh', (context, request) => {
+    core.http.registerRouteHandlerContext('cyb3rhq', (context, request) => {
       return {
         // Create a custom logger with a tag composed of HTTP method and path endpoint
         logger: this.logger.get(
@@ -92,8 +92,8 @@ export class WazuhPlugin implements Plugin<WazuhPluginSetup, WazuhPluginStart> {
           info: serverInfo,
         },
         plugins,
-        security: plugins.wazuhCore.dashboardSecurity,
-        api: context.wazuh_core.api,
+        security: plugins.cyb3rhqCore.dashboardSecurity,
+        api: context.cyb3rhq_core.api,
       };
     });
 
@@ -107,7 +107,7 @@ export class WazuhPlugin implements Plugin<WazuhPluginSetup, WazuhPluginStart> {
 
     // Routes
     const router = core.http.createRouter();
-    setupRoutes(router, plugins.wazuhCore);
+    setupRoutes(router, plugins.cyb3rhqCore);
 
     return {};
   }
@@ -125,66 +125,66 @@ export class WazuhPlugin implements Plugin<WazuhPluginSetup, WazuhPluginStart> {
     // Initialize
     jobInitializeRun({
       core,
-      wazuh: {
+      cyb3rhq: {
         logger: this.logger.get('initialize'),
-        api: plugins.wazuhCore.api,
+        api: plugins.cyb3rhqCore.api,
       },
-      wazuh_core: plugins.wazuhCore,
+      cyb3rhq_core: plugins.cyb3rhqCore,
       server: contextServer,
     });
 
     // Sanitize uploaded files tasks
     jobSanitizeUploadedFilesTasksRun({
       core,
-      wazuh: {
+      cyb3rhq: {
         logger: this.logger.get('sanitize-uploaded-files-task'),
-        api: plugins.wazuhCore.api,
+        api: plugins.cyb3rhqCore.api,
       },
-      wazuh_core: plugins.wazuhCore,
+      cyb3rhq_core: plugins.cyb3rhqCore,
       server: contextServer,
     });
 
     // Migration tasks
     jobMigrationTasksRun({
       core,
-      wazuh: {
+      cyb3rhq: {
         logger: this.logger.get('migration-task'),
-        api: plugins.wazuhCore.api,
+        api: plugins.cyb3rhqCore.api,
       },
-      wazuh_core: plugins.wazuhCore,
+      cyb3rhq_core: plugins.cyb3rhqCore,
       server: contextServer,
     });
 
     // Monitoring
     jobMonitoringRun({
       core,
-      wazuh: {
+      cyb3rhq: {
         logger: this.logger.get('monitoring'),
-        api: plugins.wazuhCore.api,
+        api: plugins.cyb3rhqCore.api,
       },
-      wazuh_core: plugins.wazuhCore,
+      cyb3rhq_core: plugins.cyb3rhqCore,
       server: contextServer,
     });
 
     // Scheduler
     jobSchedulerRun({
       core,
-      wazuh: {
+      cyb3rhq: {
         logger: this.logger.get('cron-scheduler'),
-        api: plugins.wazuhCore.api,
+        api: plugins.cyb3rhqCore.api,
       },
-      wazuh_core: plugins.wazuhCore,
+      cyb3rhq_core: plugins.cyb3rhqCore,
       server: contextServer,
     });
 
     // Queue
     jobQueueRun({
       core,
-      wazuh: {
+      cyb3rhq: {
         logger: this.logger.get('queue'),
-        api: plugins.wazuhCore.api,
+        api: plugins.cyb3rhqCore.api,
       },
-      wazuh_core: plugins.wazuhCore,
+      cyb3rhq_core: plugins.cyb3rhqCore,
       server: contextServer,
     });
     return {};

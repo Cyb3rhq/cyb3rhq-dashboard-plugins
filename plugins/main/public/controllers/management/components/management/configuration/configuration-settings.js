@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Definitions of configuration sections.
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Definitions of configuration sections.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 
 import { hasAgentSupportModule } from '../../../../../react-services/wz-agents';
-import { WAZUH_MODULES_ID } from '../../../../../../common/constants';
+import { CYB3RHQ_MODULES_ID } from '../../../../../../common/constants';
 
 export default [
   {
@@ -103,7 +103,7 @@ export default [
         description:
           'Configuration assessment and automation of compliance monitoring using SCAP checks',
         goto: 'open-scap',
-        when: agent => hasAgentSupportModule(agent, WAZUH_MODULES_ID.OPEN_SCAP),
+        when: agent => hasAgentSupportModule(agent, CYB3RHQ_MODULES_ID.OPEN_SCAP),
       },
       {
         name: 'CIS-CAT',
@@ -158,7 +158,7 @@ export default [
         description:
           'Monitor and collect the activity from Docker containers such as creation, running, starting, stopping or pausing events',
         goto: 'docker-listener',
-        when: agent => hasAgentSupportModule(agent, WAZUH_MODULES_ID.DOCKER),
+        when: agent => hasAgentSupportModule(agent, CYB3RHQ_MODULES_ID.DOCKER),
       },
     ],
   },

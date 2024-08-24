@@ -204,8 +204,8 @@ services:
         mkdir -p /etc/filebeat
         echo admin | filebeat keystore add username --stdin --force
         echo ${PASSWORD}| filebeat keystore add password --stdin --force
-        curl -so /etc/filebeat/wazuh-template.json https://raw.githubusercontent.com/wazuh/wazuh/v4.7.2/extensions/elasticsearch/7.x/wazuh-template.json
-        curl -s https://packages.wazuh.com/4.x/filebeat/wazuh-filebeat-0.3.tar.gz | tar -xvz -C /usr/share/filebeat/module
+        curl -so /etc/filebeat/cyb3rhq-template.json https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/v4.7.2/extensions/elasticsearch/7.x/cyb3rhq-template.json
+        curl -s https://packages.wazuh.com/4.x/filebeat/cyb3rhq-filebeat-0.3.tar.gz | tar -xvz -C /usr/share/filebeat/module
         # copy filebeat to preserve correct permissions without
         # affecting host filesystem
         cp /tmp/filebeat.yml /usr/share/filebeat/filebeat.yml
@@ -222,7 +222,7 @@ services:
     depends_on:
       os1:
         condition: service_healthy
-    image: quay.io/wazuh/osd-dev:${OSD_VERSION}
+    image: quay.io/cyb3rhq/osd-dev:${OSD_VERSION}
     profiles:
       - 'server'
       - 'saml'
@@ -242,14 +242,14 @@ services:
     entrypoint: ['tail', '-f', '/dev/null']
     volumes:
       - osd_cache:/home/node/.cache
-      - '${SRC}/main:/home/node/kbn/plugins/wazuh'
-      - '${SRC}/wazuh-core:/home/node/kbn/plugins/wazuh-core'
-      - '${SRC}/wazuh-check-updates:/home/node/kbn/plugins/wazuh-check-updates'
-      - '${SRC}/wazuh-engine:/home/node/kbn/plugins/wazuh-engine'
-      - '${SRC}/wazuh-fleet:/home/node/kbn/plugins/wazuh-fleet'
+      - '${SRC}/main:/home/node/kbn/plugins/cyb3rhq'
+      - '${SRC}/cyb3rhq-core:/home/node/kbn/plugins/cyb3rhq-core'
+      - '${SRC}/cyb3rhq-check-updates:/home/node/kbn/plugins/cyb3rhq-check-updates'
+      - '${SRC}/cyb3rhq-engine:/home/node/kbn/plugins/cyb3rhq-engine'
+      - '${SRC}/cyb3rhq-fleet:/home/node/kbn/plugins/cyb3rhq-fleet'
       - wd_certs:/home/node/kbn/certs/
-      - ${WAZUH_DASHBOARD_CONF}:/home/node/kbn/config/opensearch_dashboards.yml
-      - ./config/${OSD_MAJOR}/osd/wazuh.yml:/home/node/kbn/data/wazuh/config/wazuh.yml
+      - ${CYB3RHQ_DASHBOARD_CONF}:/home/node/kbn/config/opensearch_dashboards.yml
+      - ./config/${OSD_MAJOR}/osd/cyb3rhq.yml:/home/node/kbn/data/cyb3rhq/config/cyb3rhq.yml
 
   idpsec:
     image: quay.io/keycloak/keycloak:19.0.1
@@ -335,14 +335,14 @@ services:
        bash /enable_saml.sh
        exit 0
       '
-  wazuh.manager:
+  cyb3rhq.manager:
     depends_on:
       os1:
         condition: service_healthy
-    image: wazuh/wazuh-manager:${WAZUH_STACK}
+    image: cyb3rhq/cyb3rhq-manager:${CYB3RHQ_STACK}
     profiles:
       - 'server'
-    hostname: wazuh.manager
+    hostname: cyb3rhq.manager
     # <<: *logging
     networks:
       - os-dev
@@ -352,13 +352,13 @@ services:
       - INDEXER_USERNAME=admin
       - INDEXER_PASSWORD=admin
       - FILEBEAT_SSL_VERIFICATION_MODE=full
-      - SSL_CERTIFICATE_AUTHORITIES=/etc/ssl/wazuh/ca.pem
-      - SSL_CERTIFICATE=/etc/ssl/wazuh/filebeat.pem
-      - SSL_KEY=/etc/ssl/wazuh/filebeat.key
-      - API_USERNAME=wazuh-wui
+      - SSL_CERTIFICATE_AUTHORITIES=/etc/ssl/cyb3rhq/ca.pem
+      - SSL_CERTIFICATE=/etc/ssl/cyb3rhq/filebeat.pem
+      - SSL_KEY=/etc/ssl/cyb3rhq/filebeat.key
+      - API_USERNAME=cyb3rhq-wui
       - API_PASSWORD=MyS3cr37P450r.*-
     volumes:
-      - wm_certs:/etc/ssl/wazuh
+      - wm_certs:/etc/ssl/cyb3rhq
     ports:
       - '514:514'
       - '1514:1514'

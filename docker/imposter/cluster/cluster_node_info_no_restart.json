@@ -5,7 +5,7 @@
         "name": "master-node",
         "type": "master",
         "version": "4.5.0",
-        "ip": "wazuh-master",
+        "ip": "cyb3rhq-master",
         "connection_date": "2021-05-27T10:50:49.175Z"
       },
       {
@@ -26,7 +26,7 @@
         "name": "worker3",
         "type": "worker",
         "version": "4.5.0",
-        "ip": "wazuh-worker",
+        "ip": "cyb3rhq-worker",
         "connection_date": "2021-05-27T10:50:51.342Z"
       },
       {
@@ -47,7 +47,7 @@
         "name": "worker6",
         "type": "worker",
         "version": "4.5.0",
-        "ip": "wazuh-worker",
+        "ip": "cyb3rhq-worker",
         "connection_date": "2021-05-27T10:50:51.342Z"
       },
       {
@@ -75,7 +75,7 @@
         "name": "worker12",
         "type": "worker",
         "version": "4.5.0",
-        "ip": "wazuh-worker",
+        "ip": "cyb3rhq-worker",
         "connection_date": "2019-05-27T10:50:51.342Z"
       }
     ],

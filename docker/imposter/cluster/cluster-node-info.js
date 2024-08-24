@@ -16,18 +16,18 @@ switch (selectedNode) {
 
 // Commented code is used to test the restart only
 //
-// var storeWazuh = stores.open('storeWazuh');
-// var attemptRestart = storeWazuh.load('attempt');
-// var callRestart = storeWazuh.load('callRestart');
+// var storeCyb3rhq = stores.open('storeCyb3rhq');
+// var attemptRestart = storeCyb3rhq.load('attempt');
+// var callRestart = storeCyb3rhq.load('callRestart');
 // if (callRestart) {
 //   if (attemptRestart < 10) {
-//     storeWazuh.save('attempt', attemptRestart + 1);
+//     storeCyb3rhq.save('attempt', attemptRestart + 1);
 //     respond()
 //       .withStatusCode(200)
 //       .withFile('cluster/cluster-node-info-no-restart.json')
 //   } else {
-//     storeWazuh.save('attempt', 0);
-//     storeWazuh.save('callRestart', false);
+//     storeCyb3rhq.save('attempt', 0);
+//     storeCyb3rhq.save('callRestart', false);
 //     respond()
 //       .withStatusCode(200)
 //       .withFile('cluster/cluster-node-info.json')

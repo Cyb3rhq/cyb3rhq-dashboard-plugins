@@ -1,6 +1,6 @@
 /*
- * Wazuh app - HOF to manage the message when elastic show a Response error / security_exception
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - HOF to manage the message when elastic show a Response error / security_exception
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 
 export const tryCatchForIndexPermissionError =
-  (wazuhIndex: string) => functionToTryCatch => async () => {
+  (cyb3rhqIndex: string) => functionToTryCatch => async () => {
     try {
       await functionToTryCatch();
     } catch (error) {
@@ -30,7 +30,7 @@ export const tryCatchForIndexPermissionError =
             ).reason || error.message;
           break;
         case errorTypes.RESPONSE_ERROR:
-          error.message = `Could not check if the index ${wazuhIndex} exists due to no permissions for create, delete or check`;
+          error.message = `Could not check if the index ${cyb3rhqIndex} exists due to no permissions for create, delete or check`;
           break;
       }
       return Promise.reject(error);

@@ -45,7 +45,7 @@ exports[`UpdateDetail component should return the UpdateDetail component 1`] = `
               <h3
                 class="euiTitle euiTitle--small euiAccordionForm__title"
               >
-                Wazuh v4.8.0
+                Cyb3rhq v4.8.0
               </h3>
             </div>
             <div

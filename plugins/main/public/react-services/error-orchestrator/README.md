@@ -40,7 +40,7 @@ The `options` object may contain:
 - `level: UILogLevel` ([UILogLevel](./types.ts) - WARNING | INFO | ERROR) to determine the error type.
 - `severity: UIErrorSeverity` ([UIErrorSeverity](./types.ts) UI | BUSINESS | CRITICAL) - to indicate that the class must use factory.
 - `display: boolean` (default true) - to show the error to the user in UI.
-- `store: boolean` (default false) - Used to stored by request [POST] on our logs (wazuh-ui-plain.log).
+- `store: boolean` (default false) - Used to stored by request [POST] on our logs (cyb3rhq-ui-plain.log).
 - `error: Error` - error caught, message and title to show on UI o store on logs.
 
 ## Software and libraries used
@@ -49,7 +49,7 @@ The `options` object may contain:
 
 ## Copyright & License
 
-Copyright &copy; 2022 Wazuh, Inc.
+Copyright &copy; 2022 Cyb3rhq, Inc.
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 

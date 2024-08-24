@@ -151,7 +151,7 @@ const githubAlertsSummary = {
   ]
 }
 
-// 'Wazuh-App-Overview-OSCAP-Last-alerts'
+// 'Cyb3rhq-App-Overview-OSCAP-Last-alerts'
 const oscapLastAlerts = {
   title: 'Last alerts',
   aggs: [
@@ -161,7 +161,7 @@ const oscapLastAlerts = {
   ]
 }
 
-// 'Wazuh-App-Overview-Audit-Last-alerts'
+// 'Cyb3rhq-App-Overview-Audit-Last-alerts'
 const auditLastAlerts = {
   title: 'Last alerts',
   aggs: [

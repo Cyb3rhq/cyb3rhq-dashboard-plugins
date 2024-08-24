@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component building the configuration component.
+ * Cyb3rhq app - React component building the configuration component.
  *
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -50,7 +50,7 @@ import {
   toastRequiresRunningHealthcheck,
   toastSuccessUpdateConfiguration,
 } from './components/categories/components/show-toasts';
-import { getWazuhCorePlugin } from '../../../kibana-services';
+import { getCyb3rhqCorePlugin } from '../../../kibana-services';
 
 export type ISetting = {
   key: string;
@@ -162,7 +162,7 @@ const WzConfigurationSettingsProvider = props => {
     transformPluginSettingsToFormFields(
       currentConfiguration,
       Object.fromEntries(
-        getWazuhCorePlugin().configuration._settings.entries(),
+        getCyb3rhqCorePlugin().configuration._settings.entries(),
       ),
     ),
   );
@@ -175,8 +175,8 @@ const WzConfigurationSettingsProvider = props => {
   const visibleSettings = Object.entries(fields).map(
     ([fieldKey, fieldForm]) => {
       const pluginSetting =
-        getWazuhCorePlugin().configuration._settings.get(fieldKey);
-      const _categoryMeta = getWazuhCorePlugin().configuration._categories.get(
+        getCyb3rhqCorePlugin().configuration._settings.get(fieldKey);
+      const _categoryMeta = getCyb3rhqCorePlugin().configuration._categories.get(
         String(pluginSetting.category),
       );
       return {
@@ -201,7 +201,7 @@ const WzConfigurationSettingsProvider = props => {
 
   const visibleCategories = groupSettingsByCategory(
     search || visibleSettings,
-    Array.from(getWazuhCorePlugin().configuration._categories.values()),
+    Array.from(getCyb3rhqCorePlugin().configuration._categories.values()),
   );
 
   const onSave = async () => {
@@ -210,7 +210,7 @@ const WzConfigurationSettingsProvider = props => {
       const settingsToUpdate = Object.entries(changed).reduce(
         (accum, [pluginSettingKey, currentValue]) => {
           const pluginSetting =
-            getWazuhCorePlugin().configuration._settings.get(pluginSettingKey);
+            getCyb3rhqCorePlugin().configuration._settings.get(pluginSettingKey);
 
           const transformedValue =
             pluginSetting?.uiFormTransformInputValueToConfigurationValue?.(
@@ -383,7 +383,7 @@ const WzConfigurationSettingsProvider = props => {
                 field: 'category',
                 name: 'Categories',
                 multiSelect: 'or',
-                options: getWazuhCorePlugin()
+                options: getCyb3rhqCorePlugin()
                   .configuration.getUniqueCategories()
                   .map(({ title }) => ({ value: title })),
               },
@@ -394,7 +394,7 @@ const WzConfigurationSettingsProvider = props => {
           {visibleCategories &&
             visibleCategories.map(({ category, settings }) => {
               const { description, documentationLink, title } = Array.from(
-                getWazuhCorePlugin().configuration._categories.values(),
+                getCyb3rhqCorePlugin().configuration._categories.values(),
               ).find(({ title: categoryTitle }) => categoryTitle === category);
               return (
                 <Category

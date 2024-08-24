@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Authentication service for Wazuh
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Authentication service for Cyb3rhq
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ import {
   updateUserAccount,
 } from '../redux/actions/appStateActions';
 import { UI_LOGGER_LEVELS } from '../../common/constants';
-import { getWazuhCorePlugin } from '../kibana-services';
+import { getCyb3rhqCorePlugin } from '../kibana-services';
 import { getAuthorizedAgents } from '../react-services/wz-agents';
 import {
   UI_ERROR_SEVERITIES,
@@ -32,7 +32,7 @@ import {
 import { getErrorOrchestrator } from './common-services';
 
 /**
- * Wazuh user authentication class
+ * Cyb3rhq user authentication class
  */
 export class WzAuthentication {
   /**
@@ -97,7 +97,7 @@ export class WzAuthentication {
 
       store.dispatch(
         updateUserAccount(
-          getWazuhCorePlugin().dashboardSecurity.getAccountFromJWTAPIDecodedToken(
+          getCyb3rhqCorePlugin().dashboardSecurity.getAccountFromJWTAPIDecodedToken(
             jwtPayload,
           ),
         ),
@@ -117,7 +117,7 @@ export class WzAuthentication {
       getErrorOrchestrator().handleError(options);
       store.dispatch(
         updateUserAccount(
-          getWazuhCorePlugin().dashboardSecurity.getAccountFromJWTAPIDecodedToken(
+          getCyb3rhqCorePlugin().dashboardSecurity.getAccountFromJWTAPIDecodedToken(
             {}, // This value should cause the user is not considered as an administrator
           ),
         ),
@@ -152,7 +152,7 @@ export class WzAuthentication {
   }
 
   /**
-   * Sends a request to the Wazuh's API to delete the user's token.
+   * Sends a request to the Cyb3rhq's API to delete the user's token.
    *
    * @returns {Object}
    */

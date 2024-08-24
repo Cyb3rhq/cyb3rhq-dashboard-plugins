@@ -3,7 +3,7 @@ import { EmbeddableInput } from '../../../../../../../../src/plugins/embeddable/
 
 const getVisStateAlertsEvolution = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-MITRE-Alerts-Evolution',
+    id: 'Cyb3rhq-App-Overview-MITRE-Alerts-Evolution',
     title: 'Alerts evolution over time',
     type: 'line',
     params: {
@@ -162,7 +162,7 @@ const getVisStateAlertsEvolution = (indexPatternId: string) => {
 
 const getVisStateTopTactics = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-MITRE-Top-Tactics',
+    id: 'Cyb3rhq-App-Overview-MITRE-Top-Tactics',
     title: 'Top tactics',
     type: 'pie',
     params: {
@@ -248,7 +248,7 @@ const getVisStateTopTactics = (indexPatternId: string) => {
 
 const getVisStateAttacksByTechnique = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-MITRE-Attacks-By-Technique',
+    id: 'Cyb3rhq-App-Overview-MITRE-Attacks-By-Technique',
     title: 'Attacks by technique',
     type: 'histogram',
     params: {
@@ -393,7 +393,7 @@ const getVisStateAttacksByTechnique = (indexPatternId: string) => {
 
 const getVisStateTopTacticsByAgent = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-MITRE-Top-Tactics-By-Agent',
+    id: 'Cyb3rhq-App-Overview-MITRE-Top-Tactics-By-Agent',
     title: 'Top tactics by agent',
     type: 'area',
     params: {
@@ -551,7 +551,7 @@ const getVisStateTopTacticsByAgent = (indexPatternId: string) => {
 
 const getVisStateTechniqueByAgent = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-MITRE-Attacks-By-Agent',
+    id: 'Cyb3rhq-App-Overview-MITRE-Attacks-By-Agent',
     title: 'Mitre techniques by agent',
     type: 'pie',
     params: {
@@ -638,7 +638,7 @@ const getVisStateTechniqueByAgent = (indexPatternId: string) => {
 
 const getVisStateAlertsLevelByAttack = indexPatternId => {
   return {
-    id: 'Wazuh-App-Agents-MITRE-Level-By-Attack',
+    id: 'Cyb3rhq-App-Agents-MITRE-Level-By-Attack',
     title: 'Rule level by attack',
     type: 'pie',
     params: {
@@ -768,7 +768,7 @@ const getVisStateAlertsLevelByAttack = indexPatternId => {
 
 const getVisStateMitreAttacksByTactic = indexPatternId => {
   return {
-    id: 'Wazuh-App-Agents-MITRE-Attacks-By-Tactic',
+    id: 'Cyb3rhq-App-Agents-MITRE-Attacks-By-Tactic',
     title: 'MITRE attacks by tactic',
     type: 'histogram',
     params: {
@@ -913,7 +913,7 @@ const getVisStateMitreAttacksByTactic = indexPatternId => {
 
 const getVisStateAlertsLevelByTactic = indexPatternId => {
   return {
-    id: 'Wazuh-App-Agents-MITRE-Level-By-Tactic',
+    id: 'Cyb3rhq-App-Agents-MITRE-Level-By-Tactic',
     title: 'Rule level by tactic',
     type: 'pie',
     params: {

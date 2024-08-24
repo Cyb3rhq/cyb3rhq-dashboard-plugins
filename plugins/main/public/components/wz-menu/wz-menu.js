@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for build q queries.
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - React component for build q queries.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ import {
 } from '@elastic/eui';
 import { AppState } from '../../react-services/app-state';
 import { PatternHandler } from '../../react-services/pattern-handler';
-import { WazuhConfig } from '../../react-services/wazuh-config';
+import { Cyb3rhqConfig } from '../../react-services/cyb3rhq-config';
 import { connect } from 'react-redux';
 import store from '../../redux/store';
 import {
@@ -49,7 +49,7 @@ const sections = {
   'agents-preview': 'agents-preview',
   agents: 'agents-preview',
   settings: 'settings',
-  'wazuh-dev': 'wazuh-dev',
+  'cyb3rhq-dev': 'cyb3rhq-dev',
   'health-check': 'health-check',
   security: 'security',
 };
@@ -73,7 +73,7 @@ export const WzMenu = withWindowSize(
       };
       this.store = store;
       this.genericReq = GenericRequest;
-      this.wazuhConfig = new WazuhConfig();
+      this.cyb3rhqConfig = new Cyb3rhqConfig();
       this.indexPatterns = getDataPlugin().indexPatterns;
       this.isLoading = false;
       this.pinnedAgentManager = new PinnedAgentManager();
@@ -329,7 +329,7 @@ export const WzMenu = withWindowSize(
         if (isPinnedAgent) {
           this.pinnedAgentManager.unPinAgent();
         }
-        if (this.state.currentMenuTab !== 'wazuh-dev') {
+        if (this.state.currentMenuTab !== 'cyb3rhq-dev') {
           /* TODO: this reloads the page to force the components are remounted with the new
           selection of. To avoid this refresh, we would have to do the components are able to react
           to these changes redoing the requests, etc... This will need a considerable time to
@@ -353,10 +353,10 @@ export const WzMenu = withWindowSize(
       }
     };
 
-    buildWazuhNotReadyYet() {
-      const container = document.getElementsByClassName('wazuhNotReadyYet');
+    buildCyb3rhqNotReadyYet() {
+      const container = document.getElementsByClassName('cyb3rhqNotReadyYet');
       return ReactDOM.createPortal(
-        <EuiCallOut title={this.props.state.wazuhNotReadyYet} color='warning'>
+        <EuiCallOut title={this.props.state.cyb3rhqNotReadyYet} color='warning'>
           <EuiFlexGroup
             responsive={false}
             direction='row'
@@ -365,8 +365,8 @@ export const WzMenu = withWindowSize(
             <EuiFlexItem>
               <p></p>
             </EuiFlexItem>
-            {typeof this.props.state.wazuhNotReadyYet === 'string' &&
-              this.props.state.wazuhNotReadyYet.includes('Restarting') && (
+            {typeof this.props.state.cyb3rhqNotReadyYet === 'string' &&
+              this.props.state.cyb3rhqNotReadyYet.includes('Restarting') && (
                 <EuiFlexItem grow={false}>
                   <p>
                     {' '}
@@ -374,7 +374,7 @@ export const WzMenu = withWindowSize(
                   </p>
                 </EuiFlexItem>
               )}
-            {this.props.state.wazuhNotReadyYet ===
+            {this.props.state.cyb3rhqNotReadyYet ===
               'Server could not be recovered.' && (
               <EuiFlexItem grow={false}>
                 <EuiButtonEmpty
@@ -424,7 +424,7 @@ export const WzMenu = withWindowSize(
     onChangePattern = async pattern => {
       try {
         this.setState({ currentSelectedPattern: pattern.id });
-        if (this.state.currentMenuTab !== 'wazuh-dev') {
+        if (this.state.currentMenuTab !== 'cyb3rhq-dev') {
           /* TODO: this reloads the page to force the components are remounted with the new
           selection of. To avoid this refresh, we would have to do the components are able to react
           to these changes redoing the requests, etc... This will need a considerable time to
@@ -543,8 +543,8 @@ export const WzMenu = withWindowSize(
                     </EuiFlexItem>
                   </>
                 )}
-              {this.props.state.wazuhNotReadyYet &&
-                this.buildWazuhNotReadyYet()}
+              {this.props.state.cyb3rhqNotReadyYet &&
+                this.buildCyb3rhqNotReadyYet()}
             </EuiFlexGroup>
           </MountPointPortal>
         </>

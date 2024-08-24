@@ -25,7 +25,7 @@ exports[`Stats component renders correctly to match the snapshot 1`] = `
               class="euiCard__children"
             >
               <div
-                class="wazuh-visualization-layout"
+                class="cyb3rhq-visualization-layout"
                 style="width: 100%; height: 150px;"
               >
                 <div

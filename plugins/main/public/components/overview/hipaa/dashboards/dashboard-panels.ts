@@ -3,7 +3,7 @@ import { EmbeddableInput } from '../../../../../../../src/plugins/embeddable/pub
 
 const getVisStateAlertsVolumeByAgent = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-HIPAA-Heatmap',
+    id: 'Cyb3rhq-App-Overview-HIPAA-Heatmap',
     title: 'Alerts volume by agent',
     type: 'heatmap',
     params: {
@@ -148,7 +148,7 @@ const getVisStateAlertsVolumeByAgent = (indexPatternId: string) => {
 
 const getVisStateTagsCloud = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-HIPAA-Tag-cloud',
+    id: 'Cyb3rhq-App-Overview-HIPAA-Tag-cloud',
     title: 'Most common alerts',
     type: 'tagcloud',
     params: {
@@ -206,7 +206,7 @@ const getVisStateTagsCloud = (indexPatternId: string) => {
 
 const getVisStateTopRequirements = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-HIPAA-Top-10-requirements',
+    id: 'Cyb3rhq-App-Overview-HIPAA-Top-10-requirements',
     title: 'Top 10 requirements',
     type: 'pie',
     params: {
@@ -282,7 +282,7 @@ const getVisStateTopRequirements = (indexPatternId: string) => {
 
 const getVisStateMostActiveAgents = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-HIPAA-Top-10-agents',
+    id: 'Cyb3rhq-App-Overview-HIPAA-Top-10-agents',
     title: 'Most active agents',
     type: 'pie',
     params: {
@@ -359,7 +359,7 @@ const getVisStateMostActiveAgents = (indexPatternId: string) => {
 
 const getVisStateStats = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-HIPAA-Metrics',
+    id: 'Cyb3rhq-App-Overview-HIPAA-Metrics',
     title: 'Stats',
     type: 'metric',
     params: {
@@ -450,7 +450,7 @@ const getVisStateStats = (indexPatternId: string) => {
 
 const getVisStateRequirementsOverTime2 = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-HIPAA-Top-requirements-over-time',
+    id: 'Cyb3rhq-App-Overview-HIPAA-Top-requirements-over-time',
     title: 'Requirements evolution over time',
     type: 'histogram',
     params: {
@@ -595,7 +595,7 @@ const getVisStateRequirementsOverTime2 = (indexPatternId: string) => {
 
 const getVisStateRequirementDistributionByAgent = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-HIPAA-Top-10-requirements-over-time-by-agent',
+    id: 'Cyb3rhq-App-Overview-HIPAA-Top-10-requirements-over-time-by-agent',
     title: 'Requirements distribution by agent',
     type: 'histogram',
     params: {
@@ -741,7 +741,7 @@ const getVisStateRequirementDistributionByAgent = (indexPatternId: string) => {
 
 const getVisStateAgentRequirementsOvertime = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-HIPAA-Requirements-Stacked-Overtime',
+    id: 'Cyb3rhq-App-Agents-HIPAA-Requirements-Stacked-Overtime',
     title: 'Requirements over time',
     type: 'histogram',
     params: {
@@ -879,7 +879,7 @@ const getVisStateAgentRequirementsOvertime = (indexPatternId: string) => {
 
 const getVisStateAgentTopRequirements = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-HIPAA-top-10',
+    id: 'Cyb3rhq-App-Agents-HIPAA-top-10',
     title: 'Top 10 requirements',
     type: 'pie',
     params: {
@@ -967,7 +967,7 @@ const getVisStateAgentTopRequirements = (indexPatternId: string) => {
 
 const getVisStateAgentRequirements = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-HIPAA-Bubbles',
+    id: 'Cyb3rhq-App-Agents-HIPAA-Bubbles',
     title: 'HIPAA requirements',
     type: 'line',
     params: {
@@ -1135,7 +1135,7 @@ const getVisStateAgentRequirements = (indexPatternId: string) => {
 
 const getVisStateAgentRuleLevelDistribution = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-HIPAA-Distributed-By-Level',
+    id: 'Cyb3rhq-App-Agents-HIPAA-Distributed-By-Level',
     title: 'Requirements distribution by level',
     type: 'histogram',
     params: {
@@ -1289,7 +1289,7 @@ const getVisStateAgentRuleLevelDistribution = (indexPatternId: string) => {
 
 const getVisStateAgentCommonAlerts = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-HIPAA-Most-Common',
+    id: 'Cyb3rhq-App-Agents-HIPAA-Most-Common',
     title: 'Most common alerts',
     type: 'tagcloud',
     params: {

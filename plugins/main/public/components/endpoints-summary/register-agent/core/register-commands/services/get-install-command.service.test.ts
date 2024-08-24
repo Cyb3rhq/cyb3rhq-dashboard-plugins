@@ -3,7 +3,7 @@ import { IOSCommandsDefinition, IOSDefinition, IOptionalParameters } from '../ty
 import {
   NoInstallCommandDefinitionException,
   NoPackageURLDefinitionException,
-  WazuhVersionUndefinedException,
+  Cyb3rhqVersionUndefinedException,
 } from '../exceptions';
 
 
@@ -24,7 +24,7 @@ export interface IMacOSTypes {
 export type tOperatingSystem = ILinuxOSTypes | IMacOSTypes | IWindowsOSTypes;
 
 
-export type tOptionalParameters = 'server_address' | 'agent_name' | 'agent_group' | 'protocol' | 'wazuh_password' | 'another_optional_parameter';
+export type tOptionalParameters = 'server_address' | 'agent_name' | 'agent_group' | 'protocol' | 'cyb3rhq_password' | 'another_optional_parameter';
 
 const validOsDefinition: IOSCommandsDefinition<tOperatingSystem, tOptionalParameters> = {
   architecture: 'x64',
@@ -52,7 +52,7 @@ describe('getInstallCommandByOS', () => {
         'linux',
       );
     } catch (error) {
-      expect(error).toBeInstanceOf(WazuhVersionUndefinedException);
+      expect(error).toBeInstanceOf(Cyb3rhqVersionUndefinedException);
     }
   });
   it('should return ERROR when the OS has no install command', () => {
@@ -91,11 +91,11 @@ describe('getInstallCommandByOS', () => {
     };
 
     const optionalParams: IOptionalParameters<tOptionalParameters> = {
-      agent_group: 'WAZUH_GROUP=agent_group',
-      agent_name: 'WAZUH_NAME=agent_name',
-      protocol: 'WAZUH_PROTOCOL=UDP',
-      server_address: 'WAZUH_MANAGER=server_address',
-      wazuh_password: 'WAZUH_PASSWORD=1231323',
+      agent_group: 'CYB3RHQ_GROUP=agent_group',
+      agent_name: 'CYB3RHQ_NAME=agent_name',
+      protocol: 'CYB3RHQ_PROTOCOL=UDP',
+      server_address: 'CYB3RHQ_MANAGER=server_address',
+      cyb3rhq_password: 'CYB3RHQ_PASSWORD=1231323',
       another_optional_parameter: 'params value'
     };
 

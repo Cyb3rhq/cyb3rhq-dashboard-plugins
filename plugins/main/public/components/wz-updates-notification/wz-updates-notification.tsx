@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React Component component to display new updates notification.
+ * Cyb3rhq app - React Component component to display new updates notification.
  *
- * Copyright (C) 2015-2023 Wazuh, Inc.
+ * Copyright (C) 2015-2023 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,7 +13,7 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { getWazuhCheckUpdatesPlugin } from '../../kibana-services';
+import { getCyb3rhqCheckUpdatesPlugin } from '../../kibana-services';
 
 const mapStateToProps = state => {
   return {
@@ -23,8 +23,8 @@ const mapStateToProps = state => {
 export const WzUpdatesNotification = connect(mapStateToProps)(
   ({ appConfig }) => {
     const isUpdatesEnabled =
-      !appConfig?.isLoading && !appConfig?.data?.['wazuh.updates.disabled'];
-    const { UpdatesNotification } = getWazuhCheckUpdatesPlugin();
+      !appConfig?.isLoading && !appConfig?.data?.['cyb3rhq.updates.disabled'];
+    const { UpdatesNotification } = getCyb3rhqCheckUpdatesPlugin();
 
     return isUpdatesEnabled ? <UpdatesNotification /> : <></>;
   },

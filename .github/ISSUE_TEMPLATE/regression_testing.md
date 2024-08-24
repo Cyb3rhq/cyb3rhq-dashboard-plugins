@@ -1,7 +1,7 @@
 ---
 name: Release Candidate - UI regression testing
 about: Report the results after running UI manual tests.
-title: 'Release [WAZUH VERSION] - Release Candidate [RC VERSION] - Wazuh UI regression testing'
+title: 'Release [CYB3RHQ VERSION] - Release Candidate [RC VERSION] - Cyb3rhq UI regression testing'
 labels: 'level/task, type/test'
 assignees: ''
 
@@ -9,7 +9,7 @@ assignees: ''
 
 The following issue aims to run manual tests for the current release candidate, report the results, and open new issues for any encountered errors.
 
-## Wazuh UI tests information
+## Cyb3rhq UI tests information
 |                                        |     |
 |----------------------------------------|-----|
 | **Main release candidate issue**       |     |
@@ -62,7 +62,7 @@ This report can be used by the auditors to dig deeper into any possible failures
 
 | Status         | Platform                       |
 |----------------|--------------------------------|
-| :black_circle: | Wazuh dashboards [VERSION][RC] |
+| :black_circle: | Cyb3rhq dashboards [VERSION][RC] |
 | :black_circle: | Kibana 7.17.9                  |
 | :black_circle: | Kibana 7.16.3                  |
 | :black_circle: | Kibana 7.10.2 + ODFE 1.2.0     |

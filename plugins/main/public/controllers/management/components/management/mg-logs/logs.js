@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Component what renders Management/Logs
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Component what renders Management/Logs
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -223,7 +223,7 @@ export default compose(
     }
 
     /**
-     * Returns an object with the path to request Wazuh logs, the list of nodes and the current selected node.
+     * Returns an object with the path to request Cyb3rhq logs, the list of nodes and the current selected node.
      */
     async getLogsPath() {
       try {
@@ -406,7 +406,7 @@ export default compose(
             name: filter,
             value: filters[filter],
           })),
-          `wazuh-${
+          `cyb3rhq-${
             this.state.selectedNode ? `${this.state.selectedNode}-` : ''
           }ossec-log`,
         );

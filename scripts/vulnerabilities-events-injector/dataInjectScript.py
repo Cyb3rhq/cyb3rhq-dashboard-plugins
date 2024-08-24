@@ -119,10 +119,10 @@ def generateRandomVulnerability():
     vulnerability['detected_at'] = generateRandomDate(180)
     return(vulnerability)
 
-def generateRandomWazuh():
-    wazuh = {}
-    wazuh['cluster'] = {'name':random.choice(['wazuh.manager', 'wazuh']), 'node':random.choice(['master','worker-01','worker-02','worker-03'])}
-    return(wazuh)
+def generateRandomCyb3rhq():
+    cyb3rhq = {}
+    cyb3rhq['cluster'] = {'name':random.choice(['cyb3rhq.manager', 'cyb3rhq']), 'node':random.choice(['master','worker-01','worker-02','worker-03'])}
+    return(cyb3rhq)
 
 def generateRandomData(number):
     for i in range(0, int(number)):
@@ -134,7 +134,7 @@ def generateRandomData(number):
             'package':generateRandomPackage(),
             'tags':generateRandomTags(),
             'vulnerability':generateRandomVulnerability(),
-            'wazuh':generateRandomWazuh()
+            'cyb3rhq':generateRandomCyb3rhq()
         }
 
 def verifyIndex(index,instance):
@@ -184,9 +184,9 @@ def verifySettings():
         if port == '':
             port = '9200'
 
-        index = input("\nEnter the index name [default=wazuh-states-vulnerabilities-default]: \n")
+        index = input("\nEnter the index name [default=cyb3rhq-states-vulnerabilities-default]: \n")
         if index == '':
-            index = 'wazuh-states-vulnerabilities-default'
+            index = 'cyb3rhq-states-vulnerabilities-default'
 
         url = 'https://{}:{}/{}/_doc'.format(ip, port, index)
 

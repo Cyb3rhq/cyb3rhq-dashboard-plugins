@@ -1,7 +1,7 @@
 import fs from 'fs';
 import md5 from 'md5';
 import path from 'path';
-import { WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH } from '../../../common/constants';
+import { CYB3RHQ_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH } from '../../../common/constants';
 
 /**
  * This task renames the report user folder from username to hashed username.
@@ -11,7 +11,7 @@ import { WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH } from '../../../common/con
 export default function migrateReportsDirectoryName(context) {
   // Create a wrapper function that logs to plugin files and platform logging system
   const createLog = (level: string) => message => {
-    context.wazuh.logger[level](`migration:reportsDirectoryName: ${message}`);
+    context.cyb3rhq.logger[level](`migration:reportsDirectoryName: ${message}`);
   };
 
   // Create the logger
@@ -26,7 +26,7 @@ export default function migrateReportsDirectoryName(context) {
     logger.debug('Task started: Migrate reports directory name');
 
     // Skip the task if the directory that stores the reports files doesn't exist in the file system
-    if (!fs.existsSync(WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH)) {
+    if (!fs.existsSync(CYB3RHQ_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH)) {
       logger.debug(
         "Reports directory doesn't exist. The task is not required. Skip.",
       );
@@ -35,21 +35,21 @@ export default function migrateReportsDirectoryName(context) {
 
     // Read the directories/files in the reports path
     logger.debug(
-      `Reading reports directory: ${WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH}`,
+      `Reading reports directory: ${CYB3RHQ_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH}`,
     );
-    fs.readdirSync(WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, {
+    fs.readdirSync(CYB3RHQ_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, {
       withFileTypes: true,
     }).forEach(fileDirent => {
       // If it is a directory and has not a valid MD5 hash, continue the task.
       if (fileDirent.isDirectory() && !isMD5(fileDirent.name)) {
         // Generate the origin and target path and hash the name
         const originDirectoryPath = path.join(
-          WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH,
+          CYB3RHQ_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH,
           fileDirent.name,
         );
         const targetDirectoryName = md5(fileDirent.name);
         const targetDirectoryPath = path.join(
-          WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH,
+          CYB3RHQ_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH,
           targetDirectoryName,
         );
         try {

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React test for wz-user-permissions
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - React test for wz-user-permissions
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -123,7 +123,7 @@ const missingPermissionsForManagerUser = [
   },
 ];
 
-describe('Wazuh User Permissions', () => {
+describe('Cyb3rhq User Permissions', () => {
   describe('Given a Json with permissions that the user does not have', () => {
     describe('Should return a simple required permissions to show on view', () => {
       it('Should return a simple missing permissions for manager user', () => {

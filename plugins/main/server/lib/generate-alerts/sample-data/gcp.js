@@ -1,6 +1,6 @@
 /*
- * Wazuh app - GCP sample data
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - GCP sample data
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@ export const arrayQueryType = ['PTR', 'PTR', 'PTR', 'PTR', 'PTR', 'A'];
 export const arrayResponseCode = ['NXDOMAIN', 'NOERROR', 'WARNING', 'CRITICAL', 'ALERT', 'EMERGENCY', 'SERVFAIL', 'INFO', 'SUCCESS', 'BADTRUNC', 'BADNAME', 'NOTAUTH'];
 export const arraySourceIP = ['163.172.0.0', '1.33.213.199', '83.32.0.0', '154.84.246.205', '75.142.129.202', '171.197.217.149', '77.38.119.17'];
 export const arrayLocation = ['europe-west1', 'us-central1', 'asia-east1', 'australia-southeast1', 'us-west1', 'us-west3', 'us-west2', 'us-west4', 'us-east1', 'us-east2', 'us-east3', 'southamerica-east1'];
-export const arrayProject = ['wazuh-dev', 'wazuh-prod', 'wazuh-test'];
+export const arrayProject = ['cyb3rhq-dev', 'cyb3rhq-prod', 'cyb3rhq-test'];
 export const arraySourceType = ['gce-vm', 'internet'];
 export const arraySeverity = ['ERROR', 'INFO', 'NOTICE', 'CRITICAL', 'EMERGENCY', 'ALERT'];
 export const arrayType = ['dns_query', 'app_script_function', 'generic_task'];

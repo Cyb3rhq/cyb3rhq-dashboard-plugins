@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React test for Stats component.
+ * Cyb3rhq app - React test for Stats component.
  *
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ jest.mock('./last-alerts-stat/last-alerts-service', () => ({
       field: 'cluster.name',
       name: 'master',
     },
-    indexPatternId: 'wazuh-alerts-*',
+    indexPatternId: 'cyb3rhq-alerts-*',
   }),
 }));
 

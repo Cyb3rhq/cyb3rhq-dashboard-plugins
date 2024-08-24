@@ -7,7 +7,7 @@ import { EmbeddableInput } from '../../../../../../../../src/plugins/embeddable/
 
 const getVisStateTop5Nodes = (indexPatternId?: string) => {
   return {
-    id: 'Wazuh-App-Cluster-monitoring-Overview-Node-Pie',
+    id: 'Cyb3rhq-App-Cluster-monitoring-Overview-Node-Pie',
     title: 'Top 5 nodes',
     type: 'pie',
     params: {

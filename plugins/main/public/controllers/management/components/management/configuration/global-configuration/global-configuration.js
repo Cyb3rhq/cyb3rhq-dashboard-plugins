@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of global configuration.
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - React component for show configuration of global configuration.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -59,7 +59,7 @@ const sectionsManager = [
 const sectionsAgent = [{ component: 'com', configuration: 'logging' }];
 
 const mapStateToProps = state => ({
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet,
+  cyb3rhqNotReadyYet: state.appStateReducers.cyb3rhqNotReadyYet,
   clusterNodeSelected: state.configurationReducers.clusterNodeSelected
 });
 

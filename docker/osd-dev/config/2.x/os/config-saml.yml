@@ -28,10 +28,10 @@ config:
           challenge: true
           config:
             idp:
-              metadata_url: http://idp:8080/realms/wazuh/protocol/saml/descriptor
-              entity_id: http://idp:8080/realms/wazuh
+              metadata_url: http://idp:8080/realms/cyb3rhq/protocol/saml/descriptor
+              entity_id: http://idp:8080/realms/cyb3rhq
             sp:
-              entity_id: wazuh
+              entity_id: cyb3rhq
               signature_private_key_filepath: "certs/admin-key.pem"
             kibana_url: https://localhost:5601
             roles_key: Role

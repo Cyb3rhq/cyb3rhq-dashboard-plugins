@@ -101,7 +101,7 @@ async function getRemoteConfiguration(
   }
 }
 /**
- * Get the manager/cluster auth configuration from Wazuh API
+ * Get the manager/cluster auth configuration from Cyb3rhq API
  * @param node
  * @returns
  */

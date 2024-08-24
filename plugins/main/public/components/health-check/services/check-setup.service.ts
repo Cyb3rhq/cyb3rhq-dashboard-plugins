@@ -1,7 +1,7 @@
 /*
- * Wazuh app - Check setup service
+ * Cyb3rhq app - Check setup service
  *
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@
 import { AppState, GenericRequest, WzRequest } from '../../../react-services';
 import { CheckLogger } from '../types/check_logger';
 import {
-  PLUGIN_PLATFORM_WAZUH_DOCUMENTATION_URL_PATH_TROUBLESHOOTING,
+  PLUGIN_PLATFORM_CYB3RHQ_DOCUMENTATION_URL_PATH_TROUBLESHOOTING,
   PLUGIN_APP_NAME,
 } from '../../../../common/constants';
 import { webDocumentationLink } from '../../../../common/services/web_documentation';
@@ -56,7 +56,7 @@ export const checkSetupService =
             `API and ${PLUGIN_APP_NAME} version mismatch. API version: ${apiVersion}. App version: ${
               setupData.data.data['app-version']
             }. Read more about this error in our troubleshooting guide: ${webDocumentationLink(
-              PLUGIN_PLATFORM_WAZUH_DOCUMENTATION_URL_PATH_TROUBLESHOOTING,
+              PLUGIN_PLATFORM_CYB3RHQ_DOCUMENTATION_URL_PATH_TROUBLESHOOTING,
             )}.`,
           );
         }

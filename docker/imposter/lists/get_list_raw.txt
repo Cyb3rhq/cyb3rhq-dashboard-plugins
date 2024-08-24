@@ -1,1 +1,1 @@
-"audit-wazuh-w:write\naudit-wazuh-r:read\naudit-wazuh-a:attribute\naudit-wazuh-x:execute\naudit-wazuh-c:command\n"
+"audit-cyb3rhq-w:write\naudit-cyb3rhq-r:read\naudit-cyb3rhq-a:attribute\naudit-cyb3rhq-x:execute\naudit-cyb3rhq-c:command\n"

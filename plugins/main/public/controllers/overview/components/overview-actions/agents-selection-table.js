@@ -220,7 +220,7 @@ export class AgentSelectionTable extends Component {
             return {
               ...item,
               /*
-              The agent version contains the Wazuh word, this get the string starting with
+              The agent version contains the Cyb3rhq word, this get the string starting with
               v<NUMBER><ANYTHING>
               */
               ...(typeof item.version === 'string'

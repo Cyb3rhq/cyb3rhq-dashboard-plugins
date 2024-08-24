@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Generic error response constructor
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Generic error response constructor
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -12,10 +12,10 @@
 
 /**
  * Error codes:
- * wazuh-api-elastic 20XX
- * wazuh-api         30XX
- * wazuh-elastic     40XX
- * wazuh-reporting   50XX
+ * cyb3rhq-api-elastic 20XX
+ * cyb3rhq-api         30XX
+ * cyb3rhq-elastic     40XX
+ * cyb3rhq-reporting   50XX
  * unknown           1000
  */
 /**

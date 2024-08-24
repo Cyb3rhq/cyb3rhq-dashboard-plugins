@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of active response - active response tab.
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - React component for show configuration of active response - active response tab.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -55,7 +55,7 @@ class WzConfigurationActiveResponseActiveResponse extends Component {
     super(props);
   }
   render() {
-    const { currentConfig, wazuhNotReadyYet } = this.props;
+    const { currentConfig, cyb3rhqNotReadyYet } = this.props;
     const items =
       !isString(currentConfig['analysis-active_response']) &&
       currentConfig['analysis-active_response']['active-response'] &&
@@ -79,7 +79,7 @@ class WzConfigurationActiveResponseActiveResponse extends Component {
           currentConfig['analysis-active_response']['active-response'] &&
           !currentConfig['analysis-active_response']['active-response']
             .length && <WzNoConfig error='not-present' help={helpLinks} />}
-        {wazuhNotReadyYet &&
+        {cyb3rhqNotReadyYet &&
           (!currentConfig || !currentConfig['analysis-active_response']) && (
             <WzNoConfig error='Server not ready yet' help={helpLinks} />
           )}
@@ -104,11 +104,11 @@ class WzConfigurationActiveResponseActiveResponse extends Component {
 
 WzConfigurationActiveResponseActiveResponse.propTypes = {
   // currentConfig: PropTypes.object.isRequired,
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  cyb3rhqNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 };
 
 const mapStateToProps = state => ({
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet,
+  cyb3rhqNotReadyYet: state.appStateReducers.cyb3rhqNotReadyYet,
 });
 
 export default connect(mapStateToProps)(
@@ -123,5 +123,5 @@ export const WzConfigurationActiveResponseActiveResponseAgent = compose(
 )(WzConfigurationActiveResponseActiveResponse);
 
 WzConfigurationActiveResponseActiveResponseAgent.propTypes = {
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  cyb3rhqNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 };

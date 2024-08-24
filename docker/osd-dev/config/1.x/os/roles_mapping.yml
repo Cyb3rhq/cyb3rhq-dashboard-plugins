@@ -1,6 +1,6 @@
 ---
-# In this file users, backendroles and hosts can be mapped to Wazuh indexer Security roles.
-# Permissions for Wazuh indexer roles are configured in roles.yml
+# In this file users, backendroles and hosts can be mapped to Cyb3rhq indexer Security roles.
+# Permissions for Cyb3rhq indexer roles are configured in roles.yml
 
 _meta:
   type: "rolesmapping"
@@ -32,8 +32,8 @@ kibana_user:
   backend_roles:
     - "kibanauser"
   users:
-    - "wazuh_user"
-    - "wazuh_admin"
+    - "cyb3rhq_user"
+    - "cyb3rhq_admin"
   description: "Maps kibanauser to kibana_user"
 
 readall:
@@ -51,21 +51,21 @@ kibana_server:
   users:
     - "kibanaserver"
 
-wazuh_ui_admin:
+cyb3rhq_ui_admin:
   reserved: true
   hidden: false
   backend_roles: []
   hosts: []
   users:
-    - "wazuh_admin"
+    - "cyb3rhq_admin"
     - "kibanaserver"
   and_backend_roles: []
 
-wazuh_ui_user:
+cyb3rhq_ui_user:
   reserved: true
   hidden: false
   backend_roles: []
   hosts: []
   users:
-    - "wazuh_user"
+    - "cyb3rhq_user"
   and_backend_roles: []

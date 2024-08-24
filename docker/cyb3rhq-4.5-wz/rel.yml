@@ -1,0 +1,325 @@
+# Cyb3rhq App Copyright (C) 2021 Cyb3rhq Inc. (License GPLv2)
+version: '3.9'
+
+x-logging: &logging
+  logging:
+    driver: loki
+    options:
+      loki-url: 'http://host.docker.internal:3100/loki/api/v1/push'
+
+services:
+  generator:
+    image: cfssl/cfssl
+    profiles:
+      - 'saml'
+      - 'standard'
+    <<: *logging
+    volumes:
+      - wi_certs:/certs/wi
+      - wd_certs:/certs/wd
+      - wm_certs:/certs/wm
+      - idp_certs:/certs/idp
+      - ./config/certs:/conf
+    # Included to avoid docker from creating duplicated networks
+    networks:
+      - wz-rel
+    entrypoint: /bin/bash
+    command: >
+      -c '
+        export certs=/tmp/certs
+        mkdir $$certs
+      	cd $$certs
+
+      	echo "Generating CA"
+      	cfssl gencert -initca /conf/ca.json | cfssljson -bare ca
+
+      	echo "Generating servers certificates"
+      	for i in cyb3rhq.indexer cyb3rhq.dashboard cyb3rhq.manager; do
+      		echo "Generating cert for $$i"
+      		cat /conf/host.json | \
+      		sed "s/HOST/$$i/g" | \
+      		cfssl gencert \
+      			-ca $$certs/ca.pem \
+      			-ca-key $$certs/ca-key.pem \
+      			-config /conf/cfssl.json \
+      			-profile=server - | \
+      		cfssljson -bare $$i
+      		openssl pkcs8 -topk8 -inform pem -in $$i-key.pem -outform pem -nocrypt -out $$i.key
+      	done
+
+      	echo "Generating clients certificates"
+        	for i in admin saml filebeat; do
+        		echo "Generating cert for $$i"
+      		cat /conf/host.json | \
+      		sed "s/HOST/$$i/g" | \
+      		cfssl gencert \
+      			-ca $$certs/ca.pem \
+      			-ca-key $$certs/ca-key.pem \
+      			-config /conf/cfssl.json \
+      			-profile=client - | \
+      		cfssljson -bare $$i
+      		openssl pkcs8 -topk8 -inform pem -in $$i-key.pem -outform pem -nocrypt -out $$i.key
+      	done
+
+          echo "Setting up permissions"
+
+          rm /certs/wi/* /certs/wd/* /certs/wm/*
+
+          mv $$certs/cyb3rhq.indexer* /certs/wi
+          mv $$certs/admin* /certs/wi
+          mv /certs/wi/admin.key /certs/wi/admin-key.pem
+          cp $$certs/*ca* /certs/wi
+
+          mv $$certs/saml* /certs/idp
+          mv /certs/idp/saml.key /certs/idp/saml-key.pem
+          cp $$certs/*ca* /certs/idp
+
+          mv $$certs/cyb3rhq.dashboard* /certs/wd
+          cp $$certs/*ca* /certs/wd
+
+          mv $$certs/*.* /certs/wm
+
+          chmod 640 /certs/wi/* /certs/wd/* /certs/wm/*
+          chown -R 1000:1000 /certs/*
+          ls -alR /certs/
+
+          sleep 300
+      '
+    healthcheck:
+      test: ['CMD-SHELL', '[ -r /certs/wm/cyb3rhq.manager.pem ]']
+      interval: 2s
+      timeout: 5s
+      retries: 10
+
+  idpsec:
+    image: quay.io/keycloak/keycloak:19.0.1
+    depends_on:
+      generator:
+        condition: service_healthy
+    profiles:
+      - 'saml'
+    volumes:
+      - wi_certs:/certs/wi
+      - wd_certs:/certs/wd
+      - wm_certs:/certs/wm
+      - idp_certs:/certs/idp
+    networks:
+      - wz-rel
+      - mon
+    entrypoint: /bin/bash
+    command: >
+      -c '
+        # trust store
+        for i in /certs/idp/ca.pem /certs/wd/cyb3rhq.dashboard.pem /certs/wi/cyb3rhq.indexer.pem
+        do
+          keytool -import -alias $$(basename $$i .pem) -file $$i -keystore /certs/idp/truststore.jks -storepass SecretPassword -trustcacerts -noprompt
+        done
+        sleep 300
+      '
+    healthcheck:
+      test: ['CMD-SHELL', '[ -r /certs/idp/truststore.jks ]']
+      interval: 2s
+      timeout: 5s
+      retries: 10
+
+  cyb3rhq.manager:
+    depends_on:
+      generator:
+        condition: service_healthy
+    image: cyb3rhq/cyb3rhq-manager:${CYB3RHQ_STACK}
+    profiles:
+      - 'saml'
+      - 'standard'
+    hostname: cyb3rhq.manager
+    networks:
+      - wz-rel
+      - mon
+    <<: *logging
+    environment:
+      - INDEXER_URL=https://cyb3rhq.indexer:9200
+      - INDEXER_USERNAME=admin
+      - INDEXER_PASSWORD=SecretPassword
+      - FILEBEAT_SSL_VERIFICATION_MODE=full
+      - SSL_CERTIFICATE_AUTHORITIES=/etc/ssl/cyb3rhq/ca.pem
+      - SSL_CERTIFICATE=/etc/ssl/cyb3rhq/filebeat.pem
+      - SSL_KEY=/etc/ssl/cyb3rhq/filebeat.key
+      - API_USERNAME=cyb3rhq-wui
+      - API_PASSWORD=MyS3cr37P450r.*-
+    volumes:
+      - cyb3rhq_api_configuration:/var/ossec/api/configuration
+      - cyb3rhq_etc:/var/ossec/etc
+      - cyb3rhq_logs:/var/ossec/logs
+      - cyb3rhq_queue:/var/ossec/queue
+      - cyb3rhq_var_multigroups:/var/ossec/var/multigroups
+      - cyb3rhq_integrations:/var/ossec/integrations
+      - cyb3rhq_active_response:/var/ossec/active-response/bin
+      - cyb3rhq_agentless:/var/ossec/agentless
+      - cyb3rhq_wodles:/var/ossec/wodles
+      - filebeat_etc:/etc/filebeat
+      - filebeat_var:/var/lib/filebeat
+      - wm_certs:/etc/ssl/cyb3rhq
+      - ./config/cyb3rhq_cluster/cyb3rhq_manager.conf:/cyb3rhq-config-mount/etc/ossec.conf
+
+  cyb3rhq.indexer:
+    depends_on:
+      generator:
+        condition: service_healthy
+      idpsetup:
+        condition: service_completed_successfully
+        required: false
+    image: cyb3rhq/cyb3rhq-indexer:${CYB3RHQ_STACK}
+    profiles:
+      - 'saml'
+      - 'standard'
+    hostname: cyb3rhq.indexer
+    networks:
+      - wz-rel
+      - mon
+    <<: *logging
+    environment:
+      - 'OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m'
+      - 'OPENSEARCH_PATH_CONF=/usr/share/cyb3rhq-indexer/config'
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    volumes:
+      - cyb3rhq-indexer-data:/var/lib/cyb3rhq-indexer
+      - wi_certs:/usr/share/cyb3rhq-indexer/certs/
+      - idp_certs:/usr/share/cyb3rhq-indexer/idp/
+      - ./config/cyb3rhq_indexer/cyb3rhq.indexer.yml:/usr/share/cyb3rhq-indexer/opensearch.yml
+      - ./config/cyb3rhq_indexer/internal_users.yml:/usr/share/cyb3rhq-indexer/opensearch-security/internal_users.yml
+      - ${SEC_CONFIG_FILE}:/usr/share/cyb3rhq-indexer/opensearch-security/config.yml
+      - ./config/cyb3rhq_indexer/roles.yml:/usr/share/cyb3rhq-indexer/opensearch-security/roles.yml
+      - ./config/cyb3rhq_indexer/roles_mapping.yml:/usr/share/cyb3rhq-indexer/opensearch-security/roles_mapping.yml
+    healthcheck:
+      test:
+        [
+          'CMD-SHELL',
+          '/usr/share/cyb3rhq-indexer/bin/opensearch-plugin list | grep -q security',
+        ]
+      interval: 10s
+      timeout: 10s
+      retries: 120
+
+  cyb3rhq.dashboard:
+    image: cyb3rhq/cyb3rhq-dashboard:${CYB3RHQ_STACK}
+    profiles:
+      - 'saml'
+      - 'standard'
+    hostname: cyb3rhq.dashboard
+    depends_on:
+      cyb3rhq.indexer:
+        condition: service_healthy
+    networks:
+      - wz-rel
+      - mon
+    <<: *logging
+    ports:
+      - ${KIBANA_PORT}:5601
+    environment:
+      - INDEXER_USERNAME=admin
+      - INDEXER_PASSWORD=SecretPassword
+      - CYB3RHQ_API_URL=https://cyb3rhq.manager
+      - API_USERNAME=cyb3rhq-wui
+      - API_PASSWORD=MyS3cr37P450r.*-
+    volumes:
+      - wd_certs:/usr/share/cyb3rhq-dashboard/certs
+      - ${CYB3RHQ_DASHBOARD_CONF}:/usr/share/cyb3rhq-dashboard/config/opensearch_dashboards.yml
+      - ./config/cyb3rhq_dashboard/cyb3rhq.yml:/usr/share/cyb3rhq-dashboard/data/cyb3rhq/config/cyb3rhq.yml
+
+  exporter:
+    image: quay.io/prometheuscommunity/elasticsearch-exporter:latest
+    profiles:
+      - 'saml'
+      - 'standard'
+    <<: *logging
+    hostname: 'exporter'
+    networks:
+      - wz-rel
+      - mon
+    command:
+      - '--es.uri=https://admin:${KIBANA_PASSWORD}@cyb3rhq-indexer:9200'
+      - '--es.ssl-skip-verify'
+      - '--es.all'
+
+  idp:
+    image: quay.io/keycloak/keycloak:19.0.1
+    depends_on:
+      idpsec:
+        condition: service_healthy
+    profiles:
+      - 'saml'
+    hostname: idp
+    <<: *logging
+    networks:
+      - wz-rel
+      - mon
+    ports:
+      - '8080:8080'
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+      - KC_SPI_TRUSTSTORE_FILE_PASSWORD=SecretPassword
+      - KC_SPI_TRUSTSTORE_FILE_FILE=/certs/truststore.jks
+    volumes:
+      - keycloak-data:/var/lib/keycloak/data
+      - idp_certs:/certs
+    command: start-dev
+    healthcheck:
+      test: curl -f http://idp:8080/realms/master || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 6
+
+  idpsetup:
+    image: badouralix/curl-jq
+    depends_on:
+      idp:
+        condition: service_healthy
+    profiles:
+      - 'saml'
+    hostname: idpsetup
+    <<: *logging
+    networks:
+      - wz-rel
+      - mon
+    volumes:
+      - wi_certs:/certs/wi
+      - ./enable_saml.sh:/enable_saml.sh
+    entrypoint: /bin/sh
+    command: >
+      -c '
+       apk add bash
+       bash /enable_saml.sh
+       exit 0
+      '
+
+networks:
+  wz-rel:
+    name: ${COMPOSE_PROJECT_NAME}
+    driver: bridge
+  mon:
+    external: true
+
+volumes:
+  wi_certs:
+  wd_certs:
+  wm_certs:
+  idp_certs:
+  cyb3rhq_api_configuration:
+  cyb3rhq_etc:
+  cyb3rhq_logs:
+  cyb3rhq_queue:
+  cyb3rhq_var_multigroups:
+  cyb3rhq_integrations:
+  cyb3rhq_active_response:
+  cyb3rhq_agentless:
+  cyb3rhq_wodles:
+  filebeat_etc:
+  filebeat_var:
+  cyb3rhq-indexer-data:
+  keycloak-data:

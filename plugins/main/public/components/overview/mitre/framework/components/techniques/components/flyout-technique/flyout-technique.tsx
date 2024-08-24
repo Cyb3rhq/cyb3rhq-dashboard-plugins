@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Mitre flyout components
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Mitre flyout components
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -40,13 +40,13 @@ import {
   agentTechniquesColumns,
 } from './flyout-technique-columns';
 import { PatternDataSource } from '../../../../../../../../components/common/data-source';
-import { WazuhFlyoutDiscover } from '../../../../../../../common/wazuh-discover/wz-flyout-discover';
+import { Cyb3rhqFlyoutDiscover } from '../../../../../../../common/cyb3rhq-discover/wz-flyout-discover';
 import { tFilterParams } from '../../../../mitre';
 import TechniqueRowDetails from './technique-row-details';
 import { buildPhraseFilter } from '../../../../../../../../../../../src/plugins/data/common';
 import store from '../../../../../../../../redux/store';
 import NavigationService from '../../../../../../../../react-services/navigation-service';
-import { wzDiscoverRenderColumns } from '../../../../../../../common/wazuh-discover/render-columns';
+import { wzDiscoverRenderColumns } from '../../../../../../../common/cyb3rhq-discover/render-columns';
 
 type tFlyoutTechniqueProps = {
   currentTechnique: string;
@@ -393,7 +393,7 @@ export const FlyoutTechnique = (props: tFlyoutTechniqueProps) => {
           paddingSize='none'
           initialIsOpen={true}
         >
-          <WazuhFlyoutDiscover
+          <Cyb3rhqFlyoutDiscover
             DataSource={PatternDataSource}
             tableColumns={getDiscoverColumns()}
             filterManager={filterManager}

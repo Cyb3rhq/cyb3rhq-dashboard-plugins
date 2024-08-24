@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Tools to test the area chart visualizations
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Tools to test the area chart visualizations
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

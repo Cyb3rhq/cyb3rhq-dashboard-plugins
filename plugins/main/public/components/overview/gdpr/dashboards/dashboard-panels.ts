@@ -3,7 +3,7 @@ import { EmbeddableInput } from '../../../../../../../src/plugins/embeddable/pub
 
 const getVisStateTopAgentsByAlertsCount = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-GDPR-Agents',
+    id: 'Cyb3rhq-App-Overview-GDPR-Agents',
     title: 'Top 10 agents by alerts number',
     type: 'pie',
     params: {
@@ -57,7 +57,7 @@ const getVisStateTopAgentsByAlertsCount = (indexPatternId: string) => {
 
 const getVisStateRequirements = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-GDPR-requirements',
+    id: 'Cyb3rhq-App-Overview-GDPR-requirements',
     title: 'GDPR requirements',
     type: 'line',
     params: {
@@ -215,7 +215,7 @@ const getVisStateRequirements = (indexPatternId: string) => {
 
 const getVisStateRequirementsOverTime = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-GDPR-Requirements-heatmap',
+    id: 'Cyb3rhq-App-Overview-GDPR-Requirements-heatmap',
     title: 'Top requirements over time',
     type: 'area',
     params: {
@@ -333,7 +333,7 @@ const getVisStateRequirementsOverTime = (indexPatternId: string) => {
 
 const getVisStateRequirementsHeatmap = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-GDPR-Requirements-Agents-heatmap',
+    id: 'Cyb3rhq-App-Overview-GDPR-Requirements-Agents-heatmap',
     title: 'Last alerts',
     type: 'heatmap',
     params: {
@@ -445,7 +445,7 @@ const getVisStateRequirementsHeatmap = (indexPatternId: string) => {
 
 const getVisStateRequirementsByAgent = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-GDPR-Requirements-by-agent',
+    id: 'Cyb3rhq-App-Overview-GDPR-Requirements-by-agent',
     title: 'Requirements by agent',
     type: 'histogram',
     params: {
@@ -551,7 +551,7 @@ const getVisStateRequirementsByAgent = (indexPatternId: string) => {
 
 const getVisStateTopRuleGroups = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-GDPR-Groups',
+    id: 'Cyb3rhq-App-Agents-GDPR-Groups',
     title: 'Top 5 rule groups',
     type: 'pie',
     params: {
@@ -599,7 +599,7 @@ const getVisStateTopRuleGroups = (indexPatternId: string) => {
 
 const getVisStateTopRules = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-GDPR-Rule',
+    id: 'Cyb3rhq-App-Agents-GDPR-Rule',
     title: 'Top 5 rules',
     type: 'pie',
     params: {
@@ -647,7 +647,7 @@ const getVisStateTopRules = (indexPatternId: string) => {
 
 const getVisStateAgentTopRequirements = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-GDPR-Requirement',
+    id: 'Cyb3rhq-App-Agents-GDPR-Requirement',
     title: 'Top 5 requirements',
     type: 'pie',
     params: {
@@ -690,7 +690,7 @@ const getVisStateAgentTopRequirements = (indexPatternId: string) => {
 
 const getVisStateAgentTopRequirementsCount = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-GDPR-Requirements',
+    id: 'Cyb3rhq-App-Agents-GDPR-Requirements',
     title: 'GDPR Requirements',
     type: 'histogram',
     params: {
@@ -790,7 +790,7 @@ const getVisStateAgentTopRequirementsCount = (indexPatternId: string) => {
 
 const getVisStateAgentRuleLevelDistribution = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-GDPR-Rule-level-distribution',
+    id: 'Cyb3rhq-App-Agents-GDPR-Rule-level-distribution',
     title: 'Rule level distribution',
     type: 'pie',
     params: {

@@ -1,7 +1,7 @@
 const chai = require('chai');
 const needle = require('needle');
 const { PLUGIN_PLATFORM_REQUEST_HEADERS } = require('../../common/constants');
-const elasticServer = process.env.WAZUH_ELASTIC_IP || 'localhost';
+const elasticServer = process.env.CYB3RHQ_ELASTIC_IP || 'localhost';
 chai.should();
 
 const headers = {
@@ -11,7 +11,7 @@ const headers = {
 const date = new Date();
 const day = date.getDate();
 const month = date.getMonth() + 1;
-const index = `wazuh-alerts-2018.${month >= 10 ? month : `0${month}`}.${
+const index = `cyb3rhq-alerts-2018.${month >= 10 ? month : `0${month}`}.${
   day >= 10 ? day : `0${day}`
 }`;
 
@@ -62,7 +62,7 @@ const syscheck = async agentID => {
   sample.source.should.be.eql('/var/ossec/logs/alerts/alerts.json');
   sample.location.should.be.eql('syscheck');
   sample.cluster.should.be.a('object');
-  sample.cluster.name.should.be.eql('wazuh');
+  sample.cluster.name.should.be.eql('cyb3rhq');
   sample.cluster.node.should.be.eql('node01');
 };
 
@@ -97,7 +97,7 @@ const rootcheck = async agentID => {
   sample.source.should.be.eql('/var/ossec/logs/alerts/alerts.json');
   sample.location.should.be.eql('rootcheck');
   sample.cluster.should.be.a('object');
-  sample.cluster.name.should.be.eql('wazuh');
+  sample.cluster.name.should.be.eql('cyb3rhq');
   sample.cluster.node.should.be.eql('node01');
 };
 
@@ -143,7 +143,7 @@ const vulnerability = async agentID => {
   sample.source.should.be.eql('/var/ossec/logs/alerts/alerts.json');
   sample.location.should.be.eql('vulnerability-detector');
   sample.cluster.should.be.a('object');
-  sample.cluster.name.should.be.eql('wazuh');
+  sample.cluster.name.should.be.eql('cyb3rhq');
   sample.cluster.node.should.be.eql('node01');
 };
 
@@ -177,7 +177,7 @@ const pciDss = async agentID => {
   sample.manager.name.should.be.a('string');
   sample.source.should.be.eql('/var/ossec/logs/alerts/alerts.json');
   sample.cluster.should.be.a('object');
-  sample.cluster.name.should.be.eql('wazuh');
+  sample.cluster.name.should.be.eql('cyb3rhq');
   sample.cluster.node.should.be.eql('node01');
 };
 
@@ -211,7 +211,7 @@ const gdpr = async agentID => {
   sample.manager.name.should.be.a('string');
   sample.source.should.be.eql('/var/ossec/logs/alerts/alerts.json');
   sample.cluster.should.be.a('object');
-  sample.cluster.name.should.be.eql('wazuh');
+  sample.cluster.name.should.be.eql('cyb3rhq');
   sample.cluster.node.should.be.eql('node01');
 };
 
@@ -247,7 +247,7 @@ const audit = async agentID => {
   sample.source.should.be.eql('/var/ossec/logs/alerts/alerts.json');
   sample.location.should.be.eql('/var/log/audit/audit.log');
   sample.cluster.should.be.a('object');
-  sample.cluster.name.should.be.eql('wazuh');
+  sample.cluster.name.should.be.eql('cyb3rhq');
   sample.cluster.node.should.be.eql('node01');
 };
 

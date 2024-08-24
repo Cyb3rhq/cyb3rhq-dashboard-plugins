@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Resolve function to parse configuration file
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Resolve function to parse configuration file
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -10,12 +10,12 @@
  * Find more information about this on the LICENSE file.
  */
 
-import { getWazuhCorePlugin } from '../../kibana-services';
+import { getCyb3rhqCorePlugin } from '../../kibana-services';
 import { GenericRequest } from '../../react-services';
 
-export async function getWzConfig(wazuhConfig) {
+export async function getWzConfig(cyb3rhqConfig) {
   try {
-    const defaultConfig = await getWazuhCorePlugin().configuration.get();
+    const defaultConfig = await getCyb3rhqCorePlugin().configuration.get();
 
     try {
       const config = await GenericRequest.request(
@@ -40,9 +40,9 @@ export async function getWzConfig(wazuhConfig) {
         }
       }
 
-      wazuhConfig.setConfig(defaultConfig);
+      cyb3rhqConfig.setConfig(defaultConfig);
     } catch (error) {
-      wazuhConfig.setConfig(defaultConfig);
+      cyb3rhqConfig.setConfig(defaultConfig);
       console.log('Error getting configuration, using default values.'); // eslint-disable-line
       console.log(error.message || error); // eslint-disable-line
     }

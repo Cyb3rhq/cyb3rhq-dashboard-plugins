@@ -30,17 +30,17 @@ const linuxDefinition: IOSDefinition<tOperatingSystem, tOptionalParamsNames> = {
     {
       architecture: '32/64',
       urlPackage: props =>
-        `https://packages.wazuh.com/4.x/yum/wazuh-agent-${props.wazuhVersion}-1.x86_64`,
+        `https://packages.wazuh.com/4.x/yum/cyb3rhq-agent-${props.cyb3rhqVersion}-1.x86_64`,
       installCommand: props => `sudo yum install -y ${props.urlPackage}`,
-      startCommand: props => `sudo systemctl start wazuh-agent`,
+      startCommand: props => `sudo systemctl start cyb3rhq-agent`,
     },
     {
       architecture: 'x64',
       urlPackage: props =>
-        `https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/ wazuh-agent_${props.wazuhVersion}-1_${props.architecture}`,
+        `https://packages.wazuh.com/4.x/apt/pool/main/w/cyb3rhq-agent/ cyb3rhq-agent_${props.cyb3rhqVersion}-1_${props.architecture}`,
       installCommand: props =>
-        `curl -so wazuh-agent.deb ${props.urlPackage} && sudo dpkg -i ./wazuh-agent.deb`,
-      startCommand: props => `sudo systemctl start wazuh-agent`,
+        `curl -so cyb3rhq-agent.deb ${props.urlPackage} && sudo dpkg -i ./cyb3rhq-agent.deb`,
+      startCommand: props => `sudo systemctl start cyb3rhq-agent`,
     },
   ],
 };
@@ -54,14 +54,14 @@ export const osCommandsDefinitions = [linuxDefinition];
 export const optionalParamsDefinitions: tOptionalParams<tOptionalParamsNames> =
   {
     optional1: {
-      property: 'WAZUH_MANAGER',
+      property: 'CYB3RHQ_MANAGER',
       getParamCommand: props => {
         const { property, value } = props;
         return `${property}=${value}`;
       },
     },
     optional2: {
-      property: 'WAZUH_AGENT_NAME',
+      property: 'CYB3RHQ_AGENT_NAME',
       getParamCommand: props => {
         const { property, value } = props;
         return `${property}=${value}`;

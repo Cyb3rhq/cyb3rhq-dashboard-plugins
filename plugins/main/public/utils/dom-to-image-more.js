@@ -31,7 +31,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
 // dom-to-image-more 3.3.1
-// It contains some customization by Wazuh
+// It contains some customization by Cyb3rhq
 (function (global) {
   'use strict';
 
@@ -135,7 +135,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         .then(function (clonee) {
           return cloneNode(clonee, options, null, ownerWindow);
         })
-        // Wazuh
+        // Cyb3rhq
         // Avoid downloading the embed fonts
         // .then(embedFonts)
         .then(inlineImages)

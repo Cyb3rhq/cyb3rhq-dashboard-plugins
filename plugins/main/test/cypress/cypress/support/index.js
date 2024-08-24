@@ -45,7 +45,7 @@ before(() => {
     //     navigate("/");
     // }
     // else {
-         navigate("app/wazuh");
+         navigate("app/cyb3rhq");
     // }
 
     login ? login() : cy.log(`Error! loginMethod: "${loginMethod}" is not recognized`);
@@ -57,7 +57,7 @@ before(() => {
     if (Cypress.env('type') != 'odfe') {
         if (Cypress.env('type') != 'wzd') validateURLIncludes(OVERVIEW_URL);
     } else {
-        navigate("app/wazuh");
+        navigate("app/cyb3rhq");
     };
 
     cy.get('react-component[name="StatsOverview"]', { timeout: 18000 }).should('be.visible');

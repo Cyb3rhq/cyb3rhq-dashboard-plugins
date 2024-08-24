@@ -158,7 +158,7 @@ exports[`Cluster settings should render the cluster settings 1`] = `
                 data-testid="cluster-name"
                 readonly=""
                 type="text"
-                value="wazuh1"
+                value="cyb3rhq1"
               />
             </div>
           </div>
@@ -543,7 +543,7 @@ exports[`Cluster settings should render the cluster settings with HAProxy helper
                 data-testid="cluster-name"
                 readonly=""
                 type="text"
-                value="wazuh1"
+                value="cyb3rhq1"
               />
             </div>
           </div>
@@ -864,7 +864,7 @@ exports[`Cluster settings should render the cluster settings with HAProxy helper
                 data-testid="address"
                 readonly=""
                 type="text"
-                value="wazuh-proxy"
+                value="cyb3rhq-proxy"
               />
             </div>
           </div>
@@ -1039,7 +1039,7 @@ exports[`Cluster settings should render the cluster settings with HAProxy helper
                 data-testid="backend"
                 readonly=""
                 type="text"
-                value="wazuh_cluster"
+                value="cyb3rhq_cluster"
               />
             </div>
           </div>

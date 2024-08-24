@@ -105,7 +105,7 @@ const githubAlertsSummary = {
   ]
 }
 
-// 'Wazuh-App-Agents-GDPR-Last-alerts'
+// 'Cyb3rhq-App-Agents-GDPR-Last-alerts'
 const gdprLastAlerts = {
   title: 'Last alerts',
   aggs: [
@@ -115,7 +115,7 @@ const gdprLastAlerts = {
 
 }
 
-// 'Wazuh-App-Agents-PCI-Last-alerts'
+// 'Cyb3rhq-App-Agents-PCI-Last-alerts'
 const pciLastAlerts = {
   title: 'Last alerts',
   aggs: [
@@ -124,7 +124,7 @@ const pciLastAlerts = {
   ]
 }
 
-// 'Wazuh-App-Agents-NIST-Last-alerts'
+// 'Cyb3rhq-App-Agents-NIST-Last-alerts'
 const nistLastAlerts = {
   title: 'Alerts summary',
   aggs: [
@@ -134,7 +134,7 @@ const nistLastAlerts = {
   ]
 }
 
-// 'Wazuh-App-Agents-HIPAA-Last-alerts'
+// 'Cyb3rhq-App-Agents-HIPAA-Last-alerts'
 const hipaaLastAlerts = {
   title: 'Alerts summary',
   aggs: [
@@ -144,7 +144,7 @@ const hipaaLastAlerts = {
   ]
 }
 
-// 'Wazuh-App-Agents-OSCAP-Last-alerts'
+// 'Cyb3rhq-App-Agents-OSCAP-Last-alerts'
 const oscapLastAlerts = {
   title: 'Last alerts',
   aggs: [
@@ -153,7 +153,7 @@ const oscapLastAlerts = {
   ]
 }
 
-// 'Wazuh-App-Agents-Audit-Last-alerts'
+// 'Cyb3rhq-App-Agents-Audit-Last-alerts'
 const auditLastAlerts = {
   title: 'Last alerts',
   aggs: [

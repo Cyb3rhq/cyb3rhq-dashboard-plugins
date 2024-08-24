@@ -17,11 +17,11 @@ import {
   TelemetryPluginStart,
   TelemetryPluginSetup,
 } from '../../../src/plugins/telemetry/public';
-import { WazuhCheckUpdatesPluginStart } from '../../wazuh-check-updates/public';
-import { WazuhCorePluginStart } from '../../wazuh-core/public';
-import { WazuhEnginePluginStart } from '../../wazuh-engine/public';
+import { Cyb3rhqCheckUpdatesPluginStart } from '../../cyb3rhq-check-updates/public';
+import { Cyb3rhqCorePluginStart } from '../../cyb3rhq-core/public';
+import { Cyb3rhqEnginePluginStart } from '../../cyb3rhq-engine/public';
 import { DashboardStart } from '../../../src/plugins/dashboard/public';
-import { WazuhFleetPluginStart } from '../../wazuh-fleet/public';
+import { Cyb3rhqFleetPluginStart } from '../../cyb3rhq-fleet/public';
 
 export interface AppPluginStartDependencies {
   navigation: NavigationPublicPluginStart;
@@ -32,11 +32,11 @@ export interface AppPluginStartDependencies {
   securityOss: SecurityOssPluginStart;
   savedObjects: SavedObjectsStart;
   telemetry: TelemetryPluginStart;
-  wazuhCheckUpdates: WazuhCheckUpdatesPluginStart;
-  wazuhCore: WazuhCorePluginStart;
-  wazuhEngine: WazuhEnginePluginStart;
+  cyb3rhqCheckUpdates: Cyb3rhqCheckUpdatesPluginStart;
+  cyb3rhqCore: Cyb3rhqCorePluginStart;
+  cyb3rhqEngine: Cyb3rhqEnginePluginStart;
   dashboard: DashboardStart;
-  wazuhFleet: WazuhFleetPluginStart;
+  cyb3rhqFleet: Cyb3rhqFleetPluginStart;
 }
 export interface AppDependencies {
   core: CoreStart;
@@ -44,7 +44,7 @@ export interface AppDependencies {
   params: AppMountParameters;
 }
 
-export type WazuhSetupPlugins = {
+export type Cyb3rhqSetupPlugins = {
   uiActions: UiActionsSetup;
   visualizations: VisualizationsSetup;
   data: DataPublicPluginSetup;
@@ -52,7 +52,7 @@ export type WazuhSetupPlugins = {
   telemetry: TelemetryPluginSetup;
 };
 
-export type WazuhStartPlugins = AppPluginStartDependencies;
+export type Cyb3rhqStartPlugins = AppPluginStartDependencies;
 
-export type WazuhSetup = {};
-export type WazuhStart = {};
+export type Cyb3rhqSetup = {};
+export type Cyb3rhqStart = {};

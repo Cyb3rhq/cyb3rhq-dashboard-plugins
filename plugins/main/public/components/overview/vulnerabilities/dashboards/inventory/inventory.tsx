@@ -17,7 +17,7 @@ import {
 import { SearchResponse } from '../../../../../../../../src/core/server';
 import { HitsCounter } from '../../../../../kibana-integrations/discover/application/components/hits_counter/hits_counter';
 import { formatNumWithCommas } from '../../../../../kibana-integrations/discover/application/helpers';
-import { getWazuhCorePlugin } from '../../../../../kibana-services';
+import { getCyb3rhqCorePlugin } from '../../../../../kibana-services';
 import {
   ErrorHandler,
   ErrorFactory,
@@ -48,8 +48,8 @@ import {
 } from '../../../../common/data-source';
 import { useDataSource } from '../../../../common/data-source/hooks';
 import { IndexPattern } from '../../../../../../../../src/plugins/data/public';
-import { wzDiscoverRenderColumns } from '../../../../common/wazuh-discover/render-columns';
-import { DocumentViewTableAndJson } from '../../../../common/wazuh-discover/components/document-view-table-and-json';
+import { wzDiscoverRenderColumns } from '../../../../common/cyb3rhq-discover/render-columns';
+import { DocumentViewTableAndJson } from '../../../../common/cyb3rhq-discover/components/document-view-table-and-json';
 import { WzSearchBar } from '../../../../common/search-bar';
 
 const InventoryVulsComponent = () => {
@@ -79,7 +79,7 @@ const InventoryVulsComponent = () => {
   );
   const [isExporting, setIsExporting] = useState<boolean>(false);
 
-  const sideNavDocked = getWazuhCorePlugin().hooks.useDockedSideNav();
+  const sideNavDocked = getCyb3rhqCorePlugin().hooks.useDockedSideNav();
 
   const onClickInspectDoc = useMemo(
     () => (index: number) => {

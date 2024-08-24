@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { getPlugins, getWazuhCorePlugin } from '../../../../kibana-services';
+import { getPlugins, getCyb3rhqCorePlugin } from '../../../../kibana-services';
 import { ViewMode } from '../../../../../../../src/plugins/embeddable/public';
 import { SearchResponse } from '../../../../../../../src/core/server';
 import { IndexPattern } from '../../../../../../../src/plugins/data/common';
@@ -53,11 +53,11 @@ import {
 import { DiscoverNoResults } from '../../../common/no-results/no-results';
 import { LoadingSpinner } from '../../../common/loading-spinner/loading-spinner';
 import { useReportingCommunicateSearchContext } from '../../../common/hooks/use-reporting-communicate-search-context';
-import { wzDiscoverRenderColumns } from '../../../common/wazuh-discover/render-columns';
+import { wzDiscoverRenderColumns } from '../../../common/cyb3rhq-discover/render-columns';
 import { WzSearchBar } from '../../../common/search-bar';
-import DiscoverDataGridAdditionalControls from '../../../common/wazuh-discover/components/data-grid-additional-controls';
+import DiscoverDataGridAdditionalControls from '../../../common/cyb3rhq-discover/components/data-grid-additional-controls';
 
-import DocDetailsHeader from '../../../common/wazuh-discover/components/doc-details-header';
+import DocDetailsHeader from '../../../common/cyb3rhq-discover/components/doc-details-header';
 
 const plugins = getPlugins();
 
@@ -90,7 +90,7 @@ const DashboardTH: React.FC = () => {
   const [inspectedHit, setInspectedHit] = useState<any>(undefined);
   const [isExporting, setIsExporting] = useState<boolean>(false);
 
-  const sideNavDocked = getWazuhCorePlugin().hooks.useDockedSideNav();
+  const sideNavDocked = getCyb3rhqCorePlugin().hooks.useDockedSideNav();
 
   const onClickInspectDoc = useMemo(
     () => (index: number) => {

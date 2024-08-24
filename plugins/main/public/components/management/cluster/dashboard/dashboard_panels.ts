@@ -13,7 +13,7 @@ const getVisStateClusterAlertsSummary = (
   let expression = `.es(index=${indexPattern.title},q="cluster.name: ${clusterName}").label("${clusterName} cluster")`;
   expression = expression.replace(/'/g, '"');
   return {
-    id: 'Wazuh-App-Cluster-monitoring-Overview-Manager',
+    id: 'Cyb3rhq-App-Cluster-monitoring-Overview-Manager',
     title: 'Cluster alerts summary',
     type: 'timelion',
     params: { expression, interval: 'auto' },
@@ -50,7 +50,7 @@ const getVisStateAlertsByNodeSummary = (
   expression = expression.substring(0, expression.length - 1);
   expression = expression.replace(/'/g, '"');
   return {
-    id: 'Wazuh-App-Cluster-monitoring-Overview',
+    id: 'Cyb3rhq-App-Cluster-monitoring-Overview',
     title: 'Alerts by node summary',
     type: 'timelion',
     params: { expression, interval: 'auto' },

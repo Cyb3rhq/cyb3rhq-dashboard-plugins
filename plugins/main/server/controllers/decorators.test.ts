@@ -11,7 +11,7 @@ const mockContext = ({
   isAdmin?: boolean;
   isConfigurationAPIEditable: boolean;
 }) => ({
-  wazuh: {
+  cyb3rhq: {
     security: {
       getCurrentUser: () => {},
     },
@@ -28,7 +28,7 @@ const mockContext = ({
       })),
     },
   },
-  wazuh_core: {
+  cyb3rhq_core: {
     configuration: {
       get: jest.fn(async () => isConfigurationAPIEditable),
     },

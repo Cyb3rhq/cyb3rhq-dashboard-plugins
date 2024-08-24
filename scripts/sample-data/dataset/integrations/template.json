@@ -81,7 +81,7 @@
       "kvdbs": {
         "type": "keyword"
       },
-      "wazuh": {
+      "cyb3rhq": {
         "properties": {
           "cluster": {
             "properties": {

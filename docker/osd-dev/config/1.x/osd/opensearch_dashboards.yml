@@ -9,6 +9,6 @@ server.ssl.enabled: true
 server.ssl.key: "/home/node/kbn/certs/osd.key"
 server.ssl.certificate: "/home/node/kbn/certs/osd.pem"
 opensearch.ssl.certificateAuthorities: ["/home/node/kbn/certs/ca.pem"]
-uiSettings.overrides.defaultRoute: /app/wazuh
+uiSettings.overrides.defaultRoute: /app/cyb3rhq
 opensearch.username: "kibanaserver"
 opensearch.password: "kibanaserver"

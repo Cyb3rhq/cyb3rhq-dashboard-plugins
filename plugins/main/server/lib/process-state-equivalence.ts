@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Wazuh syscollector process state equivalence
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Cyb3rhq syscollector process state equivalence
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

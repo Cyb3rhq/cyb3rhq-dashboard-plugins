@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Mitre sample alerts
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Mitre sample alerts
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@ export const arrayMitreRules = [
     nist_800_53: ['AU.6', 'AU.14', 'AU.5'],
     tsc: ['CC7.2', 'CC7.3', 'CC6.8'],
     mitre: { tactic: ['Defense Evasion'], id: ['T1089'], technique: ['Disabling Security Tools'] },
-    groups: ['wazuh'],
+    groups: ['cyb3rhq'],
     description: 'Ossec agent disconnected.',
   },
   {
@@ -43,7 +43,7 @@ export const arrayMitreRules = [
     nist_800_53: ['AU.6', 'AU.14', 'AU.5'],
     tsc: ['CC7.2', 'CC7.3', 'CC6.8'],
     mitre: { tactic: ['Defense Evasion'], id: ['T1089'], technique: ['Disabling Security Tools'] },
-    groups: ['wazuh'],
+    groups: ['cyb3rhq'],
     description: 'Ossec agent removed.',
   },
   {
@@ -60,7 +60,7 @@ export const arrayMitreRules = [
       id: ['T1017'],
       technique: ['Application Deployment Software'],
     },
-    groups: ['rootcheck', 'wazuh'],
+    groups: ['rootcheck', 'cyb3rhq'],
     description: 'Windows Adware/Spyware application found.',
   },
   {
@@ -69,7 +69,7 @@ export const arrayMitreRules = [
     id: 550,
     level: 7,
     status: 'enabled',
-    details: { category: 'wazuh', decoded_as: 'syscheck_integrity_changed' },
+    details: { category: 'cyb3rhq', decoded_as: 'syscheck_integrity_changed' },
     pci_dss: ['11.5'],
     gpg13: ['4.11'],
     gdpr: ['II_5.1.f'],
@@ -77,7 +77,7 @@ export const arrayMitreRules = [
     nist_800_53: ['SI.7'],
     tsc: ['PI1.4', 'PI1.5', 'CC6.1', 'CC6.8', 'CC7.2', 'CC7.3'],
     mitre: { tactic: ['Impact'], id: ['T1492'], technique: ['Stored Data Manipulation'] },
-    groups: ['syscheck', 'wazuh'],
+    groups: ['syscheck', 'cyb3rhq'],
     description: 'Integrity checksum changed.',
   },
   {
@@ -86,7 +86,7 @@ export const arrayMitreRules = [
     id: 553,
     level: 7,
     status: 'enabled',
-    details: { category: 'wazuh', decoded_as: 'syscheck_deleted' },
+    details: { category: 'cyb3rhq', decoded_as: 'syscheck_deleted' },
     pci_dss: ['11.5'],
     gpg13: ['4.11'],
     gdpr: ['II_5.1.f'],
@@ -98,7 +98,7 @@ export const arrayMitreRules = [
       id: ['T1107', 'T1485'],
       technique: ['File Deletion', 'Data Destruction'],
     },
-    groups: ['syscheck', 'wazuh'],
+    groups: ['syscheck', 'cyb3rhq'],
     description: 'File deleted.',
   },
   {
@@ -115,7 +115,7 @@ export const arrayMitreRules = [
     nist_800_53: ['AU.9', 'SI.4'],
     tsc: ['CC6.1', 'CC7.2', 'CC7.3', 'CC6.8'],
     mitre: { tactic: ['Impact'], id: ['T1492'], technique: ['Stored Data Manipulation'] },
-    groups: ['attacks', 'wazuh'],
+    groups: ['attacks', 'cyb3rhq'],
     description: 'Log file size reduced.',
   },
   {
@@ -132,7 +132,7 @@ export const arrayMitreRules = [
     nist_800_53: ['AU.9'],
     tsc: ['CC6.1', 'CC7.2', 'CC7.3'],
     mitre: { tactic: ['Defense Evasion'], id: ['T1070'], technique: ['Indicator Removal on Host'] },
-    groups: ['logs_cleared', 'wazuh'],
+    groups: ['logs_cleared', 'cyb3rhq'],
     description: 'Microsoft Event log cleared.',
   },
   {
@@ -141,7 +141,7 @@ export const arrayMitreRules = [
     id: 594,
     level: 5,
     status: 'enabled',
-    details: { category: 'wazuh', if_sid: '550', hostname: 'syscheck-registry' },
+    details: { category: 'cyb3rhq', if_sid: '550', hostname: 'syscheck-registry' },
     pci_dss: ['11.5'],
     gpg13: ['4.13'],
     gdpr: ['II_5.1.f'],
@@ -149,7 +149,7 @@ export const arrayMitreRules = [
     nist_800_53: ['SI.7'],
     tsc: ['PI1.4', 'PI1.5', 'CC6.1', 'CC6.8', 'CC7.2', 'CC7.3'],
     mitre: { tactic: ['Impact'], id: ['T1492'], technique: ['Stored Data Manipulation'] },
-    groups: ['syscheck', 'wazuh'],
+    groups: ['syscheck', 'cyb3rhq'],
     description: 'Registry Integrity Checksum Changed',
   },
   {
@@ -158,7 +158,7 @@ export const arrayMitreRules = [
     id: 597,
     level: 5,
     status: 'enabled',
-    details: { category: 'wazuh', if_sid: '553', hostname: 'syscheck-registry' },
+    details: { category: 'cyb3rhq', if_sid: '553', hostname: 'syscheck-registry' },
     pci_dss: ['11.5'],
     gpg13: ['4.13'],
     gdpr: ['II_5.1.f'],
@@ -170,7 +170,7 @@ export const arrayMitreRules = [
       id: ['T1107', 'T1485'],
       technique: ['File Deletion', 'Data Destruction'],
     },
-    groups: ['syscheck', 'wazuh'],
+    groups: ['syscheck', 'cyb3rhq'],
     description: 'Registry Entry Deleted.',
   },
   {

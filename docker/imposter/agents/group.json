@@ -16,7 +16,7 @@
         "node_name": "worker1",
         "ip": "FE80:0034:0223:A000:0002:B3FF:0000:8329",
         "id": 4,
-        "manager": "wazuh-worker1",
+        "manager": "cyb3rhq-worker1",
         "group": [
           "default",
           "group1"
@@ -27,7 +27,7 @@
         "dateAdd": "2021-05-27T09:14:19Z",
         "registerIP": "any",
         "lastKeepAlive": "2021-05-27T09:23:59Z",
-        "version": "Wazuh v4.3.0"
+        "version": "Cyb3rhq v4.3.0"
       },
       {
         "os": {
@@ -44,7 +44,7 @@
         "node_name": "worker1",
         "ip": "FE80:1234:2223:A000:2202:B3FF:FE1E:8329",
         "id": 5,
-        "manager": "wazuh-worker1",
+        "manager": "cyb3rhq-worker1",
         "group": [
           "default",
           "group2"
@@ -55,7 +55,7 @@
         "dateAdd": "2021-05-27T09:14:19Z",
         "registerIP": "any",
         "lastKeepAlive": "2021-05-27T09:23:52Z",
-        "version": "Wazuh v4.3.0"
+        "version": "Cyb3rhq v4.3.0"
       },
       {
         "os": {
@@ -72,7 +72,7 @@
         "node_name": "worker2",
         "ip": "172.20.0.10",
         "id": 6,
-        "manager": "wazuh-worker2",
+        "manager": "cyb3rhq-worker2",
         "group": [
           "default",
           "group3"
@@ -83,7 +83,7 @@
         "dateAdd": "2021-05-27T09:14:19Z",
         "registerIP": "any",
         "lastKeepAlive": "2021-05-27T09:23:52Z",
-        "version": "Wazuh v4.3.0"
+        "version": "Cyb3rhq v4.3.0"
       }
     ],
     "total_affected_items": 3,

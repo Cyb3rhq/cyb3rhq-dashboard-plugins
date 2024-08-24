@@ -1,7 +1,7 @@
 /*
- * Wazuh app - Check alerts index pattern service
+ * Cyb3rhq app - Check alerts index pattern service
  *
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ export const checkIndexPatternObjectService = async (
   ];
   checkLogger.info(`Getting list of valid index patterns...`);
   let listValidIndexPatterns =
-    await SavedObject.getListOfWazuhValidIndexPatterns(
+    await SavedObject.getListOfCyb3rhqValidIndexPatterns(
       defaultIndexPatterns,
       HEALTH_CHECK,
     );
@@ -51,7 +51,7 @@ export const checkIndexPatternObjectService = async (
   );
 
   if (!indexPatternDefaultFound && defaultPatternId) {
-    // if no valid index patterns are found we try to create the wazuh-alerts-*
+    // if no valid index patterns are found we try to create the cyb3rhq-alerts-*
     try {
       checkLogger.info(
         `Checking if index pattern [${defaultPatternId}] exists...`,
@@ -85,7 +85,7 @@ export const checkIndexPatternObjectService = async (
         }
       } else if (shouldCreateIndex) {
         checkLogger.info(`Creating index pattern [${defaultPatternId}]...`);
-        await SavedObject.createWazuhIndexPattern(defaultPatternId);
+        await SavedObject.createCyb3rhqIndexPattern(defaultPatternId);
         checkLogger.action(`Created index pattern [${defaultPatternId}]`);
       } else {
         // show error
@@ -93,7 +93,7 @@ export const checkIndexPatternObjectService = async (
       }
       checkLogger.info(`Getting list of valid index patterns...`);
       listValidIndexPatterns =
-        await SavedObject.getListOfWazuhValidIndexPatterns(
+        await SavedObject.getListOfCyb3rhqValidIndexPatterns(
           defaultIndexPatterns,
           HEALTH_CHECK,
         );
@@ -102,7 +102,7 @@ export const checkIndexPatternObjectService = async (
       );
       if (!AppState.getCurrentPattern()) {
         // Check the index pattern saved objects can be found using `GET /api/saved_objects/_find` endpoint.
-        // Related issue: https://github.com/wazuh/wazuh-dashboard-plugins/issues/4293
+        // Related issue: https://github.com/cyb3rhq/cyb3rhq-dashboard-plugins/issues/4293
         await validateIntegritySavedObjects([defaultPatternId], checkLogger);
 
         AppState.setCurrentPattern(defaultPatternId);
@@ -124,7 +124,7 @@ export const checkIndexPatternObjectService = async (
       const indexPatternID = listValidIndexPatterns[0].id;
 
       // Check the index pattern saved objects can be found using `GET /api/saved_objects/_find` endpoint.
-      // Related issue: https://github.com/wazuh/wazuh-dashboard-plugins/issues/4293
+      // Related issue: https://github.com/cyb3rhq/cyb3rhq-dashboard-plugins/issues/4293
       await validateIntegritySavedObjects([indexPatternID], checkLogger);
 
       AppState.setCurrentPattern(indexPatternID);
@@ -174,7 +174,7 @@ export const checkIndexPatternObjectService = async (
       );
       if (indexPatternDefaultFound) {
         // Check the index pattern saved objects can be found using `GET /api/saved_objects/_find` endpoint.
-        // Related issue: https://github.com/wazuh/wazuh-dashboard-plugins/issues/4293
+        // Related issue: https://github.com/cyb3rhq/cyb3rhq-dashboard-plugins/issues/4293
         await validateIntegritySavedObjects(
           [indexPatternDefaultFound.id],
           checkLogger,
@@ -194,7 +194,7 @@ export const checkIndexPatternObjectService = async (
 };
 
 // Check the index pattern saved objects can be found using `GET /api/saved_objects/_find` endpoint.
-// Related issue: https://github.com/wazuh/wazuh-dashboard-plugins/issues/4293
+// Related issue: https://github.com/cyb3rhq/cyb3rhq-dashboard-plugins/issues/4293
 const validateIntegritySavedObjects = async (
   indexPatternSavedObjectIDs: string[],
   checkLogger: CheckLogger,

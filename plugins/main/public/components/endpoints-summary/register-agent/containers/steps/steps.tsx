@@ -42,7 +42,7 @@ interface IStepsProps {
   connection: {
     isUDP: boolean;
   };
-  wazuhPassword: string;
+  cyb3rhqPassword: string;
 }
 
 export const Steps = ({
@@ -50,7 +50,7 @@ export const Steps = ({
   form,
   osCard,
   connection,
-  wazuhPassword,
+  cyb3rhqPassword,
 }: IStepsProps) => {
   const initialParsedFormValues = {
     operatingSystem: {
@@ -61,7 +61,7 @@ export const Steps = ({
       agentGroups: '',
       agentName: '',
       serverAddress: '',
-      wazuhPassword,
+      cyb3rhqPassword,
       protocol: connection.isUDP ? 'UDP' : '',
     },
   } as IParseRegisterFormValues;
@@ -146,7 +146,7 @@ export const Steps = ({
       children: <ServerAddress formField={form.fields.serverAddress} />,
       status: getServerAddressStepStatus(form.fields),
     },
-    ...(needsPassword && !wazuhPassword
+    ...(needsPassword && !cyb3rhqPassword
       ? [
           {
             title: 'Password',
@@ -214,7 +214,7 @@ export const Steps = ({
                 showCommand={showCommandsSections(form.fields)}
                 os={registerAgentFormValues.operatingSystem.name}
                 onCopy={() => setInstallCommandWasCopied(true)}
-                password={registerAgentFormValues.optionalParams.wazuhPassword}
+                password={registerAgentFormValues.optionalParams.cyb3rhqPassword}
               />
               <OsCommandWarning
                 os={registerAgentFormValues.operatingSystem.name}

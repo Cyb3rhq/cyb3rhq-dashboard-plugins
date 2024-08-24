@@ -17,16 +17,16 @@ Application order: one of 100-199 range: 100, 101, 102, etc...
 */
 
 /* Categories ID
-Wazuh:
+Cyb3rhq:
 Home: 0
-Explore (added to Wazuh dashboard default categories): 100
+Explore (added to Cyb3rhq dashboard default categories): 100
 Endpoint security: 200
 Threat intelligence: 300
 Security operations: 400
 Cloud security: 500
 Server management: 600
 Dashboard management: 700
-Indexer management (added to Wazuh dashboard default categories): 9000
+Indexer management (added to Cyb3rhq dashboard default categories): 9000
 */
 
 export const overview = {
@@ -734,7 +734,7 @@ export const devTools = {
   order: 610,
   showInOverviewApp: false,
   showInAgentMenu: false,
-  redirectTo: () => '/wazuh-dev?tab=devTools',
+  redirectTo: () => '/cyb3rhq-dev?tab=devTools',
 };
 
 export const rulesetTest = {
@@ -753,7 +753,7 @@ export const rulesetTest = {
   order: 611,
   showInOverviewApp: false,
   showInAgentMenu: false,
-  redirectTo: () => '/wazuh-dev?tab=logtest',
+  redirectTo: () => '/cyb3rhq-dev?tab=logtest',
 };
 
 export const security = {

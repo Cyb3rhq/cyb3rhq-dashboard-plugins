@@ -21,19 +21,19 @@ import {
   setCookies,
   setWzMainParams,
   setWzCurrentAppID,
-  setWazuhCheckUpdatesPlugin,
+  setCyb3rhqCheckUpdatesPlugin,
   setHeaderActionMenuMounter,
-  setWazuhCorePlugin,
-  setWazuhEnginePlugin,
-  setWazuhFleetPlugin,
+  setCyb3rhqCorePlugin,
+  setCyb3rhqEnginePlugin,
+  setCyb3rhqFleetPlugin,
 } from './kibana-services';
 import { validate as validateNodeCronInterval } from 'node-cron';
 import {
   AppPluginStartDependencies,
-  WazuhSetup,
-  WazuhSetupPlugins,
-  WazuhStart,
-  WazuhStartPlugins,
+  Cyb3rhqSetup,
+  Cyb3rhqSetupPlugins,
+  Cyb3rhqStart,
+  Cyb3rhqStartPlugins,
 } from './types';
 import { Cookies } from 'react-cookie';
 import { AppState } from './react-services/app-state';
@@ -50,16 +50,16 @@ import { euiPaletteColorBlind } from '@elastic/eui';
 import NavigationService from './react-services/navigation-service';
 import { createHashHistory } from 'history';
 
-export class WazuhPlugin
+export class Cyb3rhqPlugin
   implements
-    Plugin<WazuhSetup, WazuhStart, WazuhSetupPlugins, WazuhStartPlugins>
+    Plugin<Cyb3rhqSetup, Cyb3rhqStart, Cyb3rhqSetupPlugins, Cyb3rhqStartPlugins>
 {
   constructor(private readonly initializerContext: PluginInitializerContext) {}
   private hideTelemetryBanner?: () => void;
   public async setup(
     core: CoreSetup,
-    plugins: WazuhSetupPlugins,
-  ): Promise<WazuhSetup> {
+    plugins: Cyb3rhqSetupPlugins,
+  ): Promise<Cyb3rhqSetup> {
     // Get custom logos configuration to start up the app with the correct logos
     let logosInitialState = {};
     try {
@@ -131,7 +131,7 @@ export class WazuhPlugin
             There is an optimization error of the frontend side source code due to some modules can
             not be loaded
             */
-            const setting = plugins.wazuhCore.configuration._settings.get(
+            const setting = plugins.cyb3rhqCore.configuration._settings.get(
               'cron.statistics.interval',
             );
             !setting.validateUIForm &&
@@ -188,7 +188,7 @@ export class WazuhPlugin
   public start(
     core: CoreStart,
     plugins: AppPluginStartDependencies,
-  ): WazuhStart {
+  ): Cyb3rhqStart {
     // hide security alert
     if (plugins.securityOss) {
       plugins.securityOss.insecureCluster.hideAlert(true);
@@ -210,10 +210,10 @@ export class WazuhPlugin
     setSavedObjects(core.savedObjects);
     setOverlays(core.overlays);
     setErrorOrchestrator(ErrorOrchestratorService);
-    setWazuhCheckUpdatesPlugin(plugins.wazuhCheckUpdates);
-    setWazuhCorePlugin(plugins.wazuhCore);
-    setWazuhEnginePlugin(plugins.wazuhEngine);
-    setWazuhFleetPlugin(plugins.wazuhFleet);
+    setCyb3rhqCheckUpdatesPlugin(plugins.cyb3rhqCheckUpdates);
+    setCyb3rhqCorePlugin(plugins.cyb3rhqCore);
+    setCyb3rhqEnginePlugin(plugins.cyb3rhqEngine);
+    setCyb3rhqFleetPlugin(plugins.cyb3rhqFleet);
     return {};
   }
 }

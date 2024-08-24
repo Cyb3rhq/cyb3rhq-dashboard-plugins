@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Generic request
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Generic request
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 
 import { AppState } from './app-state';
-import { WazuhConfig } from './wazuh-config';
+import { Cyb3rhqConfig } from './cyb3rhq-config';
 import { ApiCheck } from './wz-api-check';
 import { WzMisc } from '../factories/misc';
 import { getHttp, getDataPlugin } from '../kibana-services';
@@ -25,8 +25,8 @@ export class GenericRequest {
       if (!method || !path) {
         throw new Error('Missing parameters');
       }
-      const wazuhConfig = new WazuhConfig();
-      const { timeout } = wazuhConfig.getConfig();
+      const cyb3rhqConfig = new Cyb3rhqConfig();
+      const { timeout } = cyb3rhqConfig.getConfig();
       const requestHeaders = {
         ...PLUGIN_PLATFORM_REQUEST_HEADERS,
         'content-type': 'application/json',

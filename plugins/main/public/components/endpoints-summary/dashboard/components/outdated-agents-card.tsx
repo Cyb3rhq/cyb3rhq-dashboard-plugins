@@ -33,17 +33,17 @@ const OutdatedAgentsCard = ({
 
   const renderMetric = () => {
     return (
-      <div className='wazuh-outdated-agents-panel' onClick={onShowOptions}>
+      <div className='cyb3rhq-outdated-agents-panel' onClick={onShowOptions}>
         <EuiIcon
           type={contentIcon}
           color={contentType}
-          className='wazuh-outdated-icon'
+          className='cyb3rhq-outdated-icon'
         />
         <EuiStat
-          className='wazuh-outdated-metric'
+          className='cyb3rhq-outdated-metric'
           title={
             <EuiTextColor
-              data-testid='wazuh-endpoints-summary-outdated-agents-number'
+              data-testid='cyb3rhq-endpoints-summary-outdated-agents-number'
               color={contentType}
             >
               {outdatedAgents}
@@ -88,7 +88,7 @@ const OutdatedAgentsCard = ({
             <EuiTextColor color='subdued'>
               <EuiLink
                 href={webDocumentationLink(
-                  'upgrade-guide/wazuh-agent/index.html',
+                  'upgrade-guide/cyb3rhq-agent/index.html',
                 )}
                 target='_blank'
                 external

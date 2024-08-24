@@ -1,18 +1,18 @@
 {
-  "name": "wazuh",
+  "name": "cyb3rhq",
   "version": "5.0.0",
   "revision": "00",
   "pluginPlatform": {
     "version": "2.13.0"
   },
-  "description": "Wazuh dashboard",
+  "description": "Cyb3rhq dashboard",
   "keywords": [
     "opensearch_dashboards",
-    "wazuh",
+    "cyb3rhq",
     "ossec"
   ],
   "node_build": "10.23.1",
-  "author": "Wazuh, Inc",
+  "author": "Cyb3rhq, Inc",
   "license": "GPL-2.0",
   "resolutions": {
     "**/es5-ext": "^0.10.63",
@@ -20,10 +20,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wazuh/wazuh-dashboard-plugins.git"
+    "url": "https://github.com/cyb3rhq/cyb3rhq-dashboard-plugins.git"
   },
   "bugs": {
-    "url": "https://github.com/wazuh/wazuh-dashboard-plugins/issues"
+    "url": "https://github.com/cyb3rhq/cyb3rhq-dashboard-plugins/issues"
   },
   "homepage": "https://www.wazuh.com/",
   "scripts": {
@@ -44,7 +44,7 @@
     "test:browser": "plugin-helpers test:browser",
     "test:jest": "node scripts/jest --runInBand",
     "test:jest:runner": "node scripts/runner test",
-    "generate:api-data": "node scripts/generate-api-data.js --spec https://raw.githubusercontent.com/wazuh/wazuh/$(node -e \"console.log(require('./package.json').version)\")/api/api/spec/spec.yaml --output file --output-directory common/api-info --display-configuration",
+    "generate:api-data": "node scripts/generate-api-data.js --spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/$(node -e \"console.log(require('./package.json').version)\")/api/api/spec/spec.yaml --output file --output-directory common/api-info --display-configuration",
     "prebuild": "node scripts/generate-build-version",
     "knip": "knip --files"
   },

@@ -11,7 +11,7 @@ export * from './reporting';
 export * from './saved-objects';
 export * from './time-service';
 export * from './toast-notifications';
-export * from './wazuh-config';
+export * from './cyb3rhq-config';
 export * from './wz-agents';
 export * from './wz-api-check';
 export * from './wz-authentication';

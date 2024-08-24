@@ -9,7 +9,7 @@ const getVisStateTop5UniqueMaliciousFilesPerAgent = (
   indexPatternId: string,
 ) => {
   return {
-    id: 'Wazuh-App-Overview-Virustotal-Malicious-Per-Agent',
+    id: 'Cyb3rhq-App-Overview-Virustotal-Malicious-Per-Agent',
     title: 'Top 5 agents with unique malicious files',
     type: 'pie',
     params: {
@@ -34,7 +34,7 @@ const getVisStateTop5UniqueMaliciousFilesPerAgent = (
         filter: [
           {
             meta: {
-              index: 'wazuh-alerts',
+              index: 'cyb3rhq-alerts',
               negate: true,
               disabled: false,
               alias: null,
@@ -95,7 +95,7 @@ const getVisStateTop5UniqueMaliciousFilesPerAgent = (
 
 const getVisStateLastScannedFiles = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Virustotal-Last-Files-Pie',
+    id: 'Cyb3rhq-App-Overview-Virustotal-Last-Files-Pie',
     title: 'Last scanned files',
     type: 'pie',
     params: {
@@ -157,7 +157,7 @@ const getVisStateLastScannedFiles = (indexPatternId: string) => {
 
 const getVisStateAlertsEvolutionByAgents = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Virustotal-Alerts-Evolution',
+    id: 'Cyb3rhq-App-Overview-Virustotal-Alerts-Evolution',
     title: 'Alerts evolution by agents',
     type: 'histogram',
     params: {
@@ -284,7 +284,7 @@ const getVisStateAlertsEvolutionByAgents = (indexPatternId: string) => {
         filter: [
           {
             meta: {
-              index: 'wazuh-alerts',
+              index: 'cyb3rhq-alerts',
               negate: false,
               disabled: false,
               alias: null,
@@ -301,7 +301,7 @@ const getVisStateAlertsEvolutionByAgents = (indexPatternId: string) => {
           },
           {
             meta: {
-              index: 'wazuh-alerts',
+              index: 'cyb3rhq-alerts',
               negate: true,
               disabled: false,
               alias: null,
@@ -382,7 +382,7 @@ const getVisStateAlertsEvolutionByAgents = (indexPatternId: string) => {
 
 const getVisStateMaliciousFilesAlertsEvolution = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Virustotal-Malicious-Evolution',
+    id: 'Cyb3rhq-App-Overview-Virustotal-Malicious-Evolution',
     title: 'Malicious files alerts evolution',
     type: 'histogram',
     params: {
@@ -439,7 +439,7 @@ const getVisStateMaliciousFilesAlertsEvolution = (indexPatternId: string) => {
         filter: [
           {
             meta: {
-              index: 'wazuh-alerts',
+              index: 'cyb3rhq-alerts',
               negate: false,
               disabled: false,
               alias: null,
@@ -456,7 +456,7 @@ const getVisStateMaliciousFilesAlertsEvolution = (indexPatternId: string) => {
           },
           {
             meta: {
-              index: 'wazuh-alerts',
+              index: 'cyb3rhq-alerts',
               negate: true,
               disabled: false,
               alias: null,
@@ -518,7 +518,7 @@ const getVisStateMaliciousFilesAlertsEvolution = (indexPatternId: string) => {
 
 const getVisStateLastFiles = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Virustotal-Files-Table',
+    id: 'Cyb3rhq-App-Overview-Virustotal-Files-Table',
     title: 'Last files',
     type: 'table',
     params: {
@@ -592,7 +592,7 @@ const getVisStateLastFiles = (indexPatternId: string) => {
 
 const getVisStateAgentLastScannedFiles = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-Virustotal-Last-Files-Pie',
+    id: 'Cyb3rhq-App-Agents-Virustotal-Last-Files-Pie',
     title: 'Last scanned files',
     type: 'pie',
     params: {
@@ -649,7 +649,7 @@ const getVisStateAgentMaliciousFilesAlertsEvolution = (
   indexPatternId: string,
 ) => {
   return {
-    id: 'Wazuh-App-Agents-Virustotal-Malicious-Evolution',
+    id: 'Cyb3rhq-App-Agents-Virustotal-Malicious-Evolution',
     title: 'Malicious files alerts Evolution',
     type: 'histogram',
     params: {
@@ -706,7 +706,7 @@ const getVisStateAgentMaliciousFilesAlertsEvolution = (
         filter: [
           {
             meta: {
-              index: 'wazuh-alerts',
+              index: 'cyb3rhq-alerts',
               negate: false,
               disabled: false,
               alias: null,
@@ -723,7 +723,7 @@ const getVisStateAgentMaliciousFilesAlertsEvolution = (
           },
           {
             meta: {
-              index: 'wazuh-alerts',
+              index: 'cyb3rhq-alerts',
               negate: true,
               disabled: false,
               alias: null,
@@ -785,7 +785,7 @@ const getVisStateAgentMaliciousFilesAlertsEvolution = (
 
 const getVisStateAgentLastFiles = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-Virustotal-Files-Table',
+    id: 'Cyb3rhq-App-Agents-Virustotal-Files-Table',
     title: 'Last files',
     type: 'table',
     params: {

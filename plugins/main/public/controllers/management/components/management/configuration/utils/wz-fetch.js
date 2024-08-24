@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Fetch API function and utils.
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Fetch API function and utils.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@ export const getCurrentConfig = async (
   agentId = '000',
   sections,
   node = false,
-  updateWazuhNotReadyYet,
+  updateCyb3rhqNotReadyYet,
 ) => {
   try {
     if (
@@ -68,7 +68,7 @@ export const getCurrentConfig = async (
         } else {
           /*
            * I need to check the amount of properties and use the first one in case there's only one
-           * because the /agents/{agent_id}/config/logcollector/socket response has property named "target" instead of "socket" in versions before Wazuh 4.9.0
+           * because the /agents/{agent_id}/config/logcollector/socket response has property named "target" instead of "socket" in versions before Cyb3rhq 4.9.0
            * this allows to interprete any property name in the response
            */
           const configKeys = Object.keys(partialResult.data.data);
@@ -85,7 +85,7 @@ export const getCurrentConfig = async (
         result[`${component}-${configuration}`] = await handleError(
           error,
           'Fetch configuration',
-          updateWazuhNotReadyYet,
+          updateCyb3rhqNotReadyYet,
           node,
         );
       }
@@ -132,21 +132,21 @@ export const extractMessage = error => {
  *
  * @param {Error|string} error
  * @param {*} location
- * @param updateWazuhNotReadyYet
+ * @param updateCyb3rhqNotReadyYet
  * @param {boolean} isCluster
  */
 export const handleError = async (
   error,
   location,
-  updateWazuhNotReadyYet,
+  updateCyb3rhqNotReadyYet,
   isCluster,
 ) => {
   const message = extractMessage(error);
   const messageIsString = typeof message === 'string';
   try {
     if (messageIsString && message.includes('ERROR3099')) {
-      updateWazuhNotReadyYet('Server not ready yet.');
-      await makePing(updateWazuhNotReadyYet, isCluster);
+      updateCyb3rhqNotReadyYet('Server not ready yet.');
+      await makePing(updateCyb3rhqNotReadyYet, isCluster);
       return;
     }
 
@@ -182,11 +182,11 @@ export const checkDaemons = async isCluster => {
     const daemons =
       ((((response || {}).data || {}).data || {}).affected_items || [])[0] ||
       {};
-    const wazuhdbExists = typeof daemons['wazuh-db'] !== 'undefined';
+    const cyb3rhqdbExists = typeof daemons['cyb3rhq-db'] !== 'undefined';
 
-    const execd = daemons['wazuh-execd'] === 'running';
-    const modulesd = daemons['wazuh-modulesd'] === 'running';
-    const wazuhdb = wazuhdbExists ? daemons['wazuh-db'] === 'running' : true;
+    const execd = daemons['cyb3rhq-execd'] === 'running';
+    const modulesd = daemons['cyb3rhq-modulesd'] === 'running';
+    const cyb3rhqdb = cyb3rhqdbExists ? daemons['cyb3rhq-db'] === 'running' : true;
 
     let clusterd = true;
     if (isCluster) {
@@ -194,12 +194,12 @@ export const checkDaemons = async isCluster => {
         (((await clusterReq()) || {}).data || {}).data || {};
       clusterd =
         clusterStatus.enabled === 'yes' && clusterStatus.running === 'yes'
-          ? daemons['wazuh-clusterd'] === 'running'
+          ? daemons['cyb3rhq-clusterd'] === 'running'
           : false;
     }
 
     const isValid =
-      execd && modulesd && wazuhdb && (isCluster ? clusterd : true);
+      execd && modulesd && cyb3rhqdb && (isCluster ? clusterd : true);
 
     if (isValid) {
       return { isValid };
@@ -212,14 +212,14 @@ export const checkDaemons = async isCluster => {
 };
 
 /**
- * Make ping to Wazuh API
- * @param updateWazuhNotReadyYet
+ * Make ping to Cyb3rhq API
+ * @param updateCyb3rhqNotReadyYet
  * @param {boolean} isCluster
  * @param {number} [tries=10] Tries
  * @return {Promise}
  */
 export const makePing = async (
-  updateWazuhNotReadyYet,
+  updateCyb3rhqNotReadyYet,
   isCluster,
   tries = 30,
 ) => {
@@ -230,7 +230,7 @@ export const makePing = async (
       try {
         isValid = await checkDaemons(isCluster);
         if (isValid) {
-          updateWazuhNotReadyYet('');
+          updateCyb3rhqNotReadyYet('');
           break;
         }
       } catch (error) {
@@ -240,14 +240,14 @@ export const makePing = async (
     if (!isValid) {
       throw new Error('Not recovered');
     }
-    return Promise.resolve('Wazuh is ready');
+    return Promise.resolve('Cyb3rhq is ready');
   } catch (error) {
     throw new Error('Server could not be recovered.');
   }
 };
 
 /**
- * Get Cluster status from Wazuh API
+ * Get Cluster status from Cyb3rhq API
  * @returns {Promise}
  */
 export const clusterReq = async () => {
@@ -295,22 +295,22 @@ export const fetchFile = async selectedNode => {
 /**
  * Restart a node or manager
  * @param {} selectedNode Cluster Node
- * @param updateWazuhNotReadyYet
+ * @param updateCyb3rhqNotReadyYet
  */
 export const restartNodeSelected = async (
   selectedNode,
-  updateWazuhNotReadyYet,
+  updateCyb3rhqNotReadyYet,
 ) => {
   try {
     const clusterStatus = (((await clusterReq()) || {}).data || {}).data || {};
     const isCluster =
       clusterStatus.enabled === 'yes' && clusterStatus.running === 'yes';
     // Dispatch a Redux action
-    updateWazuhNotReadyYet(
+    updateCyb3rhqNotReadyYet(
       `Restarting ${isCluster ? selectedNode : 'Manager'}, please wait.`,
     ); //FIXME: if it enables/disables cluster, this will show Manager instead node name
     isCluster ? await restartNode(selectedNode) : await restartManager();
-    return await makePing(updateWazuhNotReadyYet, isCluster);
+    return await makePing(updateCyb3rhqNotReadyYet, isCluster);
   } catch (error) {
     throw error;
   }
@@ -539,7 +539,7 @@ export const clusterNodes = async () => {
 /**
  * Restart cluster or Manager
  */
-export const restartClusterOrManager = async updateWazuhNotReadyYet => {
+export const restartClusterOrManager = async updateCyb3rhqNotReadyYet => {
   try {
     const clusterStatus = (((await clusterReq()) || {}).data || {}).data || {};
     const isCluster =
@@ -553,10 +553,10 @@ export const restartClusterOrManager = async updateWazuhNotReadyYet => {
     });
     isCluster ? await restartCluster() : await restartManager();
     // Dispatch a Redux action
-    updateWazuhNotReadyYet(
+    updateCyb3rhqNotReadyYet(
       `Restarting ${isCluster ? 'Cluster' : 'Manager'}, please wait.`,
     );
-    await makePing(updateWazuhNotReadyYet, isCluster);
+    await makePing(updateCyb3rhqNotReadyYet, isCluster);
     return { restarted: isCluster ? 'Cluster' : 'Manager' };
   } catch (error) {
     throw error;

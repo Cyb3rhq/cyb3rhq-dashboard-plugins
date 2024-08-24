@@ -393,7 +393,7 @@ describe('Query language - WQL', () => {
   */
 
   // Validate the tokens
-  // Some examples of value tokens are based on this API test: https://github.com/wazuh/wazuh/blob/813595cf58d753c1066c3e7c2018dbb4708df088/framework/wazuh/core/tests/test_utils.py#L987-L1050
+  // Some examples of value tokens are based on this API test: https://github.com/cyb3rhq/cyb3rhq/blob/813595cf58d753c1066c3e7c2018dbb4708df088/framework/cyb3rhq/core/tests/test_utils.py#L987-L1050
   it.each`
     WQL                                               | validationError
     ${''}                                             | ${undefined}

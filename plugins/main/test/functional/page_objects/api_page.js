@@ -29,9 +29,9 @@ export function ApiProvider({ getService, getPageObjects }) {
           `Invalid type: ${type}; use 'apiConfig' or 'apiTableEdit'`
         );
       }
-      await testSubjects.setValue(`${type}Username`, 'wazuh');
+      await testSubjects.setValue(`${type}Username`, 'cyb3rhq');
       log.debug('insert the user');
-      await testSubjects.setValue(`${type}Password`, 'wazuh');
+      await testSubjects.setValue(`${type}Password`, 'cyb3rhq');
       log.debug('insert the password');
       await testSubjects.setValue(`${type}Host`, 'http://localhost');
       log.debug('insert the host');
@@ -52,7 +52,7 @@ export function ApiProvider({ getService, getPageObjects }) {
       await testSubjects.click(tab);
       await PageObjects.common.sleep(1500);
       expect(await browser.getCurrentUrl()).to.contain('tab=api');
-      expect(await browser.getCurrentUrl()).to.contain('app/wazuh#/settings');
+      expect(await browser.getCurrentUrl()).to.contain('app/cyb3rhq#/settings');
     }
 
     /**

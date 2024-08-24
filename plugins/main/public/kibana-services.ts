@@ -14,9 +14,9 @@ import { DataPublicPluginStart } from '../../../src/plugins/data/public';
 import { VisualizationsStart } from '../../../src/plugins/visualizations/public';
 import { NavigationPublicPluginStart } from '../../../src/plugins/navigation/public';
 import { AppPluginStartDependencies } from './types';
-import { WazuhCheckUpdatesPluginStart } from '../../wazuh-check-updates/public';
-import { WazuhEnginePluginStart } from '../../wazuh-engine/public';
-import { WazuhFleetPluginStart } from '../../wazuh-fleet/public';
+import { Cyb3rhqCheckUpdatesPluginStart } from '../../cyb3rhq-check-updates/public';
+import { Cyb3rhqEnginePluginStart } from '../../cyb3rhq-engine/public';
+import { Cyb3rhqFleetPluginStart } from '../../cyb3rhq-fleet/public';
 
 let angularModule: any = null;
 let discoverModule: any = null;
@@ -45,18 +45,18 @@ export const [getWzMainParams, setWzMainParams] =
   createGetterSetter<NavigationPublicPluginStart>('WzMainParams');
 export const [getWzCurrentAppID, setWzCurrentAppID] =
   createGetterSetter<NavigationPublicPluginStart>('WzCurrentAppID');
-export const [getWazuhCheckUpdatesPlugin, setWazuhCheckUpdatesPlugin] =
-  createGetterSetter<WazuhCheckUpdatesPluginStart>('WazuhCheckUpdatesPlugin');
-export const [getWazuhCorePlugin, setWazuhCorePlugin] =
-  createGetterSetter<WazuhCheckUpdatesPluginStart>('WazuhCorePlugin');
-export const [getWazuhEnginePlugin, setWazuhEnginePlugin] =
-  createGetterSetter<WazuhEnginePluginStart>('WazuhEnginePlugin');
+export const [getCyb3rhqCheckUpdatesPlugin, setCyb3rhqCheckUpdatesPlugin] =
+  createGetterSetter<Cyb3rhqCheckUpdatesPluginStart>('Cyb3rhqCheckUpdatesPlugin');
+export const [getCyb3rhqCorePlugin, setCyb3rhqCorePlugin] =
+  createGetterSetter<Cyb3rhqCheckUpdatesPluginStart>('Cyb3rhqCorePlugin');
+export const [getCyb3rhqEnginePlugin, setCyb3rhqEnginePlugin] =
+  createGetterSetter<Cyb3rhqEnginePluginStart>('Cyb3rhqEnginePlugin');
 export const [getHeaderActionMenuMounter, setHeaderActionMenuMounter] =
   createGetterSetter<AppMountParameters['setHeaderActionMenu']>(
     'headerActionMenuMounter',
   );
-export const [getWazuhFleetPlugin, setWazuhFleetPlugin] =
-  createGetterSetter<WazuhFleetPluginStart>('WazuhFleetPlugin');
+export const [getCyb3rhqFleetPlugin, setCyb3rhqFleetPlugin] =
+  createGetterSetter<Cyb3rhqFleetPluginStart>('Cyb3rhqFleetPlugin');
 
 /**
  * set bootstrapped inner angular module

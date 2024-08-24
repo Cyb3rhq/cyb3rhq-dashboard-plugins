@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Overview -> general test
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Overview -> general test
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
   const esTableViz = getService('esTableViz');
   const filterBar = getService('filterBar');
   const find = getService('find');
-  const PageObjects = getPageObjects(['wazuhCommon', 'common']);
+  const PageObjects = getPageObjects(['cyb3rhqCommon', 'common']);
   const pieCharts = getService('pieCharts');
   const queryBar = getService('queryBar');
   const tableViz = getService('tableViz');
@@ -32,12 +32,12 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
   describe.skip('security_events', () => {
     let es_index: string;
     before(async () => {
-      await PageObjects.wazuhCommon.OpenSecurityEvents();
-      es_index = 'wazuh-alerts-*'; // TODO: use the configuration service
+      await PageObjects.cyb3rhqCommon.OpenSecurityEvents();
+      es_index = 'cyb3rhq-alerts-*'; // TODO: use the configuration service
     });
 
     beforeEach(async () => {
-      await PageObjects.wazuhCommon.setTodayRange();
+      await PageObjects.cyb3rhqCommon.setTodayRange();
     });
 
     //#region Visualization tests
@@ -94,7 +94,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
 
     it('should alert level evolution chart value ​​are correct', async () => {
       const chartSelector: string =
-        '#Wazuh-App-Overview-General-Alert-level-evolution';
+        '#Cyb3rhq-App-Overview-General-Alert-level-evolution';
       const values: object = await areaChart.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -117,7 +117,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
     });
 
     it('should alert chart values are correct', async () => {
-      const chartSelector: string = '#Wazuh-App-Overview-General-Alerts';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-General-Alerts';
       const values: object = await areaChart.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -140,7 +140,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
     });
 
     it('should top 5 agent chart pie values are correct', async () => {
-      const chartSelector: string = '#Wazuh-App-Overview-General-Top-5-agents';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-General-Top-5-agents';
       const values = await pieCharts.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -166,7 +166,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
 
     it('should top 5 rule groups chart pie values are correct', async () => {
       const chartSelector: string =
-        '#Wazuh-App-Overview-General-Top-5-rule-groups';
+        '#Cyb3rhq-App-Overview-General-Top-5-rule-groups';
       const values = await pieCharts.getValues(chartSelector);
       const query: SearchParams = {
         index: es_index,
@@ -191,7 +191,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
 
     it('should alerts evolution - top 5 agents chart values are correct', async () => {
       const chartSelector: string =
-        '#Wazuh-App-Overview-General-Alerts-evolution-Top-5-agents';
+        '#Cyb3rhq-App-Overview-General-Alerts-evolution-Top-5-agents';
       const values: object = await areaChart.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -215,7 +215,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
 
     it('should alerts summary table values are correct', async () => {
       const summarySelector: string =
-        '#Wazuh-App-Overview-General-Alerts-summary';
+        '#Cyb3rhq-App-Overview-General-Alerts-summary';
       const values: object[] = await tableViz.getValues(summarySelector);
 
       const fields = [
@@ -331,7 +331,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await filterBar.addFilter('rule.level', 'is', '7');
       await PageObjects.common.sleep(3000);
 
-      const chartSelector: string = '#Wazuh-App-Overview-General-Alerts';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-General-Alerts';
       const values: object = await areaChart.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -369,7 +369,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await filterBar.addFilter('rule.level', 'is', '7');
       await PageObjects.common.sleep(3000);
 
-      const chartSelector: string = '#Wazuh-App-Overview-General-Alerts';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-General-Alerts';
       const values: object = await areaChart.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -407,7 +407,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await filterBar.addFilter('rule.level', 'is', '7');
       await PageObjects.common.sleep(3000);
 
-      const chartSelector: string = '#Wazuh-App-Overview-General-Top-5-agents';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-General-Top-5-agents';
       const values = await pieCharts.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -448,7 +448,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await PageObjects.common.sleep(3000);
 
       const chartSelector: string =
-        '#Wazuh-App-Overview-General-Top-5-rule-groups';
+        '#Cyb3rhq-App-Overview-General-Top-5-rule-groups';
       const values = await pieCharts.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -487,7 +487,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await PageObjects.common.sleep(3000);
 
       const chartSelector: string =
-        '#Wazuh-App-Overview-General-Alerts-evolution-Top-5-agents';
+        '#Cyb3rhq-App-Overview-General-Alerts-evolution-Top-5-agents';
       const values: object = await areaChart.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -526,7 +526,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await PageObjects.common.sleep(3000);
 
       const summarySelector: string =
-        '#Wazuh-App-Overview-General-Alerts-summary';
+        '#Cyb3rhq-App-Overview-General-Alerts-summary';
       const values: object[] = await tableViz.getValues(summarySelector);
 
       const fields = [
@@ -646,7 +646,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await queryBar.submitQuery();
       await PageObjects.common.sleep(3000);
 
-      const chartSelector: string = '#Wazuh-App-Overview-General-Alerts';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-General-Alerts';
       const values: object = await areaChart.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -686,7 +686,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await queryBar.submitQuery();
       await PageObjects.common.sleep(3000);
 
-      const chartSelector: string = '#Wazuh-App-Overview-General-Alerts';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-General-Alerts';
       const values: object = await areaChart.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -726,7 +726,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await queryBar.submitQuery();
       await PageObjects.common.sleep(3000);
 
-      const chartSelector: string = '#Wazuh-App-Overview-General-Top-5-agents';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-General-Top-5-agents';
       const values = await pieCharts.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -769,7 +769,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await PageObjects.common.sleep(3000);
 
       const chartSelector: string =
-        '#Wazuh-App-Overview-General-Top-5-rule-groups';
+        '#Cyb3rhq-App-Overview-General-Top-5-rule-groups';
       const values = await pieCharts.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -809,7 +809,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await PageObjects.common.sleep(3000);
 
       const chartSelector: string =
-        '#Wazuh-App-Overview-General-Alerts-evolution-Top-5-agents';
+        '#Cyb3rhq-App-Overview-General-Alerts-evolution-Top-5-agents';
       const values: object = await areaChart.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -850,7 +850,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await PageObjects.common.sleep(3000);
 
       const summarySelector: string =
-        '#Wazuh-App-Overview-General-Alerts-summary';
+        '#Cyb3rhq-App-Overview-General-Alerts-summary';
       const values: object[] = await tableViz.getValues(summarySelector);
 
       const fields = [

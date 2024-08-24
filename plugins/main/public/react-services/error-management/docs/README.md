@@ -29,20 +29,20 @@ Exists the following error sources:
 # Error sources
 
 - Operational errors (development) - Native javascript errors
-- Wazuh API errors
+- Cyb3rhq API errors
 - Indexer Error
 - Http errors
 - Etc
 
 
-Our frontend server-side have a intermedial layer between the frontend and the backend APIs like Indexer and Wazuh.
+Our frontend server-side have a intermedial layer between the frontend and the backend APIs like Indexer and Cyb3rhq.
 This layer catch the error and categorize them by type and add a custom error code.
 
  ### Error codes: code
- * wazuh-api-Indexer 20XX
- * wazuh-api         30XX
- * wazuh-Indexer     40XX
- * wazuh-reporting   50XX
+ * cyb3rhq-api-Indexer 20XX
+ * cyb3rhq-api         30XX
+ * cyb3rhq-Indexer     40XX
+ * cyb3rhq-reporting   50XX
  * unknown           1000
  
 
@@ -71,8 +71,8 @@ graph TD;
  errorHandlerDecorator-Decorator-->ErrorHandler
  ErrorHandler-->ErrorFactory
  ErrorHandler-->ErrorOrchestratorService
- ErrorFactory-->WazuhApiError
- ErrorFactory-->WazuhReportingError
+ ErrorFactory-->Cyb3rhqApiError
+ ErrorFactory-->Cyb3rhqReportingError
  ErrorFactory-->IndexerApiError
  ErrorFactory-->IndexerError
 ```
@@ -97,7 +97,7 @@ The error orchestrator have the responsability to receive and error and showing 
 
 The current error handler tells the error orchestrator how the error will be shown to the user/developer. It sends the error and the showing options to the error orchestrator.
 
-For more details about the error orchestrator see the [Error Orchestrator documentation](https://github.com/wazuh/wazuh-dashboard-plugins/blob/ef071e55fd310bdb4cecb7d490ea83372bb07b01/public/react-services/error-orchestrator/README.md)
+For more details about the error orchestrator see the [Error Orchestrator documentation](https://github.com/cyb3rhq/cyb3rhq-dashboard-plugins/blob/ef071e55fd310bdb4cecb7d490ea83372bb07b01/public/react-services/error-orchestrator/README.md)
 
 ## React patterns
 
@@ -118,8 +118,8 @@ The `error factory` is responsible to create different instances of error depend
 
 The errors returned are defined as the `error type` received.
 
-- WazuhApiError
-- WazuhReportingError
+- Cyb3rhqApiError
+- Cyb3rhqReportingError
 - IndexerApiError
 - HttpError
 
@@ -134,16 +134,16 @@ The next diagram shows how is the relationship between the different types of er
 ```mermaid
 classDiagram
 
-class iWazuhError {
+class iCyb3rhqError {
     <<interface>>
     +Error error
-    +IWazuhErrorLogOptions logOptions
+    +ICyb3rhqErrorLogOptions logOptions
 }
 
-iWazuhError <|-- WazuhError : implements
-WazuhError <|-- HttpError : extends
-HttpError <|-- WazuhApiError : extends
-HttpError <|-- WazuhReportingError : extends
+iCyb3rhqError <|-- Cyb3rhqError : implements
+Cyb3rhqError <|-- HttpError : extends
+HttpError <|-- Cyb3rhqApiError : extends
+HttpError <|-- Cyb3rhqReportingError : extends
 HttpError <|-- IndexerApiError : extends
 HttpError <|-- IndexerError : extends
 
@@ -158,8 +158,8 @@ In the next table we have defined how the will be treated.
 
 | Error type          | show        | store | display |
 |---------------------|-------------|-------|---------|
-| WazuhApiError       | toast       |       |    ✅   |
-| WazuhReportingError | toast       |       |    ✅   |
+| Cyb3rhqApiError       | toast       |       |    ✅   |
+| Cyb3rhqReportingError | toast       |       |    ✅   |
 | IndexerApiError     | toast       |       |    ✅   |
 | HttpError           | toast       |       |    ✅   |
 | Error               | log(error)  |       |    ✅   |

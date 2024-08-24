@@ -195,7 +195,7 @@ This is used in:
   - `onChange` component handler 
   - `onSearch` component handler
 
-Its syntax is equal to Wazuh API Query Language
+Its syntax is equal to Cyb3rhq API Query Language
 https://wazuh.com/<major_version>.<minor_version>/user-manual/api/queries.html
 
 > The AQL query language is a implementation of this syntax.

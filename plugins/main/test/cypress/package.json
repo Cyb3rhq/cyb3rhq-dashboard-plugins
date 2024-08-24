@@ -1,5 +1,5 @@
 {
-  "name": "wazuh-kibana-app-automation",
+  "name": "cyb3rhq-kibana-app-automation",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,7 +15,7 @@
     "cypress:run-headless:github-actions:xpack": "cypress-tags run -e TAGS=\"@actions\" --headless --browser chrome --config baseUrl=https://kibana:5601/ --env type=xpack -e TAGS=\"@actions\"",
     "cypress:run-headless:github-actions:basic": "cypress-tags run -e TAGS=\"@actions\" --headless --browser chrome --config baseUrl=http://kibana:5601/ --env type=basic -e TAGS=\"@actions\"",
     "cypress:run-headless:github-actions:odfe": "cypress-tags run -e TAGS=\"@actions\" --headless --browser chrome --config baseUrl=http://kibana:5601/ --env type=odfe -e TAGS=\"@actions\"",
-    "cypress:run-headless:github-actions:wzd": "cypress-tags run -e TAGS=\"@actions\" --headless --browser chrome --config baseUrl=https://wazuh.dashboard:5601/ --env type=wzd -e TAGS=\"@actions\"",
+    "cypress:run-headless:github-actions:wzd": "cypress-tags run -e TAGS=\"@actions\" --headless --browser chrome --config baseUrl=https://cyb3rhq.dashboard:5601/ --env type=wzd -e TAGS=\"@actions\"",
     "cypress:run-headless:xpack": "cypress run --headless --browser chrome --config baseUrl=https://localhost:5601/ --env type=xpack",
     "cypress:run-headless:basic": "cypress run --headless --browser chrome --config baseUrl=http://localhost:5601/ --env type=basic",
     "cypress:run-headless:odfe": "cypress run --headless --browser chrome --config baseUrl=http://localhost:5601/ --env type=odfe",

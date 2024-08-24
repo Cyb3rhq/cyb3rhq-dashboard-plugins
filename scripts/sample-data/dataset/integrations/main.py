@@ -7,14 +7,14 @@ from pathlib import Path
 
 index_template_file='template.json'
 default_count='10000'
-default_index_name='wazuh-integrations'
+default_index_name='cyb3rhq-integrations'
 asset_identifier='integration'
 
 def generate_document(params):
   id_int = int(params["id"])
   top_limit = id_int - 1 if id_int - 1 > -1 else 0
 
-  # https://github.com/wazuh/wazuh/blob/11334-dev-new-wazuh-engine/src/engine/ruleset/schemas/wazuh-asset.json
+  # https://github.com/cyb3rhq/cyb3rhq/blob/11334-dev-new-cyb3rhq-engine/src/engine/ruleset/schemas/cyb3rhq-asset.json
   data = {
     "ecs": {"version": "1.7.0"},
     "name": f'{asset_identifier}/{str(id_int)}/0',
@@ -32,9 +32,9 @@ def generate_document(params):
       "versions": ['0.1', '0.2'],
       "references": [f'Ref 01', f'Ref 02']
     },
-    "wazuh": {
+    "cyb3rhq": {
       "cluster": {
-        "name": "wazuh"
+        "name": "cyb3rhq"
       }
     },
     "parents": [],

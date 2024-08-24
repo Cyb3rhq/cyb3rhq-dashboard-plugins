@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import WazuhError from '../../error-factory/errors/WazuhError';
+import Cyb3rhqError from '../../error-factory/errors/Cyb3rhqError';
 import { ErrorHandler } from '../error-handler';
 
 /**
@@ -9,7 +9,7 @@ import { ErrorHandler } from '../error-handler';
  */
 export const useErrorHandler = (callback: Function) => {
   const [res, setRes] = useState(null);
-  const [error, setError] = useState<Error|WazuhError|null>(null);
+  const [error, setError] = useState<Error|Cyb3rhqError|null>(null);
   useEffect(() => {
     const handleCallback =  async () => {
       try {
@@ -21,7 +21,7 @@ export const useErrorHandler = (callback: Function) => {
           error = ErrorHandler.handleError(error);
         }
         setRes(null);
-        setError(error as Error | WazuhError);
+        setError(error as Error | Cyb3rhqError);
       }
     }
 

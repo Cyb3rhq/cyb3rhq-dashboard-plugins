@@ -1,0 +1,17 @@
+# Cyb3rhq - Filebeat configuration file
+filebeat.modules:
+  - module: cyb3rhq
+    alerts:
+      enabled: true
+    archives:
+      enabled: false
+
+setup.template.json.enabled: true
+setup.template.json.path: '/etc/filebeat/cyb3rhq-template.json'
+setup.template.json.name: 'cyb3rhq'
+setup.template.overwrite: true
+setup.ilm.enabled: false
+
+output.elasticsearch:
+  hosts: ['elasticsearch:9200']
+  protocol: http

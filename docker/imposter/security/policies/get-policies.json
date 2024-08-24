@@ -2,10 +2,10 @@
   "data": {
     "affected_items": [
       {
-        "policy": "policy/wazuh/0",
+        "policy": "policy/cyb3rhq/0",
         "hash": "13009429687400424171",
         "assets": [
-          "integration/wazuh-core/0",
+          "integration/cyb3rhq-core/0",
           "integration/syslog/0",
           "integration/system/0",
           "integration/windows/0",
@@ -14,7 +14,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/0",
-          "wazuh": ["rule/enrichment/0", "decoder/integrations/0"]
+          "cyb3rhq": ["rule/enrichment/0", "decoder/integrations/0"]
         }
       },
       {
@@ -30,7 +30,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/1",
-          "wazuh": ["rule/enrichment/1", "decoder/integrations/1"]
+          "cyb3rhq": ["rule/enrichment/1", "decoder/integrations/1"]
         }
       },
       {
@@ -46,7 +46,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/2",
-          "wazuh": ["rule/enrichment/2", "decoder/integrations/2"]
+          "cyb3rhq": ["rule/enrichment/2", "decoder/integrations/2"]
         }
       },
       {
@@ -62,7 +62,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/3",
-          "wazuh": ["rule/enrichment/3", "decoder/integrations/3"]
+          "cyb3rhq": ["rule/enrichment/3", "decoder/integrations/3"]
         }
       },
       {
@@ -78,7 +78,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/4",
-          "wazuh": ["rule/enrichment/4", "decoder/integrations/4"]
+          "cyb3rhq": ["rule/enrichment/4", "decoder/integrations/4"]
         }
       },
       {
@@ -94,14 +94,14 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/5",
-          "wazuh": ["rule/enrichment/5", "decoder/integrations/5"]
+          "cyb3rhq": ["rule/enrichment/5", "decoder/integrations/5"]
         }
       },
       {
         "policy": "policy/threat-hunting/6",
         "hash": "23908409238409283490",
         "assets": [
-          "integration/wazuh-core/6",
+          "integration/cyb3rhq-core/6",
           "integration/sysmon/6",
           "integration/zeek/6",
           "integration/linux/6",
@@ -110,7 +110,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/6",
-          "wazuh": ["rule/enrichment/6", "decoder/integrations/6"]
+          "cyb3rhq": ["rule/enrichment/6", "decoder/integrations/6"]
         }
       },
       {
@@ -126,7 +126,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/7",
-          "wazuh": ["rule/enrichment/7", "decoder/integrations/7"]
+          "cyb3rhq": ["rule/enrichment/7", "decoder/integrations/7"]
         }
       },
       {
@@ -142,7 +142,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/8",
-          "wazuh": ["rule/enrichment/8", "decoder/integrations/8"]
+          "cyb3rhq": ["rule/enrichment/8", "decoder/integrations/8"]
         }
       },
       {
@@ -158,7 +158,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/9",
-          "wazuh": ["rule/enrichment/9", "decoder/integrations/9"]
+          "cyb3rhq": ["rule/enrichment/9", "decoder/integrations/9"]
         }
       },
       {
@@ -174,7 +174,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/10",
-          "wazuh": ["rule/enrichment/10", "decoder/integrations/10"]
+          "cyb3rhq": ["rule/enrichment/10", "decoder/integrations/10"]
         }
       },
       {
@@ -190,7 +190,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/11",
-          "wazuh": ["rule/enrichment/11", "decoder/integrations/11"]
+          "cyb3rhq": ["rule/enrichment/11", "decoder/integrations/11"]
         }
       },
       {
@@ -206,7 +206,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/12",
-          "wazuh": ["rule/enrichment/12", "decoder/integrations/12"]
+          "cyb3rhq": ["rule/enrichment/12", "decoder/integrations/12"]
         }
       },
       {
@@ -222,7 +222,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/13",
-          "wazuh": ["rule/enrichment/13", "decoder/integrations/13"]
+          "cyb3rhq": ["rule/enrichment/13", "decoder/integrations/13"]
         }
       },
       {
@@ -238,7 +238,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/14",
-          "wazuh": ["rule/enrichment/14", "decoder/integrations/14"]
+          "cyb3rhq": ["rule/enrichment/14", "decoder/integrations/14"]
         }
       },
       {
@@ -254,7 +254,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/15",
-          "wazuh": ["rule/enrichment/15", "decoder/integrations/15"]
+          "cyb3rhq": ["rule/enrichment/15", "decoder/integrations/15"]
         }
       },
       {
@@ -270,7 +270,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/16",
-          "wazuh": ["rule/enrichment/16", "decoder/integrations/16"]
+          "cyb3rhq": ["rule/enrichment/16", "decoder/integrations/16"]
         }
       },
       {
@@ -286,7 +286,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/17",
-          "wazuh": ["rule/enrichment/17", "decoder/integrations/17"]
+          "cyb3rhq": ["rule/enrichment/17", "decoder/integrations/17"]
         }
       },
       {
@@ -302,7 +302,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/18",
-          "wazuh": ["rule/enrichment/18", "decoder/integrations/18"]
+          "cyb3rhq": ["rule/enrichment/18", "decoder/integrations/18"]
         }
       },
       {
@@ -318,7 +318,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/19",
-          "wazuh": ["rule/enrichment/19", "decoder/integrations/19"]
+          "cyb3rhq": ["rule/enrichment/19", "decoder/integrations/19"]
         }
       },
       {
@@ -334,7 +334,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/20",
-          "wazuh": ["rule/enrichment/20", "decoder/integrations/20"]
+          "cyb3rhq": ["rule/enrichment/20", "decoder/integrations/20"]
         }
       },
       {
@@ -350,7 +350,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/21",
-          "wazuh": ["rule/enrichment/21", "decoder/integrations/21"]
+          "cyb3rhq": ["rule/enrichment/21", "decoder/integrations/21"]
         }
       },
       {
@@ -366,7 +366,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/22",
-          "wazuh": ["rule/enrichment/22", "decoder/integrations/22"]
+          "cyb3rhq": ["rule/enrichment/22", "decoder/integrations/22"]
         }
       },
       {
@@ -382,7 +382,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/23",
-          "wazuh": ["rule/enrichment/23", "decoder/integrations/23"]
+          "cyb3rhq": ["rule/enrichment/23", "decoder/integrations/23"]
         }
       },
       {
@@ -398,7 +398,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/24",
-          "wazuh": ["rule/enrichment/24", "decoder/integrations/24"]
+          "cyb3rhq": ["rule/enrichment/24", "decoder/integrations/24"]
         }
       },
       {
@@ -414,7 +414,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/25",
-          "wazuh": ["rule/enrichment/25", "decoder/integrations/25"]
+          "cyb3rhq": ["rule/enrichment/25", "decoder/integrations/25"]
         }
       },
       {
@@ -430,7 +430,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/26",
-          "wazuh": ["rule/enrichment/26", "decoder/integrations/26"]
+          "cyb3rhq": ["rule/enrichment/26", "decoder/integrations/26"]
         }
       },
       {
@@ -446,7 +446,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/27",
-          "wazuh": ["rule/enrichment/27", "decoder/integrations/27"]
+          "cyb3rhq": ["rule/enrichment/27", "decoder/integrations/27"]
         }
       },
       {
@@ -462,7 +462,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/28",
-          "wazuh": ["rule/enrichment/28", "decoder/integrations/28"]
+          "cyb3rhq": ["rule/enrichment/28", "decoder/integrations/28"]
         }
       },
       {
@@ -478,7 +478,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/29",
-          "wazuh": ["rule/enrichment/29", "decoder/integrations/29"]
+          "cyb3rhq": ["rule/enrichment/29", "decoder/integrations/29"]
         }
       },
       {
@@ -494,7 +494,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/30",
-          "wazuh": ["rule/enrichment/30", "decoder/integrations/30"]
+          "cyb3rhq": ["rule/enrichment/30", "decoder/integrations/30"]
         }
       },
       {
@@ -510,7 +510,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/31",
-          "wazuh": ["rule/enrichment/31", "decoder/integrations/31"]
+          "cyb3rhq": ["rule/enrichment/31", "decoder/integrations/31"]
         }
       },
       {
@@ -526,7 +526,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/32",
-          "wazuh": ["rule/enrichment/32", "decoder/integrations/32"]
+          "cyb3rhq": ["rule/enrichment/32", "decoder/integrations/32"]
         }
       },
       {
@@ -542,7 +542,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/33",
-          "wazuh": ["rule/enrichment/33", "decoder/integrations/33"]
+          "cyb3rhq": ["rule/enrichment/33", "decoder/integrations/33"]
         }
       },
       {
@@ -558,7 +558,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/34",
-          "wazuh": ["rule/enrichment/34", "decoder/integrations/34"]
+          "cyb3rhq": ["rule/enrichment/34", "decoder/integrations/34"]
         }
       },
       {
@@ -574,7 +574,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/35",
-          "wazuh": ["rule/enrichment/35", "decoder/integrations/35"]
+          "cyb3rhq": ["rule/enrichment/35", "decoder/integrations/35"]
         }
       },
       {
@@ -590,7 +590,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/36",
-          "wazuh": ["rule/enrichment/36", "decoder/integrations/36"]
+          "cyb3rhq": ["rule/enrichment/36", "decoder/integrations/36"]
         }
       },
       {
@@ -606,7 +606,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/37",
-          "wazuh": ["rule/enrichment/37", "decoder/integrations/37"]
+          "cyb3rhq": ["rule/enrichment/37", "decoder/integrations/37"]
         }
       },
       {
@@ -622,7 +622,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/38",
-          "wazuh": ["rule/enrichment/38", "decoder/integrations/38"]
+          "cyb3rhq": ["rule/enrichment/38", "decoder/integrations/38"]
         }
       },
       {
@@ -638,7 +638,7 @@
         ],
         "default_parents": {
           "user": "decoder/integrations/39",
-          "wazuh": ["rule/enrichment/39", "decoder/integrations/39"]
+          "cyb3rhq": ["rule/enrichment/39", "decoder/integrations/39"]
         }
       }
     ],

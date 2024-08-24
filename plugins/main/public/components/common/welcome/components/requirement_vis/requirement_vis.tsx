@@ -1,8 +1,8 @@
 /*
- * Wazuh app - React component building the welcome screen of an agent.
+ * Cyb3rhq app - React component building the welcome screen of an agent.
  * version, OS, registration date, last keep alive.
  *
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@ import { VisualizationBasicWidgetSelector } from '../../../charts/visualizations
 import { getRequirementAlerts } from './lib';
 import { useTimeFilter } from '../../../hooks';
 import { AppState } from '../../../../../react-services';
-import { WAZUH_MODULES } from '../../../../../../common/wazuh-modules';
+import { CYB3RHQ_MODULES } from '../../../../../../common/cyb3rhq-modules';
 import { PinnedAgentManager } from '../../../../wz-agent-selector/wz-agent-selector-service';
 import {
   FILTER_OPERATOR,
@@ -65,7 +65,7 @@ export function RequirementVis(props) {
       agent.id
     }&_g=${PatternDataSourceFilterManager.filtersToURLFormat(filters)}`;
     NavigationService.getInstance().navigateToApp(
-      WAZUH_MODULES[tabName].appId,
+      CYB3RHQ_MODULES[tabName].appId,
       {
         path: `#/overview?${params}`,
       },

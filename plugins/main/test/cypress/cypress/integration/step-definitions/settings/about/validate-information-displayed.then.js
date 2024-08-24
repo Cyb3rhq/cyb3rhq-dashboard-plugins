@@ -15,7 +15,7 @@ const installDateTitle = getSelector('installDateTitle', pageName);
 const welcomingCard = getSelector('welcomingCard', pageName);
 const welcomingCardTitle = getSelector('welcomingCardTitle', pageName);
 
-Then('The Wazuh information is displayed', () => {
+Then('The Cyb3rhq information is displayed', () => {
   elementIsVisible(appVersionTitle);
   elementIsVisible(appVersionNumber);
 

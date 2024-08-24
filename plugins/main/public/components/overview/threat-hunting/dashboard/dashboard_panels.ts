@@ -7,7 +7,7 @@ import { EmbeddableInput } from '../../../../../../../../src/plugins/embeddable/
 
 const getVisStateTop10AlertLevelEvolution = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-General-Alert-level-evolution',
+    id: 'Cyb3rhq-App-Overview-General-Alert-level-evolution',
     title: 'Top 10 Alert level evolution',
     type: 'area',
     params: {
@@ -155,7 +155,7 @@ const getVisStateTop10AlertLevelEvolution = (indexPatternId: string) => {
 
 const getVisStateTop5Agents = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-General-Top-5-agents',
+    id: 'Cyb3rhq-App-Overview-General-Top-5-agents',
     title: 'Top 5 agents',
     type: 'pie',
     params: {
@@ -221,7 +221,7 @@ const getVisStateTop5Agents = (indexPatternId: string) => {
 
 const getVisStateTop10MITREATTACKS = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-General-Alerts-Top-Mitre',
+    id: 'Cyb3rhq-App-Overview-General-Alerts-Top-Mitre',
     title: 'Top 10 MITRE ATT&CKS',
     type: 'pie',
     params: {
@@ -284,7 +284,7 @@ const getVisStateTop10MITREATTACKS = (indexPatternId: string) => {
 
 const getVisStateAlertEvolutionTop5Agents = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-General-Alerts-evolution-Top-5-agents',
+    id: 'Cyb3rhq-App-Overview-General-Alerts-evolution-Top-5-agents',
     title: 'Alerts evolution - Top 5 agents',
     type: 'histogram',
     params: {
@@ -392,7 +392,7 @@ const getVisStatePinnedAgentTop10AlertGroupsEvolution = (
   indexPatternId: string,
 ) => {
   return {
-    id: 'Wazuh-App-Agents-General-Alert-groups-evolution',
+    id: 'Cyb3rhq-App-Agents-General-Alert-groups-evolution',
     title: 'Top 10 Alert groups evolution',
     type: 'area',
     params: {
@@ -540,7 +540,7 @@ const getVisStatePinnedAgentTop10AlertGroupsEvolution = (
 
 const getVisStateAlertsAgents = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-General-Alerts',
+    id: 'Cyb3rhq-App-Agents-General-Alerts',
     title: 'Alerts',
     type: 'area',
     params: {
@@ -688,7 +688,7 @@ const getVisStateAlertsAgents = (indexPatternId: string) => {
 
 const getVisStateTop5AlertsAgents = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-General-Top-5-alerts',
+    id: 'Cyb3rhq-App-Agents-General-Top-5-alerts',
     title: 'Top 5 alerts',
     type: 'pie',
     params: {
@@ -754,7 +754,7 @@ const getVisStateTop5AlertsAgents = (indexPatternId: string) => {
 
 const getVisStateTop5RuleGroupsAgents = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-General-Top-10-groups',
+    id: 'Cyb3rhq-App-Agents-General-Top-10-groups',
     title: 'Top 5 rule groups',
     type: 'pie',
     params: {
@@ -820,7 +820,7 @@ const getVisStateTop5RuleGroupsAgents = (indexPatternId: string) => {
 
 const getVisStateTop5PCIDSSRequirementsAgents = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-General-Top-5-PCI-DSS-Requirements',
+    id: 'Cyb3rhq-App-Agents-General-Top-5-PCI-DSS-Requirements',
     title: 'Top 5 PCI DSS Requirements',
     type: 'pie',
     params: {

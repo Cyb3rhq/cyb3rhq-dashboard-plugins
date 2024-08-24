@@ -30,10 +30,10 @@ baseUrl=`https://localhost:5601/`
 * ingresar al template de "WZD" y modificar el .env con el nombre de la imagen de docker de cypress que se genero previamente
 * levantar el contenerdo con docker compose up -d
 * eliminar el paquete de WZD que viene pre-instalado:
-    - ./bin/opensearch-dashboards-plugin remove wazuh
+    - ./bin/opensearch-dashboards-plugin remove cyb3rhq
     - docker compose restart 
 * instalar el paquete nuevo (el paquete que se usa en el GitHub Action) y ejecutar:
-    - ./bin/opensearch-dashboards-plugin install https://packages-dev.wazuh.com/pre-release/ui/dashboard/wazuh-4.3.5-1.zip
+    - ./bin/opensearch-dashboards-plugin install https://packages-dev.wazuh.com/pre-release/ui/dashboard/cyb3rhq-4.3.5-1.zip
     - reiciar docker
     - check WZD
 * ingresar al Path del template de wzd y ejecutar:

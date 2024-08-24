@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Load App config service
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Load App config service
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@ import { UI_ERROR_SEVERITIES } from './error-orchestrator/types';
 import { getErrorOrchestrator } from './common-services';
 
 /**
- * Retunrs the wazuh app config
+ * Retunrs the cyb3rhq app config
  */
 export const loadAppConfig = async () => {
   try {

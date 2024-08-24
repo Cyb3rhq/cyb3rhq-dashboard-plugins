@@ -15,4 +15,4 @@ jobs:
     with:
       reference: ${{ github.ref_name }}
       command: 'yarn build'
-      artifact_name: 'wazuh-${{ github.ref_name }}'
+      artifact_name: 'cyb3rhq-${{ github.ref_name }}'

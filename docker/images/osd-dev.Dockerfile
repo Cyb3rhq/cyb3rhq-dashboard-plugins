@@ -1,4 +1,4 @@
-# Usage: docker build --build-arg NODE_VERSION=14.20.1 --build-arg OPENSEARCH_VERSION=2.5.0 -t quay.io/wazuh/osd-dev:2.5.0 -f osd-dev.Dockerfile .
+# Usage: docker build --build-arg NODE_VERSION=14.20.1 --build-arg OPENSEARCH_VERSION=2.5.0 -t quay.io/cyb3rhq/osd-dev:2.5.0 -f osd-dev.Dockerfile .
 
 ARG NODE_VERSION
 FROM node:${NODE_VERSION} AS base
@@ -18,7 +18,7 @@ RUN yarn install
 RUN yarn config set registry http://host.docker.internal:4873 && \
     sed -i 's/https:\/\/registry.yarnpkg.com/http:\/\/host.docker.internal:4873/g' yarn.lock
 
-RUN mkdir -p /home/node/kbn/data/wazuh/config
+RUN mkdir -p /home/node/kbn/data/cyb3rhq/config
 
 FROM node:${NODE_VERSION}
 USER node

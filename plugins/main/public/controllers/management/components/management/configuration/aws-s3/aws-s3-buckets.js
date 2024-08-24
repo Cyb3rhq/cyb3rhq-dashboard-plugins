@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of AWS S3 - buckets tab.
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - React component for show configuration of AWS S3 - buckets tab.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,7 +39,7 @@ class WzConfigurationAmazonS3Buckets extends Component {
     super(props);
   }
   render() {
-    const { currentConfig, wodleConfig, wazuhNotReadyYet } = this.props;
+    const { currentConfig, wodleConfig, cyb3rhqNotReadyYet } = this.props;
     const items =
       wodleConfig && wodleConfig['aws-s3'] && wodleConfig['aws-s3'].buckets
         ? settingsListBuilder(wodleConfig['aws-s3'].buckets, 'name')
@@ -51,7 +51,7 @@ class WzConfigurationAmazonS3Buckets extends Component {
             (wodleConfig['aws-s3'] && !wodleConfig['aws-s3'].buckets)) && (
             <WzNoConfig error='not-present' help={helpLinks} />
           )}
-        {wazuhNotReadyYet && (!currentConfig || !wodleConfig['aws-s3']) && (
+        {cyb3rhqNotReadyYet && (!currentConfig || !wodleConfig['aws-s3']) && (
           <WzNoConfig error='Server not ready yet' help={helpLinks} />
         )}
         {currentConfig &&
@@ -74,11 +74,11 @@ class WzConfigurationAmazonS3Buckets extends Component {
 }
 
 const mapStateToProps = state => ({
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet,
+  cyb3rhqNotReadyYet: state.appStateReducers.cyb3rhqNotReadyYet,
 });
 
 WzConfigurationAmazonS3Buckets.propTypes = {
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  cyb3rhqNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 };
 
 export default connect(mapStateToProps)(WzConfigurationAmazonS3Buckets);

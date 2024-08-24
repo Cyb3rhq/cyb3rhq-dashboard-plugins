@@ -1,4 +1,4 @@
-# Wazuh development with Elastic Stack
+# Cyb3rhq development with Elastic Stack
 
 ## Usage
 
@@ -11,11 +11,11 @@ environment. For example:
 
 The script will ask for all the required parameters to bring up the
 environment, including the version of the Elastic Stack you want to
-develop for, and the source code folder where the _wazuh-dashboard-plugins_ is
+develop for, and the source code folder where the _cyb3rhq-dashboard-plugins_ is
 located.
 
 **The script will not select the appropriate version of the
-_wazuh-dashboard-plugins_ to use, so be sure to check out the appropriate version
+_cyb3rhq-dashboard-plugins_ to use, so be sure to check out the appropriate version
 before bringing up the environment!**
 
 ## Notes
@@ -23,7 +23,7 @@ before bringing up the environment!**
 This environment will start a working deployment with:
 
 - Imposter - a mock server
-- Filebeat - sets up indices using Wazuh module
+- Filebeat - sets up indices using Cyb3rhq module
 - ElasticSearch-exporter - Elasticsearch metrics to Prometheus adapter
 - Elasticsearch single-node cluster
 - Kibana development environment

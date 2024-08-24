@@ -12,7 +12,7 @@ import { sanitizeSVG } from '../../lib/sanitizer';
 export default async function sanitizeUploadedSVG(context) {
   // Create a wrapper function that logs to plugin files and platform logging system
   const createLog = (level: string) => message => {
-    context.wazuh.logger[level](`sanitize:sanitizeUploadedSVG: ${message}`);
+    context.cyb3rhq.logger[level](`sanitize:sanitizeUploadedSVG: ${message}`);
   };
 
   // Create the logger
@@ -27,7 +27,7 @@ export default async function sanitizeUploadedSVG(context) {
     logger.debug('Task sanitize SVG started');
 
     logger.debug('Get plugins configuration');
-    const configuration = await context.wazuh_core.configuration.get();
+    const configuration = await context.cyb3rhq_core.configuration.get();
     const logosSettingKeys = [
       'customization.logo.sidebar',
       'customization.logo.app',
@@ -38,7 +38,7 @@ export default async function sanitizeUploadedSVG(context) {
     // Check each of the possible custom settings uploaded files look for SVG to sanitize
     logosSettingKeys.forEach(async logoKey => {
       const logoSetting =
-        context.wazuh_core.configuration._settings.get(logoKey);
+        context.cyb3rhq_core.configuration._settings.get(logoKey);
       const customLogoPath = configuration[logoKey];
       if (!logoSetting || !customLogoPath) {
         logger.debug(`Logo [${logoKey}] not customized. Skip.`);
@@ -105,7 +105,7 @@ export default async function sanitizeUploadedSVG(context) {
           logoSetting.options.file.store.resolveStaticURL(
             configuredCustomLogo.fileName,
           );
-        await context.wazuh_core.configuration.set({
+        await context.cyb3rhq_core.configuration.set({
           [logoKey]: pluginSettingValue,
         });
       }

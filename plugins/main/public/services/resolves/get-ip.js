@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module to fetch index patterns
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Module to fetch index patterns
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,7 +13,7 @@
 import { healthCheck } from './health-check';
 import { AppState } from '../../react-services/app-state';
 import { getDataPlugin, getSavedObjects } from '../../kibana-services';
-import { WazuhConfig } from '../../react-services/wazuh-config';
+import { Cyb3rhqConfig } from '../../react-services/cyb3rhq-config';
 import { getWzConfig } from './get-config';
 import { UI_LOGGER_LEVELS } from '../../../common/constants';
 import { UI_ERROR_SEVERITIES } from '../../react-services/error-orchestrator/types';
@@ -22,15 +22,15 @@ import { StatisticsDataSource } from '../../components/common/data-source/patter
 import NavigationService from '../../react-services/navigation-service';
 
 export async function getIp() {
-  const checkWazuhPatterns = async indexPatterns => {
-    const configuration = await getWzConfig(new WazuhConfig());
+  const checkCyb3rhqPatterns = async indexPatterns => {
+    const configuration = await getWzConfig(new Cyb3rhqConfig());
     const STATISTICS_PATTERN_IDENTIFIER =
       StatisticsDataSource.getIdentifierDataSourcePattern();
-    const wazuhPatterns = [
-      `${configuration['wazuh.monitoring.pattern']}`,
+    const cyb3rhqPatterns = [
+      `${configuration['cyb3rhq.monitoring.pattern']}`,
       STATISTICS_PATTERN_IDENTIFIER,
     ];
-    return wazuhPatterns.every(pattern => {
+    return cyb3rhqPatterns.every(pattern => {
       return indexPatterns.find(element => element.id === pattern);
     });
   };
@@ -52,7 +52,7 @@ export async function getIp() {
       if (
         !currentPattern ||
         !savedObjects.find(element => element.id === currentPattern) ||
-        !(await checkWazuhPatterns(savedObjects))
+        !(await checkCyb3rhqPatterns(savedObjects))
       ) {
         if (
           !NavigationService.getInstance()
@@ -68,11 +68,11 @@ export async function getIp() {
         }
       }
 
-      const onlyWazuhAlerts = savedObjects.filter(
+      const onlyCyb3rhqAlerts = savedObjects.filter(
         element => element.id === currentPattern,
       );
 
-      if (!onlyWazuhAlerts || !onlyWazuhAlerts.length) {
+      if (!onlyCyb3rhqAlerts || !onlyCyb3rhqAlerts.length) {
         // There's now selected ip
         AppState.removeCurrentPattern();
         return 'No ip';
@@ -83,14 +83,14 @@ export async function getIp() {
       );
 
       return {
-        list: onlyWazuhAlerts,
+        list: onlyCyb3rhqAlerts,
         loaded: courierData,
         stateVal: null,
         stateValFound: false,
       };
     } catch (error) {
       const options = {
-        context: `${getIp.name}.checkWazuhPatterns`,
+        context: `${getIp.name}.checkCyb3rhqPatterns`,
         level: UI_LOGGER_LEVELS.ERROR,
         severity: UI_ERROR_SEVERITIES.CRITICAL,
         store: true,

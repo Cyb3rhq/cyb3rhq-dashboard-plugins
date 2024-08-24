@@ -1,6 +1,6 @@
 /*
-* Wazuh app - React component for get authorized agents.
-* Copyright (C) 2015-2022 Wazuh, Inc.
+* Cyb3rhq app - React component for get authorized agents.
+* Copyright (C) 2015-2022 Cyb3rhq, Inc.
 *
 * This program is free software; you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -11,14 +11,14 @@
 */
 import { AppState } from '../react-services/app-state';
 import { AUTHORIZED_AGENTS } from '../../common/constants';
-import { WazuhConfig } from '../react-services/wazuh-config';
+import { Cyb3rhqConfig } from '../react-services/cyb3rhq-config';
 
 export function getFilterWithAuthorizedAgents(agentsIds, pattern) {
    //check for empty agents array
   if(!agentsIds || agentsIds.length == 0) return;
 
-  const wazuhConfig = new WazuhConfig();
-  const config = wazuhConfig.getConfig();
+  const cyb3rhqConfig = new Cyb3rhqConfig();
+  const config = cyb3rhqConfig.getConfig();
   const statisticsPattern = `${config['cron.prefix']}-${config['cron.statistics.index.name']}-*`
   if(pattern == statisticsPattern) return;
   

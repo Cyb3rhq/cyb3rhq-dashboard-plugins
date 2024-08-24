@@ -1,15 +1,15 @@
 import { IRouter } from 'opensearch_dashboards/server';
-import { WazuhApiRoutes } from './wazuh-api';
-import { WazuhElasticRoutes } from './wazuh-elastic';
-import { WazuhHostsRoutes } from './wazuh-hosts';
-import { WazuhUtilsRoutes, UiLogsRoutes } from './wazuh-utils';
-import { WazuhReportingRoutes } from './wazuh-reporting';
+import { Cyb3rhqApiRoutes } from './cyb3rhq-api';
+import { Cyb3rhqElasticRoutes } from './cyb3rhq-elastic';
+import { Cyb3rhqHostsRoutes } from './cyb3rhq-hosts';
+import { Cyb3rhqUtilsRoutes, UiLogsRoutes } from './cyb3rhq-utils';
+import { Cyb3rhqReportingRoutes } from './cyb3rhq-reporting';
 
 export const setupRoutes = (router: IRouter, services) => {
-  WazuhApiRoutes(router, services);
-  WazuhElasticRoutes(router, services);
-  WazuhHostsRoutes(router, services);
-  WazuhUtilsRoutes(router, services);
-  WazuhReportingRoutes(router, services);
+  Cyb3rhqApiRoutes(router, services);
+  Cyb3rhqElasticRoutes(router, services);
+  Cyb3rhqHostsRoutes(router, services);
+  Cyb3rhqUtilsRoutes(router, services);
+  Cyb3rhqReportingRoutes(router, services);
   UiLogsRoutes(router, services);
 };

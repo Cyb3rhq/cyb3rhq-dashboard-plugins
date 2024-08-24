@@ -346,7 +346,7 @@ describe('PatternDataSourceFilterManager', () => {
     });
   });
 
-  describe('wazuh filters', () => {
+  describe('cyb3rhq filters', () => {
     it('should return the filters to fetch the data merging the filters stored and the excluded manager filter', () => {
       (store.getState as jest.Mock).mockReturnValue({
         appConfig: {

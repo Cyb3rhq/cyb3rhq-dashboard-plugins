@@ -36,7 +36,7 @@ import { OsCard } from '../../components/os-selector/os-card/os-card';
 import { validateAgentName } from '../../utils/validations';
 import { compose } from 'redux';
 import { endpointSummary } from '../../../../../utils/applications';
-import { getWazuhCorePlugin } from '../../../../../kibana-services';
+import { getCyb3rhqCorePlugin } from '../../../../../kibana-services';
 import { getErrorOrchestrator } from '../../../../../react-services/common-services';
 import {
   enableMenu,
@@ -63,10 +63,10 @@ export const RegisterAgent = compose(
   const configuration = useSelector(
     (state: { appConfig: { data: any } }) => state.appConfig.data,
   );
-  const [wazuhVersion, setWazuhVersion] = useState('');
+  const [cyb3rhqVersion, setCyb3rhqVersion] = useState('');
   const [haveUdpProtocol, setHaveUdpProtocol] = useState<boolean | null>(false);
   const [loading, setLoading] = useState(false);
-  const [wazuhPassword, setWazuhPassword] = useState('');
+  const [cyb3rhqPassword, setCyb3rhqPassword] = useState('');
   const [groups, setGroups] = useState([]);
   const [needsPassword, setNeedsPassword] = useState<boolean>(false);
 
@@ -85,7 +85,7 @@ export const RegisterAgent = compose(
       type: 'text',
       initialValue: configuration['enrollment.dns'] || '',
       validate:
-        getWazuhCorePlugin().configuration._settings.get('enrollment.dns')
+        getCyb3rhqCorePlugin().configuration._settings.get('enrollment.dns')
           .validate,
     },
     agentName: {
@@ -116,19 +116,19 @@ export const RegisterAgent = compose(
     return masterConfig;
   };
 
-  const getWazuhVersion = async () => {
+  const getCyb3rhqVersion = async () => {
     try {
       const result = await WzRequest.apiReq('GET', '/', {});
       return result?.data?.data?.api_version;
     } catch (error) {
       const options = {
-        context: `RegisterAgent.getWazuhVersion`,
+        context: `RegisterAgent.getCyb3rhqVersion`,
         level: UI_LOGGER_LEVELS.ERROR,
         severity: UI_ERROR_SEVERITIES.BUSINESS,
         error: {
           error: error,
           message: error.message || error,
-          title: `Could not get the Wazuh version: ${error.message || error}`,
+          title: `Could not get the Cyb3rhq version: ${error.message || error}`,
         },
       };
       getErrorOrchestrator().handleError(options);
@@ -139,25 +139,25 @@ export const RegisterAgent = compose(
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const wazuhVersion = await getWazuhVersion();
+        const cyb3rhqVersion = await getCyb3rhqVersion();
         const { auth: authConfig } = await getMasterConfig();
-        // get wazuh password configuration
-        let wazuhPassword = '';
+        // get cyb3rhq password configuration
+        let cyb3rhqPassword = '';
         const needsPassword = authConfig?.auth?.use_password === 'yes';
         if (needsPassword) {
-          wazuhPassword =
+          cyb3rhqPassword =
             configuration?.['enrollment.password'] ||
             authConfig?.['authd.pass'] ||
             '';
         }
         const groups = await getGroups();
         setNeedsPassword(needsPassword);
-        setWazuhPassword(wazuhPassword);
-        setWazuhVersion(wazuhVersion);
+        setCyb3rhqPassword(cyb3rhqPassword);
+        setCyb3rhqVersion(cyb3rhqVersion);
         setGroups(groups);
         setLoading(false);
       } catch (error) {
-        setWazuhVersion(wazuhVersion);
+        setCyb3rhqVersion(cyb3rhqVersion);
         setLoading(false);
         const options = {
           context: 'RegisterAgent',
@@ -225,7 +225,7 @@ export const RegisterAgent = compose(
                     <Steps
                       form={form}
                       needsPassword={needsPassword}
-                      wazuhPassword={wazuhPassword}
+                      cyb3rhqPassword={cyb3rhqPassword}
                       osCard={osCard}
                       connection={{
                         isUDP: haveUdpProtocol ? true : false,

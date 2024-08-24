@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Tools to check the version of the plugin
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Tools to check the version of the plugin
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -126,7 +126,7 @@ This message should not be displayed again.`;
     clearBrowserInfo(appInfo);
   } else {
     if (window.history.state == 'refreshed') {
-      window.history.replaceState('', 'wazuh'); // TODO: this seems to redirect to old plugin path
+      window.history.replaceState('', 'cyb3rhq'); // TODO: this seems to redirect to old plugin path
     }
     const storeAppInfo = localStorage.getItem('appInfo');
     !storeAppInfo && updateAppInfo(appInfo);

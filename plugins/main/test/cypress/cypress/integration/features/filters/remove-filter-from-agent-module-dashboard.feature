@@ -1,10 +1,10 @@
 Feature: Validate that the added filter label is remove after click remove filter option agent modules Dashboard
 
-  As a Wazuh user
+  As a Cyb3rhq user
   I want to remove a selected filter
   in order to manage them
   Background:
-    Given The wazuh admin user is logged
+    Given The cyb3rhq admin user is logged
     And The user navigates to the agent page
     And The user navigates to the agent dashboard
 

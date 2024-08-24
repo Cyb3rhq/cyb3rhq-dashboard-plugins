@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Component to display the Agent stats
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Component to display the Agent stats
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -131,7 +131,7 @@ export const MainAgentStats = compose(
   withGuard(
     ({ agent }) => {
       const [major, minor, patch] = agent.version
-        .replace('Wazuh v', '')
+        .replace('Cyb3rhq v', '')
         .split('.')
         .map(value => parseInt(value));
       return !(major >= 4 && minor >= 2 && patch >= 0);

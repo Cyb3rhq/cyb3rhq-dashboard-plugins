@@ -3,7 +3,7 @@ import { EmbeddableInput } from '../../../../../../../src/plugins/embeddable/pub
 
 const getVisStateAlertsEvolutionByOrganization = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-GitHub-Alerts-Evolution-By-Organization',
+    id: 'Cyb3rhq-App-Overview-GitHub-Alerts-Evolution-By-Organization',
     title: 'Alerts evolution by organization',
     type: 'area',
     params: {
@@ -152,7 +152,7 @@ const getVisStateAlertsEvolutionByOrganization = (indexPatternId: string) => {
 
 const getVisStateTopOrganizationsByAlertCount = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-GitHub-Top-5-Organizations-By-Alerts',
+    id: 'Cyb3rhq-App-Overview-GitHub-Top-5-Organizations-By-Alerts',
     title: 'Top 5 organizations by alerts',
     type: 'pie',
     params: {
@@ -216,7 +216,7 @@ const getVisStateTopOrganizationsByAlertCount = (indexPatternId: string) => {
 
 const getVisStateActionTypeByOrganization = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-GitHub-Alert-Action-Type-By-Organization',
+    id: 'Cyb3rhq-App-Overview-GitHub-Alert-Action-Type-By-Organization',
     title: 'Top alerts by action type and organization',
     type: 'pie',
     params: {
@@ -296,7 +296,7 @@ const getVisStateActionTypeByOrganization = (indexPatternId: string) => {
 
 const getVisStateUsersWithMoreAlerts = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-GitHub-Users-With-More-Alerts',
+    id: 'Cyb3rhq-App-Overview-GitHub-Users-With-More-Alerts',
     title: 'Users with more alerts',
     type: 'line',
     params: {
@@ -441,7 +441,7 @@ const getVisStateAgentAlertsEvolutionByOrganization = (
   indexPatternId: string,
 ) => {
   return {
-    id: 'Wazuh-App-Agents-GitHub-Alerts-Evolution-By-Organization',
+    id: 'Cyb3rhq-App-Agents-GitHub-Alerts-Evolution-By-Organization',
     title: 'Alerts evolution by organization',
     type: 'area',
     params: {
@@ -592,7 +592,7 @@ const getVisStateAgentTopOrganizationsByAlertCount = (
   indexPatternId: string,
 ) => {
   return {
-    id: 'Wazuh-App-Agents-GitHub-Top-5-Organizations-By-Alerts',
+    id: 'Cyb3rhq-App-Agents-GitHub-Top-5-Organizations-By-Alerts',
     title: 'Top 5 organizations by alerts',
     type: 'pie',
     params: {
@@ -656,7 +656,7 @@ const getVisStateAgentTopOrganizationsByAlertCount = (
 
 const getVisStateAgentActionTypeByOrganization = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-GitHub-Alert-Action-Type-By-Organization',
+    id: 'Cyb3rhq-App-Agents-GitHub-Alert-Action-Type-By-Organization',
     title: 'Top alerts by action type and organization',
     type: 'pie',
     params: {
@@ -736,7 +736,7 @@ const getVisStateAgentActionTypeByOrganization = (indexPatternId: string) => {
 
 const getVisStateAgentUsersWithMoreAlerts = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-GitHub-Users-With-More-Alerts',
+    id: 'Cyb3rhq-App-Agents-GitHub-Users-With-More-Alerts',
     title: 'Users with more alerts',
     type: 'line',
     params: {
@@ -879,7 +879,7 @@ const getVisStateAgentUsersWithMoreAlerts = (indexPatternId: string) => {
 
 const getVisStateMetricOrganizationsCount = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-GitHub-Metric-Organizations-Count',
+    id: 'Cyb3rhq-GitHub-Metric-Organizations-Count',
     title: '',
     type: 'metric',
     params: {
@@ -949,7 +949,7 @@ const getVisStateMetricOrganizationsCount = (indexPatternId: string) => {
 
 const getVisStateMetricRepositoriesCount = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-GitHub-Metric-Repositories-Count',
+    id: 'Cyb3rhq-GitHub-Metric-Repositories-Count',
     title: '',
     type: 'metric',
     params: {
@@ -1020,7 +1020,7 @@ const getVisStateMetricRepositoriesCount = (indexPatternId: string) => {
 
 const getVisStateMetricActorsCount = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-GitHub-Metric-Actors-Count',
+    id: 'Cyb3rhq-GitHub-Metric-Actors-Count',
     title: '',
     type: 'metric',
     params: {

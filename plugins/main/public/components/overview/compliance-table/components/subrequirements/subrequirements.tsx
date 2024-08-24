@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Mitre alerts components
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Mitre alerts components
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@ import { AppState } from '../../../../../react-services/app-state';
 import { RequirementFlyout } from '../requirement-flyout';
 import {
   getDataPlugin,
-  getWazuhCorePlugin,
+  getCyb3rhqCorePlugin,
 } from '../../../../../kibana-services';
 
 export class ComplianceSubrequirements extends Component {
@@ -72,7 +72,7 @@ export class ComplianceSubrequirements extends Component {
         negate: filter.negate || false,
         index:
           AppState.getCurrentPattern() ||
-          getWazuhCorePlugin().configuration.getSettingValue('pattern'),
+          getCyb3rhqCorePlugin().configuration.getSettingValue('pattern'),
       },
       query: { match_phrase: matchPhrase },
       $state: { store: 'appState' },

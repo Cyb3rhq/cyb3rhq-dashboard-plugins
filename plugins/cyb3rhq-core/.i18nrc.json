@@ -1,0 +1,7 @@
+{
+  "prefix": "cyb3rhqCore",
+  "paths": {
+    "cyb3rhqCore": "."
+  },
+  "translations": ["translations/en-US.json"]
+}

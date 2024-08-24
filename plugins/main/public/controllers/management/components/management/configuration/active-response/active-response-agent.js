@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of active response - agent tab.
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - React component for show configuration of active response - agent tab.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -64,7 +64,7 @@ class WzConfigurationActiveResponseAgent extends Component {
     super(props);
   }
   render() {
-    const { currentConfig, wazuhNotReadyYet } = this.props;
+    const { currentConfig, cyb3rhqNotReadyYet } = this.props;
     return (
       <Fragment>
         {currentConfig['com-active-response'] &&
@@ -79,7 +79,7 @@ class WzConfigurationActiveResponseAgent extends Component {
           !currentConfig['com-active-response']['active-response'] && (
             <WzNoConfig error='not-present' help={helpLinks} />
           )}
-        {wazuhNotReadyYet &&
+        {cyb3rhqNotReadyYet &&
           (!currentConfig || !currentConfig['com-active-response']) && (
             <WzNoConfig error='Server not ready yet' help={helpLinks} />
           )}
@@ -103,13 +103,13 @@ class WzConfigurationActiveResponseAgent extends Component {
 }
 
 const mapStateToProps = state => ({
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet,
+  cyb3rhqNotReadyYet: state.appStateReducers.cyb3rhqNotReadyYet,
 });
 
 const sectionsAgent = [{ component: 'com', configuration: 'active-response' }];
 
 WzConfigurationActiveResponseAgent.propTypes = {
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  cyb3rhqNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 };
 
 export default compose(

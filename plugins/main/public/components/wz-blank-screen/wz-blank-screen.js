@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for build q queries.
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - React component for build q queries.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,7 +13,7 @@ import React, { Component } from 'react';
 import { EuiButton, EuiSpacer, EuiLink } from '@elastic/eui';
 import { ErrorComponentPrompt } from '../common/error-boundary-prompt/error-boundary-prompt';
 import {
-  PLUGIN_PLATFORM_WAZUH_DOCUMENTATION_URL_PATH_TROUBLESHOOTING,
+  PLUGIN_PLATFORM_CYB3RHQ_DOCUMENTATION_URL_PATH_TROUBLESHOOTING,
   PLUGIN_PLATFORM_URL_GUIDE,
   PLUGIN_PLATFORM_URL_GUIDE_TITLE,
   UI_LOGGER_LEVELS,
@@ -101,7 +101,7 @@ export const WzBlankScreen = withRouteResolvers({ enableMenu })(
                 <br />
                 <EuiLink
                   href={webDocumentationLink(
-                    PLUGIN_PLATFORM_WAZUH_DOCUMENTATION_URL_PATH_TROUBLESHOOTING,
+                    PLUGIN_PLATFORM_CYB3RHQ_DOCUMENTATION_URL_PATH_TROUBLESHOOTING,
                   )}
                   target='_blank'
                   rel='noopener noreferrer'

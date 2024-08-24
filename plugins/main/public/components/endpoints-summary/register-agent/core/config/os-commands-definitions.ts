@@ -13,7 +13,7 @@ import {
   scapeSpecialCharsForLinux,
   scapeSpecialCharsForMacOS,
   scapeSpecialCharsForWindows,
-} from '../../services/wazuh-password-service';
+} from '../../services/cyb3rhq-password-service';
 import { IOSDefinition, tOptionalParams } from '../register-commands/types';
 
 // Defined OS combinations
@@ -70,7 +70,7 @@ export type tOptionalParameters =
   | 'serverAddress'
   | 'agentName'
   | 'agentGroups'
-  | 'wazuhPassword'
+  | 'cyb3rhqPassword'
   | 'protocol';
 
 ///////////////////////////////////////////////////////////////////
@@ -83,28 +83,28 @@ const linuxDefinition: IOSDefinition<ILinuxOSTypes, tOptionalParameters> = {
     {
       architecture: 'DEB amd64',
       urlPackage: props =>
-        `https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_${props.wazuhVersion}-1_amd64.deb`,
+        `https://packages.wazuh.com/4.x/apt/pool/main/w/cyb3rhq-agent/cyb3rhq-agent_${props.cyb3rhqVersion}-1_amd64.deb`,
       installCommand: props => getDEBAMD64InstallCommand(props),
       startCommand: props => getLinuxStartCommand(props),
     },
     {
       architecture: 'RPM amd64',
       urlPackage: props =>
-        `https://packages.wazuh.com/4.x/yum/wazuh-agent-${props.wazuhVersion}-1.x86_64.rpm`,
+        `https://packages.wazuh.com/4.x/yum/cyb3rhq-agent-${props.cyb3rhqVersion}-1.x86_64.rpm`,
       installCommand: props => getRPMAMD64InstallCommand(props),
       startCommand: props => getLinuxStartCommand(props),
     },
     {
       architecture: 'DEB aarch64',
       urlPackage: props =>
-        `https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_${props.wazuhVersion}-1_arm64.deb`,
+        `https://packages.wazuh.com/4.x/apt/pool/main/w/cyb3rhq-agent/cyb3rhq-agent_${props.cyb3rhqVersion}-1_arm64.deb`,
       installCommand: props => getDEBARM64InstallCommand(props),
       startCommand: props => getLinuxStartCommand(props),
     },
     {
       architecture: 'RPM aarch64',
       urlPackage: props =>
-        `https://packages.wazuh.com/4.x/yum/wazuh-agent-${props.wazuhVersion}-1.aarch64.rpm`,
+        `https://packages.wazuh.com/4.x/yum/cyb3rhq-agent-${props.cyb3rhqVersion}-1.aarch64.rpm`,
       installCommand: props => getRPMARM64InstallCommand(props),
       startCommand: props => getLinuxStartCommand(props),
     },
@@ -117,7 +117,7 @@ const windowsDefinition: IOSDefinition<IWindowsOSTypes, tOptionalParameters> = {
     {
       architecture: 'MSI 32/64 bits',
       urlPackage: props =>
-        `https://packages.wazuh.com/4.x/windows/wazuh-agent-${props.wazuhVersion}-1.msi`,
+        `https://packages.wazuh.com/4.x/windows/cyb3rhq-agent-${props.cyb3rhqVersion}-1.msi`,
       installCommand: props => getWindowsInstallCommand(props),
       startCommand: props => getWindowsStartCommand(props),
     },
@@ -130,14 +130,14 @@ const macDefinition: IOSDefinition<IMacOSTypes, tOptionalParameters> = {
     {
       architecture: 'Intel',
       urlPackage: props =>
-        `https://packages.wazuh.com/4.x/macos/wazuh-agent-${props.wazuhVersion}-1.intel64.pkg`,
+        `https://packages.wazuh.com/4.x/macos/cyb3rhq-agent-${props.cyb3rhqVersion}-1.intel64.pkg`,
       installCommand: props => getMacOsInstallCommand(props),
       startCommand: props => getMacosStartCommand(props),
     },
     {
       architecture: 'Apple silicon',
       urlPackage: props =>
-        `https://packages.wazuh.com/4.x/macos/wazuh-agent-${props.wazuhVersion}-1.arm64.pkg`,
+        `https://packages.wazuh.com/4.x/macos/cyb3rhq-agent-${props.cyb3rhqVersion}-1.arm64.pkg`,
       installCommand: props => getMacOsInstallCommand(props),
       startCommand: props => getMacosStartCommand(props),
     },
@@ -156,21 +156,21 @@ export const osCommandsDefinitions = [
 
 export const optionalParamsDefinitions: tOptionalParams<tOptionalParameters> = {
   serverAddress: {
-    property: 'WAZUH_MANAGER',
+    property: 'CYB3RHQ_MANAGER',
     getParamCommand: (props, selectedOS) => {
       const { property, value } = props;
       return value !== '' ? `${property}='${value}'` : '';
     },
   },
   agentName: {
-    property: 'WAZUH_AGENT_NAME',
+    property: 'CYB3RHQ_AGENT_NAME',
     getParamCommand: (props, selectedOS) => {
       const { property, value } = props;
       return value !== '' ? `${property}='${value}'` : '';
     },
   },
   agentGroups: {
-    property: 'WAZUH_AGENT_GROUP',
+    property: 'CYB3RHQ_AGENT_GROUP',
     getParamCommand: (props, selectedOS) => {
       const { property, value } = props;
       let parsedValue = value;
@@ -181,14 +181,14 @@ export const optionalParamsDefinitions: tOptionalParams<tOptionalParameters> = {
     },
   },
   protocol: {
-    property: 'WAZUH_PROTOCOL',
+    property: 'CYB3RHQ_PROTOCOL',
     getParamCommand: (props, selectedOS) => {
       const { property, value } = props;
       return value !== '' ? `${property}='${value}'` : '';
     },
   },
-  wazuhPassword: {
-    property: 'WAZUH_REGISTRATION_PASSWORD',
+  cyb3rhqPassword: {
+    property: 'CYB3RHQ_REGISTRATION_PASSWORD',
     getParamCommand: (props, selectedOS) => {
       const { property, value } = props;
       if (!value) {

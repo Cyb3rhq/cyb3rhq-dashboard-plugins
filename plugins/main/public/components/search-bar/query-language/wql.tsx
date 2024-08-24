@@ -958,9 +958,9 @@ export const WQL = {
   id: 'wql',
   label: 'WQL',
   description:
-    'WQL (Wazuh Query Language) provides a human query syntax based on the Wazuh API query language.',
+    'WQL (Cyb3rhq Query Language) provides a human query syntax based on the Cyb3rhq API query language.',
   documentationLink: webDocumentationLink(
-    'user-manual/wazuh-dashboard/queries.html',
+    'user-manual/cyb3rhq-dashboard/queries.html',
   ),
   getConfiguration() {
     return {

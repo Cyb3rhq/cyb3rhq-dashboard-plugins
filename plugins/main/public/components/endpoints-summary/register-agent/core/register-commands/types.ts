@@ -42,7 +42,7 @@ export interface IOSCommandsDefinition<
 }
 
 export interface IOSProps extends IOperationSystem {
-  wazuhVersion: string;
+  cyb3rhqVersion: string;
 }
 
 ///////////////////////////////////////////////////////////////////
@@ -92,7 +92,7 @@ export interface ICommandGenerator<
   Params extends string,
 > extends ICommandGeneratorMethods<Params> {
   osDefinitions: IOSDefinition<OS, Params>[];
-  wazuhVersion: string;
+  cyb3rhqVersion: string;
 }
 
 export interface ICommandGeneratorMethods<T extends string> {
@@ -107,7 +107,7 @@ export interface ICommandGeneratorMethods<T extends string> {
   getAllCommands(): ICommandsResponse<T>;
 }
 export interface ICommandsResponse<T extends string> {
-  wazuhVersion: string;
+  cyb3rhqVersion: string;
   os: string;
   architecture: string;
   url_package: string;

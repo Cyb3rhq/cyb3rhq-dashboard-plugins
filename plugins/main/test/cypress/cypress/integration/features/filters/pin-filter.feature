@@ -1,10 +1,10 @@
 Feature: Pin filter - across the modules
 
-  As a Wazuh user
+  As a Cyb3rhq user
   I want to pin a filter
   in order to aplly it across the modules
   Background:
-    Given The wazuh admin user is logged
+    Given The cyb3rhq admin user is logged
 
   @filter
   Scenario Outline: The user add and pin new filer - across the modules <Module Name>

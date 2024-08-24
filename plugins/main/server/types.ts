@@ -17,11 +17,11 @@
  * under the License.
  */
 
-export interface WazuhPluginSetup {}
+export interface Cyb3rhqPluginSetup {}
 
-export interface WazuhPluginStart {}
+export interface Cyb3rhqPluginStart {}
 
 export type PluginSetup = {
   securityDashboards?: {}; // TODO: Add OpenSearch Dashboards Security interface
-  wazuhCore: {};
+  cyb3rhqCore: {};
 };

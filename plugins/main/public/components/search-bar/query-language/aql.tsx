@@ -93,7 +93,7 @@ const mapSuggestionCreatorValue = mapSuggestionCreator('value');
  */
 export function tokenizer(input: string): ITokens {
   // API regular expression
-  // https://github.com/wazuh/wazuh/blob/v4.4.0-rc1/framework/wazuh/core/utils.py#L1242-L1257
+  // https://github.com/cyb3rhq/cyb3rhq/blob/v4.4.0-rc1/framework/cyb3rhq/core/utils.py#L1242-L1257
   //   self.query_regex = re.compile(
   //     # A ( character.
   //     r"(\()?" +

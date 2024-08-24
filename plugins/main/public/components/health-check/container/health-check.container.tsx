@@ -1,7 +1,7 @@
 /*
- * Wazuh app - Health Check Component
+ * Cyb3rhq app - Health Check Component
  *
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,8 +36,8 @@ import { withErrorBoundary, withRouteResolvers } from '../../common/hocs';
 import { getCore, getHttp, getWzCurrentAppID } from '../../../kibana-services';
 import {
   HEALTH_CHECK_REDIRECTION_TIME,
-  WAZUH_INDEX_TYPE_MONITORING,
-  WAZUH_INDEX_TYPE_STATISTICS,
+  CYB3RHQ_INDEX_TYPE_MONITORING,
+  CYB3RHQ_INDEX_TYPE_STATISTICS,
 } from '../../../../common/constants';
 import { getThemeAssetURL, getAssetURL } from '../../../utils/assets';
 import { serverApis } from '../../../utils/applications';
@@ -73,8 +73,8 @@ const checks = {
     label: 'Monitoring index pattern',
     validator: appConfig =>
       checkPatternSupportService(
-        appConfig.data['wazuh.monitoring.pattern'],
-        WAZUH_INDEX_TYPE_MONITORING,
+        appConfig.data['cyb3rhq.monitoring.pattern'],
+        CYB3RHQ_INDEX_TYPE_MONITORING,
       ),
     awaitFor: [],
     shouldCheck: true,
@@ -86,7 +86,7 @@ const checks = {
     validator: appConfig =>
       checkPatternSupportService(
         `${appConfig.data['cron.prefix']}-${appConfig.data['cron.statistics.index.name']}-*`,
-        WAZUH_INDEX_TYPE_STATISTICS,
+        CYB3RHQ_INDEX_TYPE_STATISTICS,
       ),
     awaitFor: [],
     shouldCheck: true,

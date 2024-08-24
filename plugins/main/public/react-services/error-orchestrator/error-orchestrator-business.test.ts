@@ -1,7 +1,7 @@
 /*
- * Wazuh app - Unit test for ErrorOrchestratorBusiness.
+ * Cyb3rhq app - Unit test for ErrorOrchestratorBusiness.
  *
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@ jest.mock('../../kibana-services', () => ({
   }),
 }));
 
-describe.skip('Wazuh Error Orchestrator Business', () => {
+describe.skip('Cyb3rhq Error Orchestrator Business', () => {
   describe('Given a valid options params for display toast INFO', () => {
     it('Should be called toast and addInfo', () => {
       const toast = {

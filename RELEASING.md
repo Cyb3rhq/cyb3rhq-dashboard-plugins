@@ -50,7 +50,7 @@ node scripts/release/bump.js --plugins-directory <plugins_directory> --manifest-
 Example:
 
 ```console
-WAZUH_SERVER_BRANCH_TAG=4.6.0 && node scripts/release/bump.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --manifest-package ./plugins/main/package.json --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/wazuh/wazuh/${WAZUH_SERVER_BRANCH_TAG}/api/api/spec/spec.yaml --revision 03
+CYB3RHQ_SERVER_BRANCH_TAG=4.6.0 && node scripts/release/bump.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --manifest-package ./plugins/main/package.json --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/${CYB3RHQ_SERVER_BRANCH_TAG}/api/api/spec/spec.yaml --revision 03
 ```
 
 - Define the `version`:
@@ -62,7 +62,7 @@ node scripts/release/bump.js --plugins-directory <plugins_directory> --manifest-
 Example:
 
 ```console
-WAZUH_SERVER_BRANCH_TAG=4.7.0 && node scripts/release/bump.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --manifest-package ./plugins/main/package.json --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/wazuh/wazuh/${WAZUH_SERVER_BRANCH_TAG}/api/api/spec/spec.yaml --version 4.7.0
+CYB3RHQ_SERVER_BRANCH_TAG=4.7.0 && node scripts/release/bump.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --manifest-package ./plugins/main/package.json --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/${CYB3RHQ_SERVER_BRANCH_TAG}/api/api/spec/spec.yaml --version 4.7.0
 ```
 
 - Define the `pluginPlatform.version`:
@@ -74,7 +74,7 @@ node scripts/release/bump.js --plugins-directory <plugins_directory> --manifest-
 Example:
 
 ```console
-WAZUH_SERVER_BRANCH_TAG=4.6.0 && node scripts/release/bump.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --manifest-package ./plugins/main/package.json --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/wazuh/wazuh/${WAZUH_SERVER_BRANCH_TAG}/api/api/spec/spec.yaml --platform-version 2.8.0
+CYB3RHQ_SERVER_BRANCH_TAG=4.6.0 && node scripts/release/bump.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --manifest-package ./plugins/main/package.json --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/${CYB3RHQ_SERVER_BRANCH_TAG}/api/api/spec/spec.yaml --platform-version 2.8.0
 ```
 
 You can bump one or more values at the same time using a combination of these:
@@ -82,13 +82,13 @@ You can bump one or more values at the same time using a combination of these:
 - Define the `version`, `revision` and `pluginPlatform.version`:
 
 ```console
-WAZUH_SERVER_BRANCH_TAG=<wazuh-server-branch-tag> && node scripts/release/bump.js --plugins-directory <plugins_directory> --manifest-changelog <manifest_changelog_file> --plugin-main-generate-api-data-spec <url_api_spec_file> --version <bump_version> --revision <bump_revision> --platform-version <bump_platform_version>
+CYB3RHQ_SERVER_BRANCH_TAG=<cyb3rhq-server-branch-tag> && node scripts/release/bump.js --plugins-directory <plugins_directory> --manifest-changelog <manifest_changelog_file> --plugin-main-generate-api-data-spec <url_api_spec_file> --version <bump_version> --revision <bump_revision> --platform-version <bump_platform_version>
 ```
 
 Example:
 
 ```console
-WAZUH_SERVER_BRANCH_TAG=4.7.0 && node scripts/release/bump.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --manifest-package ./plugins/main/package.json --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/wazuh/wazuh/${WAZUH_SERVER_BRANCH_TAG}/api/api/spec/spec.yaml --version 4.7.0 --revision 03 --platform-version 2.8.0
+CYB3RHQ_SERVER_BRANCH_TAG=4.7.0 && node scripts/release/bump.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --manifest-package ./plugins/main/package.json --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/${CYB3RHQ_SERVER_BRANCH_TAG}/api/api/spec/spec.yaml --version 4.7.0 --revision 03 --platform-version 2.8.0
 ```
 
 3. Depending on the case, it could be required to update the snapshots of the plugin tests:
@@ -115,7 +115,7 @@ A new branch will be created in the remote and will be ready to receive pull req
 If you have installed the [GitHub CLI](https://cli.github.com/):
 
 ```console
-gh pr create -a @me -B <base_branch> -t "Bump Wazuh version <version>"
+gh pr create -a @me -B <base_branch> -t "Bump Cyb3rhq version <version>"
 ```
 
 or use the through the GitHub web.
@@ -124,8 +124,8 @@ or use the through the GitHub web.
 
 ⚠️ This is done by the bump script.
 
-We have a script to update the files of the `plugins/main` that have information about the Wazuh API. This script uses the API specification
-file that is stored in the GitHub repository of [wazuh/wazuh](https://github.com/wazuh/wazuh) repository.
+We have a script to update the files of the `plugins/main` that have information about the Cyb3rhq API. This script uses the API specification
+file that is stored in the GitHub repository of [cyb3rhq/cyb3rhq](https://github.com/cyb3rhq/cyb3rhq) repository.
 
 ```console
 cd plugins/main
@@ -138,21 +138,21 @@ Examples:
 
 ```console
 cd plugins/main
-yarn generate:api-data --spec https://raw.githubusercontent.com/wazuh/wazuh/v4.6.0/api/api/spec/spec.yaml
+yarn generate:api-data --spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/v4.6.0/api/api/spec/spec.yaml
 ```
 
 - Update the files with a pre-release tag
 
 ```console
 cd plugins/main
-yarn generate:api-data --spec https://raw.githubusercontent.com/wazuh/wazuh/v4.6.0-rc1/api/api/spec/spec.yaml
+yarn generate:api-data --spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/v4.6.0-rc1/api/api/spec/spec.yaml
 ```
 
 - Update the files with a development branch
 
 ```console
 cd plugins/main
-yarn generate:api-data --spec https://raw.githubusercontent.com/wazuh/wazuh/4.6.0/api/api/spec/spec.yaml
+yarn generate:api-data --spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/4.6.0/api/api/spec/spec.yaml
 ```
 
 ### Tags
@@ -189,22 +189,22 @@ Steps:
 - Non-final tag (pre-alpha, alpha, beta, rc):
 
 ```console
-WAZUH_SERVER_BRANCH_TAG=<wazuh-server-branch-tag> node scripts/release/tag.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --manifest-package ./plugins/main/package.json --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/wazuh/wazuh/${WAZUH_SERVER_BRANCH_TAG}/api/api/spec/spec.yaml
+CYB3RHQ_SERVER_BRANCH_TAG=<cyb3rhq-server-branch-tag> node scripts/release/tag.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --manifest-package ./plugins/main/package.json --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/${CYB3RHQ_SERVER_BRANCH_TAG}/api/api/spec/spec.yaml
 ```
 
 where:
 
-- `<wazuh-server-branch-tag>`: tag ( or branch ) of Wazuh server repository to take the API spec file
+- `<cyb3rhq-server-branch-tag>`: tag ( or branch ) of Cyb3rhq server repository to take the API spec file
 
 - Final:
 
 ```console
-WAZUH_SERVER_BRANCH_TAG=<wazuh-server-branch-tag> node scripts/release/tag.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --manifest-package ./plugins/main/package.json --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/wazuh/wazuh/${WAZUH_SERVER_BRANCH_TAG}/api/api/spec/spec.yaml --tag-suffix <tag-suffix>
+CYB3RHQ_SERVER_BRANCH_TAG=<cyb3rhq-server-branch-tag> node scripts/release/tag.js --plugins-directory ./plugins --manifest-changelog ./CHANGELOG.md --manifest-package ./plugins/main/package.json --plugin-main-generate-api-data-spec https://raw.githubusercontent.com/cyb3rhq/cyb3rhq/${CYB3RHQ_SERVER_BRANCH_TAG}/api/api/spec/spec.yaml --tag-suffix <tag-suffix>
 ```
 
 where:
 
-- `<wazuh-server-branch-tag>`: tag ( or branch ) of Wazuh server repository to take the API spec file
+- `<cyb3rhq-server-branch-tag>`: tag ( or branch ) of Cyb3rhq server repository to take the API spec file
 - `<tag-suffix>` <tag-suffix>
 
 For more details about the tag scripts options, see [README.md](./scripts/release/README.md)
@@ -224,7 +224,7 @@ git pull
 
 3. Create the tag
 
-> IMPORTANT: Due to a problem in the process to build Wazuh dashboard using reusable GHA workflow pointing to tags of this repository, it is required the tag is not signed, annotated or both.
+> IMPORTANT: Due to a problem in the process to build Cyb3rhq dashboard using reusable GHA workflow pointing to tags of this repository, it is required the tag is not signed, annotated or both.
 
 - No sign, no annotated, no message:
 
@@ -235,7 +235,7 @@ git tag {tag}
 - Sign, annotate and add message:
 
 ```
-git tag -s -a -m "Wazuh {version} for Wazuh dashboard {platform version}" {tag}
+git tag -s -a -m "Cyb3rhq {version} for Cyb3rhq dashboard {platform version}" {tag}
 ```
 
 > replace the placeholders:

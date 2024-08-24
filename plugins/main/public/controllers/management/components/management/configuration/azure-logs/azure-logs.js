@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of Azure logs.
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - React component for show configuration of Azure logs.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@ import { webDocumentationLink } from '../../../../../../../common/services/web_d
 
 const helpLinks = [
   {
-    text: 'Using Wazuh to monitor Azure',
+    text: 'Using Cyb3rhq to monitor Azure',
     href: webDocumentationLink('cloud-security/azure/index.html'),
   },
   {

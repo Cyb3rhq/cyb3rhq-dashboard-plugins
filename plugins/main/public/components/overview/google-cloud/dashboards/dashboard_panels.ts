@@ -3,7 +3,7 @@ import { EmbeddableInput } from '../../../../../../../../src/plugins/embeddable/
 
 const getVisStateEventsOverTime = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-GCP-Alerts-Evolution-By-AuthAnswer',
+    id: 'Cyb3rhq-App-Overview-GCP-Alerts-Evolution-By-AuthAnswer',
     title: 'Events over time by auth answer',
     type: 'area',
     params: {
@@ -126,7 +126,7 @@ const getVisStateEventsOverTime = (indexPatternId: string) => {
 
 const getVisStateTopResponseCode = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-GCP-Top-vmInstances-By-ResponseCode',
+    id: 'Cyb3rhq-App-Overview-GCP-Top-vmInstances-By-ResponseCode',
     title: 'Top instances by response code',
     type: 'pie',
     params: {
@@ -237,7 +237,7 @@ const getVisStateTopResponseCode = (indexPatternId: string) => {
 
 const getVisStateTopResourceTypeProject = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-GCP-Top-ResourceType-By-Project-Id',
+    id: 'Cyb3rhq-App-Overview-GCP-Top-ResourceType-By-Project-Id',
     title: 'Resource type by project id',
     type: 'horizontal_bar',
     params: {
@@ -383,7 +383,7 @@ const getVisStateTopResourceTypeProject = (indexPatternId: string) => {
 
 const getVisStateTopProjectIdBySource = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-GCP-Top-ProjectId-By-SourceType',
+    id: 'Cyb3rhq-App-Overview-GCP-Top-ProjectId-By-SourceType',
     title: 'Top project id by sourcetype',
     type: 'pie',
     params: {
@@ -519,7 +519,7 @@ const getVisStateTopProjectIdBySource = (indexPatternId: string) => {
 
 const getVisStateTop5Map = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-GCP-Map-By-SourceIp',
+    id: 'Cyb3rhq-App-Overview-GCP-Map-By-SourceIp',
     title: 'Top 5 Map by source ip',
     type: 'tile_map',
     params: {
@@ -603,7 +603,7 @@ const getVisStateTop5Map = (indexPatternId: string) => {
 
 const getVisStateTop5Rules = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-GCP-Top-5-rules',
+    id: 'Cyb3rhq-App-Agents-GCP-Top-5-rules',
     title: 'Top 5 rules',
     type: 'table',
     params: {
@@ -680,7 +680,7 @@ const getVisStateTop5Rules = (indexPatternId: string) => {
 
 const getVisStateTopQueryEvents = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-GCP-Event-Query-Name',
+    id: 'Cyb3rhq-App-Agents-GCP-Event-Query-Name',
     title: 'Top query events',
     type: 'pie',
     params: {
@@ -766,7 +766,7 @@ const getVisStateTopQueryEvents = (indexPatternId: string) => {
 
 const getVisStateTop5Instances = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-GCP-Top-5-instances',
+    id: 'Cyb3rhq-App-Agents-GCP-Top-5-instances',
     title: 'Top 5 instances',
     type: 'pie',
     params: {
@@ -852,7 +852,7 @@ const getVisStateTop5Instances = (indexPatternId: string) => {
 
 const getVisStateGCPAlerts = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-GCP-Events-Over-Time',
+    id: 'Cyb3rhq-App-Agents-GCP-Events-Over-Time',
     title: 'GCP alerts evolution',
     type: 'line',
     params: {
@@ -980,7 +980,7 @@ const getVisStateGCPAlerts = (indexPatternId: string) => {
 
 const getVisStateGCPAuthAnswer = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Agents-GCP-authAnswer-Bar',
+    id: 'Cyb3rhq-App-Agents-GCP-authAnswer-Bar',
     title: 'Auth answer count',
     type: 'histogram',
     params: {

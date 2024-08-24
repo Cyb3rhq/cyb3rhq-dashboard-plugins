@@ -28,7 +28,7 @@ import {
 import { UI_ERROR_SEVERITIES } from '../../react-services/error-orchestrator/types';
 import { getErrorOrchestrator } from '../../react-services/common-services';
 import { security } from '../../utils/applications';
-import { getWazuhCorePlugin } from '../../kibana-services';
+import { getCyb3rhqCorePlugin } from '../../kibana-services';
 import {
   enableMenu,
   ip,
@@ -124,14 +124,14 @@ export const WzSecurity = compose(
   const isNotRunAs = allowRunAs => {
     let runAsWarningTxt = '';
     switch (allowRunAs) {
-      case getWazuhCorePlugin().API_USER_STATUS_RUN_AS.HOST_DISABLED:
+      case getCyb3rhqCorePlugin().API_USER_STATUS_RUN_AS.HOST_DISABLED:
         runAsWarningTxt = `For the role mapping to take effect, enable run_as in the API host configuration, restart the ${PLUGIN_PLATFORM_NAME} service and clear your browser cache and cookies.`;
         break;
-      case getWazuhCorePlugin().API_USER_STATUS_RUN_AS.USER_NOT_ALLOWED:
+      case getCyb3rhqCorePlugin().API_USER_STATUS_RUN_AS.USER_NOT_ALLOWED:
         runAsWarningTxt =
           'The role mapping has no effect because the current API user has allow_run_as disabled.';
         break;
-      case getWazuhCorePlugin().API_USER_STATUS_RUN_AS.ALL_DISABLED:
+      case getCyb3rhqCorePlugin().API_USER_STATUS_RUN_AS.ALL_DISABLED:
         runAsWarningTxt = `For the role mapping to take effect, enable run_as in the API host configuration and set the current API user allow_run_as to true. Restart the ${PLUGIN_PLATFORM_NAME} service and clear your browser cache and cookies.`;
         break;
       default:
@@ -174,7 +174,7 @@ export const WzSecurity = compose(
               <>
                 {allowRunAs !== undefined &&
                   allowRunAs !==
-                    getWazuhCorePlugin().API_USER_STATUS_RUN_AS.ENABLED &&
+                    getCyb3rhqCorePlugin().API_USER_STATUS_RUN_AS.ENABLED &&
                   isNotRunAs(allowRunAs)}
                 <RolesMapping></RolesMapping>
               </>

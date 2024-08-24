@@ -1,15 +1,15 @@
-# Wazuh dashboard app
+# Cyb3rhq dashboard app
 
-This folder contains the Wazuh dashboard plugin, from which you can navigate through the
-Wazuh data using visualizations in a simple and understandable way. It also allows you to
-manage the configuration and capabilities of the Wazuh server.
+This folder contains the Cyb3rhq dashboard plugin, from which you can navigate through the
+Cyb3rhq data using visualizations in a simple and understandable way. It also allows you to
+manage the configuration and capabilities of the Cyb3rhq server.
 
 ## Description
 
-This plugin for Wazuh dashboard allows you to visualize and analyze Wazuh alerts stored in
-the Wazuh Indexer. The plugin provides the following capabilities:
+This plugin for Cyb3rhq dashboard allows you to visualize and analyze Cyb3rhq alerts stored in
+the Cyb3rhq Indexer. The plugin provides the following capabilities:
 
-- Search alerts classified by modules and filter them using the different views. You will be able to explore the alerts both at Wazuh cluster level, and in a particular agent. The modules, divided into the following use cases, are:
+- Search alerts classified by modules and filter them using the different views. You will be able to explore the alerts both at Cyb3rhq cluster level, and in a particular agent. The modules, divided into the following use cases, are:
   - Security Information Management
     - Security events: Browse through your security alerts, identifying issues and threats in your environment.
     - Integrity monitoring: Alerts related to file changes, including permissions, content, ownership and attributes.
@@ -35,12 +35,12 @@ the Wazuh Indexer. The plugin provides the following capabilities:
     - GDPR: General Data Protection Regulation (GDPR) sets guidelines for processing of personal data.
     - HIPAA: Health Insurance Portability and Accountability Act of 1996 (HIPAA) provides data privacy and security provisions for safeguarding medical information.
     - TSC: Trust Services Criteria for Security, Availability, Processing Integrity, Confidentiality, and Privacy.
-- View and edit the Wazuh server configuration.
+- View and edit the Cyb3rhq server configuration.
 - Manage your ruleset (rules, decoders and CDB lists).
 - Manage your groups of agents.
-- Check the status and logs of your Wazuh cluster.
+- Check the status and logs of your Cyb3rhq cluster.
 - Manage your agents, as well as see their configuration and data inventory. You can also deploy new agents.
-- Explore and interact with the Wazuh API through our Dev Tools.
+- Explore and interact with the Cyb3rhq API through our Dev Tools.
 
 ## Software and libraries used
 

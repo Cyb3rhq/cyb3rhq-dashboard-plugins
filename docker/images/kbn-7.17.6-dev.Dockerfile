@@ -9,7 +9,7 @@ RUN yarn kbn bootstrap
 RUN yarn config set registry http://host.docker.internal:4873 && \
     sed -i 's/https:\/\/registry.yarnpkg.com/http:\/\/host.docker.internal:4873/g' yarn.lock
 RUN rm -rf /home/node/.cache/yarn && rm -rf /home/node/.cache/Cypress && rm -rf /home/node/.cache/ms-playwright
-RUN mkdir -p /home/node/kbn/data/wazuh/config
+RUN mkdir -p /home/node/kbn/data/cyb3rhq/config
 
 FROM node:16.16.0
 USER node

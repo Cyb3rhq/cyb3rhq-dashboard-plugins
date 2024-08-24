@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of agentless.
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - React component for show configuration of agentless.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -52,7 +52,7 @@ class WzConfigurationAgentless extends Component {
     super(props);
   }
   render() {
-    const { currentConfig, wazuhNotReadyYet } = this.props;
+    const { currentConfig, cyb3rhqNotReadyYet } = this.props;
     const items =
       currentConfig &&
       currentConfig['agentless-agentless'] &&
@@ -71,7 +71,7 @@ class WzConfigurationAgentless extends Component {
               help={helpLinks}
             />
           )}
-        {wazuhNotReadyYet &&
+        {cyb3rhqNotReadyYet &&
           (!currentConfig || !currentConfig['agentless-agentless']) && (
             <WzNoConfig error='Server not ready yet' help={helpLinks} />
           )}
@@ -96,11 +96,11 @@ class WzConfigurationAgentless extends Component {
 const sections = [{ component: 'agentless', configuration: 'agentless' }];
 
 const mapStateToProps = state => ({
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet,
+  cyb3rhqNotReadyYet: state.appStateReducers.cyb3rhqNotReadyYet,
 });
 
 WzConfigurationAgentless.propTypes = {
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  cyb3rhqNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 };
 
 export default compose(

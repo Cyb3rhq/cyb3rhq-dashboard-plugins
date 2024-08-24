@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Overview -> general test
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Overview -> general test
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
   const esPieChart = getService('esPieChart');
   const esTableViz = getService('esTableViz');
   const filterBar = getService('filterBar');
-  const PageObjects = getPageObjects(['wazuhCommon', 'common']);
+  const PageObjects = getPageObjects(['cyb3rhqCommon', 'common']);
   const pieCharts = getService('pieCharts');
   const queryBar = getService('queryBar');
   const tableViz = getService('tableViz');
@@ -30,19 +30,19 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
   describe.skip('integrity_monitoring', () => {
     let es_index: string;
     before(async () => {
-      await PageObjects.wazuhCommon.OpenIntegrityMonitoring();
-      es_index = 'wazuh-alerts-*'; // TODO: use the configuration service
+      await PageObjects.cyb3rhqCommon.OpenIntegrityMonitoring();
+      es_index = 'cyb3rhq-alerts-*'; // TODO: use the configuration service
     });
 
     beforeEach(async () => {
-      await PageObjects.wazuhCommon.setTodayRange();
+      await PageObjects.cyb3rhqCommon.setTodayRange();
     });
 
     //#region Visualization tests
 
     it('should Alerts by action over time values are correct', async () => {
       const chartSelector: string =
-        '#Wazuh-App-Agents-FIM-Alerts-by-action-over-time';
+        '#Cyb3rhq-App-Agents-FIM-Alerts-by-action-over-time';
       const values: object = await areaChart.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -76,7 +76,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
     });
 
     it('should Top 5 agents values are correct', async () => {
-      const chartSelector: string = '#Wazuh-App-Overview-FIM-Top-5-agents-pie';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-FIM-Top-5-agents-pie';
       const values = await pieCharts.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -110,7 +110,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
     });
 
     it('should Events summary values are correct', async () => {
-      const chartSelector: string = '#Wazuh-App-Overview-FIM-Events-summary';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-FIM-Events-summary';
       const values: object = await areaChart.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -144,7 +144,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
     });
 
     it('should Rule distribution values are correct', async () => {
-      const chartSelector: string = '#Wazuh-App-Overview-FIM-Top-5-rules';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-FIM-Top-5-rules';
       const values = await pieCharts.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -180,7 +180,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
     });
 
     it('should Actions values are correct', async () => {
-      const chartSelector: string = '#Wazuh-App-Overview-FIM-Common-actions';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-FIM-Common-actions';
       const values = await pieCharts.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -216,7 +216,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
     });
 
     it('should Top 5 users values are correct', async () => {
-      const chartSelector: string = '#Wazuh-App-Overview-FIM-top-agents-user';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-FIM-top-agents-user';
       const values: object[] = await tableViz.getValues(chartSelector);
 
       const fields = [
@@ -261,7 +261,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
     });
 
     it('should Alerts summary values are correct', async () => {
-      const chartSelector: string = '#Wazuh-App-Overview-FIM-Alerts-summary';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-FIM-Alerts-summary';
       const values: object[] = await tableViz.getValues(chartSelector);
 
       const fields = [
@@ -326,7 +326,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await PageObjects.common.sleep(3000);
 
       const chartSelector: string =
-        '#Wazuh-App-Agents-FIM-Alerts-by-action-over-time';
+        '#Cyb3rhq-App-Agents-FIM-Alerts-by-action-over-time';
       const values: object = await areaChart.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -369,7 +369,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await filterBar.addFilter('rule.level', 'is', '7');
       await PageObjects.common.sleep(3000);
 
-      const chartSelector: string = '#Wazuh-App-Overview-FIM-Top-5-agents-pie';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-FIM-Top-5-agents-pie';
       const values = await pieCharts.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -412,7 +412,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await filterBar.addFilter('rule.level', 'is', '7');
       await PageObjects.common.sleep(3000);
 
-      const chartSelector: string = '#Wazuh-App-Overview-FIM-Events-summary';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-FIM-Events-summary';
       const values: object = await areaChart.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -455,7 +455,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await filterBar.addFilter('rule.level', 'is', '7');
       await PageObjects.common.sleep(3000);
 
-      const chartSelector: string = '#Wazuh-App-Overview-FIM-Top-5-rules';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-FIM-Top-5-rules';
       const values = await pieCharts.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -500,7 +500,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await filterBar.addFilter('rule.level', 'is', '7');
       await PageObjects.common.sleep(3000);
 
-      const chartSelector: string = '#Wazuh-App-Overview-FIM-Common-actions';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-FIM-Common-actions';
       const values = await pieCharts.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -545,7 +545,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await filterBar.addFilter('rule.level', 'is', '7');
       await PageObjects.common.sleep(3000);
 
-      const chartSelector: string = '#Wazuh-App-Overview-FIM-top-agents-user';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-FIM-top-agents-user';
       const values: object[] = await tableViz.getValues(chartSelector);
 
       const fields = [
@@ -610,7 +610,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await filterBar.addFilter('rule.level', 'is', '7');
       await PageObjects.common.sleep(3000);
 
-      const chartSelector: string = '#Wazuh-App-Overview-FIM-Alerts-summary';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-FIM-Alerts-summary';
       const values: object[] = await tableViz.getValues(chartSelector);
 
       const fields = [
@@ -682,7 +682,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await PageObjects.common.sleep(3000);
 
       const chartSelector: string =
-        '#Wazuh-App-Agents-FIM-Alerts-by-action-over-time';
+        '#Cyb3rhq-App-Agents-FIM-Alerts-by-action-over-time';
       const values: object = await areaChart.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -727,7 +727,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await queryBar.submitQuery();
       await PageObjects.common.sleep(3000);
 
-      const chartSelector: string = '#Wazuh-App-Overview-FIM-Top-5-agents-pie';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-FIM-Top-5-agents-pie';
       const values = await pieCharts.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -772,7 +772,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await queryBar.submitQuery();
       await PageObjects.common.sleep(3000);
 
-      const chartSelector: string = '#Wazuh-App-Overview-FIM-Events-summary';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-FIM-Events-summary';
       const values: object = await areaChart.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -817,7 +817,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await queryBar.submitQuery();
       await PageObjects.common.sleep(3000);
 
-      const chartSelector: string = '#Wazuh-App-Overview-FIM-Top-5-rules';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-FIM-Top-5-rules';
       const values = await pieCharts.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -864,7 +864,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await queryBar.submitQuery();
       await PageObjects.common.sleep(3000);
 
-      const chartSelector: string = '#Wazuh-App-Overview-FIM-Common-actions';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-FIM-Common-actions';
       const values = await pieCharts.getValues(chartSelector);
 
       const query: SearchParams = {
@@ -911,7 +911,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await queryBar.submitQuery();
       await PageObjects.common.sleep(3000);
 
-      const chartSelector: string = '#Wazuh-App-Overview-FIM-top-agents-user';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-FIM-top-agents-user';
       const values: object[] = await tableViz.getValues(chartSelector);
 
       const fields = [
@@ -978,7 +978,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
       await queryBar.submitQuery();
       await PageObjects.common.sleep(3000);
 
-      const chartSelector: string = '#Wazuh-App-Overview-FIM-Alerts-summary';
+      const chartSelector: string = '#Cyb3rhq-App-Overview-FIM-Alerts-summary';
       const values: object[] = await tableViz.getValues(chartSelector);
 
       const fields = [

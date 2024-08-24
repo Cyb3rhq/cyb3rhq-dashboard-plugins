@@ -7,7 +7,7 @@ import { EmbeddableInput } from '../../../../../../../../src/plugins/embeddable/
 
 const getVisStateTotalNumberOfBytesReceived = (indexPatternId?: string) => {
   return {
-    id: 'Wazuh-App-Statistics-remoted-Recv-bytes',
+    id: 'Cyb3rhq-App-Statistics-remoted-Recv-bytes',
     title: 'Total number of bytes received',
     type: 'line',
     params: {
@@ -165,7 +165,7 @@ const getVisStateTotalNumberOfBytesReceived = (indexPatternId?: string) => {
 
 const getVisStateEventsSentToAnalysisd = (indexPatternId?: string) => {
   return {
-    id: 'Wazuh-App-Statistics-remoted-event-count',
+    id: 'Cyb3rhq-App-Statistics-remoted-event-count',
     title: 'Events sent to Analysisd',
     type: 'line',
     params: {
@@ -322,7 +322,7 @@ const getVisStateEventsSentToAnalysisd = (indexPatternId?: string) => {
 
 const getVisStateTCPSessions = (indexPatternId?: string) => {
   return {
-    id: 'Wazuh-App-Statistics-remoted-tcp-sessions',
+    id: 'Cyb3rhq-App-Statistics-remoted-tcp-sessions',
     title: 'TCP sessions',
     type: 'line',
     params: {

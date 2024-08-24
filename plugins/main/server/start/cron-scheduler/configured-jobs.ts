@@ -53,7 +53,7 @@ const checkConfiguration = async (
   },
 ) => {
   const { jobObj, host } = params;
-  const config = await context.wazuh_core.configuration.get();
+  const config = await context.cyb3rhq_core.configuration.get();
   const cronSettigns = Object.keys(config).filter(checkSetting);
   cronSettigns.forEach(setting =>
     applySettings(setting, config[setting], jobObj),

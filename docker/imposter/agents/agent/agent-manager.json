@@ -20,11 +20,11 @@
         "disconnection_time": "2022-08-25T16:36:35Z",
         "name": "Debian",
         "status": "active",
-        "manager": "wazuh-manager-master-0",
+        "manager": "cyb3rhq-manager-master-0",
         "node_name": "master",
         "group": ["default", "debian"],
         "lastKeepAlive": "2022-09-12T08:48:40Z",
-        "version": "Wazuh v4.3.7",
+        "version": "Cyb3rhq v4.3.7",
         "status_code": 0
       }
     ],

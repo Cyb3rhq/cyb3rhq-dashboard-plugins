@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Compliance flyout component
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Compliance flyout component
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,13 +31,13 @@ import {
   IndexPattern,
 } from '../../../../../../../../src/plugins/data/public/';
 import { WzFlyout } from '../../../../../components/common/flyouts';
-import { WazuhFlyoutDiscover } from '../../../../common/wazuh-discover/wz-flyout-discover';
+import { Cyb3rhqFlyoutDiscover } from '../../../../common/cyb3rhq-discover/wz-flyout-discover';
 import { PatternDataSource } from '../../../../common/data-source';
 import { formatUIDate } from '../../../../../react-services';
 import TechniqueRowDetails from '../../../mitre/framework/components/techniques/components/flyout-technique/technique-row-details';
 import { buildPhraseFilter } from '../../../../../../../../src/plugins/data/common';
 import { connect } from 'react-redux';
-import { wzDiscoverRenderColumns } from '../../../../common/wazuh-discover/render-columns';
+import { wzDiscoverRenderColumns } from '../../../../common/cyb3rhq-discover/render-columns';
 
 const mapStateToProps = state => ({
   currentAgentData: state.appStateReducers.currentAgentData,
@@ -304,7 +304,7 @@ export const RequirementFlyout = connect(mapStateToProps)(
             paddingSize='none'
             initialIsOpen={true}
           >
-            <WazuhFlyoutDiscover
+            <Cyb3rhqFlyoutDiscover
               DataSource={PatternDataSource}
               tableColumns={this.getDiscoverColumns()}
               filterManager={this.filterManager}

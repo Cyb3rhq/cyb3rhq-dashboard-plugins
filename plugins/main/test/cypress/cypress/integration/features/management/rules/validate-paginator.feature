@@ -1,11 +1,11 @@
 Feature: Validate paginator on Rule page
 
-    As a wazuh user
+    As a cyb3rhq user
     i want to see the Rules pages
     in order to manage them
 
     Background: the user navigate to the Rules page
-        Given The wazuh admin user is logged
+        Given The cyb3rhq admin user is logged
         When The user navigates to rules
         Then The user sees that the rule list is paginated
     

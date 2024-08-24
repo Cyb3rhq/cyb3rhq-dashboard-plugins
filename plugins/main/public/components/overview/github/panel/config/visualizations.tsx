@@ -1,6 +1,6 @@
 export const getVisStateTopActions = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-GitHub-Top-Ten-Actions',
+    id: 'Cyb3rhq-App-Overview-GitHub-Top-Ten-Actions',
     title: 'Top 10 Actions',
     type: 'pie',
     params: {
@@ -135,7 +135,7 @@ export const getVisStateTopActors = (indexPatternId: string) => {
 
 export const getVisStateTopRepositories = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-GitHub-Top-Ten-Repositories',
+    id: 'Cyb3rhq-App-Overview-GitHub-Top-Ten-Repositories',
     title: 'Top 10 Repositories',
     type: 'pie',
     params: {
@@ -268,7 +268,7 @@ export const getVisStateTopOrganizations = (indexPatternId: string) => {
 
 export const getVisStateTopCountries = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-GitHub-Countries',
+    id: 'Cyb3rhq-App-Overview-GitHub-Countries',
     title: 'Countries',
     type: 'tagcloud',
     params: {
@@ -329,7 +329,7 @@ export const getVisStateTopCountries = (indexPatternId: string) => {
 
 export const getVisStateRuleLevelEvolution = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-GitHub-Alert-Level-Evolution',
+    id: 'Cyb3rhq-App-Overview-GitHub-Alert-Level-Evolution',
     title: 'Alert level evolution',
     type: 'area',
     params: {

@@ -3,7 +3,7 @@ import { EmbeddableInput } from '../../../../../../../../src/plugins/embeddable/
 
 const getVisStateEventsBySeverity = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Office-Rule-Level-Histogram',
+    id: 'Cyb3rhq-App-Overview-Office-Rule-Level-Histogram',
     title: 'Events by severity over time',
     type: 'area',
     params: {
@@ -149,7 +149,7 @@ const getVisStateEventsBySeverity = (indexPatternId: string) => {
 
 const getVisStateIPsByUser = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Office-IPs-By-User-Barchart',
+    id: 'Cyb3rhq-App-Overview-Office-IPs-By-User-Barchart',
     title: 'IP address by Users',
     type: 'horizontal_bar',
     params: {
@@ -297,7 +297,7 @@ const getVisStateIPsByUser = (indexPatternId: string) => {
 
 const getVisStateTopUserBySubcription = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Office-Top-Users-By-Subscription-Barchart',
+    id: 'Cyb3rhq-App-Overview-Office-Top-Users-By-Subscription-Barchart',
     title: 'Top Users By Subscription',
     type: 'histogram',
     params: {
@@ -441,7 +441,7 @@ const getVisStateTopUserBySubcription = (indexPatternId: string) => {
 
 const getVisStateUsersByOperationResult = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Office-User-By-Operation-Result',
+    id: 'Cyb3rhq-App-Overview-Office-User-By-Operation-Result',
     title: 'Users by Operation Result',
     type: 'table',
     params: {
@@ -538,7 +538,7 @@ const getVisStateUsersByOperationResult = (indexPatternId: string) => {
 
 const getVisStateSeverityByUser = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Office-Severity-By-User-Barchart',
+    id: 'Cyb3rhq-App-Overview-Office-Severity-By-User-Barchart',
     title: 'Severity by user',
     type: 'histogram',
     params: {
@@ -681,7 +681,7 @@ const getVisStateSeverityByUser = (indexPatternId: string) => {
 
 const getVisStateRuleDescription = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Office-Rule-Description-Level-Table',
+    id: 'Cyb3rhq-App-Overview-Office-Rule-Description-Level-Table',
     title: 'Rule Description by Level',
     type: 'table',
     params: {
@@ -761,7 +761,7 @@ const getVisStateRuleDescription = (indexPatternId: string) => {
 
 const getVisStateOfficeMap = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Office-Location',
+    id: 'Cyb3rhq-App-Overview-Office-Location',
     title: 'Geolocation map',
     type: 'tile_map',
     params: {

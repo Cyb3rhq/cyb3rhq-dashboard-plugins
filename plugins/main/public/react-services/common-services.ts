@@ -1,7 +1,7 @@
 /*
- * Wazuh app - Component to get and set common services.
+ * Cyb3rhq app - Component to get and set common services.
  *
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

@@ -1,10 +1,10 @@
 Feature: Generating reports from module and agents
 
-  As a Wazuh user
+  As a Cyb3rhq user
   i want to generate a report from modules and agents
   in order to could access to the report from management/reporting
 Background:
-    Given The wazuh admin user is logged
+    Given The cyb3rhq admin user is logged
     And The sample data is loaded
 @report
 Scenario Outline: Create a report from modules and agents <Module Name>

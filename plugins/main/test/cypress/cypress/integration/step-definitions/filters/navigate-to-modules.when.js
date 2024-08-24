@@ -2,14 +2,14 @@ import { When } from 'cypress-cucumber-preprocessor/steps';
 import { xpathElementIsVisible, forceClickElementByXpath, getSelector, forceClickElement, elementIsVisible} from '../../utils/driver';
 
 import { BASIC_MODULES} from '../../utils/pages-constants';
-import { WAZUH_MENU_PAGE as pageName} from '../../utils/pages-constants';
-const wazuhMenuButton = getSelector('wazuhMenuButton', pageName);
+import { CYB3RHQ_MENU_PAGE as pageName} from '../../utils/pages-constants';
+const cyb3rhqMenuButton = getSelector('cyb3rhqMenuButton', pageName);
 When('The user goes to {}', (moduleName) => {
   
   cy.wait(500);
-  elementIsVisible(wazuhMenuButton);
+  elementIsVisible(cyb3rhqMenuButton);
   cy.wait(500);
-  forceClickElement(wazuhMenuButton);
+  forceClickElement(cyb3rhqMenuButton);
   xpathElementIsVisible(getSelector(moduleName, BASIC_MODULES));
   forceClickElementByXpath(getSelector(moduleName, BASIC_MODULES));
 });

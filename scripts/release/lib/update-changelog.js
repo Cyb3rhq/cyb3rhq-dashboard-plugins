@@ -12,7 +12,7 @@ function updateChangelog(
   logger.debug(`Reading file ${manifestPath}`);
   const content = fs.readFileSync(manifestPath, 'utf8');
   logger.debug(`Read file ${manifestPath}`);
-  const reChangelogEntry = `(Wazuh v${version.replace(
+  const reChangelogEntry = `(Cyb3rhq v${version.replace(
     /\./g,
     '\\.',
   )} - [\\w\\s]+) ([\\d.]+) - Revision (\\d+)`;

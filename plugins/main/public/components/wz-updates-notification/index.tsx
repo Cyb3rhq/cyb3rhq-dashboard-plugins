@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React Component component to display new updates notification.
+ * Cyb3rhq app - React Component component to display new updates notification.
  *
- * Copyright (C) 2015-2023 Wazuh, Inc.
+ * Copyright (C) 2015-2023 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

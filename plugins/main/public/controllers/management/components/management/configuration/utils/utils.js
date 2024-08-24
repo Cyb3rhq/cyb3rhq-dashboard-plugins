@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Utils used in configuration.
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Utils used in configuration.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ import XMLBeautifier from './xml-beautifier';
 export const capitalize = str => str[0].toUpperCase() + str.slice(1);
 
 /**
- * Get XML from a JSON adapting to Wazuh view of current configuration
+ * Get XML from a JSON adapting to Cyb3rhq view of current configuration
  * @param {object} currentConfig Current config in JSON
  * @returns {string}
  */

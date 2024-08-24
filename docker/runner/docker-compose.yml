@@ -4,17 +4,17 @@ version: "3"
 # -------------
 #   - APP:      osd (OpenSearch Dashboards) or kbn (Kibana)
 #   - VERSION:  OpenSearch Dashboards / Kibana version
-#   - REPO:     Path to the Wazuh app local repository
+#   - REPO:     Path to the Cyb3rhq app local repository
 #   - CMD:      yarn command to execute in the container
 #   - ARGS:     (optional) Additional CLI options of the command
 
 services:
   test_runner:
     container_name: runner
-    image:  quay.io/wazuh/$APP-dev:$VERSION
-    working_dir: /home/node/kbn/plugins/wazuh
+    image:  quay.io/cyb3rhq/$APP-dev:$VERSION
+    working_dir: /home/node/kbn/plugins/cyb3rhq
     volumes:
-      - $REPO:/home/node/kbn/plugins/wazuh
+      - $REPO:/home/node/kbn/plugins/cyb3rhq
     command: /bin/bash -c '
         yarn;
         yarn $CMD $ARGS

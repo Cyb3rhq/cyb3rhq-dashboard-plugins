@@ -5,7 +5,7 @@ export function routeDecoratorProtectedAdministrator(errorCode: number) {
     return async (context, request, response) => {
       try {
         const { administrator, administrator_requirements } =
-          await context.wazuh_core.dashboardSecurity.isAdministratorUser(
+          await context.cyb3rhq_core.dashboardSecurity.isAdministratorUser(
             context,
             request,
           );
@@ -24,7 +24,7 @@ export function routeDecoratorConfigurationAPIEditable(errorCode) {
   return handler => {
     return async (context, request, response) => {
       try {
-        const canEditConfiguration = await context.wazuh_core.configuration.get(
+        const canEditConfiguration = await context.cyb3rhq_core.configuration.get(
           'configuration.ui_api_editable',
         );
 

@@ -60,9 +60,9 @@ export class DuplicatedOSOptionException extends Error {
   }
 }
 
-export class WazuhVersionUndefinedException extends Error {
+export class Cyb3rhqVersionUndefinedException extends Error {
   constructor() {
-    super(`Wazuh version not defined`);
+    super(`Cyb3rhq version not defined`);
   }
 }
 

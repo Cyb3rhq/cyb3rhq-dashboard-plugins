@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Wazuh Constants file
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Cyb3rhq Constants file
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,60 +16,60 @@ import { version } from '../package.json';
 export const PLUGIN_VERSION = version;
 export const PLUGIN_VERSION_SHORT = version.split('.').splice(0, 2).join('.');
 
-// Index patterns - Wazuh alerts
-export const WAZUH_INDEX_TYPE_ALERTS = 'alerts';
-export const WAZUH_ALERTS_PREFIX = 'wazuh-alerts-';
-export const WAZUH_ALERTS_PATTERN = 'wazuh-alerts-*';
+// Index patterns - Cyb3rhq alerts
+export const CYB3RHQ_INDEX_TYPE_ALERTS = 'alerts';
+export const CYB3RHQ_ALERTS_PREFIX = 'cyb3rhq-alerts-';
+export const CYB3RHQ_ALERTS_PATTERN = 'cyb3rhq-alerts-*';
 
-// Job - Wazuh monitoring
-export const WAZUH_INDEX_TYPE_MONITORING = 'monitoring';
-export const WAZUH_MONITORING_PREFIX = 'wazuh-monitoring-';
-export const WAZUH_MONITORING_PATTERN = 'wazuh-monitoring-*';
-export const WAZUH_MONITORING_TEMPLATE_NAME = 'wazuh-agent';
-export const WAZUH_MONITORING_DEFAULT_INDICES_SHARDS = 1;
-export const WAZUH_MONITORING_DEFAULT_INDICES_REPLICAS = 0;
-export const WAZUH_MONITORING_DEFAULT_CREATION = 'w';
-export const WAZUH_MONITORING_DEFAULT_ENABLED = true;
-export const WAZUH_MONITORING_DEFAULT_FREQUENCY = 900;
-export const WAZUH_MONITORING_DEFAULT_CRON_FREQ = '0 * * * * *';
+// Job - Cyb3rhq monitoring
+export const CYB3RHQ_INDEX_TYPE_MONITORING = 'monitoring';
+export const CYB3RHQ_MONITORING_PREFIX = 'cyb3rhq-monitoring-';
+export const CYB3RHQ_MONITORING_PATTERN = 'cyb3rhq-monitoring-*';
+export const CYB3RHQ_MONITORING_TEMPLATE_NAME = 'cyb3rhq-agent';
+export const CYB3RHQ_MONITORING_DEFAULT_INDICES_SHARDS = 1;
+export const CYB3RHQ_MONITORING_DEFAULT_INDICES_REPLICAS = 0;
+export const CYB3RHQ_MONITORING_DEFAULT_CREATION = 'w';
+export const CYB3RHQ_MONITORING_DEFAULT_ENABLED = true;
+export const CYB3RHQ_MONITORING_DEFAULT_FREQUENCY = 900;
+export const CYB3RHQ_MONITORING_DEFAULT_CRON_FREQ = '0 * * * * *';
 
-// Job - Wazuh statistics
-export const WAZUH_INDEX_TYPE_STATISTICS = 'statistics';
-export const WAZUH_STATISTICS_DEFAULT_PREFIX = 'wazuh';
-export const WAZUH_STATISTICS_DEFAULT_NAME = 'statistics';
-export const WAZUH_STATISTICS_PATTERN = `${WAZUH_STATISTICS_DEFAULT_PREFIX}-${WAZUH_STATISTICS_DEFAULT_NAME}-*`;
-export const WAZUH_STATISTICS_TEMPLATE_NAME = `${WAZUH_STATISTICS_DEFAULT_PREFIX}-${WAZUH_STATISTICS_DEFAULT_NAME}`;
-export const WAZUH_STATISTICS_DEFAULT_INDICES_SHARDS = 1;
-export const WAZUH_STATISTICS_DEFAULT_INDICES_REPLICAS = 0;
-export const WAZUH_STATISTICS_DEFAULT_CREATION = 'w';
-export const WAZUH_STATISTICS_DEFAULT_STATUS = true;
-export const WAZUH_STATISTICS_DEFAULT_FREQUENCY = 900;
-export const WAZUH_STATISTICS_DEFAULT_CRON_FREQ = '0 */5 * * * *';
+// Job - Cyb3rhq statistics
+export const CYB3RHQ_INDEX_TYPE_STATISTICS = 'statistics';
+export const CYB3RHQ_STATISTICS_DEFAULT_PREFIX = 'cyb3rhq';
+export const CYB3RHQ_STATISTICS_DEFAULT_NAME = 'statistics';
+export const CYB3RHQ_STATISTICS_PATTERN = `${CYB3RHQ_STATISTICS_DEFAULT_PREFIX}-${CYB3RHQ_STATISTICS_DEFAULT_NAME}-*`;
+export const CYB3RHQ_STATISTICS_TEMPLATE_NAME = `${CYB3RHQ_STATISTICS_DEFAULT_PREFIX}-${CYB3RHQ_STATISTICS_DEFAULT_NAME}`;
+export const CYB3RHQ_STATISTICS_DEFAULT_INDICES_SHARDS = 1;
+export const CYB3RHQ_STATISTICS_DEFAULT_INDICES_REPLICAS = 0;
+export const CYB3RHQ_STATISTICS_DEFAULT_CREATION = 'w';
+export const CYB3RHQ_STATISTICS_DEFAULT_STATUS = true;
+export const CYB3RHQ_STATISTICS_DEFAULT_FREQUENCY = 900;
+export const CYB3RHQ_STATISTICS_DEFAULT_CRON_FREQ = '0 */5 * * * *';
 
-// Wazuh vulnerabilities
-export const WAZUH_VULNERABILITIES_PATTERN = 'wazuh-states-vulnerabilities-*';
-export const WAZUH_INDEX_TYPE_VULNERABILITIES = 'vulnerabilities';
-export const VULNERABILITY_IMPLICIT_CLUSTER_MODE_FILTER = 'wazuh.cluster.name';
+// Cyb3rhq vulnerabilities
+export const CYB3RHQ_VULNERABILITIES_PATTERN = 'cyb3rhq-states-vulnerabilities-*';
+export const CYB3RHQ_INDEX_TYPE_VULNERABILITIES = 'vulnerabilities';
+export const VULNERABILITY_IMPLICIT_CLUSTER_MODE_FILTER = 'cyb3rhq.cluster.name';
 
-// Wazuh Fleet
-export const WAZUH_FLEET_PATTERN = 'wazuh-fleet-*';
-export const WAZUH_INDEX_TYPE_FLEET = 'fleet';
-export const FLEET_IMPLICIT_CLUSTER_MODE_FILTER = 'wazuh.cluster.name';
+// Cyb3rhq Fleet
+export const CYB3RHQ_FLEET_PATTERN = 'cyb3rhq-fleet-*';
+export const CYB3RHQ_INDEX_TYPE_FLEET = 'fleet';
+export const FLEET_IMPLICIT_CLUSTER_MODE_FILTER = 'cyb3rhq.cluster.name';
 
-// Job - Wazuh initialize
-export const WAZUH_PLUGIN_PLATFORM_TEMPLATE_NAME = 'wazuh-kibana';
+// Job - Cyb3rhq initialize
+export const CYB3RHQ_PLUGIN_PLATFORM_TEMPLATE_NAME = 'cyb3rhq-kibana';
 
 // Sample data
-export const WAZUH_SAMPLE_ALERT_PREFIX = 'wazuh-alerts-4.x-';
-export const WAZUH_SAMPLE_ALERTS_INDEX_SHARDS = 1;
-export const WAZUH_SAMPLE_ALERTS_INDEX_REPLICAS = 0;
-export const WAZUH_SAMPLE_ALERTS_CATEGORY_SECURITY = 'security';
-export const WAZUH_SAMPLE_ALERTS_CATEGORY_AUDITING_POLICY_MONITORING =
+export const CYB3RHQ_SAMPLE_ALERT_PREFIX = 'cyb3rhq-alerts-4.x-';
+export const CYB3RHQ_SAMPLE_ALERTS_INDEX_SHARDS = 1;
+export const CYB3RHQ_SAMPLE_ALERTS_INDEX_REPLICAS = 0;
+export const CYB3RHQ_SAMPLE_ALERTS_CATEGORY_SECURITY = 'security';
+export const CYB3RHQ_SAMPLE_ALERTS_CATEGORY_AUDITING_POLICY_MONITORING =
   'auditing-policy-monitoring';
-export const WAZUH_SAMPLE_ALERTS_CATEGORY_THREAT_DETECTION = 'threat-detection';
-export const WAZUH_SAMPLE_ALERTS_DEFAULT_NUMBER_ALERTS = 3000;
-export const WAZUH_SAMPLE_ALERTS_CATEGORIES_TYPE_ALERTS = {
-  [WAZUH_SAMPLE_ALERTS_CATEGORY_SECURITY]: [
+export const CYB3RHQ_SAMPLE_ALERTS_CATEGORY_THREAT_DETECTION = 'threat-detection';
+export const CYB3RHQ_SAMPLE_ALERTS_DEFAULT_NUMBER_ALERTS = 3000;
+export const CYB3RHQ_SAMPLE_ALERTS_CATEGORIES_TYPE_ALERTS = {
+  [CYB3RHQ_SAMPLE_ALERTS_CATEGORY_SECURITY]: [
     { syscheck: true },
     { aws: true },
     { office: true },
@@ -81,13 +81,13 @@ export const WAZUH_SAMPLE_ALERTS_CATEGORIES_TYPE_ALERTS = {
     { windows: { service_control_manager: true }, alerts: 1000 },
     { github: true },
   ],
-  [WAZUH_SAMPLE_ALERTS_CATEGORY_AUDITING_POLICY_MONITORING]: [
+  [CYB3RHQ_SAMPLE_ALERTS_CATEGORY_AUDITING_POLICY_MONITORING]: [
     { rootcheck: true },
     { audit: true },
     { openscap: true },
     { ciscat: true },
   ],
-  [WAZUH_SAMPLE_ALERTS_CATEGORY_THREAT_DETECTION]: [
+  [CYB3RHQ_SAMPLE_ALERTS_CATEGORY_THREAT_DETECTION]: [
     { vulnerabilities: true },
     { virustotal: true },
     { osquery: true },
@@ -97,60 +97,60 @@ export const WAZUH_SAMPLE_ALERTS_CATEGORIES_TYPE_ALERTS = {
 };
 
 // Security
-export const WAZUH_SECURITY_PLUGIN_OPENSEARCH_DASHBOARDS_SECURITY =
+export const CYB3RHQ_SECURITY_PLUGIN_OPENSEARCH_DASHBOARDS_SECURITY =
   'OpenSearch Dashboards Security';
 
-export const WAZUH_SECURITY_PLUGINS = [
-  WAZUH_SECURITY_PLUGIN_OPENSEARCH_DASHBOARDS_SECURITY,
+export const CYB3RHQ_SECURITY_PLUGINS = [
+  CYB3RHQ_SECURITY_PLUGIN_OPENSEARCH_DASHBOARDS_SECURITY,
 ];
 
 // App configuration
-export const WAZUH_CONFIGURATION_CACHE_TIME = 10000; // time in ms;
+export const CYB3RHQ_CONFIGURATION_CACHE_TIME = 10000; // time in ms;
 
 // Reserved ids for Users/Role mapping
-export const WAZUH_API_RESERVED_ID_LOWER_THAN = 100;
-export const WAZUH_API_RESERVED_WUI_SECURITY_RULES = [1, 2];
+export const CYB3RHQ_API_RESERVED_ID_LOWER_THAN = 100;
+export const CYB3RHQ_API_RESERVED_WUI_SECURITY_RULES = [1, 2];
 
-// Wazuh data path
-const WAZUH_DATA_PLUGIN_PLATFORM_BASE_PATH = 'data';
-export const WAZUH_DATA_PLUGIN_PLATFORM_BASE_ABSOLUTE_PATH = path.join(
+// Cyb3rhq data path
+const CYB3RHQ_DATA_PLUGIN_PLATFORM_BASE_PATH = 'data';
+export const CYB3RHQ_DATA_PLUGIN_PLATFORM_BASE_ABSOLUTE_PATH = path.join(
   __dirname,
   '../../../',
-  WAZUH_DATA_PLUGIN_PLATFORM_BASE_PATH,
+  CYB3RHQ_DATA_PLUGIN_PLATFORM_BASE_PATH,
 );
-export const WAZUH_DATA_ABSOLUTE_PATH = path.join(
-  WAZUH_DATA_PLUGIN_PLATFORM_BASE_ABSOLUTE_PATH,
-  'wazuh',
+export const CYB3RHQ_DATA_ABSOLUTE_PATH = path.join(
+  CYB3RHQ_DATA_PLUGIN_PLATFORM_BASE_ABSOLUTE_PATH,
+  'cyb3rhq',
 );
 
-// Wazuh data path - config
-export const WAZUH_DATA_CONFIG_DIRECTORY_PATH = path.join(
-  WAZUH_DATA_ABSOLUTE_PATH,
+// Cyb3rhq data path - config
+export const CYB3RHQ_DATA_CONFIG_DIRECTORY_PATH = path.join(
+  CYB3RHQ_DATA_ABSOLUTE_PATH,
   'config',
 );
-export const WAZUH_DATA_CONFIG_REGISTRY_PATH = path.join(
-  WAZUH_DATA_CONFIG_DIRECTORY_PATH,
-  'wazuh-registry.json',
+export const CYB3RHQ_DATA_CONFIG_REGISTRY_PATH = path.join(
+  CYB3RHQ_DATA_CONFIG_DIRECTORY_PATH,
+  'cyb3rhq-registry.json',
 );
 
-// Wazuh data path - downloads
-export const WAZUH_DATA_DOWNLOADS_DIRECTORY_PATH = path.join(
-  WAZUH_DATA_ABSOLUTE_PATH,
+// Cyb3rhq data path - downloads
+export const CYB3RHQ_DATA_DOWNLOADS_DIRECTORY_PATH = path.join(
+  CYB3RHQ_DATA_ABSOLUTE_PATH,
   'downloads',
 );
-export const WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH = path.join(
-  WAZUH_DATA_DOWNLOADS_DIRECTORY_PATH,
+export const CYB3RHQ_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH = path.join(
+  CYB3RHQ_DATA_DOWNLOADS_DIRECTORY_PATH,
   'reports',
 );
 
 // Queue
-export const WAZUH_QUEUE_CRON_FREQ = '*/15 * * * * *'; // Every 15 seconds
+export const CYB3RHQ_QUEUE_CRON_FREQ = '*/15 * * * * *'; // Every 15 seconds
 
-// Wazuh errors
-export const WAZUH_ERROR_DAEMONS_NOT_READY = 'ERROR3099';
+// Cyb3rhq errors
+export const CYB3RHQ_ERROR_DAEMONS_NOT_READY = 'ERROR3099';
 
 // Agents
-export enum WAZUH_AGENTS_OS_TYPE {
+export enum CYB3RHQ_AGENTS_OS_TYPE {
   WINDOWS = 'windows',
   LINUX = 'linux',
   SUNOS = 'sunos',
@@ -158,7 +158,7 @@ export enum WAZUH_AGENTS_OS_TYPE {
   OTHERS = '',
 }
 
-export enum WAZUH_MODULES_ID {
+export enum CYB3RHQ_MODULES_ID {
   SECURITY_EVENTS = 'general',
   INTEGRITY_MONITORING = 'fim',
   AMAZON_WEB_SERVICES = 'aws',
@@ -182,7 +182,7 @@ export enum WAZUH_MODULES_ID {
   GITHUB = 'github',
 }
 
-export enum WAZUH_MENU_MANAGEMENT_SECTIONS_ID {
+export enum CYB3RHQ_MENU_MANAGEMENT_SECTIONS_ID {
   MANAGEMENT = 'management',
   ADMINISTRATION = 'administration',
   RULESET = 'ruleset',
@@ -199,19 +199,19 @@ export enum WAZUH_MENU_MANAGEMENT_SECTIONS_ID {
   STATISTICS = 'statistics',
 }
 
-export enum WAZUH_MENU_TOOLS_SECTIONS_ID {
+export enum CYB3RHQ_MENU_TOOLS_SECTIONS_ID {
   API_CONSOLE = 'devTools',
   RULESET_TEST = 'logtest',
 }
 
-export enum WAZUH_MENU_SECURITY_SECTIONS_ID {
+export enum CYB3RHQ_MENU_SECURITY_SECTIONS_ID {
   USERS = 'users',
   ROLES = 'roles',
   POLICIES = 'policies',
   ROLES_MAPPING = 'roleMapping',
 }
 
-export enum WAZUH_MENU_SETTINGS_SECTIONS_ID {
+export enum CYB3RHQ_MENU_SETTINGS_SECTIONS_ID {
   SETTINGS = 'settings',
   API_CONFIGURATION = 'api',
   MODULES = 'modules',
@@ -258,11 +258,11 @@ export const DATA_SOURCE_FILTER_CONTROLLED_FIM_RULE_GROUP = 'fim-rule-group';
 export const DATA_SOURCE_FILTER_CONTROLLED_CONFIGURATION_ASSASSMENT_RULE_GROUP =
   'configuration-assessment-rule-group';
 
-// Wazuh links
-export const WAZUH_LINK_GITHUB = 'https://github.com/wazuh';
-export const WAZUH_LINK_GOOGLE_GROUPS =
-  'https://groups.google.com/forum/#!forum/wazuh';
-export const WAZUH_LINK_SLACK = 'https://wazuh.com/community/join-us-on-slack';
+// Cyb3rhq links
+export const CYB3RHQ_LINK_GITHUB = 'https://github.com/cyb3rhq';
+export const CYB3RHQ_LINK_GOOGLE_GROUPS =
+  'https://groups.google.com/forum/#!forum/cyb3rhq';
+export const CYB3RHQ_LINK_SLACK = 'https://wazuh.com/community/join-us-on-slack';
 
 export const HEALTH_CHECK = 'health-check';
 
@@ -271,7 +271,7 @@ export const HEALTH_CHECK_REDIRECTION_TIME = 300; //ms
 
 // Plugin platform settings
 // Default timeFilter set by the app
-export const WAZUH_PLUGIN_PLATFORM_SETTING_TIME_FILTER = {
+export const CYB3RHQ_PLUGIN_PLATFORM_SETTING_TIME_FILTER = {
   from: 'now-24h',
   to: 'now',
 };
@@ -279,11 +279,11 @@ export const PLUGIN_PLATFORM_SETTING_NAME_TIME_FILTER =
   'timepicker:timeDefaults';
 
 // Default maxBuckets set by the app
-export const WAZUH_PLUGIN_PLATFORM_SETTING_MAX_BUCKETS = 200000;
+export const CYB3RHQ_PLUGIN_PLATFORM_SETTING_MAX_BUCKETS = 200000;
 export const PLUGIN_PLATFORM_SETTING_NAME_MAX_BUCKETS = 'timeline:max_buckets';
 
 // Default metaFields set by the app
-export const WAZUH_PLUGIN_PLATFORM_SETTING_METAFIELDS = ['_source', '_index'];
+export const CYB3RHQ_PLUGIN_PLATFORM_SETTING_METAFIELDS = ['_source', '_index'];
 export const PLUGIN_PLATFORM_SETTING_NAME_METAFIELDS = 'metaFields';
 
 // Logger
@@ -300,26 +300,26 @@ export const UI_TOAST_COLOR = {
 };
 
 // Assets
-export const ASSETS_BASE_URL_PREFIX = '/plugins/wazuh/assets/';
-export const ASSETS_PUBLIC_URL = '/plugins/wazuh/public/assets/';
+export const ASSETS_BASE_URL_PREFIX = '/plugins/cyb3rhq/assets/';
+export const ASSETS_PUBLIC_URL = '/plugins/cyb3rhq/public/assets/';
 
 // Reports
 export const REPORTS_LOGO_IMAGE_ASSETS_RELATIVE_PATH =
   'images/logo_reports.png';
 export const REPORTS_PRIMARY_COLOR = '#256BD1';
-export const REPORTS_PAGE_FOOTER_TEXT = 'Copyright © 2024 Wazuh, Inc.';
+export const REPORTS_PAGE_FOOTER_TEXT = 'Copyright © 2024 Cyb3rhq, Inc.';
 export const REPORTS_PAGE_HEADER_TEXT = 'info@wazuh.com\nhttps://wazuh.com';
 
 // Plugin platform
 export const PLUGIN_PLATFORM_NAME = 'dashboard';
-export const PLUGIN_PLATFORM_INSTALLATION_USER = 'wazuh-dashboard';
-export const PLUGIN_PLATFORM_INSTALLATION_USER_GROUP = 'wazuh-dashboard';
-export const PLUGIN_PLATFORM_WAZUH_DOCUMENTATION_URL_PATH_UPGRADE_PLATFORM =
+export const PLUGIN_PLATFORM_INSTALLATION_USER = 'cyb3rhq-dashboard';
+export const PLUGIN_PLATFORM_INSTALLATION_USER_GROUP = 'cyb3rhq-dashboard';
+export const PLUGIN_PLATFORM_CYB3RHQ_DOCUMENTATION_URL_PATH_UPGRADE_PLATFORM =
   'upgrade-guide';
-export const PLUGIN_PLATFORM_WAZUH_DOCUMENTATION_URL_PATH_TROUBLESHOOTING =
-  'user-manual/wazuh-dashboard/troubleshooting.html';
-export const PLUGIN_PLATFORM_WAZUH_DOCUMENTATION_URL_PATH_APP_CONFIGURATION =
-  'user-manual/wazuh-dashboard/config-file.html';
+export const PLUGIN_PLATFORM_CYB3RHQ_DOCUMENTATION_URL_PATH_TROUBLESHOOTING =
+  'user-manual/cyb3rhq-dashboard/troubleshooting.html';
+export const PLUGIN_PLATFORM_CYB3RHQ_DOCUMENTATION_URL_PATH_APP_CONFIGURATION =
+  'user-manual/cyb3rhq-dashboard/config-file.html';
 export const PLUGIN_PLATFORM_URL_GUIDE =
   'https://opensearch.org/docs/2.10/about';
 export const PLUGIN_PLATFORM_URL_GUIDE_TITLE = 'OpenSearch guide';
@@ -376,7 +376,7 @@ export const AGENT_SYNCED_STATUS = {
   NOT_SYNCED: 'not synced',
 };
 
-// The status code can be seen here https://github.com/wazuh/wazuh/blob/686068a1f05d806b2e3b3d633a765320ae7ae114/src/wazuh_db/wdb.h#L55-L61
+// The status code can be seen here https://github.com/cyb3rhq/cyb3rhq/blob/686068a1f05d806b2e3b3d633a765320ae7ae114/src/cyb3rhq_db/wdb.h#L55-L61
 
 export const AGENT_STATUS_CODE = [
   {
@@ -432,8 +432,8 @@ export const DOCUMENTATION_WEB_BASE_URL = 'https://documentation.wazuh.com';
 // Default Elasticsearch user name context
 export const ELASTIC_NAME = 'elastic';
 
-// Default Wazuh indexer name
-export const WAZUH_INDEXER_NAME = 'indexer';
+// Default Cyb3rhq indexer name
+export const CYB3RHQ_INDEXER_NAME = 'indexer';
 
 // Not timeFieldName on index pattern
 export const NOT_TIME_FIELD_NAME_INDEX_PATTERN =

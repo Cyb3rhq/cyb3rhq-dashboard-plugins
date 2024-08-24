@@ -10,7 +10,7 @@ import {
   Query,
   TimeRange,
 } from '../../../../../../src/plugins/data/public';
-// wazuh plugin dependencies
+// cyb3rhq plugin dependencies
 import useSearchBar from './use-search-bar';
 import { getDataPlugin } from '../../../kibana-services';
 import * as timeFilterHook from '../hooks/use-time-filter';
@@ -96,7 +96,7 @@ describe('[hook] useSearchBarConfiguration', () => {
   });
 
   it('should return the same index pattern when receiving a default index pattern', async () => {
-    const exampleIndexPatternId = 'wazuh-index-pattern';
+    const exampleIndexPatternId = 'cyb3rhq-index-pattern';
     const mockedIndexPatternData: Partial<IndexPattern> = {
       // used partial not avoid fill all the interface, it's only for testing purpose
       id: exampleIndexPatternId,
@@ -104,7 +104,7 @@ describe('[hook] useSearchBarConfiguration', () => {
     };
     jest
       .spyOn(AppState, 'getCurrentPattern')
-      .mockImplementation(() => 'wazuh-alerts-*');
+      .mockImplementation(() => 'cyb3rhq-alerts-*');
     jest.spyOn(AppState, 'setCurrentPattern').mockImplementation(jest.fn());
     jest
       .spyOn(mockDataPlugin.indexPatterns, 'get')
@@ -121,7 +121,7 @@ describe('[hook] useSearchBarConfiguration', () => {
   });
 
   it('should return empty filters when NOT equal a default filters', async () => {
-    const exampleIndexPatternId = 'wazuh-index-pattern';
+    const exampleIndexPatternId = 'cyb3rhq-index-pattern';
     const mockedExampleIndexPatternData: Partial<IndexPattern> = {
       // used partial not avoid fill all the interface, it's only for testing purpose
       id: exampleIndexPatternId,
@@ -153,7 +153,7 @@ describe('[hook] useSearchBarConfiguration', () => {
   });
 
   it('should reload the index pattern when the index pattern changes', async () => {
-    const exampleIndexPatternId = 'wazuh-index-pattern';
+    const exampleIndexPatternId = 'cyb3rhq-index-pattern';
     const mockedExampleIndexPatternData: Partial<IndexPattern> = {
       // used partial not avoid fill all the interface, it's only for testing purpose
       id: exampleIndexPatternId,
@@ -187,7 +187,7 @@ describe('[hook] useSearchBarConfiguration', () => {
     ]);
     const newExampleIndexPatternData: Partial<IndexPattern> = {
       // used partial not avoid fill all the interface, it's only for testing purpose
-      id: 'new-wazuh-index-pattern',
+      id: 'new-cyb3rhq-index-pattern',
       title: '',
     };
     jest

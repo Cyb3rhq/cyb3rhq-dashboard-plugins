@@ -31,11 +31,11 @@ elastic_versions=(
 
 usage() {
 	echo
-	echo "./dev.sh elastic_version /wazuh_app_src action "
+	echo "./dev.sh elastic_version /cyb3rhq_app_src action "
 	echo
 	echo "where"
 	echo "  elastic_version is one of " ${elastic_versions[*]}
-	echo "  wazuh_app_src is the path to the wazuh application source code"
+	echo "  cyb3rhq_app_src is the path to the cyb3rhq application source code"
 	echo "  action is one of up | down | stop"
 	exit -1
 }

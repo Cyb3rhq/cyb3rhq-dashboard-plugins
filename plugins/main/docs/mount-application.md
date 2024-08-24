@@ -1,6 +1,6 @@
 ## Mount application
 
-The application mounts a ReactJS application into the HTML element provided by the parameters received on the `mount` method of the Wazuh dashboard application. The application could be wrapped in the root level with some contexts as `I18nProvider` and Redux provider to these are accessibles from any component in the tree:
+The application mounts a ReactJS application into the HTML element provided by the parameters received on the `mount` method of the Cyb3rhq dashboard application. The application could be wrapped in the root level with some contexts as `I18nProvider` and Redux provider to these are accessibles from any component in the tree:
 
 ```ts
 // plugin.ts

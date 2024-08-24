@@ -8,12 +8,12 @@ import {
   EuiCallOut,
 } from '@elastic/eui';
 import { withErrorBoundary } from '../../common/hocs';
-import { getWazuhCorePlugin } from '../../../kibana-services';
+import { getCyb3rhqCorePlugin } from '../../../kibana-services';
 
 export const AddApi = withErrorBoundary(() => {
   const data = React.useMemo(() => {
     const settings = Object.entries(
-      getWazuhCorePlugin().configuration._settings.get('hosts').options.arrayOf,
+      getCyb3rhqCorePlugin().configuration._settings.get('hosts').options.arrayOf,
     ).map(([key, { description }]) => [
       key,
       description.charAt(0).toLowerCase() + description.slice(1), // lower case the first letter
@@ -36,7 +36,7 @@ export const AddApi = withErrorBoundary(() => {
         <EuiFlexItem>
           <EuiText>
             Modify{' '}
-            <EuiCode>{getWazuhCorePlugin().configuration.store.file}</EuiCode>{' '}
+            <EuiCode>{getCyb3rhqCorePlugin().configuration.store.file}</EuiCode>{' '}
             to set the connection information.
           </EuiText>
         </EuiFlexItem>

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for registering agents.
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - React component for registering agents.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,12 +25,12 @@ import {
 } from '@elastic/eui';
 
 import { getToasts }  from '../../kibana-services';
-import { updateWazuhNotReadyYet } from '../../redux/actions/appStateActions';
+import { updateCyb3rhqNotReadyYet } from '../../redux/actions/appStateActions';
 import { clusterReq, restartClusterOrManager } from '../../controllers/management/components/management/configuration/utils/wz-fetch';
 import { connect } from 'react-redux';
 
 interface IWzRestartClusterManagerCalloutProps{
-  updateWazuhNotReadyYet: (wazuhNotReadyYet) => void
+  updateCyb3rhqNotReadyYet: (cyb3rhqNotReadyYet) => void
   onRestarted: () => void
   onRestartedError: () => void
 };
@@ -64,12 +64,12 @@ class WzRestartClusterManagerCallout extends Component<IWzRestartClusterManagerC
   restartClusterOrManager = async () => {
     try{
       this.setState({ warningRestarting: true, warningRestartModalVisible: false});
-      const data = await restartClusterOrManager(this.props.updateWazuhNotReadyYet);
+      const data = await restartClusterOrManager(this.props.updateCyb3rhqNotReadyYet);
       this.props.onRestarted();
       this.showToast('success', `${data.restarted} was restarted`);
     }catch(error){
       this.setState({ warningRestarting: false });
-      this.props.updateWazuhNotReadyYet(false);
+      this.props.updateCyb3rhqNotReadyYet(false);
       this.props.onRestartedError();
       this.showToast('danger', 'Error', error.message || error );
     }
@@ -123,7 +123,7 @@ class WzRestartClusterManagerCallout extends Component<IWzRestartClusterManagerC
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateWazuhNotReadyYet: wazuhNotReadyYet => dispatch(updateWazuhNotReadyYet(wazuhNotReadyYet))
+    updateCyb3rhqNotReadyYet: cyb3rhqNotReadyYet => dispatch(updateCyb3rhqNotReadyYet(cyb3rhqNotReadyYet))
   }
 };
 

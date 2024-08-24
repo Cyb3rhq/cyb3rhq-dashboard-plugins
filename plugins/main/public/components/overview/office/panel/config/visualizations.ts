@@ -1,6 +1,6 @@
 export const getVisStateOfficeMetricStats = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Office-Metric-Stats',
+    id: 'Cyb3rhq-App-Overview-Office-Metric-Stats',
     title: 'Stats',
     type: 'metric',
     params: {
@@ -82,7 +82,7 @@ export const getVisStateOfficeMetricStats = (indexPatternId: string) => {
 
 export const getVisStateOfficeTopsEventsPie = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Office-Top-Events-Pie',
+    id: 'Cyb3rhq-App-Overview-Office-Top-Events-Pie',
     title: 'Top Events',
     type: 'pie',
     params: {
@@ -166,7 +166,7 @@ export const getVisStateOfficeTopsEventsPie = (indexPatternId: string) => {
 
 export const getVisStateOfficeUserOperationLevel = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Office-User-Operation-Level-Table',
+    id: 'Cyb3rhq-App-Overview-Office-User-Operation-Level-Table',
     title: 'User Operations',
     type: 'table',
     params: {
@@ -268,7 +268,7 @@ export const getVisStateOfficeAlertsEvolutionByUser = (
   indexPatternId: string,
 ) => {
   return {
-    id: 'Wazuh-App-Overview-Office-Alerts-Evolution-By-User',
+    id: 'Cyb3rhq-App-Overview-Office-Alerts-Evolution-By-User',
     title: 'Alerts evolution over time',
     type: 'line',
     params: {
@@ -417,7 +417,7 @@ export const getVisStateOfficeAlertsEvolutionByUser = (
 
 export const getVisStateTopOfficeUsers = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Office-Top-Users',
+    id: 'Cyb3rhq-App-Overview-Office-Top-Users',
     title: 'Top Office Users',
     type: 'pie',
     params: {
@@ -483,7 +483,7 @@ export const getVisStateTopOfficeUsers = (indexPatternId: string) => {
 
 export const getVisStateOfficeCountryTagCloud = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Office-Country-Tag-Cloud',
+    id: 'Cyb3rhq-App-Overview-Office-Country-Tag-Cloud',
     title: 'Country of origin',
     type: 'tagcloud',
     params: {
@@ -545,7 +545,7 @@ export const getVisStateOfficeAlertsEvolutionByUserID = (
   indexPatternId: string,
 ) => {
   return {
-    id: 'Wazuh-App-Overview-Office-Alerts-Evolution-By-UserID',
+    id: 'Cyb3rhq-App-Overview-Office-Alerts-Evolution-By-UserID',
     title: 'Alerts by user',
     type: 'line',
     params: {
@@ -697,7 +697,7 @@ export const getVisStateOfficeAlertsEvolutionByUserID = (
 
 export const getVisStateOfficeTopOperations = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Office-Top-Operations',
+    id: 'Cyb3rhq-App-Overview-Office-Top-Operations',
     title: 'Top Operations',
     type: 'pie',
     params: {
@@ -766,7 +766,7 @@ export const getVisStateOfficeClientIPOperationLevelTable = (
   indexPatternId: string,
 ) => {
   return {
-    id: 'Wazuh-App-Overview-Office-Client-IP-Operation-Level-Table',
+    id: 'Cyb3rhq-App-Overview-Office-Client-IP-Operation-Level-Table',
     title: 'Client IP Operations',
     type: 'table',
     params: {

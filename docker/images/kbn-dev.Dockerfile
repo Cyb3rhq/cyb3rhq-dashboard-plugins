@@ -1,4 +1,4 @@
-# Usage: docker build --build-arg NODE_VERSION=16.17.1 --build-arg KIBANA_VERSION=7.17.7 -t quay.io/wazuh/kbn-dev:7.17.7 -f kbn-dev.Dockerfile .
+# Usage: docker build --build-arg NODE_VERSION=16.17.1 --build-arg KIBANA_VERSION=7.17.7 -t quay.io/cyb3rhq/kbn-dev:7.17.7 -f kbn-dev.Dockerfile .
 
 ARG NODE_VERSION
 FROM node:${NODE_VERSION} AS base
@@ -13,7 +13,7 @@ RUN yarn kbn bootstrap
 RUN yarn config set registry http://host.docker.internal:4873 && \
     sed -i 's/https:\/\/registry.yarnpkg.com/http:\/\/host.docker.internal:4873/g' yarn.lock
 RUN rm -rf /home/node/.cache/yarn && rm -rf /home/node/.cache/Cypress && rm -rf /home/node/.cache/ms-playwright
-RUN mkdir -p /home/node/kbn/data/wazuh/config
+RUN mkdir -p /home/node/kbn/data/cyb3rhq/config
 
 FROM node:${NODE_VERSION}
 USER node

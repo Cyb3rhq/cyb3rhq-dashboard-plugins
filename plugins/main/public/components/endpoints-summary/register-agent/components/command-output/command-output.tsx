@@ -9,7 +9,7 @@ import {
 } from '@elastic/eui';
 import React, { Fragment, useEffect, useState } from 'react';
 import { tOperatingSystem } from '../../core/config/os-commands-definitions';
-import { osdfucatePasswordInCommand } from '../../services/wazuh-password-service';
+import { osdfucatePasswordInCommand } from '../../services/cyb3rhq-password-service';
 
 interface ICommandSectionProps {
   commandText: string;

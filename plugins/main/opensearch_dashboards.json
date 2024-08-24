@@ -1,8 +1,8 @@
 {
-  "id": "wazuh",
+  "id": "cyb3rhq",
   "version": "5.0.0-00",
   "opensearchDashboardsVersion": "opensearchDashboards",
-  "configPath": ["wazuh"],
+  "configPath": ["cyb3rhq"],
   "requiredPlugins": [
     "navigation",
     "data",
@@ -17,10 +17,10 @@
     "opensearchDashboardsReact",
     "opensearchDashboardsUtils",
     "opensearchDashboardsLegacy",
-    "wazuhCheckUpdates",
-    "wazuhCore",
-    "wazuhEngine",
-    "wazuhFleet"
+    "cyb3rhqCheckUpdates",
+    "cyb3rhqCore",
+    "cyb3rhqEngine",
+    "cyb3rhqFleet"
   ],
   "optionalPlugins": [
     "security",

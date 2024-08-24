@@ -7,7 +7,7 @@
           "major": "2",
           "name": "macOS High Sierra",
           "platform": "darwin",
-          "uname": "macOS High Sierra |wazuh-manager-master-0 |4.14.114-105.126.amzn2.x86_64 |#1 SMP Tue May 7 02:26:40 UTC 2019 |x86_64",
+          "uname": "macOS High Sierra |cyb3rhq-manager-master-0 |4.14.114-105.126.amzn2.x86_64 |#1 SMP Tue May 7 02:26:40 UTC 2019 |x86_64",
           "version": "2"
         },
         "ip": "127.0.0.1",
@@ -17,10 +17,10 @@
         "dateAdd": "2022-08-25T16:17:46Z",
         "name": "macOS High Sierra agent",
         "status": "active",
-        "manager": "wazuh-manager-master-0",
+        "manager": "cyb3rhq-manager-master-0",
         "node_name": "master",
         "lastKeepAlive": "9999-12-31T23:59:59Z",
-        "version": "Wazuh v4.5.0",
+        "version": "Cyb3rhq v4.5.0",
         "group_config_status": "synced",
         "status_code": 3
       }

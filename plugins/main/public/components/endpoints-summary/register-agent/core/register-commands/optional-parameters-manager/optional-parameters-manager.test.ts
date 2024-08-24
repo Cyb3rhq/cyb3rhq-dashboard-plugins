@@ -10,7 +10,7 @@ type tOptionalParamsFieldname =
   | 'server_address'
   | 'protocol'
   | 'agent_group'
-  | 'wazuh_password'
+  | 'cyb3rhq_password'
   | 'another_valid_fieldname';
 
 const returnOptionalParam = (
@@ -22,23 +22,23 @@ const returnOptionalParam = (
 const optionalParametersDefinition: tOptionalParams<tOptionalParamsFieldname> =
   {
     protocol: {
-      property: 'WAZUH_MANAGER_PROTOCOL',
+      property: 'CYB3RHQ_MANAGER_PROTOCOL',
       getParamCommand: returnOptionalParam,
     },
     agent_group: {
-      property: 'WAZUH_AGENT_GROUP',
+      property: 'CYB3RHQ_AGENT_GROUP',
       getParamCommand: returnOptionalParam,
     },
-    wazuh_password: {
-      property: 'WAZUH_PASSWORD',
+    cyb3rhq_password: {
+      property: 'CYB3RHQ_PASSWORD',
       getParamCommand: returnOptionalParam,
     },
     server_address: {
-      property: 'WAZUH_MANAGER',
+      property: 'CYB3RHQ_MANAGER',
       getParamCommand: returnOptionalParam,
     },
     another_valid_fieldname: {
-      property: 'WAZUH_ANOTHER_PROPERTY',
+      property: 'CYB3RHQ_ANOTHER_PROPERTY',
       getParamCommand: returnOptionalParam,
     },
   };
@@ -55,7 +55,7 @@ describe('Optional Parameters Manager', () => {
     ['server_address', '10.10.10.27'],
     ['protocol', 'TCP'],
     ['agent_group', 'group1'],
-    ['wazuh_password', '123456'],
+    ['cyb3rhq_password', '123456'],
     ['another_valid_fieldname', 'another_valid_value']
   ])(
     `should return the corresponding command for "%s" param with "%s" value`,
@@ -101,7 +101,7 @@ describe('Optional Parameters Manager', () => {
     const paramsValues: IOptionalParameters<tOptionalParamsFieldname> = {
       protocol: 'TCP',
       agent_group: 'group1',
-      wazuh_password: '123456',
+      cyb3rhq_password: '123456',
       server_address: 'server',
       another_valid_fieldname: 'another_valid_value',
     };
@@ -123,11 +123,11 @@ describe('Optional Parameters Manager', () => {
           property: optionalParametersDefinition.server_address.property,
           value: paramsValues.server_address,
         }),
-      wazuh_password:
-        optionalParametersDefinition.wazuh_password.getParamCommand({
-          name: 'wazuh_password',
-          property: optionalParametersDefinition.wazuh_password.property,
-          value: paramsValues.wazuh_password,
+      cyb3rhq_password:
+        optionalParametersDefinition.cyb3rhq_password.getParamCommand({
+          name: 'cyb3rhq_password',
+          property: optionalParametersDefinition.cyb3rhq_password.property,
+          value: paramsValues.cyb3rhq_password,
         }),
       another_valid_fieldname:
         optionalParametersDefinition.another_valid_fieldname.getParamCommand({
@@ -146,7 +146,7 @@ describe('Optional Parameters Manager', () => {
     const paramsValues: IOptionalParameters<tOptionalParamsFieldname> = {
       protocol: 'TCP',
       agent_group: 'group1',
-      wazuh_password: '123456',
+      cyb3rhq_password: '123456',
       server_address: 'server',
       another_valid_fieldname: 'another_valid_value',
     };
@@ -169,11 +169,11 @@ describe('Optional Parameters Manager', () => {
           property: optionalParametersDefinition.server_address.property,
           value: paramsValues.server_address,
         }),
-      wazuh_password:
-        optionalParametersDefinition.wazuh_password.getParamCommand({
-          name: 'wazuh_password',
-          property: optionalParametersDefinition.wazuh_password.property,
-          value: paramsValues.wazuh_password,
+      cyb3rhq_password:
+        optionalParametersDefinition.cyb3rhq_password.getParamCommand({
+          name: 'cyb3rhq_password',
+          property: optionalParametersDefinition.cyb3rhq_password.property,
+          value: paramsValues.cyb3rhq_password,
         }),
       another_valid_fieldname:
         optionalParametersDefinition.another_valid_fieldname.getParamCommand({
@@ -220,7 +220,7 @@ describe('Optional Parameters Manager', () => {
       agent_name: '',
       protocol: '',
       agent_group: '',
-      wazuh_password: '',
+      cyb3rhq_password: '',
     };
     // @ts-ignore
     const optionals = optParamManager.getAllOptionalParams(paramsValues);

@@ -11,7 +11,7 @@
       "crypto_method": "aes",
       "server": [
         {
-          "address": "wazuh.manager/172.27.0.3",
+          "address": "cyb3rhq.manager/172.27.0.3",
           "port": 1514,
           "max_retries": 5,
           "retry_interval": 10,

@@ -1,6 +1,6 @@
 import { WzAuthentication } from './wz-authentication';
 
-describe('Wazuh Authentication', () => {
+describe('Cyb3rhq Authentication', () => {
   describe('User has agent permissions', () => {
 
     describe('Given a user without agent:read permission', () => {

@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React View OfficeStats.
+ * Cyb3rhq app - React View OfficeStats.
  *
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@ const settings = [
   },
   {
     field: 'only_future_events',
-    label: 'Collect events generated since Wazuh manager was started',
+    label: 'Collect events generated since Cyb3rhq manager was started',
   },
   {
     field: 'curl_max_size',

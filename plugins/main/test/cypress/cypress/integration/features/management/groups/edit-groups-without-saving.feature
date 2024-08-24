@@ -6,7 +6,7 @@ Feature: Should Displayes a warning modal - Management - edit groups
 
 @rules @actions
   Scenario: Validate confirmation when closing modal without saving - Management - edit groups
-    Given The wazuh admin user is logged
+    Given The cyb3rhq admin user is logged
     When The user navigates to groups page
     And The user selects a group to edit
     And The user modify the selected group

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Reporting service
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Reporting service
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 
 import moment from 'moment';
-import { WazuhConfig } from '../react-services/wazuh-config';
+import { Cyb3rhqConfig } from '../react-services/cyb3rhq-config';
 import { AppState } from './app-state';
 import { WzRequest } from './wz-request';
 import { getCore, getHttp, getToasts, getUiSettings } from '../kibana-services';
@@ -35,7 +35,7 @@ import NavigationService from './navigation-service';
 
 export class ReportingService {
   constructor() {
-    this.wazuhConfig = new WazuhConfig();
+    this.cyb3rhqConfig = new Cyb3rhqConfig();
   }
 
   showToast = (color, title, text, time) => {
@@ -54,10 +54,10 @@ export class ReportingService {
 
   removeAgentStatusVis(idArray) {
     const monitoringEnabled =
-      this.wazuhConfig.getConfig()['wazuh.monitoring.enabled'];
+      this.cyb3rhqConfig.getConfig()['cyb3rhq.monitoring.enabled'];
     if (!monitoringEnabled) {
       const visArray = idArray.filter(vis => {
-        return vis !== 'Wazuh-App-Overview-General-Agents-status';
+        return vis !== 'Cyb3rhq-App-Overview-General-Agents-status';
       });
       return visArray;
     }
@@ -122,7 +122,7 @@ export class ReportingService {
           This solution is based on
           https://github.com/1904labs/dom-to-image-more/issues/160#issuecomment-1922491067
 
-          See https://github.com/wazuh/wazuh-dashboard-plugins/issues/6900#issuecomment-2275495245
+          See https://github.com/cyb3rhq/cyb3rhq-dashboard-plugins/issues/6900#issuecomment-2275495245
           */
           element: await domtoimage.toPng(node, {
             width: node.clientWidth,

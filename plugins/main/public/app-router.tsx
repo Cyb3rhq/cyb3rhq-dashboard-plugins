@@ -3,9 +3,9 @@ import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { ToolsRouter } from './components/tools/tools-router';
 import {
   getPlugins,
-  getWazuhCorePlugin,
-  getWazuhEnginePlugin,
-  getWazuhFleetPlugin,
+  getCyb3rhqCorePlugin,
+  getCyb3rhqEnginePlugin,
+  getCyb3rhqFleetPlugin,
   getWzMainParams,
 } from './kibana-services';
 import { updateCurrentPlatform } from './redux/actions/appStateActions';
@@ -39,7 +39,7 @@ import {
 } from './components/common/data-source/pattern/rules';
 import { useDocViewer } from './components/common/doc-viewer';
 import DocViewer from './components/common/doc-viewer/doc-viewer';
-import { WazuhFlyoutDiscover } from './components/common/wazuh-discover/wz-flyout-discover';
+import { Cyb3rhqFlyoutDiscover } from './components/common/cyb3rhq-discover/wz-flyout-discover';
 import {
   FILTER_OPERATOR,
   PatternDataSource,
@@ -60,13 +60,13 @@ import { InputForm } from './components/common/form';
 import useSearchBar from './components/common/search-bar/use-search-bar';
 import { WzSearchBar } from './components/common/search-bar';
 import { TableIndexer, TableIndexerEngine } from './components/common/tables';
-import DocDetails from './components/common/wazuh-discover/components/doc-details';
+import DocDetails from './components/common/cyb3rhq-discover/components/doc-details';
 import { useTimeFilter } from './components/common/hooks';
 import { LoadingSpinner } from './components/common/loading-spinner/loading-spinner';
 
 import { TableWzAPI } from './components/common/tables';
 import WzListEditor from './controllers/management/components/management/cdblists/views/list-editor.tsx';
-import { DocumentViewTableAndJson } from './components/common/wazuh-discover/components/document-view-table-and-json';
+import { DocumentViewTableAndJson } from './components/common/cyb3rhq-discover/components/document-view-table-and-json';
 import { OutputsDataSource } from './components/common/data-source/pattern/outputs/data-source';
 import { OutputsDataSourceRepository } from './components/common/data-source/pattern/outputs/data-source-repository';
 import WzDecoderInfo from './controllers/management/components/management/decoders/views/decoder-info.tsx';
@@ -79,11 +79,11 @@ export function Application(props) {
   const navigationService = NavigationService.getInstance();
   const history = navigationService.getHistory();
 
-  const { FleetManagement } = getWazuhFleetPlugin();
+  const { FleetManagement } = getCyb3rhqFleetPlugin();
 
   useEffect(() => {
     // Get the dashboard security
-    getWazuhCorePlugin()
+    getCyb3rhqCorePlugin()
       .dashboardSecurity.fetchCurrentPlatform()
       .then(item => {
         dispatch(updateCurrentPlatform(item));
@@ -113,7 +113,7 @@ export function Application(props) {
 
   return (
     <Router history={history}>
-      <div className='wazuhNotReadyYet'></div>
+      <div className='cyb3rhqNotReadyYet'></div>
       {/* TODO: The plugins/main/public/components/wz-menu/wz-menu.js defines a portal to mount here. We could avoid the usage of the React portal and render the component instead*/}
       <WzMenuWrapper />
       <ToastNotificationsModal /> {/* TODO: check if this is being used */}
@@ -166,7 +166,7 @@ export function Application(props) {
         <Route path={'/settings'} exact render={Settings}></Route>
         <Route path={'/security'} exact render={WzSecurity}></Route>
         <Route
-          path={'/wazuh-dev'}
+          path={'/cyb3rhq-dev'}
           exact
           render={props => <ToolsRouter {...props} />}
         ></Route>
@@ -178,7 +178,7 @@ export function Application(props) {
         <Route
           path={'/engine'}
           render={props => {
-            const { Engine } = getWazuhEnginePlugin();
+            const { Engine } = getCyb3rhqEnginePlugin();
             return (
               <Engine
                 navigationService={NavigationService}
@@ -186,7 +186,7 @@ export function Application(props) {
                   getPlugins().dashboard.DashboardContainerByValueRenderer
                 }
                 TableIndexer={TableIndexerEngine}
-                WazuhFlyoutDiscover={WazuhFlyoutDiscover}
+                Cyb3rhqFlyoutDiscover={Cyb3rhqFlyoutDiscover}
                 PatternDataSource={PatternDataSource}
                 PatternDataSourceFilterManager={PatternDataSourceFilterManager}
                 AppState={AppState}

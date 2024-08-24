@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Wazuh API utils service
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Cyb3rhq API utils service
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -10,10 +10,10 @@
  * Find more information about this on the LICENSE file.
  */
 
-import { WAZUH_API_RESERVED_ID_LOWER_THAN } from '../../common/constants';
+import { CYB3RHQ_API_RESERVED_ID_LOWER_THAN } from '../../common/constants';
 
 export class WzAPIUtils{
   static isReservedID(id: number): boolean{
-    return id < WAZUH_API_RESERVED_ID_LOWER_THAN
+    return id < CYB3RHQ_API_RESERVED_ID_LOWER_THAN
   }
 }

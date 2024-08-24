@@ -1,7 +1,7 @@
 /*
- * Wazuh app
+ * Cyb3rhq app
  *
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,12 +19,12 @@ jest.mock('./generic-request', () => ({
       return {
         data: {
           data: {
-            wazuh: {
+            cyb3rhq: {
               hash: '',
               reserved: true,
               hidden: false,
               backend_roles: ['admin'],
-              attributes: {email: 'wazuh@email.com', full_name: 'wazuh surname'},
+              attributes: {email: 'cyb3rhq@email.com', full_name: 'cyb3rhq surname'},
               description: 'admin user',
               opendistro_security_roles: [],
               static: false,
@@ -35,11 +35,11 @@ jest.mock('./generic-request', () => ({
     },
   },
 }));
-describe('Wazuh Internal Users', () => {
+describe('Cyb3rhq Internal Users', () => {
   it('Should return the ODFE internal users', async () => {
     const users = await WzSecurityOpenSearchDashboardsSecurity.getUsers();
     const expected_result = [
-        { username: 'wazuh', email: 'wazuh@email.com', full_name: 'wazuh surname', roles: [] },
+        { username: 'cyb3rhq', email: 'cyb3rhq@email.com', full_name: 'cyb3rhq surname', roles: [] },
       ];
     expect(users).toEqual(expected_result);
   });

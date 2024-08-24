@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Simple description for each App tabs
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - Simple description for each App tabs
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,10 +20,10 @@ import { GitHubPanel } from '../../overview/github/panel';
 import { DashboardPOCByReference } from '../../overview/poc/dashboards/overview/dashboard';
 import { withModuleNotForAgent } from '../hocs';
 import {
-  WazuhDiscover,
-  WazuhDiscoverProps,
-} from '../wazuh-discover/wz-discover';
-import { threatHuntingColumns } from '../wazuh-discover/config/data-grid-columns';
+  Cyb3rhqDiscover,
+  Cyb3rhqDiscoverProps,
+} from '../cyb3rhq-discover/wz-discover';
+import { threatHuntingColumns } from '../cyb3rhq-discover/config/data-grid-columns';
 import { vulnerabilitiesColumns } from '../../overview/vulnerabilities/events/vulnerabilities-columns';
 import React from 'react';
 import { dockerColumns } from '../../overview/docker/events/docker-columns';
@@ -41,7 +41,7 @@ import { githubColumns } from '../../overview/github/events/github-columns';
 import { mitreAttackColumns } from '../../overview/mitre/events/mitre-attack-columns';
 import { virustotalColumns } from '../../overview/virustotal/events/virustotal-columns';
 import { malwareDetectionColumns } from '../../overview/malware-detection/events/malware-detection-columns';
-import { WAZUH_VULNERABILITIES_PATTERN } from '../../../../common/constants';
+import { CYB3RHQ_VULNERABILITIES_PATTERN } from '../../../../common/constants';
 import {
   DashboardGitHub,
   DashboardGDPR,
@@ -82,12 +82,12 @@ import {
 } from '../data-source';
 import { ButtonExploreAgent } from '../../wz-agent-selector/button-explore-agent';
 
-const renderDiscoverTab = (props: WazuhDiscoverProps) => {
+const renderDiscoverTab = (props: Cyb3rhqDiscoverProps) => {
   return {
     id: 'events',
     name: 'Events',
     buttons: [ButtonExploreAgent],
-    component: () => <WazuhDiscover {...props} />,
+    component: () => <Cyb3rhqDiscover {...props} />,
   };
 };
 export const ModulesDefaults = {
@@ -161,7 +161,7 @@ export const ModulesDefaults = {
     ],
     availableFor: ['manager', 'agent'],
   },
-  // This module is Malware Detection. Ref: https://github.com/wazuh/wazuh-dashboard-plugins/issues/5893
+  // This module is Malware Detection. Ref: https://github.com/cyb3rhq/cyb3rhq-dashboard-plugins/issues/5893
   pm: {
     init: 'dashboard',
     tabs: [
@@ -252,19 +252,19 @@ export const ModulesDefaults = {
         id: 'dashboardByReference',
         name: 'Dashboard by reference',
         component: DashboardPOCByReference,
-        /* For ButtonExploreAgent to insert correctly according to the module's index pattern, the moduleIndexPatternTitle parameter is added. By default it applies the index pattern wazuh-alerts-* */
+        /* For ButtonExploreAgent to insert correctly according to the module's index pattern, the moduleIndexPatternTitle parameter is added. By default it applies the index pattern cyb3rhq-alerts-* */
         buttons: [],
       },
       {
         id: 'dashboard',
         name: 'Dashboard',
         component: DashboardVuls,
-        /* For ButtonExploreAgent to insert correctly according to the module's index pattern, the moduleIndexPatternTitle parameter is added. By default it applies the index patternt wazuh-alerts-* */
+        /* For ButtonExploreAgent to insert correctly according to the module's index pattern, the moduleIndexPatternTitle parameter is added. By default it applies the index patternt cyb3rhq-alerts-* */
         buttons: [
           ({ ...props }) => (
             <ButtonExploreAgent
               {...props}
-              moduleIndexPatternTitle={WAZUH_VULNERABILITIES_PATTERN}
+              moduleIndexPatternTitle={CYB3RHQ_VULNERABILITIES_PATTERN}
             />
           ),
         ],
@@ -273,12 +273,12 @@ export const ModulesDefaults = {
         id: 'inventory',
         name: 'Inventory',
         component: InventoryVuls,
-        /* For ButtonExploreAgent to insert correctly according to the module's index pattern, the moduleIndexPatternTitle parameter is added. By default it applies the index patternt wazuh-alerts-* */
+        /* For ButtonExploreAgent to insert correctly according to the module's index pattern, the moduleIndexPatternTitle parameter is added. By default it applies the index patternt cyb3rhq-alerts-* */
         buttons: [
           ({ ...props }) => (
             <ButtonExploreAgent
               {...props}
-              moduleIndexPatternTitle={WAZUH_VULNERABILITIES_PATTERN}
+              moduleIndexPatternTitle={CYB3RHQ_VULNERABILITIES_PATTERN}
             />
           ),
         ],

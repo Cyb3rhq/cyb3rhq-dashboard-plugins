@@ -8,8 +8,8 @@ on:
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
-      wazuh-version:
-        description: 'Wazuh Version'
+      cyb3rhq-version:
+        description: 'Cyb3rhq Version'
         default: 'v4.3.4'
         required: true
       elastic-version: 
@@ -27,38 +27,38 @@ on:
       url-package:
         description: 'Package Download Url'
         required: false 
-        default: 'https://packages-dev.wazuh.com/pre-release/ui/kibana/wazuh_kibana-4.3.4_7.16.3-1.zip'       
+        default: 'https://packages-dev.wazuh.com/pre-release/ui/kibana/cyb3rhq_kibana-4.3.4_7.16.3-1.zip'       
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  setup-wazuh-kibana-app:
-    name: Run setup environment wazuh kibana app
+  setup-cyb3rhq-kibana-app:
+    name: Run setup environment cyb3rhq kibana app
     runs-on: ubuntu-latest
     steps:
      - name: Step 01 - Set up environment variables
        run: |
-        echo "PATH_TEMPLATE=$GITHUB_WORKSPACE/wazuh-app-environments/templates_elastic_prod/es_odfe-wz_cluster-agent/" >> $GITHUB_ENV
+        echo "PATH_TEMPLATE=$GITHUB_WORKSPACE/cyb3rhq-app-environments/templates_elastic_prod/es_odfe-wz_cluster-agent/" >> $GITHUB_ENV
 
         echo "Information about the workflow (odfe):
-        wazuh-version: ${{ github.event.inputs.wazuh-version }}
+        cyb3rhq-version: ${{ github.event.inputs.cyb3rhq-version }}
         elastic-version: ${{ github.event.inputs.elastic-version }}
         odfe-version: ${{ github.event.inputs.odfe-version }}
         ubuntu-cypress-version: ${{ github.event.inputs.ubuntu-cypress-version }}
         url-package: ${{ github.event.inputs.url-package }}"
         
-     - name: Step 02 - Download Project wazuh-app-environments 
+     - name: Step 02 - Download Project cyb3rhq-app-environments 
        uses: actions/checkout@v2
        with:
-        repository: matiasmoreno876/wazuh-app-environments
+        repository: matiasmoreno876/cyb3rhq-app-environments
         ref: 'master'
-        path: wazuh-app-environments
+        path: cyb3rhq-app-environments
         token: ${{ secrets.FE_SECRET_TOKEN }}
      - name: Step 03 - Configuring templates docker environment
        run: |
-        cd $GITHUB_WORKSPACE/wazuh-app-environments/
+        cd $GITHUB_WORKSPACE/cyb3rhq-app-environments/
         mkdir packages
         cd ${{ env.PATH_TEMPLATE }}
-        sed -i -e 's|WAZUH_VERSION=.*|WAZUH_VERSION=${{ github.event.inputs.wazuh-version }}|g' ./.env
+        sed -i -e 's|CYB3RHQ_VERSION=.*|CYB3RHQ_VERSION=${{ github.event.inputs.cyb3rhq-version }}|g' ./.env
         sed -i -e 's|ELASTIC_VERSION=.*|ELASTIC_VERSION=${{ github.event.inputs.elastic-version }}|g' ./.env
         sed -i -e 's|ODFE_VERSION=.*|ODFE_VERSION=${{ github.event.inputs.odfe-version }}|g' ./.env
         sed -i -e 's|UBUNTU_CYPRESS_VERSION=.*|UBUNTU_CYPRESS_VERSION=${{ github.event.inputs.ubuntu-cypress-version }}|g' ./.env
@@ -77,11 +77,11 @@ jobs:
         echo CONTINUES AFTER 60 SECONDS ...
         sleep 60s
         docker-compose ps
-     - name: Step 06 - Configuring ip container into wazuh.yml
+     - name: Step 06 - Configuring ip container into cyb3rhq.yml
        run: |
         cd ${{ env.PATH_TEMPLATE }}
-        docker exec $(docker-compose ps -q kibana) sed -i -e "s/url: https:\/\/localhost/url: https:\/\/wazuh-manager-master/g" /usr/share/kibana/data/wazuh/config/wazuh.yml
-        docker exec $(docker-compose ps -q kibana) cat /usr/share/kibana/data/wazuh/config/wazuh.yml
+        docker exec $(docker-compose ps -q kibana) sed -i -e "s/url: https:\/\/localhost/url: https:\/\/cyb3rhq-manager-master/g" /usr/share/kibana/data/cyb3rhq/config/cyb3rhq.yml
+        docker exec $(docker-compose ps -q kibana) cat /usr/share/kibana/data/cyb3rhq/config/cyb3rhq.yml
      - name: Step 07 - Run Cypress tests
        id: run-cypress-test
        run: |
@@ -95,7 +95,7 @@ jobs:
      - name: Step 09 - Archive reports
        uses: actions/upload-artifact@v2
        with:
-        name: cypress-reports_ODFE_${{ github.event.inputs.wazuh-version }}-${{ github.event.inputs.odfe-version }}-${{ github.event.inputs.elastic-version }}
+        name: cypress-reports_ODFE_${{ github.event.inputs.cyb3rhq-version }}-${{ github.event.inputs.odfe-version }}-${{ github.event.inputs.elastic-version }}
         path: ${{ env.PATH_TEMPLATE }}/report/*
      - name: Step 10 - Log parsing
        run: |
@@ -114,6 +114,6 @@ jobs:
           # See also: https://api.slack.com/methods/chat.postMessage#channels
         channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
           # For posting a simple plain text message
-        slack-message: "The following workflow was executed: ${{ github.workflow }}\nWazuh version: ${{ github.event.inputs.wazuh-version }}\nElastic version: ${{ github.event.inputs.elastic-version }}\nODFE version: ${{ github.event.inputs.odfe-version }}\nUbuntu Cypress version: ${{ github.event.inputs.ubuntu-cypress-version }}\nPackage used: ${{ github.event.inputs.url-package }}\n\nTest summary:\n\tTotal Test: ${{ env.TEST_TOTAL }}\n\tPassing: ${{ env.TEST_PASSING }}\n\tFailing: ${{ env.TEST_FAILING }}\n\tPending: ${{ env.TEST_PENDING }}\n\tSkipped: ${{ env.TEST_SKIPPED }}\n\tTotal Time: ${{ env.TEST_TIME }}\n\nFor more information visit: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+        slack-message: "The following workflow was executed: ${{ github.workflow }}\nCyb3rhq version: ${{ github.event.inputs.cyb3rhq-version }}\nElastic version: ${{ github.event.inputs.elastic-version }}\nODFE version: ${{ github.event.inputs.odfe-version }}\nUbuntu Cypress version: ${{ github.event.inputs.ubuntu-cypress-version }}\nPackage used: ${{ github.event.inputs.url-package }}\n\nTest summary:\n\tTotal Test: ${{ env.TEST_TOTAL }}\n\tPassing: ${{ env.TEST_PASSING }}\n\tFailing: ${{ env.TEST_FAILING }}\n\tPending: ${{ env.TEST_PENDING }}\n\tSkipped: ${{ env.TEST_SKIPPED }}\n\tTotal Time: ${{ env.TEST_TIME }}\n\nFor more information visit: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
        env:
           SLACK_BOT_TOKEN: ${{ secrets.ACTIONS_SLACK_TOKEN }}

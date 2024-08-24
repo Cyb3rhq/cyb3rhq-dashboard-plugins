@@ -25,9 +25,9 @@
         "versions": [],
         "compatibility": "The Apache datasets were tested with Apache 2.4.12 and 2.4.46 and are expected to work with all versions >= 2.2.31 and >= 2.4.16 (independent from operating system).",
         "author": {
-          "name": "Wazuh Inc.",
+          "name": "Cyb3rhq Inc.",
           "date": "2021-12-31",
-          "email": "wazuh@wazuh.com"
+          "email": "cyb3rhq@wazuh.com"
         },
         "references": [
           "https://documentation.wazuh.com/current/user-manual/ruleset/ruleset-xml-syntax/decoders.html"
@@ -42,7 +42,7 @@
         "versions": ["2.2.31", "2.4.16"],
         "compatibility": "The Apache datasets were tested with Apache 2.4.12 and 2.4.46 and are expected to work with all versions >= 2.2.31 and >= 2.4.16 (independent from operating system).",
         "author": {
-          "name": "Wazuh Inc.",
+          "name": "Cyb3rhq Inc.",
           "date": "2023-11-29",
           "email": ""
         },

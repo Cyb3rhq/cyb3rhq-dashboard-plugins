@@ -2,7 +2,7 @@
 
 The error handler class allows to the developer to manage the errors in a centralized way.
 This class will receive an error instance or error message and it will classify and categorize the error by its structure and create and return the corresponding Error instance.
-Also, every custom error class "WazuhError" have a proper log treatment defined inside the class.
+Also, every custom error class "Cyb3rhqError" have a proper log treatment defined inside the class.
 
 ## 1 - On component when we want to log an error catched in the try-catch block
 
@@ -29,7 +29,7 @@ class ExampleComponent extends Component {
       throw errorMocked;
     } catch (error) {
       // the error handler will auto-categorize the error and log how is defined in the respective error class
-      // if the error is custom (WazuhError) the handler error will return
+      // if the error is custom (Cyb3rhqError) the handler error will return
       if (error instanceof Error) {
         ErrorHandler.handleError(error); // the error handler returns the error instance
       }
@@ -70,7 +70,7 @@ class ExampleComponent extends Component {
       throw errorMocked; // the error must be an http error like when use the WzRequest.genericReq || apiReq.request
     } catch (error) {
       // the error handler will auto-categorize the error and log how is defined in the respective error class
-      // if the error is custom (WazuhError) the handler error will return
+      // if the error is custom (Cyb3rhqError) the handler error will return
       if (error instanceof Error) {
         ErrorHandler.handleError(error); // the error handler returns the error instance
       }
@@ -117,7 +117,7 @@ class ExampleComponent extends Component {
       throw errorMocked;
     } catch (error) {
       // the error handler will auto-categorize the error and log how is defined in the respective error class
-      // if the error is custom (WazuhError) the handler error will return
+      // if the error is custom (Cyb3rhqError) the handler error will return
       if (error instanceof Error) {
         const errorCreated = new TypeError('An custom error has occurred');
 
@@ -158,7 +158,7 @@ class ExampleComponent extends Component {
       throw errorMocked;
     } catch (error) {
       // the error handler will auto-categorize the error and log how is defined in the respective error class
-      // if the error is custom (WazuhError) the handler error will return
+      // if the error is custom (Cyb3rhqError) the handler error will return
       if (error instanceof Error) {
         ErrorHandler.handleError(errorCreated, {
           title: 'An error when click on button has occurred',

@@ -13,8 +13,8 @@ export class SchedulerJob {
   constructor(jobName: string, context) {
     this.jobName = jobName;
     this.context = context;
-    this.logger = context.wazuh.logger;
-    this.apiClient = context.wazuh.api.client.asInternalUser;
+    this.logger = context.cyb3rhq.logger;
+    this.apiClient = context.cyb3rhq.api.client.asInternalUser;
     this.saveDocument = new SaveDocument(context);
   }
 
@@ -55,7 +55,7 @@ export class SchedulerJob {
   private async getApiObjects() {
     const { apis } = jobs[this.jobName];
     const hostsResponse: IApi[] =
-      await this.context.wazuh_core.manageHosts.getEntries({
+      await this.context.cyb3rhq_core.manageHosts.getEntries({
         excludePassword: true,
       });
     if (!hostsResponse.length)

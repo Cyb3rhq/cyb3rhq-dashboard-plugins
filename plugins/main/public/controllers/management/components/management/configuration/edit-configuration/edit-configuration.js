@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show Edit configuration.
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - React component for show Edit configuration.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,12 +25,12 @@ import {
 } from '@elastic/eui';
 
 import WzCodeEditor from '../util-components/code-editor';
-import WzWazuhAPINotReachable from '../util-components/wz-api-not-reachable';
+import WzCyb3rhqAPINotReachable from '../util-components/wz-api-not-reachable';
 import WzConfigurationPath from '../util-components/configuration-path';
 import WzRefreshClusterInfoButton from '../util-components/refresh-cluster-info-button';
 import { WzButtonPermissions } from '../../../../../../components/common/permissions/button';
 import withLoading from '../util-hocs/loading';
-import { updateWazuhNotReadyYet } from '../../../../../../redux/actions/appStateActions';
+import { updateCyb3rhqNotReadyYet } from '../../../../../../redux/actions/appStateActions';
 import {
   updateClusterNodes,
   updateClusterNodeSelected,
@@ -158,8 +158,8 @@ class WzEditConfiguration extends Component {
   async confirmRestart() {
     try {
       this.setState({ restarting: true, saving: true, infoChangesAfterRestart: false });
-      await restartNodeSelected(this.props.clusterNodeSelected, this.props.updateWazuhNotReadyYet);
-      this.props.updateWazuhNotReadyYet('');
+      await restartNodeSelected(this.props.clusterNodeSelected, this.props.updateCyb3rhqNotReadyYet);
+      this.props.updateCyb3rhqNotReadyYet('');
       this.setState({ restart: false, saving: false, restarting: false });
       await this.checkIfClusterOrManager();
       if (this.props.clusterNodes) {
@@ -184,7 +184,7 @@ class WzEditConfiguration extends Component {
         });
       }
     } catch (error) {
-      this.props.updateWazuhNotReadyYet('');
+      this.props.updateCyb3rhqNotReadyYet('');
       this.setState({ restart: false, saving: false, restarting: false });
       const options = {
         context: `${WzEditConfiguration.name}.confirmRestart`,
@@ -318,7 +318,7 @@ class WzEditConfiguration extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet,
+  cyb3rhqNotReadyYet: state.appStateReducers.cyb3rhqNotReadyYet,
   clusterNodes: state.configurationReducers.clusterNodes,
   clusterNodeSelected: state.configurationReducers.clusterNodeSelected,
 });
@@ -327,12 +327,12 @@ const mapDispatchToProps = (dispatch) => ({
   updateClusterNodes: (clusterNodes) => dispatch(updateClusterNodes(clusterNodes)),
   updateClusterNodeSelected: (clusterNodeSelected) =>
     dispatch(updateClusterNodeSelected(clusterNodeSelected)),
-  updateWazuhNotReadyYet: (value) => dispatch(updateWazuhNotReadyYet(value)),
+  updateCyb3rhqNotReadyYet: (value) => dispatch(updateCyb3rhqNotReadyYet(value)),
 });
 
 WzEditConfiguration.propTypes = {
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-  updateWazuhNotReadyYet: PropTypes.func,
+  cyb3rhqNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  updateCyb3rhqNotReadyYet: PropTypes.func,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(WzEditConfiguration);
@@ -341,7 +341,7 @@ const mapStateToPropsEditor = (state) => ({
   clusterNodeSelected: state.configurationReducers.clusterNodeSelected,
   clusterNodes: state.configurationReducers.clusterNodes,
   refreshTime: state.configurationReducers.refreshTime,
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet,
+  cyb3rhqNotReadyYet: state.appStateReducers.cyb3rhqNotReadyYet,
 });
 
 const WzEditorConfiguration = compose(
@@ -382,7 +382,7 @@ const WzEditorConfiguration = compose(
         infoChangesAfterRestart,
         editorValue,
         onChange,
-        wazuhNotReadyYet,
+        cyb3rhqNotReadyYet,
       } = this.props;
       const existsClusterCurrentNodeSelected =
         this.props.clusterNodes &&
@@ -415,12 +415,12 @@ const WzEditorConfiguration = compose(
                   mode="xml"
                   value={editorValue}
                   onChange={(value) => onChange(value)}
-                  minusHeight={wazuhNotReadyYet || infoChangesAfterRestart ? 320 : 270}
+                  minusHeight={cyb3rhqNotReadyYet || infoChangesAfterRestart ? 320 : 270}
                 />
               )}
             </Fragment>
           ) : (
-            <WzWazuhAPINotReachable error={this.props.errorXMLFetched} />
+            <WzCyb3rhqAPINotReachable error={this.props.errorXMLFetched} />
           )}
         </Fragment>
       );

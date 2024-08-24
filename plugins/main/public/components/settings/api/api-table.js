@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component building the API entries table.
+ * Cyb3rhq app - React component building the API entries table.
  *
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -40,8 +40,8 @@ import { UI_ERROR_SEVERITIES } from '../../../react-services/error-orchestrator/
 import { UI_LOGGER_LEVELS } from '../../../../common/constants';
 import { getErrorOrchestrator } from '../../../react-services/common-services';
 import {
-  getWazuhCheckUpdatesPlugin,
-  getWazuhCorePlugin,
+  getCyb3rhqCheckUpdatesPlugin,
+  getCyb3rhqCorePlugin,
 } from '../../../kibana-services';
 import { AvailableUpdatesFlyout } from './available-updates-flyout';
 import { AddApi } from './add-api';
@@ -55,7 +55,7 @@ import {
   ErrorHandler,
   GenericRequest,
 } from '../../../react-services';
-import { WazuhConfig } from '../../../react-services/wazuh-config';
+import { Cyb3rhqConfig } from '../../../react-services/cyb3rhq-config';
 
 export const ApiTable = compose(withErrorBoundary)(
   class ApiTable extends Component {
@@ -85,7 +85,7 @@ export const ApiTable = compose(withErrorBoundary)(
       try {
         this.setState({ refreshingAvailableUpdates: true });
         const availableUpdates =
-          await getWazuhCheckUpdatesPlugin().getAvailableUpdates(
+          await getCyb3rhqCheckUpdatesPlugin().getAvailableUpdates(
             queryApi,
             forceQuery,
           );
@@ -113,8 +113,8 @@ export const ApiTable = compose(withErrorBoundary)(
 
     componentDidMount() {
       this.refresh();
-      this.wazuhConfig = new WazuhConfig().getConfig();
-      this.isUpdatesEnabled = !this.wazuhConfig?.['wazuh.updates.disabled'];
+      this.cyb3rhqConfig = new Cyb3rhqConfig().getConfig();
+      this.isUpdatesEnabled = !this.cyb3rhqConfig?.['cyb3rhq.updates.disabled'];
       if (this.isUpdatesEnabled) {
         this.getApisAvailableUpdates();
       }
@@ -322,7 +322,7 @@ export const ApiTable = compose(withErrorBoundary)(
     }
 
     render() {
-      const { DismissNotificationCheck } = getWazuhCheckUpdatesPlugin();
+      const { DismissNotificationCheck } = getCyb3rhqCheckUpdatesPlugin();
 
       const API_UPDATES_STATUS_COLUMN = {
         upToDate: {
@@ -473,7 +473,7 @@ export const ApiTable = compose(withErrorBoundary)(
           width: '80px',
           render: value => {
             return value ===
-              getWazuhCorePlugin().API_USER_STATUS_RUN_AS.ENABLED ? (
+              getCyb3rhqCorePlugin().API_USER_STATUS_RUN_AS.ENABLED ? (
               <EuiToolTip
                 position='top'
                 content='The configured API user uses the authentication context.'
@@ -481,7 +481,7 @@ export const ApiTable = compose(withErrorBoundary)(
                 <EuiIcon type='check' />
               </EuiToolTip>
             ) : value ===
-              getWazuhCorePlugin().API_USER_STATUS_RUN_AS.USER_NOT_ALLOWED ? (
+              getCyb3rhqCorePlugin().API_USER_STATUS_RUN_AS.USER_NOT_ALLOWED ? (
               <EuiToolTip
                 position='top'
                 content='The configured API user is not allowed to use run_as. Give it permissions or set run_as with false value in the host configuration.'
@@ -695,7 +695,7 @@ export const ApiTable = compose(withErrorBoundary)(
                           title='Last dashboard check'
                           content={
                             this.state.availableUpdates?.last_check_date
-                              ? getWazuhCorePlugin().utils.formatUIDate(
+                              ? getCyb3rhqCorePlugin().utils.formatUIDate(
                                   this.state.availableUpdates.last_check_date,
                                 )
                               : '-'
@@ -744,12 +744,12 @@ export const ApiTable = compose(withErrorBoundary)(
                                       {
                                         label: 'For Systemd',
                                         command:
-                                          'sudo systemctl status wazuh-manager',
+                                          'sudo systemctl status cyb3rhq-manager',
                                       },
                                       {
                                         label: 'For SysV Init',
                                         command:
-                                          'sudo service wazuh-manager status',
+                                          'sudo service cyb3rhq-manager status',
                                       },
                                     ].map(({ label, command }) => (
                                       <>

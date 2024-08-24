@@ -1,7 +1,7 @@
 var id = context.request.queryParams.role_ids;
-var storeWazuh = stores.open('storeWazuh');
+var storeCyb3rhq = stores.open('storeCyb3rhq');
 
-storeWazuh.save('deleteRole', true);
+storeCyb3rhq.save('deleteRole', true);
 
 var data = {
   data: {

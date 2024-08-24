@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component building the configuration component.
+ * Cyb3rhq app - React component building the configuration component.
  *
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,9 +22,9 @@ import {
   EuiText,
 } from '@elastic/eui';
 import { EuiFormErrorText } from '@elastic/eui';
-import { PLUGIN_PLATFORM_WAZUH_DOCUMENTATION_URL_PATH_APP_CONFIGURATION } from '../../../../../common/constants';
+import { PLUGIN_PLATFORM_CYB3RHQ_DOCUMENTATION_URL_PATH_APP_CONFIGURATION } from '../../../../../common/constants';
 import { webDocumentationLink } from '../../../../../common/services/web_documentation';
-import { getWazuhCorePlugin } from '../../../../kibana-services';
+import { getCyb3rhqCorePlugin } from '../../../../kibana-services';
 import NavigationService from '../../../../react-services/navigation-service';
 
 export const Header = ({ query, setQuery, searchBarFilters }) => {
@@ -63,7 +63,7 @@ const Title = () => {
               target='_blank'
               rel='noopener noreferrer'
               href={webDocumentationLink(
-                PLUGIN_PLATFORM_WAZUH_DOCUMENTATION_URL_PATH_APP_CONFIGURATION,
+                PLUGIN_PLATFORM_CYB3RHQ_DOCUMENTATION_URL_PATH_APP_CONFIGURATION,
               )}
             ></EuiButtonIcon>
           </EuiToolTip>
@@ -78,7 +78,7 @@ const SubTitle = () => {
     <EuiFlexItem grow={false}>
       <EuiText color='subdued' style={{ paddingBottom: '15px' }}>
         Configuration file located at{' '}
-        {getWazuhCorePlugin().configuration.store.file}
+        {getCyb3rhqCorePlugin().configuration.store.file}
       </EuiText>
     </EuiFlexItem>
   );

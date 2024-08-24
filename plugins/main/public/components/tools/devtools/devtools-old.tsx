@@ -152,19 +152,19 @@ function calculateWhichGroup(editor, firstTime = false, groups = []) {
       });
     } catch {
       $('#play_button').hide();
-      $('#wazuh_dev_tools_documentation').hide();
+      $('#cyb3rhq_dev_tools_documentation').hide();
       return null;
     }
 
     if (!$('#play_button').is(':visible')) $('#play_button').show();
-    if (!$('#wazuh_dev_tools_documentation').is(':visible'))
-      $('#wazuh_dev_tools_documentation').show();
+    if (!$('#cyb3rhq_dev_tools_documentation').is(':visible'))
+      $('#cyb3rhq_dev_tools_documentation').show();
     const currentPlayButton = $('#play_button').offset();
     $('#play_button').offset({
       top: cords.top /*+ 2*/,
       left: currentPlayButton.left,
     });
-    $('#wazuh_dev_tools_documentation').offset({
+    $('#cyb3rhq_dev_tools_documentation').offset({
       top: cords.top /*+ 2*/,
     });
     if (firstTime) highlightGroup(editor, desiredGroup[0]);
@@ -212,17 +212,17 @@ function calculateWhichGroup(editor, firstTime = false, groups = []) {
           ),
         );
       if (apiEndpoint && apiEndpoint.documentation) {
-        $('#wazuh_dev_tools_documentation')
+        $('#cyb3rhq_dev_tools_documentation')
           .attr('href', apiEndpoint.documentation)
           .show();
       } else {
-        $('#wazuh_dev_tools_documentation').attr('href', '').hide();
+        $('#cyb3rhq_dev_tools_documentation').attr('href', '').hide();
       }
     }
     return desiredGroup[0];
   } catch (error) {
     $('#play_button').hide();
-    $('#wazuh_dev_tools_documentation').hide();
+    $('#cyb3rhq_dev_tools_documentation').hide();
     const options: UIErrorLog = {
       context: `calculateWhichGroup`,
       level: UI_LOGGER_LEVELS.WARNING as UILogLevel,
@@ -1037,7 +1037,7 @@ export const ToolDevTools = withGlobalBreadcrumb([
               target='__blank'
               title='Open documentation'
               className='fa fa-info-circle cursor-pointer pull-right fa-fw wz-always-top CodeMirror-styled-background'
-              id='wazuh_dev_tools_documentation'
+              id='cyb3rhq_dev_tools_documentation'
             ></a>
           </span>
 

@@ -49,7 +49,7 @@ exports[`WzConfigurationAlerts component mount OK renders correctly to match the
       }
     }
     refreshTime={false}
-    wazuhNotReadyYet=""
+    cyb3rhqNotReadyYet=""
   />
 </ContextProvider>
 `;

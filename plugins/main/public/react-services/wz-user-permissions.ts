@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React hook for get query of plugin platform searchBar
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - React hook for get query of plugin platform searchBar
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 
  // Data extrated of /security/actions endpoint
-import wazuhPermissions from '../../common/api-info/security-actions';
+import cyb3rhqPermissions from '../../common/api-info/security-actions';
 
 export class WzUserPermissions{
   // Check the missing permissions of the required ones that the user does not have
@@ -25,7 +25,7 @@ export class WzUserPermissions{
       const isGenericResource = (permission.resource.match(':\\*') || []).index === permission.resource.length - 2
 
       const actionName = typeof permission === 'string' ? permission : permission.action;
-      let actionResource = (typeof permission === 'string' && wazuhPermissions[actionName].resources.length === 1) ? (wazuhPermissions[actionName].resources[0] + ':*') : permission.resource;
+      let actionResource = (typeof permission === 'string' && cyb3rhqPermissions[actionName].resources.length === 1) ? (cyb3rhqPermissions[actionName].resources[0] + ':*') : permission.resource;
       const actionResourceAll = actionResource
         .split('&')
         .map(function (str) {
@@ -65,8 +65,8 @@ export class WzUserPermissions{
         return userPermissions.rbac_mode === RBAC_MODE_WHITE;
       }
 
-      const existInWazuhPermissions = (userResource) => {
-        return !!wazuhPermissions[actionName].resources.find(function (resource) {
+      const existInCyb3rhqPermissions = (userResource) => {
+        return !!cyb3rhqPermissions[actionName].resources.find(function (resource) {
           return (
             resource ===
             userResource
@@ -85,9 +85,9 @@ export class WzUserPermissions{
         });
       };
 
-      const notAllowInWazuhPermissions = (userResource) => {
+      const notAllowInCyb3rhqPermissions = (userResource) => {
         if (userResource !== RESOURCE_ANY) {
-          return existInWazuhPermissions(userResource)
+          return existInCyb3rhqPermissions(userResource)
             ? !isAllow(userPermissions[actionName][userResource])
             : true;
         } else {
@@ -100,18 +100,18 @@ export class WzUserPermissions{
       }
 
       return userPermissions[actionName][actionResource]
-        ? notAllowInWazuhPermissions(actionResource)
+        ? notAllowInCyb3rhqPermissions(actionResource)
         : Object.keys(userPermissions[actionName]).some((resource) => {
             return resource.match(actionResourceAll.replace(/\*/g, '.+')) !== null;
           })
         ? Object.keys(userPermissions[actionName]).some((resource) => {
             if (resource.match(actionResourceAll.replace(/\*/g, '.+'))) {
-              return notAllowInWazuhPermissions(resource);
+              return notAllowInCyb3rhqPermissions(resource);
             }
           })
         : (userPartialResources || []).length
         ? userPartialResources.some((resource) => partialResourceIsAllow(resource))
-        : wazuhPermissions[actionName].resources.find(
+        : cyb3rhqPermissions[actionName].resources.find(
             (resource) => resource === RESOURCE_ANY_SHORT
           ) && userPermissions[actionName][RESOURCE_ANY]
         ? !isAllow(userPermissions[actionName][RESOURCE_ANY])

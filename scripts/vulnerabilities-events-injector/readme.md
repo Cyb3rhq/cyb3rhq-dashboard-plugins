@@ -1,6 +1,6 @@
 # Vulnerabilities events injector
 
-This script generates random events with the Vulnerabilities format and saves them to a file or injects them to a Wazuh-Indexer/Opensearch instance.
+This script generates random events with the Vulnerabilities format and saves them to a file or injects them to a Cyb3rhq-Indexer/Opensearch instance.
 
 # Files
 

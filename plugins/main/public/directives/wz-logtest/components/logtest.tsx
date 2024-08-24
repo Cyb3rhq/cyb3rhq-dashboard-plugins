@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for Logtest.
- * Copyright (C) 2015-2022 Wazuh, Inc.
+ * Cyb3rhq app - React component for Logtest.
+ * Copyright (C) 2015-2022 Cyb3rhq, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -63,10 +63,10 @@ export const Logtest = compose(
     setEvents(e.target.value.split('\n').filter(item => item));
   };
 
-  // Format the result of the Wazuh API response to an output similar one to the `wazuh-logtest` utility
+  // Format the result of the Cyb3rhq API response to an output similar one to the `cyb3rhq-logtest` utility
   const formatResult = (result, alert, messages) => {
-    // How to the `wazuh-logtest` utility logs the output:
-    // https://github.com/wazuh/wazuh/blob/master/framework/scripts/wazuh-logtest.py#L359-L397
+    // How to the `cyb3rhq-logtest` utility logs the output:
+    // https://github.com/cyb3rhq/cyb3rhq/blob/master/framework/scripts/cyb3rhq-logtest.py#L359-L397
 
     const logging = [];
 
@@ -140,8 +140,8 @@ export const Logtest = compose(
     // Rule phase
 
     // Rule debugging
-    // The output has data if the utility is ran in verbose mode: `wazuh-logtest -v`.
-    // At this moment, the Wazuh API doesn't let run in verbose mode.
+    // The output has data if the utility is ran in verbose mode: `cyb3rhq-logtest -v`.
+    // At this moment, the Cyb3rhq API doesn't let run in verbose mode.
     if (result.rules_debug) {
       logging.push('');
       logging.push('**Rule debugging:');

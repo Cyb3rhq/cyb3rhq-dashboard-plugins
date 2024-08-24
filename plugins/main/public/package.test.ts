@@ -6,7 +6,7 @@ describe('package.json version', () => {
   it('should have a version', () => {
     expect(packageValue.version).toBeDefined();
   });
-  it("Wazuh's revision should be to follow the major.minor.patch.pattern.", () => {
+  it("Cyb3rhq's revision should be to follow the major.minor.patch.pattern.", () => {
     const versionSplit = packageValue.version.split('.');
 
     const versionIsNaN = versionSplit.every(isNaN);

@@ -4,7 +4,7 @@ import { WzUpdatesNotification } from '.';
 import { renderWithProviders } from '../../redux/render-with-redux-provider';
 
 jest.mock('../../kibana-services', () => ({
-  getWazuhCheckUpdatesPlugin: jest.fn().mockReturnValue({
+  getCyb3rhqCheckUpdatesPlugin: jest.fn().mockReturnValue({
     UpdatesNotification: () => <div>Updates notification</div>,
   }),
 }));

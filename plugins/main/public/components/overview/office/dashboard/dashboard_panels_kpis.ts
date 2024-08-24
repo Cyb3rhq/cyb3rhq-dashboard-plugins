@@ -3,7 +3,7 @@ import { EmbeddableInput } from '../../../../../../../../src/plugins/embeddable/
 
 const getVisStateMaxRuleLevel = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Office-Metric-Max-Rule-Level',
+    id: 'Cyb3rhq-App-Overview-Office-Metric-Max-Rule-Level',
     title: 'Max Rule Level',
     type: 'metric',
     params: {
@@ -72,7 +72,7 @@ const getVisStateMaxRuleLevel = (indexPatternId: string) => {
 
 const getVisStateSuspiciousDownloads = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Office-Metric-Suspicious-Downloads',
+    id: 'Cyb3rhq-App-Overview-Office-Metric-Suspicious-Downloads',
     title: 'Suspicious Downloads',
     type: 'metric',
     params: {
@@ -155,7 +155,7 @@ const getVisStateSuspiciousDownloads = (indexPatternId: string) => {
 
 const getVisStateFullAccess = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Office-Metric-FullAccess-Permissions',
+    id: 'Cyb3rhq-App-Overview-Office-Metric-FullAccess-Permissions',
     title: 'Full Access Permissions',
     type: 'metric',
     params: {
@@ -238,7 +238,7 @@ const getVisStateFullAccess = (indexPatternId: string) => {
 
 const getVisStatePhishingMalware = (indexPatternId: string) => {
   return {
-    id: 'Wazuh-App-Overview-Office-Phishing-Malware',
+    id: 'Cyb3rhq-App-Overview-Office-Phishing-Malware',
     title: 'Authentication success',
     type: 'metric',
     params: {
