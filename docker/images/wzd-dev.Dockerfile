@@ -1,4 +1,4 @@
-# Usage: docker build --build-arg NODE_VERSION=16.20.0 --build-arg CYB3RHQ_DASHBOARD_VERSION=4.6.0 -t quay.io/wazuh/osd-dev:4.6.0 -f wzd-dev.Dockerfile .
+# Usage: docker build --build-arg NODE_VERSION=16.20.0 --build-arg CYB3RHQ_DASHBOARD_VERSION=4.6.0 -t ghcr.io/cyb3rhq/osd-dev:4.6.0 -f wzd-dev.Dockerfile .
 
 ARG NODE_VERSION
 FROM node:${NODE_VERSION} AS base

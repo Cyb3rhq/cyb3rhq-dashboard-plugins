@@ -1,4 +1,4 @@
-# Usage: docker build --build-arg NODE_VERSION=14.20.1 --build-arg OPENSEARCH_VERSION=2.5.0 -t quay.io/wazuh/osd-dev:2.5.0 -f osd-dev.Dockerfile .
+# Usage: docker build --build-arg NODE_VERSION=14.20.1 --build-arg OPENSEARCH_VERSION=2.5.0 -t ghcr.io/cyb3rhq/osd-dev:2.5.0 -f osd-dev.Dockerfile .
 
 ARG NODE_VERSION
 FROM node:${NODE_VERSION} AS base

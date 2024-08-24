@@ -163,7 +163,7 @@ For example, to build the image for OpenSearch Dashboards `2.6.0`:
 
 ```bash
 cd images
-docker build --build-arg NODE_VERSION=14.20.1 --build-arg OPENSEARCH_VERSION=2.6.0 -t quay.io/wazuh/osd-dev:2.6.0 -f osd-dev.Dockerfile .
+docker build --build-arg NODE_VERSION=14.20.1 --build-arg OPENSEARCH_VERSION=2.6.0 -t ghcr.io/cyb3rhq/osd-dev:2.6.0 -f osd-dev.Dockerfile .
 cd ..
 ```
 
